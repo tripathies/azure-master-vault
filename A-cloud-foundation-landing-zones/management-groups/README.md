@@ -2,57 +2,85 @@
 
 [← A. Cloud Foundation & Landing Zones](../README.md) · [← Master catalogue](../../README.md)
 
-**Status:** Starter guide — complete the checklist and replace generic examples with verified component-specific design before production use.
+## Solution-architect checklist
 
-## Completion checklist
-- [ ] Purpose, scope, Azure architecture placement and key terminology
-- [ ] Use cases, non-use cases, alternatives and decision criteria
-- [ ] Identity, RBAC, security, governance and data protection
-- [ ] Network paths, private connectivity, DNS and ingress/egress where applicable
-- [ ] Availability, scaling, backup/DR, quotas and failure modes where applicable
-- [ ] Pricing drivers, cost controls and common cost surprises
-- [ ] Realistic enterprise scenario with trade-offs and operational ownership
-- [ ] Service-specific Azure architecture diagram
-- [ ] Validated Terraform and/or Bicep with parameters where appropriate
-- [ ] Validation, deployment, expected outputs and cleanup steps
-- [ ] Interview questions with model answers
-- [ ] LinkedIn-ready post and current Microsoft Learn references
+- [ ] Explain the hierarchy from Microsoft Entra tenant to management groups, subscriptions, resource groups and resources
+- [ ] Distinguish identity boundary, governance scope, billing boundary and deployment scope
+- [ ] Design management group branches around policy, platform ownership and landing-zone governance
+- [ ] Explain policy and RBAC inheritance and how exceptions are governed
+- [ ] Keep the hierarchy shallow enough to operate and avoid mirroring every organizational chart
+- [ ] Document subscription placement, naming, ownership and lifecycle
+- [ ] Test policy effects and exemptions before broad assignment
+- [ ] Link the design to [Azure Landing Zones](../azure-landing-zones/README.md) and [Azure Policy](../azure-policy/README.md)
 
-## What it is
-Describe the component's purpose, scope, control-plane/data-plane role and how it differs from alternatives.
+## 1. What it is
 
-## Where it fits
-Map dependencies and consumers; explain its relationships with identity, networking, security, governance, monitoring and operations.
+A management group is a governance scope above Azure subscriptions. Management groups let teams organize subscriptions and apply Azure Policy and access governance across groups of subscriptions. They do **not** replace a subscription: subscriptions remain important boundaries for billing, quotas, resource management and workload isolation.
 
-## When to use it
-Select based on requirements and trade-offs across functionality, latency, availability, scale, compliance, team skills and total cost. Explicitly compare viable alternatives.
+## 2. Where it fits in Azure architecture
 
-## Security and connectivity checklist
-- [ ] Prefer Microsoft Entra ID / managed identity over embedded secrets where supported
-- [ ] Apply least privilege and narrowly scoped access
-- [ ] Use private connectivity and restrict public exposure where required and supported
-- [ ] Enable diagnostics, audit logs and actionable alerts
-- [ ] Validate encryption, data classification, retention and compliance needs
+~~~mermaid
+flowchart TB
+    Tenant[Microsoft Entra tenant<br/>Identity boundary]
+    Tenant --> Root[Root management group<br/>Top-level governance scope]
+    Root --> Platform[Platform management group]
+    Root --> LandingZones[Landing zones management group]
+    Platform --> Identity[Identity subscription]
+    Platform --> Connectivity[Connectivity subscription]
+    Platform --> Management[Management subscription]
+    LandingZones --> Prod[Production subscription]
+    LandingZones --> NonProd[Non-production subscription]
+    Identity --> IRG[Resource groups and resources]
+    Connectivity --> CRG[Resource groups and resources]
+    Management --> MRG[Resource groups and resources]
+    Prod --> PRG[Resource groups and resources]
+    NonProd --> NRG[Resource groups and resources]
+~~~
 
-## Availability, operations and cost
-Document regional scope, failure domains, recovery objectives, scaling behavior, quotas, service limits, monitoring ownership, support model and cost drivers. Do not assume zone or region support without checking the current service documentation.
+Illustrative enterprise hierarchy. Actual management-group branches and subscription placements depend on governance requirements. Platform subscriptions are examples, not mandatory separate subscriptions for every organization.
 
-## Architecture diagram
-See [architecture.mmd](./architecture.mmd). This is a placeholder flow and must be replaced with a service-specific design.
+## 3. Understand each layer
 
-## Infrastructure as Code
-Add examples under `infra/terraform` and/or `infra/bicep` only after validating resource schemas, API/provider versions, prerequisites and parameterization. Governance/framework concepts should use policy/configuration samples rather than fake deployment resources. Never commit secrets or production state.
+| Layer | Primary role | Does not replace |
+|---|---|---|
+| Microsoft Entra tenant | Identity directory and tenant boundary | Azure subscription |
+| Management group | Organize subscriptions and inherit governance | Subscription billing/quota/resource boundary |
+| Subscription | Resource-management, billing and quota boundary | Resource group |
+| Resource group | Lifecycle and management grouping for resources | Network/security boundary by itself |
+| Resource | Individual service instance or Azure object | Governance design |
 
-## Scenario and interview answer
-**Scenario:** An enterprise team evaluates Management Groups for a governed workload. Record requirements, options, decision rationale, security boundary, failure modes, and operations runbook.
+## 4. Design principles
 
-**Interview question:** How do you decide whether Management Groups is appropriate for a production workload?
+- Organize by governance needs, policy inheritance, platform ownership and workload landing zones—not just by org chart.
+- Keep platform capabilities (such as connectivity, identity and management) logically distinct from workload subscriptions where this helps ownership and blast-radius control.
+- Assign policies at the highest safe scope, then use carefully governed exceptions. Test effects and compliance before broad rollout.
+- Remember that Azure RBAC and Azure Policy are different: RBAC controls who can perform actions; Policy evaluates/enforces resource configuration and compliance.
+- Avoid deep, fragile trees and uncontrolled exemptions. Document who approves placement changes.
+- Use subscription vending and landing-zone automation to apply repeatable naming, tags, budgets, diagnostic settings and guardrails.
 
-**Model answer:** Start with functional and non-functional requirements. Assess native capabilities, identity/network integration, availability and recovery, quotas, compliance, operating skills and total cost. Compare alternatives, state assumptions, identify failure modes and validate against current Microsoft Learn documentation and a representative proof of concept.
+## 5. Common mistakes
 
-## LinkedIn learning post
-**Azure architecture note — Management Groups:** Good cloud design starts with requirements, not product names. Evaluate identity, network boundaries, resilience, operations, compliance and cost together. Document trade-offs, validate limits and automate repeatable configuration. #Azure #CloudArchitecture #SolutionArchitect
+- Treating a management group as if it were a subscription.
+- Assigning restrictive policy at root without testing impact on platform and recovery operations.
+- Assuming management group placement alone provides network isolation.
+- Creating branches for every team or project without a clear governance reason.
+- Forgetting policy inheritance, exemptions, role scope and operational ownership when moving subscriptions.
 
-## Official documentation
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add the current component-specific Learn page, pricing, limits, regional availability and security guidance before marking this guide complete.
+## 6. Scenario
+
+An enterprise needs shared connectivity and management capabilities while isolating production and non-production workloads. A possible design places platform subscriptions under a Platform management group and workload subscriptions under Landing zones, then applies baseline policy and RBAC at appropriate scopes. The final hierarchy should be validated against actual ownership, compliance, scale and exception requirements.
+
+## Interview question
+
+**Does a management group replace an Azure subscription?**
+
+**Model answer:** No. It is a higher-level organizational and governance scope above subscriptions. It helps group subscriptions and inherit policy/access governance. A subscription remains a key boundary for billing, quotas and resource management. Resource groups organize resources within a subscription.
+
+## LinkedIn-ready post
+
+Azure governance starts with understanding the hierarchy. Microsoft Entra defines the identity boundary; management groups organize subscriptions and provide governance inheritance; subscriptions remain key billing, quota and resource-management boundaries; resource groups organize resources. The hierarchy should reflect policy and ownership needs—not merely the org chart. #Azure #CloudGovernance #LandingZones
+
+## Official references
+- [Management groups](https://learn.microsoft.com/azure/governance/management-groups/overview)
+- [Azure landing zones](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/)
+- [Azure Policy](https://learn.microsoft.com/azure/governance/policy/overview)
