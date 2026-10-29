@@ -1,8 +1,12 @@
 # Virtual Networks (VNet)
 
-[← C. Networking & Private Connectivity](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
+[← C. Networking & Private Connectivity](../README.md) · [← Master catalogue](../../README.md) · [Rendered architecture diagram](architecture.svg) · [Editable draw.io diagram](architecture.drawio) · [Mermaid source](architecture.mmd)
 
 **Purpose.** Design Virtual Networks (VNet) around its documented capability boundary, supported consumers, dependencies, permission model and failure behavior. Confirm service limits and current regional/SKU support in Microsoft Learn before production use.
+
+![Virtual Network component architecture](architecture.svg)
+
+> This diagram shows one illustrative VNet layout. Address ranges, subnet sizes, service-specific subnet requirements, route tables and security rules must be designed for the actual workload.
 
 ## Completion tracker
 
