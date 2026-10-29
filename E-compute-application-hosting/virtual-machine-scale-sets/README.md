@@ -1,54 +1,71 @@
 # Virtual Machine Scale Sets
 
-[← E. Compute & Application Hosting](../README.md) · [← Master catalogue](../../README.md)
+[← E. Compute & Application Hosting](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter guide; verify current capabilities, limits and pricing before production use.
+**Purpose.** Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## Completion checklist
-- [ ] Purpose, architecture placement and use cases
-- [ ] Alternatives and decision criteria
-- [ ] Identity, RBAC, security and governance
-- [ ] Networking, ingress/egress and private connectivity
-- [ ] Availability, scaling, recovery, quotas and failure modes
-- [ ] Cost drivers, observability and operations
-- [ ] Enterprise scenario and trade-offs
-- [ ] Service-specific architecture diagram
-- [ ] Validated Terraform/Bicep and parameters where appropriate
-- [ ] Validation, deployment and cleanup steps
-- [ ] Interview Q&A and LinkedIn-ready post
-- [ ] Current Microsoft Learn references
-
-## What it is and where it fits
-Explain the workload type and operational model supported by Virtual Machine Scale Sets, dependencies, scope and relationship to other Azure services.
+## Where it fits
+runs applications and compute jobs with different levels of operating-system control and platform management. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Compare requirements for runtime, portability, control, scale, performance, availability, compliance, team skills and cost. State when alternatives fit better.
+Choose the simplest hosting model that satisfies runtime, scaling, networking, availability and control requirements.
 
-## Security and operations
-- [ ] Use managed identity and least privilege where supported
-- [ ] Restrict network exposure and document ingress/egress
-- [ ] Patch/secure images or hosts where responsibility lies with the customer
-- [ ] Configure monitoring, logs, health checks and alerts
-- [ ] Test scale-out, upgrade, recovery and failure behavior
-- [ ] Validate service limits, region support and cost model
+**Alternatives and trade-offs:** Compare VM control against managed PaaS/serverless options using runtime constraints, scale, patching, networking and operational ownership.
 
-## Architecture
-Create a component-specific diagram showing workload, dependencies, trust boundaries, network paths and operations.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Add tested Terraform/Bicep examples under `infra/` where appropriate, with parameters and validation/deployment/cleanup instructions. Do not commit secrets or production state.
+```mermaid
+flowchart LR
+  Source["An API uses App Service"] --> Component["Virtual Machine Scale Sets"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
+
+## Security and governance
+Use managed identity where supported, patch and harden VMs, restrict management access, store secrets outside code, and protect ingress/egress.
+
+## Network and connectivity
+Design ingress, outbound VNet integration, private endpoints, DNS and administrative access separately; verify the service's supported network model.
+
+## Availability, scale and recovery
+Use health checks, autoscale, zones where supported, tested backups/restore and deployment rollback; compute redundancy alone is not application DR.
+
+## Cost and operations
+Compare uptime, VM family/size, disks, plan/SKU, autoscale, licenses, egress and idle capacity.
 
 ## Enterprise scenario
-Describe a workload that needs Virtual Machine Scale Sets, options considered, selected architecture, scale/availability assumptions, security controls and operating runbook.
+An API uses App Service, event processing uses Functions, and a legacy dependency remains on VMs only where OS control is necessary. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Interview question
-**Question:** How do you select and operate Virtual Machine Scale Sets for a production workload?
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
 
-**Model answer:** Match the service's control and operational model to workload requirements. Evaluate security, network integration, availability, scaling, deployment/upgrade process, observability, limits, skills and total cost. Compare alternatives and test failure and recovery paths.
+## Component-specific design note
+Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## LinkedIn post
-**Azure architecture note — Virtual Machine Scale Sets:** Choose compute/container platforms by workload shape and required operational control. Include identity, networking, scaling, patching, observability, recovery and cost in the decision—not just deployment speed. #Azure #CloudNative #SolutionArchitect
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
 
-## References
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add current component-specific docs, limits and pricing.
+## Interview questions
+
+**Q1. Where does Virtual Machine Scale Sets fit in an Azure solution?**  
+It implements one part of the larger compute & application hosting design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Virtual Machine Scale Sets does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Virtual Machine Scale Sets](<https://learn.microsoft.com/search/?terms=Virtual%20Machine%20Scale%20Sets%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

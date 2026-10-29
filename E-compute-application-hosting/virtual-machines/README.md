@@ -1,53 +1,71 @@
 # Virtual Machines
 
-[← E. Compute & Application Hosting](../README.md) · [← Master catalogue](../../README.md)
+[← E. Compute & Application Hosting](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter guide. Verify current service behavior, limits and pricing in Microsoft Learn.
+**Purpose.** Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## Completion checklist
-- [ ] Purpose and architecture placement
-- [ ] Use cases, alternatives and decision matrix
-- [ ] Identity, security and governance
-- [ ] Traffic/data flow and private connectivity where applicable
-- [ ] HA, scaling, failover, backup/DR and limits where applicable
-- [ ] Cost drivers, monitoring and operational ownership
-- [ ] Realistic enterprise scenario and trade-offs
-- [ ] Service-specific architecture diagram
-- [ ] Validated Terraform/Bicep and parameters where appropriate
-- [ ] Validation, deployment, output and cleanup
-- [ ] Interview Q&A, LinkedIn post and official references
-
-## What it is and where it fits
-Describe Virtual Machines's role, traffic or workload it serves, dependencies, scope, and how it differs from alternatives.
+## Where it fits
+runs applications and compute jobs with different levels of operating-system control and platform management. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Assess protocol/application needs, performance, scale, availability, security, global vs regional requirements, operational complexity and total cost. Explain alternatives and assumptions.
+Choose the simplest hosting model that satisfies runtime, scaling, networking, availability and control requirements.
 
-## Design checklist
-- [ ] Document ingress/egress and trust boundaries
-- [ ] Apply least privilege and restrict management-plane exposure
-- [ ] Validate TLS/certificates, DNS and health probes where relevant
-- [ ] Design for failure domains and test failover behavior
-- [ ] Enable logs, metrics, alerts and operational runbooks
-- [ ] Verify regional availability, quotas and pricing
+**Alternatives and trade-offs:** Compare VM control against managed PaaS/serverless options using runtime constraints, scale, patching, networking and operational ownership.
 
-## Architecture
-Add a service-specific diagram showing traffic direction, health/failover paths, dependencies and security boundaries.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Add tested Terraform/Bicep under `infra/` where appropriate. Include parameters, prerequisites, validation, deployment and cleanup; never commit secrets or state.
+```mermaid
+flowchart LR
+  Source["An API uses App Service"] --> Component["Virtual Machines"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
 
-## Scenario
-Describe an enterprise workload needing Virtual Machines, alternatives considered, design rationale, failure modes, operational handoffs and cost trade-offs.
+## Security and governance
+Use managed identity where supported, patch and harden VMs, restrict management access, store secrets outside code, and protect ingress/egress.
 
-## Interview question and model answer
-**Question:** What factors drive the design of Virtual Machines for production?
+## Network and connectivity
+Design ingress, outbound VNet integration, private endpoints, DNS and administrative access separately; verify the service's supported network model.
 
-**Model answer:** Translate requirements into routing/traffic, performance, security, availability, recovery, operational and cost criteria. Compare alternatives, document assumptions and failure paths, then validate health checks, DNS, access and failover in a representative test.
+## Availability, scale and recovery
+Use health checks, autoscale, zones where supported, tested backups/restore and deployment rollback; compute redundancy alone is not application DR.
 
-## LinkedIn post
-**Azure architecture note — Virtual Machines:** Traffic design should explicitly address health, failover, trust boundaries, observability and cost—not just route requests. Document assumptions and test failure paths before production. #Azure #CloudArchitecture #Reliability
+## Cost and operations
+Compare uptime, VM family/size, disks, plan/SKU, autoscale, licenses, egress and idle capacity.
 
-## References
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add service-specific docs, limits and pricing.
+## Enterprise scenario
+An API uses App Service, event processing uses Functions, and a legacy dependency remains on VMs only where OS control is necessary. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
+
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
+
+## Component-specific design note
+Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
+
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
+
+## Interview questions
+
+**Q1. Where does Virtual Machines fit in an Azure solution?**  
+It implements one part of the larger compute & application hosting design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Virtual Machines does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Virtual Machines](<https://learn.microsoft.com/search/?terms=Virtual%20Machines%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

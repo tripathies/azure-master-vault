@@ -1,54 +1,71 @@
 # Azure Event Grid
 
-[← I. Integration & API Management](../README.md) · [← Master catalogue](../../README.md)
+[← I. Integration & API Management](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter guide. Validate service-specific behavior, supported regions, quotas and pricing against current Microsoft Learn before production use.
+**Purpose.** Routes discrete events to subscribers. Use filters, retries/dead-letter behavior and idempotent handlers; it is not a high-volume long-retention telemetry stream.
 
-## Learning checklist
-- [ ] Purpose, architecture placement, responsibilities and service boundaries
-- [ ] Use cases, alternatives, selection criteria and assumptions
-- [ ] Identity, access, RBAC, security and governance
-- [ ] Network paths, private connectivity and DNS where applicable
-- [ ] Availability, scale, recovery, retention and failure modes where applicable
-- [ ] Logging, monitoring, alerting, incident response and ownership
-- [ ] Cost drivers, limits and operational trade-offs
-- [ ] Enterprise scenario and design rationale
-- [ ] Service-specific architecture diagram
-- [ ] Validated Terraform/Bicep/policy samples where appropriate
-- [ ] Validation, rollout and cleanup/runbook steps
-- [ ] Interview Q&A, LinkedIn post and official references
-
-## What it is and where it fits
-Describe the role of Azure Event Grid, what control or data flow it supports, its dependencies and the security/operations boundary between Azure and the customer.
+## Where it fits
+connects APIs, business messages, discrete events and high-volume streams while decoupling producers from consumers. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Evaluate functional requirements, risk reduction, scale, latency, compliance, integration, operational maturity and total cost. Compare alternatives and record assumptions.
+Choose API Management for governed synchronous APIs, Service Bus for brokered business messages, Event Grid for event routing, and Event Hubs for high-volume streams.
 
-## Security and governance checklist
-- [ ] Apply least privilege, separation of duties and scoped administrative roles
-- [ ] Prefer Microsoft Entra ID / managed identity and avoid embedded credentials
-- [ ] Restrict public exposure and use private connectivity where supported and required
-- [ ] Enable audit logs, diagnostic settings, alerts and evidence retention
-- [ ] Define ownership, incident handling, exception process and periodic review
-- [ ] Validate service-specific limits and feature availability in the target region
+**Alternatives and trade-offs:** Compare synchronous API, durable broker, discrete event routing and high-volume streaming semantics; they are not interchangeable.
 
-## Architecture
-Add a component-specific diagram showing trust boundaries, control/data flows, dependencies, monitoring and recovery paths.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Use tested Terraform/Bicep or policy/configuration examples where appropriate. Avoid fake deployment resources for conceptual governance topics. Include non-secret parameters and validation steps; never commit secrets or production state.
+```mermaid
+flowchart LR
+  Source["APIM exposes an order API"] --> Component["Azure Event Grid"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
+
+## Security and governance
+Validate tokens and backend authorization, use managed identity where supported, scope data-plane roles, secure endpoints and avoid logging secrets.
+
+## Network and connectivity
+Map caller-to-gateway and producer-to-broker paths, private endpoints, DNS, backend reachability and inbound/outbound controls.
+
+## Availability, scale and recovery
+Design retries, idempotency, dead-lettering, ordering/partitioning, consumer lag, replay and regional recovery explicitly.
+
+## Cost and operations
+Model throughput tier, requests, messages, retention, event volume, consumers, integration runtime and diagnostic ingestion.
 
 ## Enterprise scenario
-Describe the requirement addressed by Azure Event Grid, the alternatives, the chosen control/design, operational owner, alert and response path, residual risk and cost.
+APIM exposes an order API, Service Bus queues durable work, Event Grid distributes discrete notifications, and Event Hubs ingests telemetry. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Interview question and model answer
-**Question:** How would you implement Azure Event Grid without creating unnecessary operational or security risk?
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
 
-**Model answer:** Start from the threat model and requirements. Scope access narrowly, integrate identity and network controls, enable audit/monitoring, document exceptions and ownership, validate service limits and test the operational response. Compare alternatives and review residual risk and cost.
+## Component-specific design note
+Routes discrete events to subscribers. Use filters, retries/dead-letter behavior and idempotent handlers; it is not a high-volume long-retention telemetry stream.
 
-## LinkedIn-ready post
-**Azure architecture note — Azure Event Grid:** Security and governance work when controls are scoped, observable and operationally owned. Design least privilege, auditability, private access where needed, clear exceptions and tested response paths into the architecture. #AzureSecurity #Governance #CloudArchitecture
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
 
-## Official references
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add the current component-specific docs, security guidance, pricing and limits.
+## Interview questions
+
+**Q1. Where does Azure Event Grid fit in an Azure solution?**  
+It implements one part of the larger integration & api management design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Azure Event Grid does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Azure Event Grid](<https://learn.microsoft.com/search/?terms=Azure%20Event%20Grid%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

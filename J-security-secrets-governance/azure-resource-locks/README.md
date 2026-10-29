@@ -1,54 +1,71 @@
 # Azure Resource Locks
 
-[← J. Security, Secrets & Governance](../README.md) · [← Master catalogue](../../README.md)
+[← J. Security, Secrets & Governance](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter guide. Validate service-specific behavior, supported regions, quotas and pricing against current Microsoft Learn before production use.
+**Purpose.** Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## Learning checklist
-- [ ] Purpose, architecture placement, responsibilities and service boundaries
-- [ ] Use cases, alternatives, selection criteria and assumptions
-- [ ] Identity, access, RBAC, security and governance
-- [ ] Network paths, private connectivity and DNS where applicable
-- [ ] Availability, scale, recovery, retention and failure modes where applicable
-- [ ] Logging, monitoring, alerting, incident response and ownership
-- [ ] Cost drivers, limits and operational trade-offs
-- [ ] Enterprise scenario and design rationale
-- [ ] Service-specific architecture diagram
-- [ ] Validated Terraform/Bicep/policy samples where appropriate
-- [ ] Validation, rollout and cleanup/runbook steps
-- [ ] Interview Q&A, LinkedIn post and official references
-
-## What it is and where it fits
-Describe the role of Azure Resource Locks, what control or data flow it supports, its dependencies and the security/operations boundary between Azure and the customer.
+## Where it fits
+protects secrets and data, evaluates security posture, detects threats and enforces governance. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Evaluate functional requirements, risk reduction, scale, latency, compliance, integration, operational maturity and total cost. Compare alternatives and record assumptions.
+Use a layered approach combining identity, preventive policy, workload protection, detection, data governance and response.
 
-## Security and governance checklist
-- [ ] Apply least privilege, separation of duties and scoped administrative roles
-- [ ] Prefer Microsoft Entra ID / managed identity and avoid embedded credentials
-- [ ] Restrict public exposure and use private connectivity where supported and required
-- [ ] Enable audit logs, diagnostic settings, alerts and evidence retention
-- [ ] Define ownership, incident handling, exception process and periodic review
-- [ ] Validate service-specific limits and feature availability in the target region
+**Alternatives and trade-offs:** Pair preventive controls with detection and response; no single security product replaces identity, network and data controls.
 
-## Architecture
-Add a component-specific diagram showing trust boundaries, control/data flows, dependencies, monitoring and recovery paths.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Use tested Terraform/Bicep or policy/configuration examples where appropriate. Avoid fake deployment resources for conceptual governance topics. Include non-secret parameters and validation steps; never commit secrets or production state.
+```mermaid
+flowchart LR
+  Source["A production app uses Key Vault with managed identity Defender findings are triaged Sentinel detections route to a documented response process."] --> Component["Azure Resource Locks"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
+
+## Security and governance
+Apply least privilege, managed identities, secret/key rotation, Defender recommendations with owners, Sentinel detections and data classification.
+
+## Network and connectivity
+Use private connectivity where supported, but never treat a private IP as authorization; validate DNS and service access independently.
+
+## Availability, scale and recovery
+Protect vault recovery, security logs, incident playbooks and break-glass access; rehearse response and recovery.
+
+## Cost and operations
+Scope Sentinel ingestion by use case, review Defender plans and retention, and quantify the cost of data scanning and long-term logs.
 
 ## Enterprise scenario
-Describe the requirement addressed by Azure Resource Locks, the alternatives, the chosen control/design, operational owner, alert and response path, residual risk and cost.
+A production app uses Key Vault with managed identity; Defender findings are triaged; Sentinel detections route to a documented response process. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Interview question and model answer
-**Question:** How would you implement Azure Resource Locks without creating unnecessary operational or security risk?
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
 
-**Model answer:** Start from the threat model and requirements. Scope access narrowly, integrate identity and network controls, enable audit/monitoring, document exceptions and ownership, validate service limits and test the operational response. Compare alternatives and review residual risk and cost.
+## Component-specific design note
+Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## LinkedIn-ready post
-**Azure architecture note — Azure Resource Locks:** Security and governance work when controls are scoped, observable and operationally owned. Design least privilege, auditability, private access where needed, clear exceptions and tested response paths into the architecture. #AzureSecurity #Governance #CloudArchitecture
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
 
-## Official references
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add the current component-specific docs, security guidance, pricing and limits.
+## Interview questions
+
+**Q1. Where does Azure Resource Locks fit in an Azure solution?**  
+It implements one part of the larger security, secrets & governance design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Azure Resource Locks does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Azure Resource Locks](<https://learn.microsoft.com/search/?terms=Azure%20Resource%20Locks%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

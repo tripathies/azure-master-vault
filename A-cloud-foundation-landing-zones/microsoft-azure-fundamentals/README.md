@@ -1,58 +1,71 @@
 # Microsoft Azure fundamentals
 
-[← A. Cloud Foundation & Landing Zones](../README.md) · [← Master catalogue](../../README.md)
+[← A. Cloud Foundation & Landing Zones](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Status:** Starter guide — complete the checklist and replace generic examples with verified component-specific design before production use.
-
-## Completion checklist
-- [ ] Purpose, scope, Azure architecture placement and key terminology
-- [ ] Use cases, non-use cases, alternatives and decision criteria
-- [ ] Identity, RBAC, security, governance and data protection
-- [ ] Network paths, private connectivity, DNS and ingress/egress where applicable
-- [ ] Availability, scaling, backup/DR, quotas and failure modes where applicable
-- [ ] Pricing drivers, cost controls and common cost surprises
-- [ ] Realistic enterprise scenario with trade-offs and operational ownership
-- [ ] Service-specific Azure architecture diagram
-- [ ] Validated Terraform and/or Bicep with parameters where appropriate
-- [ ] Validation, deployment, expected outputs and cleanup steps
-- [ ] Interview questions with model answers
-- [ ] LinkedIn-ready post and current Microsoft Learn references
-
-## What it is
-Describe the component's purpose, scope, control-plane/data-plane role and how it differs from alternatives.
+**Purpose.** Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
 ## Where it fits
-Map dependencies and consumers; explain its relationships with identity, networking, security, governance, monitoring and operations.
+establishes the cloud hierarchy, guardrails, placement and operational boundaries that workloads inherit. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Select based on requirements and trade-offs across functionality, latency, availability, scale, compliance, team skills and total cost. Explicitly compare viable alternatives.
+Use it before deploying production workloads or when defining enterprise-wide ownership, compliance and resource organization.
 
-## Security and connectivity checklist
-- [ ] Prefer Microsoft Entra ID / managed identity over embedded secrets where supported
-- [ ] Apply least privilege and narrowly scoped access
-- [ ] Use private connectivity and restrict public exposure where required and supported
-- [ ] Enable diagnostics, audit logs and actionable alerts
-- [ ] Validate encryption, data classification, retention and compliance needs
+**Alternatives and trade-offs:** Compare alternative hierarchy and governance patterns against tenant boundaries, policy inheritance, ownership and billing requirements.
 
-## Availability, operations and cost
-Document regional scope, failure domains, recovery objectives, scaling behavior, quotas, service limits, monitoring ownership, support model and cost drivers. Do not assume zone or region support without checking the current service documentation.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Architecture diagram
-See [architecture.mmd](./architecture.mmd). This is a placeholder flow and must be replaced with a service-specific design.
+```mermaid
+flowchart LR
+  Source["A regulated enterprise creates shared platform subscriptions for identity/connectivity/security and workload subscriptions under management groups with inherited policy."] --> Component["Microsoft Azure fundamentals"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
 
-## Infrastructure as Code
-Add examples under `infra/terraform` and/or `infra/bicep` only after validating resource schemas, API/provider versions, prerequisites and parameterization. Governance/framework concepts should use policy/configuration samples rather than fake deployment resources. Never commit secrets or production state.
+## Security and governance
+Define tenant and subscription ownership, apply least-privilege Azure RBAC, assign policy at the right scope, and document approved exceptions.
 
-## Scenario and interview answer
-**Scenario:** An enterprise team evaluates Microsoft Azure fundamentals for a governed workload. Record requirements, options, decision rationale, security boundary, failure modes, and operations runbook.
+## Network and connectivity
+Confirm connectivity is planned at the platform level: address allocation, DNS, hybrid paths, private access and egress ownership.
 
-**Interview question:** How do you decide whether Microsoft Azure fundamentals is appropriate for a production workload?
+## Availability, scale and recovery
+Separate regional placement, zonal resilience, backup and disaster recovery; do not assume a hierarchy or policy control provides runtime availability.
 
-**Model answer:** Start with functional and non-functional requirements. Assess native capabilities, identity/network integration, availability and recovery, quotas, compliance, operating skills and total cost. Compare alternatives, state assumptions, identify failure modes and validate against current Microsoft Learn documentation and a representative proof of concept.
+## Cost and operations
+Set subscription/resource ownership, budgets, tags, quota monitoring and chargeback rules before broad rollout.
 
-## LinkedIn learning post
-**Azure architecture note — Microsoft Azure fundamentals:** Good cloud design starts with requirements, not product names. Evaluate identity, network boundaries, resilience, operations, compliance and cost together. Document trade-offs, validate limits and automate repeatable configuration. #Azure #CloudArchitecture #SolutionArchitect
+## Enterprise scenario
+A regulated enterprise creates shared platform subscriptions for identity/connectivity/security and workload subscriptions under management groups with inherited policy. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Official documentation
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add the current component-specific Learn page, pricing, limits, regional availability and security guidance before marking this guide complete.
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
+
+## Component-specific design note
+Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
+
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
+
+## Interview questions
+
+**Q1. Where does Microsoft Azure fundamentals fit in an Azure solution?**  
+It implements one part of the larger cloud foundation & landing zones design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Microsoft Azure fundamentals does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Microsoft Azure fundamentals](<https://learn.microsoft.com/search/?terms=Microsoft%20Azure%20fundamentals%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

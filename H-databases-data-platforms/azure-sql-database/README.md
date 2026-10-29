@@ -1,54 +1,71 @@
 # Azure SQL Database
 
-[← H. Databases & Data Platforms](../README.md) · [← Master catalogue](../../README.md)
+[← H. Databases & Data Platforms](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter guide. Validate service-specific behavior, region support, quotas and pricing against current Microsoft Learn before production use.
+**Purpose.** Managed relational database service. Validate compatibility, networking, identity, tier/capacity, PITR and geo/zone availability needs; test restore and query performance.
 
-## Learning checklist
-- [ ] Purpose, architecture placement and core terminology
-- [ ] Use cases, alternatives and workload decision matrix
-- [ ] Identity, RBAC, security, encryption and governance
-- [ ] Private connectivity, DNS, firewall and public-access posture where applicable
-- [ ] Availability, durability, replication, backup/restore and failure modes
-- [ ] Performance, scaling, quotas and service limits
-- [ ] Cost drivers, monitoring, lifecycle and operational ownership
-- [ ] Enterprise scenario with requirements and trade-offs
-- [ ] Service-specific architecture diagram
-- [ ] Validated Terraform/Bicep examples and parameter files where appropriate
-- [ ] Validation, deployment, test and cleanup steps
-- [ ] Interview questions/model answers, LinkedIn post and official references
-
-## What it is and where it fits
-Explain the purpose of Azure SQL Database, the data/workload it serves, its scope and dependencies, and how it differs from alternatives in the same service family.
+## Where it fits
+persists and processes structured, document, key-value and analytical data using different consistency, query and scale models. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Assess data shape, access pattern, throughput/latency, consistency, durability, availability, compliance, portability, operational skills and total cost. Document alternatives and why they fit less well.
+Choose from data model, query patterns, compatibility, consistency, latency, migration needs, operations and skills.
 
-## Security and resilience checklist
-- [ ] Prefer Microsoft Entra ID / managed identity where supported and appropriate
-- [ ] Apply least privilege, narrow role scopes and separation of duties
-- [ ] Disable public access or use private endpoints when required and supported
-- [ ] Validate encryption, key management, data classification and retention
-- [ ] Define backup/restore, replication, failover and recovery objectives
-- [ ] Enable diagnostic logs, metrics, alerts and data-access auditing where available
+**Alternatives and trade-offs:** Compare data models, consistency, query patterns, compatibility, migration effort, HA/DR and total cost.
 
-## Architecture and operations
-Create a component-specific diagram showing consumers, data flow, trust boundaries, network paths, dependencies, monitoring and recovery. Record service limits, regional availability, maintenance/upgrade model and operational ownership.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Add tested Terraform/Bicep examples under infra/ when deployment code is appropriate. Include parameters, prerequisites, validation and cleanup instructions. Never commit secrets, production state or sensitive test data.
+```mermaid
+flowchart LR
+  Source["A transactional SQL database remains isolated from analytics workloads"] --> Component["Azure SQL Database"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
+
+## Security and governance
+Separate control-plane roles from data-plane permissions, use Entra/managed identity where supported, private connectivity, encryption, auditing and data classification.
+
+## Network and connectivity
+Design private endpoints/VNet integration, DNS, firewall allowlists and connectivity from apps, pipelines and operations tools.
+
+## Availability, scale and recovery
+Define backup/PITR, HA, replication, regional failover and restore tests according to explicit RTO/RPO.
+
+## Cost and operations
+Model compute, storage, transactions/RUs, backups, replicas, egress, analytics capacity and query inefficiency.
 
 ## Enterprise scenario
-Describe a real enterprise requirement that suits Azure SQL Database. Document access patterns, data sensitivity, expected scale, chosen redundancy, recovery approach, alternative considered, cost drivers and failure modes.
+A transactional SQL database remains isolated from analytics workloads, which use governed pipelines and a separate data-processing platform. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Interview question and model answer
-**Question:** How would you select and secure Azure SQL Database for a production workload?
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
 
-**Model answer:** Start with data and workload requirements. Compare access patterns, consistency/performance, scale, availability and recovery, security and private access, compliance, operational capability and total cost. Validate service-specific limits and test backup/restore or failover behavior rather than relying only on stated configuration.
+## Component-specific design note
+Managed relational database service. Validate compatibility, networking, identity, tier/capacity, PITR and geo/zone availability needs; test restore and query performance.
 
-## LinkedIn-ready post
-**Azure architecture note — Azure SQL Database:** Data platform decisions should include access patterns, identity, network exposure, durability, recovery, observability and cost. Choose from workload requirements, document trade-offs and prove the restore/recovery path. #Azure #DataArchitecture #CloudSecurity
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
 
-## Official references
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add the current service-specific documentation, pricing, regional availability and limits before marking complete.
+## Interview questions
+
+**Q1. Where does Azure SQL Database fit in an Azure solution?**  
+It implements one part of the larger databases & data platforms design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Azure SQL Database does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Azure SQL Database](<https://learn.microsoft.com/search/?terms=Azure%20SQL%20Database%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

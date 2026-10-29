@@ -1,54 +1,71 @@
 # Azure Database for PostgreSQL
 
-[← H. Databases & Data Platforms](../README.md) · [← Master catalogue](../../README.md)
+[← H. Databases & Data Platforms](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter guide. Validate service-specific behavior, regional support, quotas and pricing against current Microsoft Learn before production use.
+**Purpose.** Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## Learning checklist
-- [ ] Purpose, architecture placement, core concepts and service boundaries
-- [ ] Workload fit, alternatives, decision matrix and migration considerations
-- [ ] Identity, RBAC, authentication, secrets and governance
-- [ ] Network integration, private access, DNS and data flows where applicable
-- [ ] Availability, scaling, consistency, backup/restore and recovery objectives
-- [ ] Performance, capacity, quotas and service limits
-- [ ] Cost drivers, monitoring, lifecycle and operating model
-- [ ] Enterprise scenario and design trade-offs
-- [ ] Service-specific Azure architecture diagram
-- [ ] Validated Terraform/Bicep and parameters where appropriate
-- [ ] Validation, deployment, smoke tests and cleanup
-- [ ] Interview Q&A, LinkedIn post and current official references
-
-## What it is and where it fits
-Explain the role of Azure Database for PostgreSQL, the workloads or data flows it serves, its dependencies, and the boundary between managed platform responsibility and customer responsibility.
+## Where it fits
+persists and processes structured, document, key-value and analytical data using different consistency, query and scale models. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Compare workload shape, protocol/query/processing needs, latency, consistency, scale, availability, portability, compliance, team skills and total cost. Explain alternatives and assumptions.
+Choose from data model, query patterns, compatibility, consistency, latency, migration needs, operations and skills.
 
-## Security and reliability checklist
-- [ ] Prefer Microsoft Entra ID and managed identity where supported
-- [ ] Apply least privilege and separate admin from application access
-- [ ] Restrict public exposure; validate private access and DNS if required
-- [ ] Encrypt data in transit and at rest; review key management and retention
-- [ ] Define backup/restore, replication and recovery tests for the workload
-- [ ] Enable diagnostics, metrics, alerts and audit trails
+**Alternatives and trade-offs:** Compare data models, consistency, query patterns, compatibility, migration effort, HA/DR and total cost.
 
-## Architecture and operations
-Add a service-specific diagram showing producers/consumers, data flow, identity, network boundaries, dependencies, monitoring and recovery. Record regional support, quotas, maintenance behavior and operational ownership.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Add tested Terraform/Bicep under infra/ where appropriate. Include prerequisites, non-secret parameters, validation, deployment and cleanup. Never commit credentials, production state or sensitive datasets.
+```mermaid
+flowchart LR
+  Source["A transactional SQL database remains isolated from analytics workloads"] --> Component["Azure Database for PostgreSQL"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
+
+## Security and governance
+Separate control-plane roles from data-plane permissions, use Entra/managed identity where supported, private connectivity, encryption, auditing and data classification.
+
+## Network and connectivity
+Design private endpoints/VNet integration, DNS, firewall allowlists and connectivity from apps, pipelines and operations tools.
+
+## Availability, scale and recovery
+Define backup/PITR, HA, replication, regional failover and restore tests according to explicit RTO/RPO.
+
+## Cost and operations
+Model compute, storage, transactions/RUs, backups, replicas, egress, analytics capacity and query inefficiency.
 
 ## Enterprise scenario
-Document the business requirement, workload characteristics, chosen architecture, alternatives, scale and resilience assumptions, data/security boundaries, operations runbook and cost drivers for Azure Database for PostgreSQL.
+A transactional SQL database remains isolated from analytics workloads, which use governed pipelines and a separate data-processing platform. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Interview question and model answer
-**Question:** What makes Azure Database for PostgreSQL a suitable choice for a production architecture?
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
 
-**Model answer:** Align the service with workload and data-flow requirements. Evaluate native capabilities, identity/network integration, performance and scale, availability/recovery, security/compliance, operational effort, limits and cost. Compare alternatives, state assumptions and validate using a representative test and current service documentation.
+## Component-specific design note
+Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## LinkedIn-ready post
-**Azure architecture note — Azure Database for PostgreSQL:** Platform choices should follow workload requirements. Validate data flow, identity, network boundaries, availability, recovery, operations and cost together. Test critical failure and restore paths before calling a design production-ready. #Azure #DataArchitecture #Integration
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
 
-## Official references
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add current service-specific documentation, pricing, limits and regional support.
+## Interview questions
+
+**Q1. Where does Azure Database for PostgreSQL fit in an Azure solution?**  
+It implements one part of the larger databases & data platforms design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Azure Database for PostgreSQL does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Azure Database for PostgreSQL](<https://learn.microsoft.com/search/?terms=Azure%20Database%20for%20PostgreSQL%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

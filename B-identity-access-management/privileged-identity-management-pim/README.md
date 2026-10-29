@@ -1,53 +1,71 @@
 # Privileged Identity Management (PIM)
 
-[← B. Identity & Access Management](../README.md) · [← Master catalogue](../../README.md)
+[← B. Identity & Access Management](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter. Complete the checklist and validate component-specific details against current Microsoft Learn before production use.
+**Purpose.** Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## Checklist
-- [ ] Explain purpose, scope, architecture placement and terminology
-- [ ] Document use cases, non-use cases, alternatives and selection criteria
-- [ ] Cover identity, RBAC, security and governance
-- [ ] Cover network flows/private connectivity where relevant
-- [ ] Cover availability, scale, recovery, limits and failure modes where relevant
-- [ ] Explain cost drivers and optimization
-- [ ] Add realistic enterprise scenario and trade-offs
-- [ ] Add service-specific `architecture.mmd`
-- [ ] Add validated Terraform/Bicep or policy/configuration samples where appropriate
-- [ ] Add validation, deployment, expected output and cleanup steps
-- [ ] Add interview Q&A and LinkedIn-ready post
-- [ ] Cite current Microsoft Learn references
-
-## What it is / where it fits
-Describe the role, dependencies, control-plane/data-plane behavior, consumers and differences from alternatives.
+## Where it fits
+defines how users, applications and workloads authenticate and how permissions are granted to Azure or APIs. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Evaluate functional and non-functional requirements, security, network integration, availability, compliance, scale, skills and total cost. State assumptions and trade-offs.
+Use it to establish identity boundaries, secure application-to-service access, govern privileged roles and reduce standing credentials.
 
-## Design and security
-- [ ] Apply least privilege and narrow scope
-- [ ] Prefer Microsoft Entra ID and managed identity where supported; avoid hard-coded credentials
-- [ ] Restrict public exposure and use private connectivity where appropriate
-- [ ] Enable audit, diagnostics and actionable monitoring
-- [ ] Verify quotas, regional availability, recovery objectives and failure domains
+**Alternatives and trade-offs:** Compare managed identity, federated identity and application credentials based on hosting support and credential lifecycle; distinguish authentication from authorization.
 
-## Architecture
-Create a service-specific diagram in `architecture.mmd` that shows boundaries, dependencies and key data/control flows.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Add tested Terraform/Bicep under `infra/` where appropriate, with parameters and deployment/cleanup instructions. For governance concepts, use policy/configuration examples rather than fake deployable resources. Never commit secrets or production state.
+```mermaid
+flowchart LR
+  Source["An App Service reads Key Vault using managed identity"] --> Component["Privileged Identity Management PIM"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
 
-## Scenario
-Describe an enterprise workload that needs Privileged Identity Management (PIM); compare alternatives and document the chosen design, risk, failure mode, operational ownership and cost drivers.
+## Security and governance
+Use MFA and Conditional Access for appropriate interactive access, PIM for privileged access, managed identity/federation for workloads, and least-privilege roles.
 
-## Interview question
-**Question:** How would you determine whether Privileged Identity Management (PIM) is the right fit?
+## Network and connectivity
+Identity controls do not replace network controls; verify endpoints, private access, DNS and conditional access requirements independently.
 
-**Model answer:** Start with requirements and constraints. Evaluate capabilities, integration, security, availability/recovery, quotas, compliance, operating model and total cost. Compare alternatives, state assumptions and validate against current Microsoft Learn documentation and a proof of concept.
+## Availability, scale and recovery
+Document emergency access, credential/certificate expiry, identity dependencies and monitoring for failed or suspicious sign-ins.
 
-## LinkedIn post
-**Azure architecture note — Privileged Identity Management (PIM):** Design from requirements, not product names. Evaluate security, network boundaries, resilience, operations, compliance and cost together; document trade-offs and validate service limits before implementation. #Azure #CloudArchitecture #SolutionArchitect
+## Cost and operations
+Review licensing requirements for Conditional Access/PIM and avoid unnecessary premium features; measure operational cost of credential rotation.
 
-## References
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add current component-specific documentation, pricing, limits and regional availability.
+## Enterprise scenario
+An App Service reads Key Vault using managed identity, while administrators use group-based RBAC and eligible privileged roles activated through PIM. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
+
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
+
+## Component-specific design note
+Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
+
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
+
+## Interview questions
+
+**Q1. Where does Privileged Identity Management (PIM) fit in an Azure solution?**  
+It implements one part of the larger identity & access management design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Privileged Identity Management (PIM) does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Privileged Identity Management (PIM)](<https://learn.microsoft.com/search/?terms=Privileged%20Identity%20Management%20(PIM)%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

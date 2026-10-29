@@ -1,54 +1,71 @@
 # Azure Files
 
-[← G. Storage & Enterprise File Services](../README.md) · [← Master catalogue](../../README.md)
+[← G. Storage & Enterprise File Services](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter guide. Validate service-specific behavior, region support, quotas and pricing against current Microsoft Learn before production use.
+**Purpose.** Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## Learning checklist
-- [ ] Purpose, architecture placement and core terminology
-- [ ] Use cases, alternatives and workload decision matrix
-- [ ] Identity, RBAC, security, encryption and governance
-- [ ] Private connectivity, DNS, firewall and public-access posture where applicable
-- [ ] Availability, durability, replication, backup/restore and failure modes
-- [ ] Performance, scaling, quotas and service limits
-- [ ] Cost drivers, monitoring, lifecycle and operational ownership
-- [ ] Enterprise scenario with requirements and trade-offs
-- [ ] Service-specific architecture diagram
-- [ ] Validated Terraform/Bicep examples and parameter files where appropriate
-- [ ] Validation, deployment, test and cleanup steps
-- [ ] Interview questions/model answers, LinkedIn post and official references
-
-## What it is and where it fits
-Explain the purpose of Azure Files, the data/workload it serves, its scope and dependencies, and how it differs from alternatives in the same service family.
+## Where it fits
+stores objects, analytics files, shared files, messages and key-value data with service-specific access and durability characteristics. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Assess data shape, access pattern, throughput/latency, consistency, durability, availability, compliance, portability, operational skills and total cost. Document alternatives and why they fit less well.
+Select by access pattern, protocol, latency, hierarchy, durability, recovery and lifecycle rather than capacity price alone.
 
-## Security and resilience checklist
-- [ ] Prefer Microsoft Entra ID / managed identity where supported and appropriate
-- [ ] Apply least privilege, narrow role scopes and separation of duties
-- [ ] Disable public access or use private endpoints when required and supported
-- [ ] Validate encryption, key management, data classification and retention
-- [ ] Define backup/restore, replication, failover and recovery objectives
-- [ ] Enable diagnostic logs, metrics, alerts and data-access auditing where available
+**Alternatives and trade-offs:** Compare service by protocol, access pattern, latency, durability, retrieval, lifecycle and recovery objectives.
 
-## Architecture and operations
-Create a component-specific diagram showing consumers, data flow, trust boundaries, network paths, dependencies, monitoring and recovery. Record service limits, regional availability, maintenance/upgrade model and operational ownership.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Add tested Terraform/Bicep examples under infra/ when deployment code is appropriate. Include parameters, prerequisites, validation and cleanup instructions. Never commit secrets, production state or sensitive test data.
+```mermaid
+flowchart LR
+  Source["ADLS Gen2 stores curated analytics data"] --> Component["Azure Files"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
+
+## Security and governance
+Prefer Entra data roles where supported, restrict public access, configure private endpoints/DNS, protect keys and apply data retention/immutability as required.
+
+## Network and connectivity
+Validate service endpoints, private DNS, client routing, firewall settings and hybrid access from every consumer network.
+
+## Availability, scale and recovery
+Choose LRS/ZRS/GRS/GZRS by region/site failure needs, and separately configure versioning, soft delete, backup and tested restore.
+
+## Cost and operations
+Model capacity, operations/transactions, retrieval tiers, replication, egress, provisioned throughput and restore costs.
 
 ## Enterprise scenario
-Describe a real enterprise requirement that suits Azure Files. Document access patterns, data sensitivity, expected scale, chosen redundancy, recovery approach, alternative considered, cost drivers and failure modes.
+ADLS Gen2 stores curated analytics data, private endpoints restrict access, managed identities access data, and lifecycle rules reduce long-term cost. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Interview question and model answer
-**Question:** How would you select and secure Azure Files for a production workload?
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
 
-**Model answer:** Start with data and workload requirements. Compare access patterns, consistency/performance, scale, availability and recovery, security and private access, compliance, operational capability and total cost. Validate service-specific limits and test backup/restore or failover behavior rather than relying only on stated configuration.
+## Component-specific design note
+Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## LinkedIn-ready post
-**Azure architecture note — Azure Files:** Data platform decisions should include access patterns, identity, network exposure, durability, recovery, observability and cost. Choose from workload requirements, document trade-offs and prove the restore/recovery path. #Azure #DataArchitecture #CloudSecurity
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
 
-## Official references
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add the current service-specific documentation, pricing, regional availability and limits before marking complete.
+## Interview questions
+
+**Q1. Where does Azure Files fit in an Azure solution?**  
+It implements one part of the larger storage & enterprise file services design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Azure Files does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Azure Files](<https://learn.microsoft.com/search/?terms=Azure%20Files%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

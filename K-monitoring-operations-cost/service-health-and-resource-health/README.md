@@ -1,54 +1,71 @@
 # Service Health & Resource Health
 
-[← K. Monitoring, Operations & Cost](../README.md) · [← Master catalogue](../../README.md)
+[← K. Monitoring, Operations & Cost](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter guide. Validate current service behavior, supported regions, limits and pricing before production use.
+**Purpose.** Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## Learning checklist
-- [ ] Purpose, scope, architecture placement and key concepts
-- [ ] Use cases, alternatives and decision criteria
-- [ ] Identity, RBAC, security and governance
-- [ ] Integration, network paths and private access where applicable
-- [ ] Availability, scale, recovery, limits and failure modes where applicable
-- [ ] Logging, metrics, alerts, dashboards and operational ownership
-- [ ] Cost drivers, budgets and optimization actions
-- [ ] Enterprise scenario, runbook and design trade-offs
-- [ ] Service-specific architecture diagram
-- [ ] Validated Terraform/Bicep or configuration examples where appropriate
-- [ ] Validation, deployment, test and cleanup steps
-- [ ] Interview Q&A, LinkedIn-ready post and official references
-
-## What it is and where it fits
-Describe what Service Health & Resource Health provides, the Azure layer it belongs to, dependencies, consumers and how it supports operational excellence, security or governance.
+## Where it fits
+measures resource and application health, supports incident response, inventories estate and exposes cost drivers. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Assess workload requirements, coverage, data freshness, alerting/action needs, compliance, operational maturity, scale and total cost. Compare alternatives and document assumptions.
+Instrument user-impacting signals, alert on actionable conditions and connect each alert to an owner/runbook.
 
-## Design checklist
-- [ ] Define ownership, severity, escalation and response runbooks
-- [ ] Use least privilege and avoid exposing secrets or sensitive data in telemetry
-- [ ] Configure useful diagnostic settings and retention; manage ingestion costs
-- [ ] Set actionable thresholds and reduce noisy/duplicate alerts
-- [ ] Test alert delivery, automation permissions and recovery actions
-- [ ] Review region support, service limits, quotas and cost drivers
+**Alternatives and trade-offs:** Select actionable telemetry and operational controls; distinguish platform health, resource health and application symptoms.
 
-## Architecture
-Add a component-specific diagram showing signal/data sources, collection, storage/query, alert/action path, responders and feedback loop.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Add tested Terraform/Bicep or policy/configuration examples where appropriate. Include parameterization, validation, rollout and cleanup steps. Never commit secrets, production state or sensitive telemetry samples.
+```mermaid
+flowchart LR
+  Source["Application Insights measures API latency"] --> Component["Service Health and Resource Health"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
+
+## Security and governance
+Restrict workspace access, avoid logging secrets/personal data, secure automation identities and govern retention.
+
+## Network and connectivity
+Ensure diagnostic sources and agents can reach required ingestion endpoints; plan private monitoring connectivity only where supported and needed.
+
+## Availability, scale and recovery
+Test alert delivery, on-call escalation, runbook failure paths, patch rings and recovery verification.
+
+## Cost and operations
+Control log volume/retention, query costs, alert noise, automation runtime, idle resources and reservations/savings opportunities.
 
 ## Enterprise scenario
-Describe the operational problem addressed by Service Health & Resource Health, the signals or policies required, action owners, escalation path, service-level objectives, cost trade-offs and evidence of effectiveness.
+Application Insights measures API latency, Log Analytics stores selected diagnostics, alerts route to on-call, and Cost Management tracks spend. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Interview question and model answer
-**Question:** How do you ensure Service Health & Resource Health improves production operations rather than creating noise?
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
 
-**Model answer:** Define actionable service objectives and owners first. Collect relevant telemetry, apply appropriate retention and access controls, tune alerts to actionable conditions, test notification/action paths, measure response outcomes and review cost. Use runbooks and post-incident feedback to continuously improve signal quality.
+## Component-specific design note
+Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## LinkedIn-ready post
-**Azure architecture note — Service Health & Resource Health:** Operational maturity is not the amount of telemetry collected; it is the ability to detect meaningful conditions, route them to an owner, act with least privilege and learn from outcomes. Design observability and cost controls together. #AzureMonitor #SRE #CloudOperations
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
 
-## Official references
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add current service-specific documentation, query references, limits and pricing.
+## Interview questions
+
+**Q1. Where does Service Health & Resource Health fit in an Azure solution?**  
+It implements one part of the larger monitoring, operations & cost design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Service Health & Resource Health does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Service Health & Resource Health](<https://learn.microsoft.com/search/?terms=Service%20Health%20%26%20Resource%20Health%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

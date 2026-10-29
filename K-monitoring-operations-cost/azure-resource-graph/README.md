@@ -1,53 +1,71 @@
 # Azure Resource Graph
 
-[← K. Monitoring, Operations & Cost](../README.md) · [← Master catalogue](../../README.md)
+[← K. Monitoring, Operations & Cost](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter guide. Validate current service behavior, regional support, permissions, limits and pricing before production use.
+**Purpose.** Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## Learning checklist
-- [ ] Explain purpose, scope and architecture placement
-- [ ] Define use cases, alternatives and decision criteria
-- [ ] Cover identity, RBAC, security and governance
-- [ ] Cover network access and integration where applicable
-- [ ] Define availability, scale, recovery and failure behavior where applicable
-- [ ] Document monitoring, audit, alerting and operational ownership
-- [ ] Explain cost drivers and optimization
-- [ ] Add enterprise scenario, decision rationale and runbook
-- [ ] Add service-specific architecture diagram
-- [ ] Add validated Terraform/Bicep or configuration samples where appropriate
-- [ ] Add validation and rollout steps
-- [ ] Add interview Q&A, LinkedIn post and official references
-
-## What it is and where it fits
-Describe the capabilities of Azure Resource Graph, scope, dependencies, consumers and relationship to governance and operations.
+## Where it fits
+measures resource and application health, supports incident response, inventories estate and exposes cost drivers. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Compare functional requirements, scale, compliance, operational maturity, automation needs and total cost. State alternatives and assumptions.
+Instrument user-impacting signals, alert on actionable conditions and connect each alert to an owner/runbook.
 
-## Design checklist
-- [ ] Use least privilege and appropriate scopes
-- [ ] Restrict access and protect sensitive operational data
-- [ ] Define ownership, review cadence and exception handling
-- [ ] Test automation/query output against representative environments
-- [ ] Monitor limits, cost and failure conditions
+**Alternatives and trade-offs:** Select actionable telemetry and operational controls; distinguish platform health, resource health and application symptoms.
 
-## Architecture
-Create a component-specific diagram that shows sources, control/data flow, permissions, consumers, operational actions and feedback loop.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Add tested Terraform/Bicep or configuration examples where appropriate. Include non-secret parameters, validation and rollout/cleanup instructions. Never commit credentials or production state.
+```mermaid
+flowchart LR
+  Source["Application Insights measures API latency"] --> Component["Azure Resource Graph"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
+
+## Security and governance
+Restrict workspace access, avoid logging secrets/personal data, secure automation identities and govern retention.
+
+## Network and connectivity
+Ensure diagnostic sources and agents can reach required ingestion endpoints; plan private monitoring connectivity only where supported and needed.
+
+## Availability, scale and recovery
+Test alert delivery, on-call escalation, runbook failure paths, patch rings and recovery verification.
+
+## Cost and operations
+Control log volume/retention, query costs, alert noise, automation runtime, idle resources and reservations/savings opportunities.
 
 ## Enterprise scenario
-Describe the operations or governance requirement solved by Azure Resource Graph, the implementation, access model, automation/response path, cost drivers and evidence of success.
+Application Insights measures API latency, Log Analytics stores selected diagnostics, alerts route to on-call, and Cost Management tracks spend. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Interview question and model answer
-**Question:** How would you implement Azure Resource Graph safely and make it useful to platform operations?
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
 
-**Model answer:** Start with a clear use case and ownership. Apply least privilege, scope the implementation, validate results in a non-production context, add monitoring and error handling, document the runbook and review operational outcomes and cost.
+## Component-specific design note
+Treat this as a distinct architecture building block: define its contract, consumers, permissions, dependencies, failure behavior and operational owner. Confirm service limits and supported features against the linked Microsoft Learn documentation before production.
 
-## LinkedIn-ready post
-**Azure architecture note — Azure Resource Graph:** Mature cloud operations turn platform data into safe, repeatable action. Define the use case, limit permissions, test changes, document ownership and monitor both effectiveness and cost. #Azure #CloudOperations #Governance
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
 
-## Official references
-- [Microsoft Learn — Azure](https://learn.microsoft.com/azure/)
-- Add current service-specific documentation, query/automation references, limits and pricing.
+## Interview questions
+
+**Q1. Where does Azure Resource Graph fit in an Azure solution?**  
+It implements one part of the larger monitoring, operations & cost design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Azure Resource Graph does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Azure Resource Graph](<https://learn.microsoft.com/search/?terms=Azure%20Resource%20Graph%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)

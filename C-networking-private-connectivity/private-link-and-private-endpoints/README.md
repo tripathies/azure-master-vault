@@ -1,52 +1,71 @@
 # Private Link & Private Endpoints
 
-[← C. Networking & Private Connectivity](../README.md) · [← Master catalogue](../../README.md)
+[← C. Networking & Private Connectivity](../README.md) · [← Master catalogue](../../README.md) · [Architecture diagram](architecture.mmd)
 
-**Guide status:** Starter. Validate service-specific details against current Microsoft Learn before production use.
+**Purpose.** A private endpoint places a NIC with a private IP in a VNet for a supported target. Configure the correct private DNS zone and client routing; disable public access where policy requires and test from every network.
 
-## Completion checklist
-- [ ] Purpose, scope and architecture placement
-- [ ] Use cases, alternatives and decision criteria
-- [ ] Identity, RBAC, security and governance
-- [ ] Network paths, routing, DNS and private connectivity where relevant
-- [ ] Availability, scale, recovery, quotas and failure modes
-- [ ] Cost drivers, operations and monitoring
-- [ ] Enterprise scenario and trade-offs
-- [ ] Service-specific architecture diagram in `architecture.mmd`
-- [ ] Validated Terraform/Bicep/configuration examples where appropriate
-- [ ] Validation, deployment and cleanup steps
-- [ ] Interview Q&A, LinkedIn post and official references
-
-## What it is and where it fits
-Explain the role of Private Link & Private Endpoints, its dependencies and consumers, and how it interacts with network boundaries, identity and platform guardrails.
+## Where it fits
+provides address space, traffic paths, segmentation, hybrid connectivity and private service access. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Select based on workload requirements, segmentation, throughput/latency, availability, compliance, operating complexity and cost. Compare viable alternatives and state assumptions.
+Use it to connect workloads with explicit trust boundaries and predictable routing, DNS and egress.
 
-## Design checklist
-- [ ] Use least privilege and explicit allow/deny behavior
-- [ ] Document address spaces, routing, DNS resolution and traffic paths where applicable
-- [ ] Prefer private connectivity where required; validate name resolution end-to-end
-- [ ] Enable diagnostics, flow/audit logs and actionable alerts
-- [ ] Validate regional support, limits, failover and operational ownership
+**Alternatives and trade-offs:** Compare native routing/security services against NVAs and hybrid options using traffic path, throughput, latency, inspection and operational burden.
 
-## Architecture
-Add a service-specific diagram in `architecture.mmd` showing trust boundaries, traffic direction, dependencies and failure paths.
+## Architecture design
+The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
 
-## Infrastructure as Code
-Add tested Terraform/Bicep under `infra/` with parameters, prerequisites, validation and cleanup instructions. Do not commit secrets or production state; run plan/what-if before applying.
+```mermaid
+flowchart LR
+  Source["A hub-spoke estate routes controlled egress through a hub firewall and reaches Storage through private endpoints with DNS forwarding."] --> Component["Private Link and Private Endpoints"] --> Outcome["Workload outcome / consumer"]
+  Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
+  Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
+  Operations["Monitoring / logs / cost"] -. observe .-> Component
+```
+
+## Security and governance
+Use NSGs for distributed L3/L4 filtering, central firewall inspection where required, narrow public exposure, and service identity authorization in addition to network controls.
+
+## Network and connectivity
+Plan non-overlapping CIDRs, effective routes, peering/gateway transit, private DNS and forward/return paths; validate from the actual client network.
+
+## Availability, scale and recovery
+Design gateway/firewall/zone redundancy where supported, test route convergence and failover, and avoid asymmetric paths through stateful appliances.
+
+## Cost and operations
+Model gateway, firewall, NAT, public IP, private endpoint, egress and data processing charges; remove unused peerings and endpoints.
 
 ## Enterprise scenario
-Describe how Private Link & Private Endpoints solves a real connectivity or security requirement. Include alternatives, chosen design, failure modes, blast radius and cost.
+A hub-spoke estate routes controlled egress through a hub firewall and reaches Storage through private endpoints with DNS forwarding. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
 
-## Interview question and model answer
-**Question:** What design factors matter most when implementing Private Link & Private Endpoints?
+## Implementation and validation
+1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
+2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
+3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
+5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
 
-**Model answer:** Start from traffic and security requirements. Define boundaries and dependencies, validate identity and access, routing/DNS and failure modes, then assess availability, service limits, operations and cost. Compare alternatives and test the end-to-end path before production rollout.
+## Component-specific design note
+A private endpoint places a NIC with a private IP in a VNet for a supported target. Configure the correct private DNS zone and client routing; disable public access where policy requires and test from every network.
 
-## LinkedIn post
-**Azure architecture note — Private Link & Private Endpoints:** Network design is more than connectivity. Document trust boundaries, traffic direction, name resolution, least privilege, failure paths and operational visibility. Validate the complete flow before production. #AzureNetworking #CloudSecurity #Azure
+## Common mistakes
+- Treating the component as a standalone solution without documenting dependencies.
+- Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
+- Skipping failure testing, telemetry, cost ownership and change/rollback planning.
+- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
 
-## References
-- [Microsoft Learn — Azure networking](https://learn.microsoft.com/azure/networking/)
-- Add current service-specific docs, limits and pricing.
+## Interview questions
+
+**Q1. Where does Private Link & Private Endpoints fit in an Azure solution?**  
+It implements one part of the larger networking & private connectivity design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+
+**Q2. What trade-off drives the design?**  
+Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+
+## LinkedIn-ready summary
+A strong Azure design explains not just what Private Link & Private Endpoints does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+
+## Official reference
+- [Microsoft Learn: Private Link & Private Endpoints](<https://learn.microsoft.com/search/?terms=Private%20Link%20%26%20Private%20Endpoints%20Azure>)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)
