@@ -1,0 +1,23 @@
+flowchart LR
+  subgraph G["G · Storage and Enterprise File Services"]
+    n1["Storage Accounts"]
+    n2["Blob Storage"]
+    n1 --> n2
+    n3["Azure Data Lake Storage Gen2"]
+    n2 --> n3
+    n4["Azure Files"]
+    n3 --> n4
+    n5["Azure NetApp Files"]
+    n4 --> n5
+    n6["Queue Storage"]
+    n5 --> n6
+    n7["Table Storage"]
+    n6 --> n7
+    n8["Storage Redundancy LRS ZRS GRS and GZRS"]
+    n7 --> n8
+  end
+  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
+  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n4
+  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n8
+  Foundation["A · Cloud foundation / landing zones"] --> n1
+  n8 -. telemetry / governance .-> Operations["K · Operations / security review"]
