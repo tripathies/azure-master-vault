@@ -1,0 +1,621 @@
+{
+  "title": "Azure Master Vault",
+  "categories": [
+    {
+      "letter": "A",
+      "title": "Cloud Foundation & Landing Zones",
+      "folder": "A-cloud-foundation-landing-zones",
+      "components": [
+        {
+          "name": "Microsoft Azure fundamentals",
+          "slug": "microsoft-azure-fundamentals",
+          "path": "A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/README.md"
+        },
+        {
+          "name": "Regions, Region Pairs & Availability Zones",
+          "slug": "regions-region-pairs-and-availability-zones",
+          "path": "A-cloud-foundation-landing-zones/regions-region-pairs-and-availability-zones/README.md"
+        },
+        {
+          "name": "Microsoft Entra ID tenants",
+          "slug": "microsoft-entra-id-tenants",
+          "path": "A-cloud-foundation-landing-zones/microsoft-entra-id-tenants/README.md"
+        },
+        {
+          "name": "Management Groups",
+          "slug": "management-groups",
+          "path": "A-cloud-foundation-landing-zones/management-groups/README.md"
+        },
+        {
+          "name": "Azure Subscriptions",
+          "slug": "azure-subscriptions",
+          "path": "A-cloud-foundation-landing-zones/azure-subscriptions/README.md"
+        },
+        {
+          "name": "Resource Groups",
+          "slug": "resource-groups",
+          "path": "A-cloud-foundation-landing-zones/resource-groups/README.md"
+        },
+        {
+          "name": "Azure Resource Manager (ARM)",
+          "slug": "azure-resource-manager-arm",
+          "path": "A-cloud-foundation-landing-zones/azure-resource-manager-arm/README.md"
+        },
+        {
+          "name": "Azure Policy",
+          "slug": "azure-policy",
+          "path": "A-cloud-foundation-landing-zones/azure-policy/README.md"
+        },
+        {
+          "name": "Azure Landing Zones",
+          "slug": "azure-landing-zones",
+          "path": "A-cloud-foundation-landing-zones/azure-landing-zones/README.md"
+        },
+        {
+          "name": "Azure Well-Architected Framework",
+          "slug": "azure-well-architected-framework",
+          "path": "A-cloud-foundation-landing-zones/azure-well-architected-framework/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "B",
+      "title": "Identity & Access Management",
+      "folder": "B-identity-access-management",
+      "components": [
+        {
+          "name": "Microsoft Entra ID",
+          "slug": "microsoft-entra-id",
+          "path": "B-identity-access-management/microsoft-entra-id/README.md"
+        },
+        {
+          "name": "App Registrations",
+          "slug": "app-registrations",
+          "path": "B-identity-access-management/app-registrations/README.md"
+        },
+        {
+          "name": "Enterprise Applications & Service Principals",
+          "slug": "enterprise-applications-and-service-principals",
+          "path": "B-identity-access-management/enterprise-applications-and-service-principals/README.md"
+        },
+        {
+          "name": "Managed Identities",
+          "slug": "managed-identities",
+          "path": "B-identity-access-management/managed-identities/README.md"
+        },
+        {
+          "name": "Azure RBAC",
+          "slug": "azure-rbac",
+          "path": "B-identity-access-management/azure-rbac/README.md"
+        },
+        {
+          "name": "MFA & Conditional Access",
+          "slug": "mfa-and-conditional-access",
+          "path": "B-identity-access-management/mfa-and-conditional-access/README.md"
+        },
+        {
+          "name": "Privileged Identity Management (PIM)",
+          "slug": "privileged-identity-management-pim",
+          "path": "B-identity-access-management/privileged-identity-management-pim/README.md"
+        },
+        {
+          "name": "OAuth 2.0 & OpenID Connect",
+          "slug": "oauth-2-0-and-openid-connect",
+          "path": "B-identity-access-management/oauth-2-0-and-openid-connect/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "C",
+      "title": "Networking & Private Connectivity",
+      "folder": "C-networking-private-connectivity",
+      "components": [
+        {
+          "name": "Virtual Networks (VNet)",
+          "slug": "virtual-networks-vnet",
+          "path": "C-networking-private-connectivity/virtual-networks-vnet/README.md"
+        },
+        {
+          "name": "Subnets & CIDR Planning",
+          "slug": "subnets-and-cidr-planning",
+          "path": "C-networking-private-connectivity/subnets-and-cidr-planning/README.md"
+        },
+        {
+          "name": "Network Security Groups (NSGs)",
+          "slug": "network-security-groups-nsgs",
+          "path": "C-networking-private-connectivity/network-security-groups-nsgs/README.md"
+        },
+        {
+          "name": "Application Security Groups (ASGs)",
+          "slug": "application-security-groups-asgs",
+          "path": "C-networking-private-connectivity/application-security-groups-asgs/README.md"
+        },
+        {
+          "name": "VNet Peering",
+          "slug": "vnet-peering",
+          "path": "C-networking-private-connectivity/vnet-peering/README.md"
+        },
+        {
+          "name": "User-Defined Routes (UDRs)",
+          "slug": "user-defined-routes-udrs",
+          "path": "C-networking-private-connectivity/user-defined-routes-udrs/README.md"
+        },
+        {
+          "name": "Azure Firewall",
+          "slug": "azure-firewall",
+          "path": "C-networking-private-connectivity/azure-firewall/README.md"
+        },
+        {
+          "name": "VPN Gateway",
+          "slug": "vpn-gateway",
+          "path": "C-networking-private-connectivity/vpn-gateway/README.md"
+        },
+        {
+          "name": "ExpressRoute",
+          "slug": "expressroute",
+          "path": "C-networking-private-connectivity/expressroute/README.md"
+        },
+        {
+          "name": "Private Link & Private Endpoints",
+          "slug": "private-link-and-private-endpoints",
+          "path": "C-networking-private-connectivity/private-link-and-private-endpoints/README.md"
+        },
+        {
+          "name": "Private DNS Zones",
+          "slug": "private-dns-zones",
+          "path": "C-networking-private-connectivity/private-dns-zones/README.md"
+        },
+        {
+          "name": "NAT Gateway",
+          "slug": "nat-gateway",
+          "path": "C-networking-private-connectivity/nat-gateway/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "D",
+      "title": "Traffic Management & Delivery",
+      "folder": "D-traffic-management-delivery",
+      "components": [
+        {
+          "name": "Azure Load Balancer",
+          "slug": "azure-load-balancer",
+          "path": "D-traffic-management-delivery/azure-load-balancer/README.md"
+        },
+        {
+          "name": "Application Gateway & WAF",
+          "slug": "application-gateway-and-waf",
+          "path": "D-traffic-management-delivery/application-gateway-and-waf/README.md"
+        },
+        {
+          "name": "Azure Front Door",
+          "slug": "azure-front-door",
+          "path": "D-traffic-management-delivery/azure-front-door/README.md"
+        },
+        {
+          "name": "Traffic Manager",
+          "slug": "traffic-manager",
+          "path": "D-traffic-management-delivery/traffic-manager/README.md"
+        },
+        {
+          "name": "Azure Bastion",
+          "slug": "azure-bastion",
+          "path": "D-traffic-management-delivery/azure-bastion/README.md"
+        },
+        {
+          "name": "Azure DNS",
+          "slug": "azure-dns",
+          "path": "D-traffic-management-delivery/azure-dns/README.md"
+        },
+        {
+          "name": "DDoS Protection",
+          "slug": "ddos-protection",
+          "path": "D-traffic-management-delivery/ddos-protection/README.md"
+        },
+        {
+          "name": "Network Watcher",
+          "slug": "network-watcher",
+          "path": "D-traffic-management-delivery/network-watcher/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "E",
+      "title": "Compute & Application Hosting",
+      "folder": "E-compute-application-hosting",
+      "components": [
+        {
+          "name": "Virtual Machines",
+          "slug": "virtual-machines",
+          "path": "E-compute-application-hosting/virtual-machines/README.md"
+        },
+        {
+          "name": "Managed Disks",
+          "slug": "managed-disks",
+          "path": "E-compute-application-hosting/managed-disks/README.md"
+        },
+        {
+          "name": "Availability Sets & Zones",
+          "slug": "availability-sets-and-zones",
+          "path": "E-compute-application-hosting/availability-sets-and-zones/README.md"
+        },
+        {
+          "name": "Virtual Machine Scale Sets",
+          "slug": "virtual-machine-scale-sets",
+          "path": "E-compute-application-hosting/virtual-machine-scale-sets/README.md"
+        },
+        {
+          "name": "Azure App Service",
+          "slug": "azure-app-service",
+          "path": "E-compute-application-hosting/azure-app-service/README.md"
+        },
+        {
+          "name": "Azure Functions",
+          "slug": "azure-functions",
+          "path": "E-compute-application-hosting/azure-functions/README.md"
+        },
+        {
+          "name": "Logic Apps",
+          "slug": "logic-apps",
+          "path": "E-compute-application-hosting/logic-apps/README.md"
+        },
+        {
+          "name": "Azure Batch",
+          "slug": "azure-batch",
+          "path": "E-compute-application-hosting/azure-batch/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "F",
+      "title": "Containers & Kubernetes",
+      "folder": "F-containers-kubernetes",
+      "components": [
+        {
+          "name": "Docker & Container Fundamentals",
+          "slug": "docker-and-container-fundamentals",
+          "path": "F-containers-kubernetes/docker-and-container-fundamentals/README.md"
+        },
+        {
+          "name": "Azure Container Registry (ACR)",
+          "slug": "azure-container-registry-acr",
+          "path": "F-containers-kubernetes/azure-container-registry-acr/README.md"
+        },
+        {
+          "name": "Azure Container Apps",
+          "slug": "azure-container-apps",
+          "path": "F-containers-kubernetes/azure-container-apps/README.md"
+        },
+        {
+          "name": "Azure Kubernetes Service (AKS)",
+          "slug": "azure-kubernetes-service-aks",
+          "path": "F-containers-kubernetes/azure-kubernetes-service-aks/README.md"
+        },
+        {
+          "name": "Azure Container Instances (ACI)",
+          "slug": "azure-container-instances-aci",
+          "path": "F-containers-kubernetes/azure-container-instances-aci/README.md"
+        },
+        {
+          "name": "AKS Ingress, Scaling & Workload Identity",
+          "slug": "aks-ingress-scaling-and-workload-identity",
+          "path": "F-containers-kubernetes/aks-ingress-scaling-and-workload-identity/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "G",
+      "title": "Storage & Enterprise File Services",
+      "folder": "G-storage-enterprise-file-services",
+      "components": [
+        {
+          "name": "Storage Accounts",
+          "slug": "storage-accounts",
+          "path": "G-storage-enterprise-file-services/storage-accounts/README.md"
+        },
+        {
+          "name": "Blob Storage",
+          "slug": "blob-storage",
+          "path": "G-storage-enterprise-file-services/blob-storage/README.md"
+        },
+        {
+          "name": "Azure Data Lake Storage Gen2",
+          "slug": "azure-data-lake-storage-gen2",
+          "path": "G-storage-enterprise-file-services/azure-data-lake-storage-gen2/README.md"
+        },
+        {
+          "name": "Azure Files",
+          "slug": "azure-files",
+          "path": "G-storage-enterprise-file-services/azure-files/README.md"
+        },
+        {
+          "name": "Azure NetApp Files",
+          "slug": "azure-netapp-files",
+          "path": "G-storage-enterprise-file-services/azure-netapp-files/README.md"
+        },
+        {
+          "name": "Queue Storage",
+          "slug": "queue-storage",
+          "path": "G-storage-enterprise-file-services/queue-storage/README.md"
+        },
+        {
+          "name": "Table Storage",
+          "slug": "table-storage",
+          "path": "G-storage-enterprise-file-services/table-storage/README.md"
+        },
+        {
+          "name": "Storage Redundancy: LRS, ZRS, GRS & GZRS",
+          "slug": "storage-redundancy-lrs-zrs-grs-and-gzrs",
+          "path": "G-storage-enterprise-file-services/storage-redundancy-lrs-zrs-grs-and-gzrs/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "H",
+      "title": "Databases & Data Platforms",
+      "folder": "H-databases-data-platforms",
+      "components": [
+        {
+          "name": "Azure SQL Database",
+          "slug": "azure-sql-database",
+          "path": "H-databases-data-platforms/azure-sql-database/README.md"
+        },
+        {
+          "name": "Azure SQL Managed Instance",
+          "slug": "azure-sql-managed-instance",
+          "path": "H-databases-data-platforms/azure-sql-managed-instance/README.md"
+        },
+        {
+          "name": "SQL Server on Azure VMs",
+          "slug": "sql-server-on-azure-vms",
+          "path": "H-databases-data-platforms/sql-server-on-azure-vms/README.md"
+        },
+        {
+          "name": "Azure Cosmos DB",
+          "slug": "azure-cosmos-db",
+          "path": "H-databases-data-platforms/azure-cosmos-db/README.md"
+        },
+        {
+          "name": "Azure Database for PostgreSQL",
+          "slug": "azure-database-for-postgresql",
+          "path": "H-databases-data-platforms/azure-database-for-postgresql/README.md"
+        },
+        {
+          "name": "Azure Database for MySQL",
+          "slug": "azure-database-for-mysql",
+          "path": "H-databases-data-platforms/azure-database-for-mysql/README.md"
+        },
+        {
+          "name": "Azure Managed Redis",
+          "slug": "azure-managed-redis",
+          "path": "H-databases-data-platforms/azure-managed-redis/README.md"
+        },
+        {
+          "name": "Azure Data Factory",
+          "slug": "azure-data-factory",
+          "path": "H-databases-data-platforms/azure-data-factory/README.md"
+        },
+        {
+          "name": "Azure Databricks",
+          "slug": "azure-databricks",
+          "path": "H-databases-data-platforms/azure-databricks/README.md"
+        },
+        {
+          "name": "Microsoft Fabric / OneLake",
+          "slug": "microsoft-fabric-onelake",
+          "path": "H-databases-data-platforms/microsoft-fabric-onelake/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "I",
+      "title": "Integration & API Management",
+      "folder": "I-integration-api-management",
+      "components": [
+        {
+          "name": "API Management",
+          "slug": "api-management",
+          "path": "I-integration-api-management/api-management/README.md"
+        },
+        {
+          "name": "Azure Service Bus",
+          "slug": "azure-service-bus",
+          "path": "I-integration-api-management/azure-service-bus/README.md"
+        },
+        {
+          "name": "Azure Event Grid",
+          "slug": "azure-event-grid",
+          "path": "I-integration-api-management/azure-event-grid/README.md"
+        },
+        {
+          "name": "Azure Event Hubs",
+          "slug": "azure-event-hubs",
+          "path": "I-integration-api-management/azure-event-hubs/README.md"
+        },
+        {
+          "name": "Azure Stream Analytics",
+          "slug": "azure-stream-analytics",
+          "path": "I-integration-api-management/azure-stream-analytics/README.md"
+        },
+        {
+          "name": "Azure Data Explorer",
+          "slug": "azure-data-explorer",
+          "path": "I-integration-api-management/azure-data-explorer/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "J",
+      "title": "Security, Secrets & Governance",
+      "folder": "J-security-secrets-governance",
+      "components": [
+        {
+          "name": "Azure Key Vault",
+          "slug": "azure-key-vault",
+          "path": "J-security-secrets-governance/azure-key-vault/README.md"
+        },
+        {
+          "name": "Key Vault Access Policies & RBAC",
+          "slug": "key-vault-access-policies-and-rbac",
+          "path": "J-security-secrets-governance/key-vault-access-policies-and-rbac/README.md"
+        },
+        {
+          "name": "Microsoft Defender for Cloud",
+          "slug": "microsoft-defender-for-cloud",
+          "path": "J-security-secrets-governance/microsoft-defender-for-cloud/README.md"
+        },
+        {
+          "name": "Microsoft Sentinel",
+          "slug": "microsoft-sentinel",
+          "path": "J-security-secrets-governance/microsoft-sentinel/README.md"
+        },
+        {
+          "name": "Microsoft Purview",
+          "slug": "microsoft-purview",
+          "path": "J-security-secrets-governance/microsoft-purview/README.md"
+        },
+        {
+          "name": "Azure Resource Locks",
+          "slug": "azure-resource-locks",
+          "path": "J-security-secrets-governance/azure-resource-locks/README.md"
+        },
+        {
+          "name": "Tagging & Naming Standards",
+          "slug": "tagging-and-naming-standards",
+          "path": "J-security-secrets-governance/tagging-and-naming-standards/README.md"
+        },
+        {
+          "name": "Zero Trust Architecture",
+          "slug": "zero-trust-architecture",
+          "path": "J-security-secrets-governance/zero-trust-architecture/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "K",
+      "title": "Monitoring, Operations & Cost",
+      "folder": "K-monitoring-operations-cost",
+      "components": [
+        {
+          "name": "Azure Monitor",
+          "slug": "azure-monitor",
+          "path": "K-monitoring-operations-cost/azure-monitor/README.md"
+        },
+        {
+          "name": "Log Analytics Workspace & KQL",
+          "slug": "log-analytics-workspace-and-kql",
+          "path": "K-monitoring-operations-cost/log-analytics-workspace-and-kql/README.md"
+        },
+        {
+          "name": "Application Insights",
+          "slug": "application-insights",
+          "path": "K-monitoring-operations-cost/application-insights/README.md"
+        },
+        {
+          "name": "Azure Monitor Alerts & Action Groups",
+          "slug": "azure-monitor-alerts-and-action-groups",
+          "path": "K-monitoring-operations-cost/azure-monitor-alerts-and-action-groups/README.md"
+        },
+        {
+          "name": "Service Health & Resource Health",
+          "slug": "service-health-and-resource-health",
+          "path": "K-monitoring-operations-cost/service-health-and-resource-health/README.md"
+        },
+        {
+          "name": "Cost Management",
+          "slug": "cost-management",
+          "path": "K-monitoring-operations-cost/cost-management/README.md"
+        },
+        {
+          "name": "Azure Advisor",
+          "slug": "azure-advisor",
+          "path": "K-monitoring-operations-cost/azure-advisor/README.md"
+        },
+        {
+          "name": "Azure Automation",
+          "slug": "azure-automation",
+          "path": "K-monitoring-operations-cost/azure-automation/README.md"
+        },
+        {
+          "name": "Azure Update Manager",
+          "slug": "azure-update-manager",
+          "path": "K-monitoring-operations-cost/azure-update-manager/README.md"
+        },
+        {
+          "name": "Azure Resource Graph",
+          "slug": "azure-resource-graph",
+          "path": "K-monitoring-operations-cost/azure-resource-graph/README.md"
+        }
+      ]
+    },
+    {
+      "letter": "L",
+      "title": "DevOps, Resilience, Migration & AI",
+      "folder": "L-devops-resilience-migration-ai",
+      "components": [
+        {
+          "name": "Terraform",
+          "slug": "terraform",
+          "path": "L-devops-resilience-migration-ai/terraform/README.md"
+        },
+        {
+          "name": "Bicep / ARM Templates",
+          "slug": "bicep-arm-templates",
+          "path": "L-devops-resilience-migration-ai/bicep-arm-templates/README.md"
+        },
+        {
+          "name": "Azure DevOps Pipelines",
+          "slug": "azure-devops-pipelines",
+          "path": "L-devops-resilience-migration-ai/azure-devops-pipelines/README.md"
+        },
+        {
+          "name": "GitHub Actions",
+          "slug": "github-actions",
+          "path": "L-devops-resilience-migration-ai/github-actions/README.md"
+        },
+        {
+          "name": "Azure Backup",
+          "slug": "azure-backup",
+          "path": "L-devops-resilience-migration-ai/azure-backup/README.md"
+        },
+        {
+          "name": "Azure Site Recovery",
+          "slug": "azure-site-recovery",
+          "path": "L-devops-resilience-migration-ai/azure-site-recovery/README.md"
+        },
+        {
+          "name": "Azure Migrate",
+          "slug": "azure-migrate",
+          "path": "L-devops-resilience-migration-ai/azure-migrate/README.md"
+        },
+        {
+          "name": "Azure Arc",
+          "slug": "azure-arc",
+          "path": "L-devops-resilience-migration-ai/azure-arc/README.md"
+        },
+        {
+          "name": "Microsoft Foundry",
+          "slug": "microsoft-foundry",
+          "path": "L-devops-resilience-migration-ai/microsoft-foundry/README.md"
+        },
+        {
+          "name": "Azure OpenAI",
+          "slug": "azure-openai",
+          "path": "L-devops-resilience-migration-ai/azure-openai/README.md"
+        },
+        {
+          "name": "Azure AI Search",
+          "slug": "azure-ai-search",
+          "path": "L-devops-resilience-migration-ai/azure-ai-search/README.md"
+        },
+        {
+          "name": "Azure Machine Learning",
+          "slug": "azure-machine-learning",
+          "path": "L-devops-resilience-migration-ai/azure-machine-learning/README.md"
+        }
+      ]
+    }
+  ],
+  "componentCount": 106,
+  "note": "GitHub Markdown links open pre-created component pages; clicking a link alone cannot create a repository file."
+}
