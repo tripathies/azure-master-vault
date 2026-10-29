@@ -1,0 +1,23 @@
+flowchart LR
+  subgraph D["D · Traffic Management and Delivery"]
+    n1["Azure Load Balancer"]
+    n2["Application Gateway and WAF"]
+    n1 --> n2
+    n3["Azure Front Door"]
+    n2 --> n3
+    n4["Traffic Manager"]
+    n3 --> n4
+    n5["Azure Bastion"]
+    n4 --> n5
+    n6["Azure DNS"]
+    n5 --> n6
+    n7["DDoS Protection"]
+    n6 --> n7
+    n8["Network Watcher"]
+    n7 --> n8
+  end
+  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
+  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n4
+  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n8
+  Foundation["A · Cloud foundation / landing zones"] --> n1
+  n8 -. telemetry / governance .-> Operations["K · Operations / security review"]
