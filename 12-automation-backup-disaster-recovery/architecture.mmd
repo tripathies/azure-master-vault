@@ -1,0 +1,17 @@
+flowchart LR
+  subgraph 12["12 · Automation Backup and Disaster Recovery"]
+    n1["Terraform  Infrastructure as Code"]
+    n2["Bicep and ARM Templates"]
+    n1 --> n2
+    n3["Azure DevOps Pipelines and GitHub Actions"]
+    n2 --> n3
+    n4["Azure Backup"]
+    n3 --> n4
+    n5["Azure Site Recovery ASR"]
+    n4 --> n5
+  end
+  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
+  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n3
+  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n5
+  Foundation["A · Cloud foundation / landing zones"] --> n1
+  n5 -. telemetry / governance .-> Operations["K · Operations / security review"]
