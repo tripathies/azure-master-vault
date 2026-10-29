@@ -1,0 +1,26 @@
+flowchart LR
+  subgraph A["A · Cloud Foundation and Landing Zones"]
+    n1["Microsoft Azure fundamentals"]
+    n2["Regions Region Pairs and Availability Zones"]
+    n1 --> n2
+    n3["Microsoft Entra ID tenants"]
+    n2 --> n3
+    n4["Management Groups"]
+    n3 --> n4
+    n5["Azure Subscriptions"]
+    n4 --> n5
+    n6["Resource Groups"]
+    n5 --> n6
+    n7["Azure Resource Manager ARM"]
+    n6 --> n7
+    n8["Azure Policy"]
+    n7 --> n8
+    n9["Azure Landing Zones"]
+    n8 --> n9
+    n10["Azure Well-Architected Framework"]
+    n9 --> n10
+  end
+  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
+  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n5
+  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n10
+  n10 -. telemetry / governance .-> Operations["K · Operations / security review"]
