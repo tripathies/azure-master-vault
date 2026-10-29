@@ -1,0 +1,4 @@
+flowchart LR
+  Source["Azure resource / application"] --> Component["Azure Monitor Alerts and Action Groups"] --> Consumer["Alert / report / runbook / decision"]
+  Identity["Microsoft Entra ID / RBAC / managed identity where supported"] -. authorizes .-> Component
+  Operations["Azure Monitor / logs / alerts / cost"] -. observes .-> Component

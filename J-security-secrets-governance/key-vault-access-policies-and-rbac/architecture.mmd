@@ -1,0 +1,5 @@
+flowchart LR
+  Source["Identity / policy / data source"] --> Component["Key Vault Access Policies and RBAC"] --> Consumer["Detection / protected secret / compliant resource"]
+  Governance["Policy / compliance / ownership"] -. governs .-> Component
+  Identity["Microsoft Entra ID / RBAC / managed identity where supported"] -. authorizes .-> Component
+  Operations["Azure Monitor / logs / alerts / cost"] -. observes .-> Component
