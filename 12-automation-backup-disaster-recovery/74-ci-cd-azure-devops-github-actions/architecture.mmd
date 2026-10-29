@@ -1,0 +1,12 @@
+flowchart TD
+    PR[Pull request] --> Validate[Format, lint and validate]
+    Validate --> Scan[Security and policy scan]
+    Scan --> Plan[Plan or what-if]
+    Plan --> Review[Review and merge]
+    Review --> Test[Deploy to test]
+    Test --> Smoke[Smoke tests]
+    Smoke --> Gate[Production approval]
+    Gate --> Prod[Deploy production]
+    Prod --> Evidence[Health checks and deployment evidence]
+    Identity[Federated workload identity] --> Test
+    Identity --> Prod
