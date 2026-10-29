@@ -4,6 +4,21 @@
 
 **Purpose.** High-throughput event ingestion using partitions and consumer groups. Plan partitioning, retention, checkpoints, consumer lag and replay/capture requirements.
 
+## Completion tracker
+
+- [ ] Purpose, scope and architecture placement
+- [ ] Use cases, non-use cases, alternatives and decision criteria
+- [ ] Identity, RBAC, security, governance and data protection
+- [ ] Network paths, private connectivity and DNS where applicable
+- [ ] Availability, scaling, backup/DR, limits and failure modes where applicable
+- [ ] Pricing drivers, cost controls and common cost surprises
+- [ ] Enterprise scenario, trade-offs and operational ownership
+- [ ] Service-specific architecture diagram
+- [ ] Terraform/Bicep or policy/configuration samples where appropriate
+- [ ] Validation, deployment, expected outputs and cleanup where applicable
+- [ ] Interview questions with model answers
+- [ ] LinkedIn-ready summary and official Microsoft Learn references
+
 ## Where it fits
 connects APIs, business messages, discrete events and high-volume streams while decoupling producers from consumers. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
@@ -13,15 +28,15 @@ Choose API Management for governed synchronous APIs, Service Bus for brokered bu
 **Alternatives and trade-offs:** Compare synchronous API, durable broker, discrete event routing and high-volume streaming semantics; they are not interchangeable.
 
 ## Architecture design
-The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
+This component-level flow shows a typical source, component and outcome plus cross-cutting controls. Dashed arrows are relationships, not necessarily packet paths.
 
-```mermaid
+~~~mermaid
 flowchart LR
   Source["APIM exposes an order API"] --> Component["Azure Event Hubs"] --> Outcome["Workload outcome / consumer"]
   Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
   Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
   Operations["Monitoring / logs / cost"] -. observe .-> Component
-```
+~~~
 
 ## Security and governance
 Validate tokens and backend authorization, use managed identity where supported, scope data-plane roles, secure endpoints and avoid logging secrets.
@@ -30,21 +45,21 @@ Validate tokens and backend authorization, use managed identity where supported,
 Map caller-to-gateway and producer-to-broker paths, private endpoints, DNS, backend reachability and inbound/outbound controls.
 
 ## Availability, scale and recovery
-Design retries, idempotency, dead-lettering, ordering/partitioning, consumer lag, replay and regional recovery explicitly.
+Design retries, idempotency, dead-lettering, ordering/partitioning, consumer lag, replay and regional recovery.
 
 ## Cost and operations
-Model throughput tier, requests, messages, retention, event volume, consumers, integration runtime and diagnostic ingestion.
+Model throughput tier, requests, messages, retention, event volume, consumers and diagnostic ingestion.
 
 ## Enterprise scenario
-APIM exposes an order API, Service Bus queues durable work, Event Grid distributes discrete notifications, and Event Hubs ingests telemetry. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
+APIM exposes an order API, Service Bus queues durable work, Event Grid distributes discrete notifications, and Event Hubs ingests telemetry. Document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and evidence that proves the design works.
 
 ## Implementation and validation
 1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
-2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
-3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+2. Map each diagram dependency to a real Azure resource or control.
+3. Use a repository Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
 4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
 5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
-6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete.
 
 ## Component-specific design note
 High-throughput event ingestion using partitions and consumer groups. Plan partitioning, retention, checkpoints, consumer lag and replay/capture requirements.
@@ -53,18 +68,18 @@ High-throughput event ingestion using partitions and consumer groups. Plan parti
 - Treating the component as a standalone solution without documenting dependencies.
 - Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
 - Skipping failure testing, telemetry, cost ownership and change/rollback planning.
-- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
+- Deploying a sample without validating current SKU, region, API/provider version and service limits.
 
 ## Interview questions
 
 **Q1. Where does Azure Event Hubs fit in an Azure solution?**  
-It implements one part of the larger integration & api management design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+It implements one part of the larger integration & api management design. Explain upstream dependencies, downstream consumers, identity/network boundaries, monitoring and recovery.
 
 **Q2. What trade-off drives the design?**  
-Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+Compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State assumptions and test the critical failure mode.
 
 ## LinkedIn-ready summary
-A strong Azure design explains not just what Azure Event Hubs does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+A strong Azure design explains not just what Azure Event Hubs does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. #Azure #CloudArchitecture #AzureSolutionsArchitect
 
 ## Official reference
 - [Microsoft Learn: Azure Event Hubs](<https://learn.microsoft.com/search/?terms=Azure%20Event%20Hubs%20Azure>)

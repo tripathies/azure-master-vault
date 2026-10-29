@@ -4,47 +4,62 @@
 
 **Purpose.** A subscription is a billing, quota and RBAC boundary under an Entra tenant. Separate production/non-production or platform/workload scopes when ownership, policy, quota or billing boundaries differ.
 
+## Completion tracker
+
+- [ ] Purpose, scope and architecture placement
+- [ ] Use cases, non-use cases, alternatives and decision criteria
+- [ ] Identity, RBAC, security, governance and data protection
+- [ ] Network paths, private connectivity and DNS where applicable
+- [ ] Availability, scaling, backup/DR, limits and failure modes where applicable
+- [ ] Pricing drivers, cost controls and common cost surprises
+- [ ] Enterprise scenario, trade-offs and operational ownership
+- [ ] Service-specific architecture diagram
+- [ ] Terraform/Bicep or policy/configuration samples where appropriate
+- [ ] Validation, deployment, expected outputs and cleanup where applicable
+- [ ] Interview questions with model answers
+- [ ] LinkedIn-ready summary and official Microsoft Learn references
+
 ## Where it fits
-establishes the cloud hierarchy, guardrails, placement and operational boundaries that workloads inherit. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
+establishes cloud hierarchy, guardrails, placement and operational boundaries that workloads inherit. It interacts with upstream identity, governance and network decisions, and downstream workloads, data or operations depending on the selected pattern.
 
 ## When to use it
-Use it before deploying production workloads or when defining enterprise-wide ownership, compliance and resource organization.
+Use before production deployment or when defining enterprise ownership, compliance and resource organization.
 
-**Alternatives and trade-offs:** Compare alternative hierarchy and governance patterns against tenant boundaries, policy inheritance, ownership and billing requirements.
+**Alternatives and trade-offs:** Compare governance patterns against tenant boundaries, policy inheritance, ownership and billing requirements.
 
 ## Architecture design
-The diagram is a component-level flow, showing the main source, component, consumer and cross-cutting controls. Dashed arrows indicate a governance, authorization, network, operations or resilience relationship rather than a mandatory packet path.
+This component-level flow shows a typical source, component and outcome plus cross-cutting controls. Dashed arrows are relationships, not necessarily packet paths.
 
-```mermaid
+~~~mermaid
 flowchart LR
   Source["A regulated enterprise creates shared platform subscriptions for identity/connectivity/security and workload subscriptions under management groups with inherited policy."] --> Component["Azure Subscriptions"] --> Outcome["Workload outcome / consumer"]
   Identity["Microsoft Entra ID / RBAC where supported"] -. authorization .-> Component
   Network["Network / DNS / private connectivity where applicable"] -. access path .-> Component
   Operations["Monitoring / logs / cost"] -. observe .-> Component
-```
+~~~
 
 ## Security and governance
-Define tenant and subscription ownership, apply least-privilege Azure RBAC, assign policy at the right scope, and document approved exceptions.
+Define tenant/subscription ownership, least-privilege Azure RBAC, policy assignments and documented exceptions.
 
 ## Network and connectivity
-Confirm connectivity is planned at the platform level: address allocation, DNS, hybrid paths, private access and egress ownership.
+Plan address allocation, DNS, hybrid paths, private access and egress ownership at platform scope.
 
 ## Availability, scale and recovery
-Separate regional placement, zonal resilience, backup and disaster recovery; do not assume a hierarchy or policy control provides runtime availability.
+Separate regional placement, zonal resilience, backup and disaster recovery; hierarchy does not provide runtime availability.
 
 ## Cost and operations
-Set subscription/resource ownership, budgets, tags, quota monitoring and chargeback rules before broad rollout.
+Set ownership, budgets, tags, quota monitoring and chargeback rules before broad rollout.
 
 ## Enterprise scenario
-A regulated enterprise creates shared platform subscriptions for identity/connectivity/security and workload subscriptions under management groups with inherited policy. For this component, document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and the evidence that proves the design works.
+A regulated enterprise creates shared platform subscriptions for identity/connectivity/security and workload subscriptions under management groups with inherited policy. Document the exact scope, owner, dependencies, alert/runbook, rollback or recovery action, and evidence that proves the design works.
 
 ## Implementation and validation
 1. Confirm region/SKU/feature support, quota, naming rules and required permissions.
-2. Review the component's architecture diagram and map each dependency to a real Azure resource or control.
-3. Implement with the repository's Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
+2. Map each diagram dependency to a real Azure resource or control.
+3. Use a repository Terraform/Bicep or configuration sample where available; use a policy/configuration sample rather than fake deployment code for conceptual governance topics.
 4. Review Terraform plan or Bicep `what-if`; verify scope, identity, network access and cost before deployment.
 5. Validate allowed and denied access, DNS/routing where applicable, telemetry, failure behavior and recovery.
-6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete; do not remove shared or production resources.
+6. Record expected outputs and operational ownership. Clean up only lab resources that are safe to delete.
 
 ## Component-specific design note
 A subscription is a billing, quota and RBAC boundary under an Entra tenant. Separate production/non-production or platform/workload scopes when ownership, policy, quota or billing boundaries differ.
@@ -53,18 +68,18 @@ A subscription is a billing, quota and RBAC boundary under an Entra tenant. Sepa
 - Treating the component as a standalone solution without documenting dependencies.
 - Assuming identity, private networking or redundancy automatically grants authorization or guarantees recovery.
 - Skipping failure testing, telemetry, cost ownership and change/rollback planning.
-- Deploying a generic sample without validating current SKU, region, API/provider version and service limits.
+- Deploying a sample without validating current SKU, region, API/provider version and service limits.
 
 ## Interview questions
 
 **Q1. Where does Azure Subscriptions fit in an Azure solution?**  
-It implements one part of the larger cloud foundation & landing zones design. Explain its upstream dependencies, downstream consumers, identity and network boundaries, and how it is monitored and recovered.
+It implements one part of the larger cloud foundation & landing zones design. Explain upstream dependencies, downstream consumers, identity/network boundaries, monitoring and recovery.
 
 **Q2. What trade-off drives the design?**  
-Start with workload requirements and compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State the assumptions and test the critical failure mode.
+Compare supported alternatives on security, operational burden, availability, scale, compliance and total cost. State assumptions and test the critical failure mode.
 
 ## LinkedIn-ready summary
-A strong Azure design explains not just what Azure Subscriptions does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. Architecture decisions should be validated with evidence—not assumptions. #Azure #CloudArchitecture #AzureSolutionsArchitect
+A strong Azure design explains not just what Azure Subscriptions does, but where it fits, which identity and network boundaries apply, how failures are detected and recovered, and how cost is controlled. #Azure #CloudArchitecture #AzureSolutionsArchitect
 
 ## Official reference
 - [Microsoft Learn: Azure Subscriptions](<https://learn.microsoft.com/search/?terms=Azure%20Subscriptions%20Azure>)
