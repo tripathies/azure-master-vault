@@ -1,0 +1,9 @@
+# Copy to terraform.tfvars locally; do not commit real identifiers or secrets.
+subscription_id     = "00000000-0000-0000-0000-000000000000"
+resource_group_name = "rg-avm-demo-sandbox"
+location            = "eastus"
+tags = {
+  managed-by = "terraform"
+  environment = "sandbox"
+  workload    = "learning"
+}
