@@ -1,7 +1,14 @@
-flowchart LR
-    Req[Workload requirements] --> Decision[Evaluate Management Groups]
-    Decision --> Guardrails[Identity, network and governance guardrails]
-    Guardrails --> Component[Management Groups]
-    Component --> Ops[Monitoring, resilience and cost controls]
-    classDef azure fill:#e8f3ff,stroke:#0078d4,color:#172033
-    class Component azure
+flowchart TB
+    Tenant[Microsoft Entra tenant<br/>Identity boundary] --> Root[Root management group<br/>Top-level governance scope]
+    Root --> Platform[Platform management group]
+    Root --> LandingZones[Landing zones management group]
+    Platform --> Identity[Identity subscription]
+    Platform --> Connectivity[Connectivity subscription]
+    Platform --> Management[Management subscription]
+    LandingZones --> Prod[Production subscription]
+    LandingZones --> NonProd[Non-production subscription]
+    Identity --> IRG[Resource groups and Azure resources]
+    Connectivity --> CRG[Resource groups and Azure resources]
+    Management --> MRG[Resource groups and Azure resources]
+    Prod --> PRG[Resource groups and Azure resources]
+    NonProd --> NRG[Resource groups and Azure resources]
