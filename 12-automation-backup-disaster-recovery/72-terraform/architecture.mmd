@@ -1,0 +1,9 @@
+flowchart LR
+    Repo[Version-controlled IaC] --> Checks[Format, validate and scan]
+    Checks --> Plan[Terraform plan]
+    State[(Protected remote state)] <--> Plan
+    Plan --> Review[Review and approval]
+    Review --> Apply[Apply with scoped identity]
+    Apply --> Verify[Smoke tests and drift monitoring]
+    classDef azure fill:#e8f3ff,stroke:#0078d4,color:#172033
+    class Plan,Apply,State azure
