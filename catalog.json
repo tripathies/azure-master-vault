@@ -614,8 +614,45 @@
           "path": "L-devops-resilience-migration-ai/azure-machine-learning/README.md"
         }
       ]
+    },
+    {
+      "letter": "12",
+      "title": "Automation, Backup and Disaster Recovery",
+      "folder": "12-automation-backup-disaster-recovery",
+      "components": [
+        {
+          "name": "Terraform — Infrastructure as Code",
+          "slug": "72-terraform",
+          "path": "12-automation-backup-disaster-recovery/72-terraform/README.md",
+          "topic": 72
+        },
+        {
+          "name": "Bicep and ARM Templates",
+          "slug": "73-bicep-arm-templates",
+          "path": "12-automation-backup-disaster-recovery/73-bicep-arm-templates/README.md",
+          "topic": 73
+        },
+        {
+          "name": "Azure DevOps Pipelines and GitHub Actions",
+          "slug": "74-ci-cd-azure-devops-github-actions",
+          "path": "12-automation-backup-disaster-recovery/74-ci-cd-azure-devops-github-actions/README.md",
+          "topic": 74
+        },
+        {
+          "name": "Azure Backup",
+          "slug": "75-azure-backup",
+          "path": "12-automation-backup-disaster-recovery/75-azure-backup/README.md",
+          "topic": 75
+        },
+        {
+          "name": "Azure Site Recovery (ASR)",
+          "slug": "76-azure-site-recovery-asr",
+          "path": "12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md",
+          "topic": 76
+        }
+      ]
     }
   ],
-  "componentCount": 106,
-  "note": "GitHub Markdown links open pre-created component pages; clicking a link alone cannot create a repository file."
+  "componentCount": 111,
+  "note": "Each component has a pre-created linked page. A Markdown click navigates; it does not create a GitHub file. Category 12 is a focused learning path and overlaps intentionally with related topics in A–L."
 }
