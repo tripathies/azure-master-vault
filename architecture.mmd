@@ -1,0 +1,93 @@
+flowchart TB
+    User[Users / operators / developers] --> Identity[Microsoft Entra ID and workload identities]
+    Identity --> Governance[Management groups, subscriptions, Azure Policy and landing zones]
+    Governance --> Network[Hub-spoke / Virtual WAN, DNS, private endpoints and firewall]
+    Network --> Delivery[DNS, Front Door, Application Gateway, Load Balancer and Bastion]
+    Delivery --> Compute[VMs, App Service, Functions, Container Apps and AKS]
+    Compute --> Data[Storage, SQL, Cosmos DB and analytics platforms]
+    Compute --> Integration[API Management, Service Bus, Event Grid and Event Hubs]
+    Integration --> Data
+    Compute --> AI[Foundry, Azure OpenAI, AI Search and Azure Machine Learning]
+    Data --> AI
+    Security[Key Vault, Defender for Cloud, Sentinel, Purview and Zero Trust] -. policies and detections .-> Governance
+    Security -. secrets and protection .-> Compute
+    Security -. data governance .-> Data
+    Operations[Azure Monitor, Log Analytics, App Insights, Advisor and Cost Management] -. telemetry and alerts .-> Compute
+    Operations -. telemetry and alerts .-> Data
+    Operations -. governance and cost .-> Governance
+    Delivery --> Operations
+    IaC[Terraform / Bicep and CI/CD] --> Governance
+    IaC --> Network
+    IaC --> Compute
+    Recovery[Azure Backup, Site Recovery and migration] -. recovery .-> Compute
+    Recovery -. recovery .-> Data
+    Hybrid[VPN, ExpressRoute and Azure Arc] <--> Network
+    Hybrid <--> Governance
+    subgraph A["A · Cloud foundation"]
+      A1[Azure fundamentals] --> A2[Regions and availability]
+      A2 --> A3[Tenants, management groups, subscriptions and resource groups]
+      A3 --> A4[ARM, Policy and Landing Zones]
+    end
+    subgraph B["B · Identity"]
+      B1[Entra tenant] --> B2[App registrations and service principals]
+      B2 --> B3[Managed identities and RBAC]
+      B3 --> B4[MFA, Conditional Access and PIM]
+    end
+    subgraph C["C · Network"]
+      C1[VNet and subnet IP plan] --> C2[NSG / ASG and route tables]
+      C2 --> C3[Firewall / peering / hybrid gateway]
+      C3 --> C4[Private Link and DNS]
+    end
+    subgraph D["D · Traffic"]
+      D1[DNS and global entry] --> D2[Front Door / Traffic Manager]
+      D2 --> D3[Application Gateway / WAF / Load Balancer]
+    end
+    subgraph E["E · Compute"]
+      E1[VM / disks / VMSS] --> E2[App Service / Functions]
+      E2 --> E3[Logic Apps / Batch]
+    end
+    subgraph F["F · Containers"]
+      F1[Build and scan image] --> F2[ACR]
+      F2 --> F3[Container Apps / ACI / AKS]
+    end
+    subgraph G["G · Storage"]
+      G1[Storage accounts] --> G2[Blob / ADLS / Files / NetApp]
+      G2 --> G3[Queue / Table / redundancy]
+    end
+    subgraph H["H · Data"]
+      H1[SQL / PostgreSQL / MySQL] --> H2[Cosmos DB / Redis]
+      H2 --> H3[Data Factory / Databricks / Fabric]
+    end
+    subgraph I["I · Integration"]
+      I1[API Management] --> I2[Service Bus / Event Grid]
+      I2 --> I3[Event Hubs / Stream Analytics / Data Explorer]
+    end
+    subgraph J["J · Security"]
+      J1[Key Vault / RBAC] --> J2[Defender for Cloud]
+      J2 --> J3[Sentinel / Purview / Zero Trust]
+    end
+    subgraph K["K · Operations"]
+      K1[Monitor / Log Analytics / App Insights] --> K2[Alerts / Health]
+      K2 --> K3[Cost / Advisor / Automation / Update Manager / Resource Graph]
+    end
+    subgraph L["L · DevOps, recovery and AI"]
+      L1[Terraform / Bicep / pipelines] --> L2[Backup / Site Recovery / Migrate / Arc]
+      L2 --> L3[Foundry / Azure OpenAI / AI Search / ML]
+    end
+    A --> B
+    A --> C
+    B --> C
+    C --> D
+    C --> E
+    E --> F
+    E --> G
+    G --> H
+    E --> I
+    B --> J
+    C --> J
+    E --> K
+    G --> K
+    H --> K
+    L --> A
+    L --> E
+    L --> K
