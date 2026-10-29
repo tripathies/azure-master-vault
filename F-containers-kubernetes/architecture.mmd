@@ -1,0 +1,19 @@
+flowchart LR
+  subgraph F["F · Containers and Kubernetes"]
+    n1["Docker and Container Fundamentals"]
+    n2["Azure Container Registry ACR"]
+    n1 --> n2
+    n3["Azure Container Apps"]
+    n2 --> n3
+    n4["Azure Kubernetes Service AKS"]
+    n3 --> n4
+    n5["Azure Container Instances ACI"]
+    n4 --> n5
+    n6["AKS Ingress Scaling and Workload Identity"]
+    n5 --> n6
+  end
+  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
+  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n3
+  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n6
+  Foundation["A · Cloud foundation / landing zones"] --> n1
+  n6 -. telemetry / governance .-> Operations["K · Operations / security review"]
