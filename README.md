@@ -1,20 +1,20 @@
 # Azure Master Vault
 
-A practical, checklist-driven Azure Solution Architect knowledge base, organized into 12 core domains (A–L) plus an explicit business-continuity learning path for topics 72–76.
+A checklist-driven Azure Solution Architect knowledge base. Each domain/category page contains the **actual component explanations, architecture guidance, decision criteria, security, operations, scenarios and interview preparation inline**. The component files are optional deep dives—not the primary learning experience.
 
 ## How to use this repository
 
-1. Open a domain checklist.
-2. Tick items as you study or complete the guide.
-3. Click a component name to open its dedicated page under the repository.
-4. Use each page's completion checklist to add validated architecture, security, networking, resilience, cost, code and interview material.
-5. Improve pages through reviewed commits or pull requests.
+1. Open a category from the master catalogue below.
+2. Read and track the component checklists **on that category's page**.
+3. Use the architecture diagrams, decision matrices, scenarios and official references in that same page.
+4. Open optional component guides only when you want a deeper example or implementation artifact.
+5. Contribute improvements through reviewed commits or pull requests.
 
-> **Important:** Markdown links navigate to files that already exist. Clicking a link cannot create a GitHub file at that moment, so component pages are pre-created and then expanded.
+> GitHub Markdown checkboxes are repository text, not a private progress tracker that automatically saves per user. Tick them by editing your own branch/fork or use them as a visible checklist. A Markdown link only opens an existing file; it cannot create a new GitHub page at click time. The category pages are therefore designed to hold the core content in one place.
 
 ## Master catalogue
 
-| Domain | Checklist |
+| Domain | Complete category page |
 |---|---|
 | A | [Cloud Foundation & Landing Zones](A-cloud-foundation-landing-zones/README.md) |
 | B | [Identity & Access Management](B-identity-access-management/README.md) |
@@ -30,22 +30,23 @@ A practical, checklist-driven Azure Solution Architect knowledge base, organized
 | L | [DevOps, Resilience, Migration & AI](L-devops-resilience-migration-ai/README.md) |
 | 12 | [Automation, Backup & Disaster Recovery — topics 72–76](12-automation-backup-disaster-recovery/README.md) |
 
-- [Machine-readable component catalogue](catalog.json)
+- [Machine-readable catalogue](catalog.json)
 - [License](LICENSE)
 
-## Definition of done for each component
+## Standard expected in every category
 
-- [ ] Purpose, architecture placement, use cases and alternatives
-- [ ] Identity, access, security and governance
+- [ ] Component-specific purpose, architecture placement, use cases and alternatives
+- [ ] Real Azure design details, not generic placeholder paragraphs
+- [ ] Identity, access, security, governance and data protection
 - [ ] Network design and private connectivity where applicable
 - [ ] Availability, scaling, backup/DR, limits and failure modes where applicable
-- [ ] Cost model, monitoring and operations
-- [ ] Real-world scenario and trade-offs
-- [ ] Azure-friendly Mermaid diagram
+- [ ] Cost drivers, monitoring, operations and common mistakes
+- [ ] Enterprise scenario and decision trade-offs
+- [ ] Azure-friendly Mermaid architecture diagram
 - [ ] Validated Terraform/Bicep or policy/configuration samples where appropriate
-- [ ] Validation, deployment, output and cleanup steps
-- [ ] Interview questions/model answers and LinkedIn-ready post
-- [ ] Current Microsoft Learn references verified
+- [ ] Validation, deployment, output and cleanup steps where applicable
+- [ ] Interview questions/model answers and LinkedIn-ready summary
+- [ ] Current official Microsoft Learn references
 
 ## Safe-use rules
 
