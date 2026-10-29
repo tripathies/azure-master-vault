@@ -1,0 +1,23 @@
+flowchart LR
+  subgraph J["J · Security Secrets and Governance"]
+    n1["Azure Key Vault"]
+    n2["Key Vault Access Policies and RBAC"]
+    n1 --> n2
+    n3["Microsoft Defender for Cloud"]
+    n2 --> n3
+    n4["Microsoft Sentinel"]
+    n3 --> n4
+    n5["Microsoft Purview"]
+    n4 --> n5
+    n6["Azure Resource Locks"]
+    n5 --> n6
+    n7["Tagging and Naming Standards"]
+    n6 --> n7
+    n8["Zero Trust Architecture"]
+    n7 --> n8
+  end
+  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
+  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n4
+  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n8
+  Foundation["A · Cloud foundation / landing zones"] --> n1
+  n8 -. telemetry / governance .-> Operations["K · Operations / security review"]
