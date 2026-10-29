@@ -12,6 +12,10 @@ A checklist-driven Azure Solution Architect knowledge base. Each domain/category
 
 > GitHub Markdown checkboxes are repository text, not a private progress tracker that automatically saves per user. Tick them by editing your own branch/fork or use them as a visible checklist. A Markdown link only opens an existing file; it cannot create a new GitHub page at click time. The category pages are therefore designed to hold the core content in one place.
 
+## Visual architecture diagrams
+
+Open the [visual diagram index](ARCHITECTURE-MAPS.md) for category SVG previews and editable draw.io files for each catalog component.
+
 ## Master architecture flow
 
 [Master architecture flow](architecture.mmd) includes every catalog component and its conceptual dependency arrows. [Architecture map index](ARCHITECTURE-MAPS.md).
