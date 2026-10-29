@@ -1,0 +1,19 @@
+flowchart LR
+  subgraph I["I · Integration and API Management"]
+    n1["API Management"]
+    n2["Azure Service Bus"]
+    n1 --> n2
+    n3["Azure Event Grid"]
+    n2 --> n3
+    n4["Azure Event Hubs"]
+    n3 --> n4
+    n5["Azure Stream Analytics"]
+    n4 --> n5
+    n6["Azure Data Explorer"]
+    n5 --> n6
+  end
+  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
+  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n3
+  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n6
+  Foundation["A · Cloud foundation / landing zones"] --> n1
+  n6 -. telemetry / governance .-> Operations["K · Operations / security review"]
