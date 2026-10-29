@@ -1,5 +1,8 @@
 # L. DevOps, Resilience, Migration & AI
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 This category brings together infrastructure delivery, continuity, migration, hybrid management and AI platform design. These domains connect, but their controls are not interchangeable.
@@ -111,3 +114,39 @@ Modernization succeeds when delivery, resilience, governance and application beh
 - [Azure Machine Learning](https://learn.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning)
 - [Azure Backup](https://learn.microsoft.com/azure/backup/)
 - [Azure Site Recovery](https://learn.microsoft.com/azure/site-recovery/)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATL["L · DevOps Resilience Migration and AI"]
+    n1["Terraform"]
+    n2["Bicep / ARM Templates"]
+    n1 --> n2
+    n3["Azure DevOps Pipelines"]
+    n2 --> n3
+    n4["GitHub Actions"]
+    n3 --> n4
+    n5["Azure Backup"]
+    n4 --> n5
+    n6["Azure Site Recovery"]
+    n5 --> n6
+    n7["Azure Migrate"]
+    n6 --> n7
+    n8["Azure Arc"]
+    n7 --> n8
+    n9["Microsoft Foundry"]
+    n8 --> n9
+    n10["Azure OpenAI"]
+    n9 --> n10
+    n11["Azure AI Search"]
+    n10 --> n11
+    n12["Azure Machine Learning"]
+    n11 --> n12
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n6
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n12
+~~~

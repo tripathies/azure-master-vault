@@ -1,5 +1,8 @@
 # E. Compute & Application Hosting
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 This page compares Azure compute models and explains operational responsibility, scaling, identity, network integration, resilience and cost.
@@ -136,3 +139,31 @@ The best Azure compute choice is the one that meets workload requirements with t
 - [Azure Functions](https://learn.microsoft.com/azure/azure-functions/functions-overview)
 - [Logic Apps](https://learn.microsoft.com/azure/logic-apps/logic-apps-overview)
 - [Azure Batch](https://learn.microsoft.com/azure/batch/batch-technical-overview)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATE["E · Compute and Application Hosting"]
+    n1["Virtual Machines"]
+    n2["Managed Disks"]
+    n1 --> n2
+    n3["Availability Sets and Zones"]
+    n2 --> n3
+    n4["Virtual Machine Scale Sets"]
+    n3 --> n4
+    n5["Azure App Service"]
+    n4 --> n5
+    n6["Azure Functions"]
+    n5 --> n6
+    n7["Logic Apps"]
+    n6 --> n7
+    n8["Azure Batch"]
+    n7 --> n8
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n4
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n8
+~~~

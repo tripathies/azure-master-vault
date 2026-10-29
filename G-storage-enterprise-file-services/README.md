@@ -1,5 +1,8 @@
 # G. Storage & Enterprise File Services
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 Storage selection begins with access pattern, data shape, protocol, latency, throughput, durability, recovery, compliance and cost—not simply “which storage service is cheapest?”
@@ -132,3 +135,31 @@ Azure storage design is about access patterns and recoverability—not just capa
 - [ADLS Gen2](https://learn.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)
 - [Azure Files](https://learn.microsoft.com/azure/storage/files/storage-files-introduction)
 - [Storage redundancy](https://learn.microsoft.com/azure/storage/common/storage-redundancy)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATG["G · Storage and Enterprise File Services"]
+    n1["Storage Accounts"]
+    n2["Blob Storage"]
+    n1 --> n2
+    n3["Azure Data Lake Storage Gen2"]
+    n2 --> n3
+    n4["Azure Files"]
+    n3 --> n4
+    n5["Azure NetApp Files"]
+    n4 --> n5
+    n6["Queue Storage"]
+    n5 --> n6
+    n7["Table Storage"]
+    n6 --> n7
+    n8["Storage Redundancy LRS ZRS GRS and GZRS"]
+    n7 --> n8
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n4
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n8
+~~~

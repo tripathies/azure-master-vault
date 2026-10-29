@@ -1,5 +1,8 @@
 # K. Monitoring, Operations & Cost
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 Operations means detect impact, diagnose causes, recover safely and improve from evidence. Cost management belongs in the same operating model.
@@ -106,3 +109,35 @@ Observability is not collecting every log. It is measuring user impact, connecti
 - [Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview)
 - [Cost Management](https://learn.microsoft.com/azure/cost-management-billing/costs/overview-cost-management)
 - [Azure Resource Graph](https://learn.microsoft.com/azure/governance/resource-graph/overview)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATK["K · Monitoring Operations and Cost"]
+    n1["Azure Monitor"]
+    n2["Log Analytics Workspace and KQL"]
+    n1 --> n2
+    n3["Application Insights"]
+    n2 --> n3
+    n4["Azure Monitor Alerts and Action Groups"]
+    n3 --> n4
+    n5["Service Health and Resource Health"]
+    n4 --> n5
+    n6["Cost Management"]
+    n5 --> n6
+    n7["Azure Advisor"]
+    n6 --> n7
+    n8["Azure Automation"]
+    n7 --> n8
+    n9["Azure Update Manager"]
+    n8 --> n9
+    n10["Azure Resource Graph"]
+    n9 --> n10
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n5
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n10
+~~~

@@ -1,5 +1,8 @@
 # H. Databases & Data Platforms
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 Database and data-platform selection should start with data model, query pattern, consistency, latency, scale, availability, migration constraints, governance and operating skills.
@@ -135,3 +138,35 @@ Data architecture starts with workload semantics. Relational compatibility, NoSQ
 - [Azure Data Factory](https://learn.microsoft.com/azure/data-factory/introduction)
 - [Azure Databricks](https://learn.microsoft.com/azure/databricks/)
 - [Microsoft Fabric](https://learn.microsoft.com/fabric/)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATH["H · Databases and Data Platforms"]
+    n1["Azure SQL Database"]
+    n2["Azure SQL Managed Instance"]
+    n1 --> n2
+    n3["SQL Server on Azure VMs"]
+    n2 --> n3
+    n4["Azure Cosmos DB"]
+    n3 --> n4
+    n5["Azure Database for PostgreSQL"]
+    n4 --> n5
+    n6["Azure Database for MySQL"]
+    n5 --> n6
+    n7["Azure Managed Redis"]
+    n6 --> n7
+    n8["Azure Data Factory"]
+    n7 --> n8
+    n9["Azure Databricks"]
+    n8 --> n9
+    n10["Microsoft Fabric / OneLake"]
+    n9 --> n10
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n5
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n10
+~~~

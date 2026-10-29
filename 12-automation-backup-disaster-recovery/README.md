@@ -1,5 +1,8 @@
 # Category 12 — Automation, Backup and Disaster Recovery
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 This is the **complete category page** for infrastructure delivery and business continuity. The key learning content is on this page; links to component files are optional deep dives and examples.
@@ -300,3 +303,25 @@ flowchart LR
 - [Azure Pipelines](https://learn.microsoft.com/azure/devops/pipelines/)
 - [Azure Backup](https://learn.microsoft.com/azure/backup/)
 - [Azure Site Recovery](https://learn.microsoft.com/azure/site-recovery/)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CAT12["12 · Automation Backup and Disaster Recovery"]
+    n1["Terraform  Infrastructure as Code"]
+    n2["Bicep and ARM Templates"]
+    n1 --> n2
+    n3["Azure DevOps Pipelines and GitHub Actions"]
+    n2 --> n3
+    n4["Azure Backup"]
+    n3 --> n4
+    n5["Azure Site Recovery ASR"]
+    n4 --> n5
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n3
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n5
+~~~

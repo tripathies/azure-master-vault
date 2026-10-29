@@ -1,93 +1,288 @@
 flowchart TB
-    User[Users / operators / developers] --> Identity[Microsoft Entra ID and workload identities]
-    Identity --> Governance[Management groups, subscriptions, Azure Policy and landing zones]
-    Governance --> Network[Hub-spoke / Virtual WAN, DNS, private endpoints and firewall]
-    Network --> Delivery[DNS, Front Door, Application Gateway, Load Balancer and Bastion]
-    Delivery --> Compute[VMs, App Service, Functions, Container Apps and AKS]
-    Compute --> Data[Storage, SQL, Cosmos DB and analytics platforms]
-    Compute --> Integration[API Management, Service Bus, Event Grid and Event Hubs]
-    Integration --> Data
-    Compute --> AI[Foundry, Azure OpenAI, AI Search and Azure Machine Learning]
-    Data --> AI
-    Security[Key Vault, Defender for Cloud, Sentinel, Purview and Zero Trust] -. policies and detections .-> Governance
-    Security -. secrets and protection .-> Compute
-    Security -. data governance .-> Data
-    Operations[Azure Monitor, Log Analytics, App Insights, Advisor and Cost Management] -. telemetry and alerts .-> Compute
-    Operations -. telemetry and alerts .-> Data
-    Operations -. governance and cost .-> Governance
-    Delivery --> Operations
-    IaC[Terraform / Bicep and CI/CD] --> Governance
-    IaC --> Network
-    IaC --> Compute
-    Recovery[Azure Backup, Site Recovery and migration] -. recovery .-> Compute
-    Recovery -. recovery .-> Data
-    Hybrid[VPN, ExpressRoute and Azure Arc] <--> Network
-    Hybrid <--> Governance
-    subgraph A["A · Cloud foundation"]
-      A1[Azure fundamentals] --> A2[Regions and availability]
-      A2 --> A3[Tenants, management groups, subscriptions and resource groups]
-      A3 --> A4[ARM, Policy and Landing Zones]
-    end
-    subgraph B["B · Identity"]
-      B1[Entra tenant] --> B2[App registrations and service principals]
-      B2 --> B3[Managed identities and RBAC]
-      B3 --> B4[MFA, Conditional Access and PIM]
-    end
-    subgraph C["C · Network"]
-      C1[VNet and subnet IP plan] --> C2[NSG / ASG and route tables]
-      C2 --> C3[Firewall / peering / hybrid gateway]
-      C3 --> C4[Private Link and DNS]
-    end
-    subgraph D["D · Traffic"]
-      D1[DNS and global entry] --> D2[Front Door / Traffic Manager]
-      D2 --> D3[Application Gateway / WAF / Load Balancer]
-    end
-    subgraph E["E · Compute"]
-      E1[VM / disks / VMSS] --> E2[App Service / Functions]
-      E2 --> E3[Logic Apps / Batch]
-    end
-    subgraph F["F · Containers"]
-      F1[Build and scan image] --> F2[ACR]
-      F2 --> F3[Container Apps / ACI / AKS]
-    end
-    subgraph G["G · Storage"]
-      G1[Storage accounts] --> G2[Blob / ADLS / Files / NetApp]
-      G2 --> G3[Queue / Table / redundancy]
-    end
-    subgraph H["H · Data"]
-      H1[SQL / PostgreSQL / MySQL] --> H2[Cosmos DB / Redis]
-      H2 --> H3[Data Factory / Databricks / Fabric]
-    end
-    subgraph I["I · Integration"]
-      I1[API Management] --> I2[Service Bus / Event Grid]
-      I2 --> I3[Event Hubs / Stream Analytics / Data Explorer]
-    end
-    subgraph J["J · Security"]
-      J1[Key Vault / RBAC] --> J2[Defender for Cloud]
-      J2 --> J3[Sentinel / Purview / Zero Trust]
-    end
-    subgraph K["K · Operations"]
-      K1[Monitor / Log Analytics / App Insights] --> K2[Alerts / Health]
-      K2 --> K3[Cost / Advisor / Automation / Update Manager / Resource Graph]
-    end
-    subgraph L["L · DevOps, recovery and AI"]
-      L1[Terraform / Bicep / pipelines] --> L2[Backup / Site Recovery / Migrate / Arc]
-      L2 --> L3[Foundry / Azure OpenAI / AI Search / ML]
-    end
-    A --> B
-    A --> C
-    B --> C
-    C --> D
-    C --> E
-    E --> F
-    E --> G
-    G --> H
-    E --> I
-    B --> J
-    C --> J
-    E --> K
-    G --> K
-    H --> K
-    L --> A
-    L --> E
-    L --> K
+  User["Users / developers / operators"] --> Identity["Microsoft Entra ID / workload identities"]
+  Identity --> Foundation["A · Tenant, management groups, subscriptions, policy and landing zones"]
+  Foundation --> Network["C · VNet, subnet, routing, firewall, hybrid and private DNS"]
+  Network --> Traffic["D · DNS, Front Door, Application Gateway, Load Balancer and Bastion"]
+  Traffic --> Compute["E/F · VMs, App Service, Functions, containers and AKS"]
+  Compute --> Data["G/H · Storage, databases and analytics platforms"]
+  Compute --> Integration["I · API Management, Service Bus, Event Grid, Event Hubs and streaming"]
+  Integration --> Data
+  Data --> AI["L · Foundry, Azure OpenAI, AI Search and Azure Machine Learning"]
+  Security["J · Key Vault, Defender for Cloud, Sentinel, Purview and Zero Trust"] -. governs .-> Foundation
+  Security -. protects .-> Compute
+  Security -. protects .-> Data
+  Operations["K · Monitor, Log Analytics, App Insights, alerts, Cost Management and Advisor"] -. observes .-> Compute
+  Operations -. observes .-> Data
+  Operations -. observes .-> Integration
+  Delivery["L · Terraform, Bicep and CI/CD"] --> Foundation
+  Delivery --> Network
+  Delivery --> Compute
+  Recovery["L/12 · Backup, Site Recovery, Migrate and Arc"] -. recovery .-> Compute
+  Recovery -. recovery .-> Data
+  Hybrid["VPN / ExpressRoute / Arc"] <--> Network
+  subgraph CATA["A · Cloud Foundation and Landing Zones"]
+    A1["Microsoft Azure fundamentals"]
+    A2["Regions Region Pairs and Availability Zones"]
+    A1 --> A2
+    A3["Microsoft Entra ID tenants"]
+    A2 --> A3
+    A4["Management Groups"]
+    A3 --> A4
+    A5["Azure Subscriptions"]
+    A4 --> A5
+    A6["Resource Groups"]
+    A5 --> A6
+    A7["Azure Resource Manager ARM"]
+    A6 --> A7
+    A8["Azure Policy"]
+    A7 --> A8
+    A9["Azure Landing Zones"]
+    A8 --> A9
+    A10["Azure Well-Architected Framework"]
+    A9 --> A10
+  end
+  Foundation -. scope .-> A1
+  subgraph CATB["B · Identity and Access Management"]
+    B1["Microsoft Entra ID"]
+    B2["App Registrations"]
+    B1 --> B2
+    B3["Enterprise Applications and Service Principals"]
+    B2 --> B3
+    B4["Managed Identities"]
+    B3 --> B4
+    B5["Azure RBAC"]
+    B4 --> B5
+    B6["MFA and Conditional Access"]
+    B5 --> B6
+    B7["Privileged Identity Management PIM"]
+    B6 --> B7
+    B8["OAuth 2.0 and OpenID Connect"]
+    B7 --> B8
+  end
+  Foundation -. scope .-> B1
+  subgraph CATC["C · Networking and Private Connectivity"]
+    C1["Virtual Networks VNet"]
+    C2["Subnets and CIDR Planning"]
+    C1 --> C2
+    C3["Network Security Groups NSGs"]
+    C2 --> C3
+    C4["Application Security Groups ASGs"]
+    C3 --> C4
+    C5["VNet Peering"]
+    C4 --> C5
+    C6["User-Defined Routes UDRs"]
+    C5 --> C6
+    C7["Azure Firewall"]
+    C6 --> C7
+    C8["VPN Gateway"]
+    C7 --> C8
+    C9["ExpressRoute"]
+    C8 --> C9
+    C10["Private Link and Private Endpoints"]
+    C9 --> C10
+    C11["Private DNS Zones"]
+    C10 --> C11
+    C12["NAT Gateway"]
+    C11 --> C12
+  end
+  Foundation -. scope .-> C1
+  subgraph CATD["D · Traffic Management and Delivery"]
+    D1["Azure Load Balancer"]
+    D2["Application Gateway and WAF"]
+    D1 --> D2
+    D3["Azure Front Door"]
+    D2 --> D3
+    D4["Traffic Manager"]
+    D3 --> D4
+    D5["Azure Bastion"]
+    D4 --> D5
+    D6["Azure DNS"]
+    D5 --> D6
+    D7["DDoS Protection"]
+    D6 --> D7
+    D8["Network Watcher"]
+    D7 --> D8
+  end
+  Foundation -. scope .-> D1
+  subgraph CATE["E · Compute and Application Hosting"]
+    E1["Virtual Machines"]
+    E2["Managed Disks"]
+    E1 --> E2
+    E3["Availability Sets and Zones"]
+    E2 --> E3
+    E4["Virtual Machine Scale Sets"]
+    E3 --> E4
+    E5["Azure App Service"]
+    E4 --> E5
+    E6["Azure Functions"]
+    E5 --> E6
+    E7["Logic Apps"]
+    E6 --> E7
+    E8["Azure Batch"]
+    E7 --> E8
+  end
+  Foundation -. scope .-> E1
+  subgraph CATF["F · Containers and Kubernetes"]
+    F1["Docker and Container Fundamentals"]
+    F2["Azure Container Registry ACR"]
+    F1 --> F2
+    F3["Azure Container Apps"]
+    F2 --> F3
+    F4["Azure Kubernetes Service AKS"]
+    F3 --> F4
+    F5["Azure Container Instances ACI"]
+    F4 --> F5
+    F6["AKS Ingress Scaling and Workload Identity"]
+    F5 --> F6
+  end
+  Foundation -. scope .-> F1
+  subgraph CATG["G · Storage and Enterprise File Services"]
+    G1["Storage Accounts"]
+    G2["Blob Storage"]
+    G1 --> G2
+    G3["Azure Data Lake Storage Gen2"]
+    G2 --> G3
+    G4["Azure Files"]
+    G3 --> G4
+    G5["Azure NetApp Files"]
+    G4 --> G5
+    G6["Queue Storage"]
+    G5 --> G6
+    G7["Table Storage"]
+    G6 --> G7
+    G8["Storage Redundancy LRS ZRS GRS and GZRS"]
+    G7 --> G8
+  end
+  Foundation -. scope .-> G1
+  subgraph CATH["H · Databases and Data Platforms"]
+    H1["Azure SQL Database"]
+    H2["Azure SQL Managed Instance"]
+    H1 --> H2
+    H3["SQL Server on Azure VMs"]
+    H2 --> H3
+    H4["Azure Cosmos DB"]
+    H3 --> H4
+    H5["Azure Database for PostgreSQL"]
+    H4 --> H5
+    H6["Azure Database for MySQL"]
+    H5 --> H6
+    H7["Azure Managed Redis"]
+    H6 --> H7
+    H8["Azure Data Factory"]
+    H7 --> H8
+    H9["Azure Databricks"]
+    H8 --> H9
+    H10["Microsoft Fabric / OneLake"]
+    H9 --> H10
+  end
+  Foundation -. scope .-> H1
+  subgraph CATI["I · Integration and API Management"]
+    I1["API Management"]
+    I2["Azure Service Bus"]
+    I1 --> I2
+    I3["Azure Event Grid"]
+    I2 --> I3
+    I4["Azure Event Hubs"]
+    I3 --> I4
+    I5["Azure Stream Analytics"]
+    I4 --> I5
+    I6["Azure Data Explorer"]
+    I5 --> I6
+  end
+  Foundation -. scope .-> I1
+  subgraph CATJ["J · Security Secrets and Governance"]
+    J1["Azure Key Vault"]
+    J2["Key Vault Access Policies and RBAC"]
+    J1 --> J2
+    J3["Microsoft Defender for Cloud"]
+    J2 --> J3
+    J4["Microsoft Sentinel"]
+    J3 --> J4
+    J5["Microsoft Purview"]
+    J4 --> J5
+    J6["Azure Resource Locks"]
+    J5 --> J6
+    J7["Tagging and Naming Standards"]
+    J6 --> J7
+    J8["Zero Trust Architecture"]
+    J7 --> J8
+  end
+  Foundation -. scope .-> J1
+  subgraph CATK["K · Monitoring Operations and Cost"]
+    K1["Azure Monitor"]
+    K2["Log Analytics Workspace and KQL"]
+    K1 --> K2
+    K3["Application Insights"]
+    K2 --> K3
+    K4["Azure Monitor Alerts and Action Groups"]
+    K3 --> K4
+    K5["Service Health and Resource Health"]
+    K4 --> K5
+    K6["Cost Management"]
+    K5 --> K6
+    K7["Azure Advisor"]
+    K6 --> K7
+    K8["Azure Automation"]
+    K7 --> K8
+    K9["Azure Update Manager"]
+    K8 --> K9
+    K10["Azure Resource Graph"]
+    K9 --> K10
+  end
+  Foundation -. scope .-> K1
+  subgraph CATL["L · DevOps Resilience Migration and AI"]
+    L1["Terraform"]
+    L2["Bicep / ARM Templates"]
+    L1 --> L2
+    L3["Azure DevOps Pipelines"]
+    L2 --> L3
+    L4["GitHub Actions"]
+    L3 --> L4
+    L5["Azure Backup"]
+    L4 --> L5
+    L6["Azure Site Recovery"]
+    L5 --> L6
+    L7["Azure Migrate"]
+    L6 --> L7
+    L8["Azure Arc"]
+    L7 --> L8
+    L9["Microsoft Foundry"]
+    L8 --> L9
+    L10["Azure OpenAI"]
+    L9 --> L10
+    L11["Azure AI Search"]
+    L10 --> L11
+    L12["Azure Machine Learning"]
+    L11 --> L12
+  end
+  Foundation -. scope .-> L1
+  subgraph CAT12["12 · Automation Backup and Disaster Recovery"]
+    121["Terraform  Infrastructure as Code"]
+    122["Bicep and ARM Templates"]
+    121 --> 122
+    123["Azure DevOps Pipelines and GitHub Actions"]
+    122 --> 123
+    124["Azure Backup"]
+    123 --> 124
+    125["Azure Site Recovery ASR"]
+    124 --> 125
+  end
+  Foundation -. scope .-> 121
+  A10 -. dependency / lifecycle .-> B1
+  B4 -. dependency / lifecycle .-> C1
+  C12 -. dependency / lifecycle .-> D1
+  D3 -. dependency / lifecycle .-> E5
+  E5 -. dependency / lifecycle .-> F3
+  F2 -. dependency / lifecycle .-> F3
+  E5 -. dependency / lifecycle .-> G1
+  G2 -. dependency / lifecycle .-> H8
+  H1 -. dependency / lifecycle .-> I1
+  I2 -. dependency / lifecycle .-> K1
+  J2 -. dependency / lifecycle .-> B4
+  K1 -. dependency / lifecycle .-> K4
+  L1 -. dependency / lifecycle .-> A4
+  L4 -. dependency / lifecycle .-> L5
+  L8 -. dependency / lifecycle .-> L10
+  L10 -. dependency / lifecycle .-> H10
+
+%% Conceptual dependency map, not a mandatory deployment order.

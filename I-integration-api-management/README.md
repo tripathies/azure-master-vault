@@ -1,5 +1,8 @@
 # I. Integration & API Management
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 Integration design separates synchronous API requests from asynchronous messages and event notifications. Choose based on delivery guarantees, ordering, throughput, consumer coupling and replay requirements.
@@ -121,3 +124,27 @@ Event-driven architecture is strongest when every service has a clear role. Use 
 - [Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about)
 - [Stream Analytics](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-introduction)
 - [Azure Data Explorer](https://learn.microsoft.com/azure/data-explorer/data-explorer-overview)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATI["I · Integration and API Management"]
+    n1["API Management"]
+    n2["Azure Service Bus"]
+    n1 --> n2
+    n3["Azure Event Grid"]
+    n2 --> n3
+    n4["Azure Event Hubs"]
+    n3 --> n4
+    n5["Azure Stream Analytics"]
+    n4 --> n5
+    n6["Azure Data Explorer"]
+    n5 --> n6
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n3
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n6
+~~~

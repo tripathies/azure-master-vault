@@ -1,5 +1,8 @@
 # B. Identity & Access Management
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 This page contains the category's working notes and checklists inline. The core objective is to establish **who/what can authenticate, what it can do, at which scope, under what conditions, and how that access is reviewed**.
@@ -171,3 +174,31 @@ Cloud identity design is more than enabling sign-in. Separate authentication fro
 - [Azure RBAC](https://learn.microsoft.com/azure/role-based-access-control/overview)
 - [Managed identities](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview)
 - [OAuth 2.0 and OIDC on Microsoft identity platform](https://learn.microsoft.com/entra/identity-platform/v2-protocols)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATB["B · Identity and Access Management"]
+    n1["Microsoft Entra ID"]
+    n2["App Registrations"]
+    n1 --> n2
+    n3["Enterprise Applications and Service Principals"]
+    n2 --> n3
+    n4["Managed Identities"]
+    n3 --> n4
+    n5["Azure RBAC"]
+    n4 --> n5
+    n6["MFA and Conditional Access"]
+    n5 --> n6
+    n7["Privileged Identity Management PIM"]
+    n6 --> n7
+    n8["OAuth 2.0 and OpenID Connect"]
+    n7 --> n8
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n4
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n8
+~~~

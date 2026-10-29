@@ -1,5 +1,8 @@
 # F. Containers & Kubernetes
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 This category compares container packaging, image storage, serverless containers and Kubernetes. Pick the lowest operational model that satisfies workload needs.
@@ -120,3 +123,27 @@ Kubernetes is powerful, but it is not the default answer for every container. Co
 - [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview)
 - [Azure Container Registry](https://learn.microsoft.com/azure/container-registry/container-registry-intro)
 - [Azure Container Instances](https://learn.microsoft.com/azure/container-instances/container-instances-overview)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATF["F · Containers and Kubernetes"]
+    n1["Docker and Container Fundamentals"]
+    n2["Azure Container Registry ACR"]
+    n1 --> n2
+    n3["Azure Container Apps"]
+    n2 --> n3
+    n4["Azure Kubernetes Service AKS"]
+    n3 --> n4
+    n5["Azure Container Instances ACI"]
+    n4 --> n5
+    n6["AKS Ingress Scaling and Workload Identity"]
+    n5 --> n6
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n3
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n6
+~~~

@@ -1,5 +1,8 @@
 # D. Traffic Management & Delivery
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 Keep traffic decisions together on this page: global vs regional entry, Layer 4 vs Layer 7, private administration, DNS, DDoS and observability.
@@ -136,3 +139,31 @@ Traffic architecture should be requirement-driven. Layer 4 load balancing, regio
 - [Traffic Manager](https://learn.microsoft.com/azure/traffic-manager/traffic-manager-overview)
 - [Azure Bastion](https://learn.microsoft.com/azure/bastion/bastion-overview)
 - [Network Watcher](https://learn.microsoft.com/azure/network-watcher/network-watcher-overview)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATD["D · Traffic Management and Delivery"]
+    n1["Azure Load Balancer"]
+    n2["Application Gateway and WAF"]
+    n1 --> n2
+    n3["Azure Front Door"]
+    n2 --> n3
+    n4["Traffic Manager"]
+    n3 --> n4
+    n5["Azure Bastion"]
+    n4 --> n5
+    n6["Azure DNS"]
+    n5 --> n6
+    n7["DDoS Protection"]
+    n6 --> n7
+    n8["Network Watcher"]
+    n7 --> n8
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n4
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n8
+~~~

@@ -1,5 +1,8 @@
 # J. Security, Secrets & Governance
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 Security is a system of identity, configuration, data, detection and response controls—not one product.
@@ -75,3 +78,31 @@ Security controls must be owned and observable. Use least privilege and managed 
 - [Microsoft Sentinel](https://learn.microsoft.com/azure/sentinel/overview)
 - [Microsoft Purview](https://learn.microsoft.com/purview/)
 - [Resource locks](https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATJ["J · Security Secrets and Governance"]
+    n1["Azure Key Vault"]
+    n2["Key Vault Access Policies and RBAC"]
+    n1 --> n2
+    n3["Microsoft Defender for Cloud"]
+    n2 --> n3
+    n4["Microsoft Sentinel"]
+    n3 --> n4
+    n5["Microsoft Purview"]
+    n4 --> n5
+    n6["Azure Resource Locks"]
+    n5 --> n6
+    n7["Tagging and Naming Standards"]
+    n6 --> n7
+    n8["Zero Trust Architecture"]
+    n7 --> n8
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n4
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n8
+~~~

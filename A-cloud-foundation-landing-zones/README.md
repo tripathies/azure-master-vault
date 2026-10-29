@@ -1,5 +1,8 @@
 # A. Cloud Foundation & Landing Zones
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 This page is the **complete learning page for Category A**. Each component is explained below on this page; component links are optional references, not a requirement to navigate away. Use the checkboxes as your progress tracker.
@@ -267,3 +270,35 @@ Azure governance is not just a folder structure. Microsoft Entra establishes the
 - [Azure Policy](https://learn.microsoft.com/azure/governance/policy/overview)
 - [Azure landing zones](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/)
 - [Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATA["A · Cloud Foundation and Landing Zones"]
+    n1["Microsoft Azure fundamentals"]
+    n2["Regions Region Pairs and Availability Zones"]
+    n1 --> n2
+    n3["Microsoft Entra ID tenants"]
+    n2 --> n3
+    n4["Management Groups"]
+    n3 --> n4
+    n5["Azure Subscriptions"]
+    n4 --> n5
+    n6["Resource Groups"]
+    n5 --> n6
+    n7["Azure Resource Manager ARM"]
+    n6 --> n7
+    n8["Azure Policy"]
+    n7 --> n8
+    n9["Azure Landing Zones"]
+    n8 --> n9
+    n10["Azure Well-Architected Framework"]
+    n9 --> n10
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n5
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n10
+~~~

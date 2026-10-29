@@ -1,5 +1,8 @@
 # C. Networking & Private Connectivity
 
+**[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
+
+
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json)
 
 This page keeps the core networking concepts together. Design the traffic path and trust boundaries first, then select Azure services that implement them.
@@ -202,3 +205,39 @@ Private connectivity is an end-to-end design, not a checkbox. A private endpoint
 - [ExpressRoute](https://learn.microsoft.com/azure/expressroute/expressroute-introduction)
 - [Private Link](https://learn.microsoft.com/azure/private-link/private-link-overview)
 - [NAT Gateway](https://learn.microsoft.com/azure/nat-gateway/nat-overview)
+
+## Component dependency flow
+
+The diagram includes every component in this catalog and shows a typical progression plus cross-cutting controls.
+
+~~~mermaid
+flowchart LR
+  subgraph CATC["C · Networking and Private Connectivity"]
+    n1["Virtual Networks VNet"]
+    n2["Subnets and CIDR Planning"]
+    n1 --> n2
+    n3["Network Security Groups NSGs"]
+    n2 --> n3
+    n4["Application Security Groups ASGs"]
+    n3 --> n4
+    n5["VNet Peering"]
+    n4 --> n5
+    n6["User-Defined Routes UDRs"]
+    n5 --> n6
+    n7["Azure Firewall"]
+    n6 --> n7
+    n8["VPN Gateway"]
+    n7 --> n8
+    n9["ExpressRoute"]
+    n8 --> n9
+    n10["Private Link and Private Endpoints"]
+    n9 --> n10
+    n11["Private DNS Zones"]
+    n10 --> n11
+    n12["NAT Gateway"]
+    n11 --> n12
+  end
+  Identity[Entra ID / RBAC] -. cross-cutting .-> n1
+  Network[Network / DNS / private access] -. cross-cutting .-> n6
+  Operations[Monitor / logs / cost] -. cross-cutting .-> n12
+~~~
