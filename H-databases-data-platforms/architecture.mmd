@@ -1,0 +1,27 @@
+flowchart LR
+  subgraph H["H · Databases and Data Platforms"]
+    n1["Azure SQL Database"]
+    n2["Azure SQL Managed Instance"]
+    n1 --> n2
+    n3["SQL Server on Azure VMs"]
+    n2 --> n3
+    n4["Azure Cosmos DB"]
+    n3 --> n4
+    n5["Azure Database for PostgreSQL"]
+    n4 --> n5
+    n6["Azure Database for MySQL"]
+    n5 --> n6
+    n7["Azure Managed Redis"]
+    n6 --> n7
+    n8["Azure Data Factory"]
+    n7 --> n8
+    n9["Azure Databricks"]
+    n8 --> n9
+    n10["Microsoft Fabric / OneLake"]
+    n9 --> n10
+  end
+  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
+  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n5
+  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n10
+  Foundation["A · Cloud foundation / landing zones"] --> n1
+  n10 -. telemetry / governance .-> Operations["K · Operations / security review"]
