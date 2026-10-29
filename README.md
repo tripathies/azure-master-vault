@@ -1,5 +1,9 @@
 # Azure Master Vault
 
+![Azure Master Vault master architecture](architecture.svg)
+
+- [Visual architecture library](VISUAL-DIAGRAMS.md) · [Editable draw.io master diagram](architecture.drawio)
+
 A checklist-driven Azure Solution Architect knowledge base. Each domain/category page contains the **actual component explanations, architecture guidance, decision criteria, security, operations, scenarios and interview preparation inline**. The component files are optional deep dives—not the primary learning experience.
 
 ## How to use this repository

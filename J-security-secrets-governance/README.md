@@ -1,5 +1,28 @@
 # J. Security, Secrets & Governance
 
+![Category architecture diagram](architecture.svg)
+
+- [Edit diagram in draw.io](architecture.drawio) · [Mermaid source](architecture.mmd)
+
+## Component completion tracker
+
+Use this checklist to review every component page. Mark an item complete only when content is present and verified; if an item is not applicable, record why.
+
+- [ ] Component-specific purpose, architecture placement, use cases and alternatives
+- [ ] Real Azure design details, not generic placeholder paragraphs
+- [ ] Identity, access, security, governance and data protection
+- [ ] Network design and private connectivity where applicable
+- [ ] Availability, scaling, backup/DR, limits and failure modes where applicable
+- [ ] Cost drivers, monitoring, operations and common mistakes
+- [ ] Enterprise scenario and decision trade-offs
+- [ ] Rendered Azure architecture diagram (SVG) and editable draw.io source
+- [ ] Validated Terraform/Bicep or policy/configuration samples where appropriate
+- [ ] Validation, deployment, output and cleanup steps where applicable
+- [ ] Interview questions/model answers and LinkedIn-ready summary
+- [ ] Current official Microsoft Learn references
+
+
+
 **[Component architecture map](architecture.mmd)** — arrows show a typical dependency/learning flow, not a mandatory deployment order.
 
 
