@@ -1,0 +1,7 @@
+flowchart LR
+    Req[Workload requirements] --> Decision[Evaluate Microsoft Azure fundamentals]
+    Decision --> Guardrails[Identity, network and governance guardrails]
+    Guardrails --> Component[Microsoft Azure fundamentals]
+    Component --> Ops[Monitoring, resilience and cost controls]
+    classDef azure fill:#e8f3ff,stroke:#0078d4,color:#172033
+    class Component azure
