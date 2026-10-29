@@ -1,5 +1,12 @@
 # Visual architecture diagrams
 
+## Master architecture flow
+
+- [View all 111 catalog components as an SVG diagram](architecture.svg)
+- [Open the editable master diagram in diagrams.net](architecture.drawio)
+
+
+
 **Editable source:** `.drawio` files open in [diagrams.net](https://app.diagrams.net/).  
 **Quick preview:** `.svg` files render directly in GitHub.  
 **Text model:** `.mmd` files are supplementary Mermaid source.
