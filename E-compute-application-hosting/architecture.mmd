@@ -1,0 +1,23 @@
+flowchart LR
+  subgraph E["E · Compute and Application Hosting"]
+    n1["Virtual Machines"]
+    n2["Managed Disks"]
+    n1 --> n2
+    n3["Availability Sets and Zones"]
+    n2 --> n3
+    n4["Virtual Machine Scale Sets"]
+    n3 --> n4
+    n5["Azure App Service"]
+    n4 --> n5
+    n6["Azure Functions"]
+    n5 --> n6
+    n7["Logic Apps"]
+    n6 --> n7
+    n8["Azure Batch"]
+    n7 --> n8
+  end
+  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
+  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n4
+  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n8
+  Foundation["A · Cloud foundation / landing zones"] --> n1
+  n8 -. telemetry / governance .-> Operations["K · Operations / security review"]
