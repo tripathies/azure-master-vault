@@ -1,0 +1,7 @@
+flowchart LR
+    Req[Workload requirements] --> Decision[Evaluate Regions, Region Pairs & Availability Zones]
+    Decision --> Guardrails[Identity, network and governance guardrails]
+    Guardrails --> Component[Regions, Region Pairs & Availability Zones]
+    Component --> Ops[Monitoring, resilience and cost controls]
+    classDef azure fill:#e8f3ff,stroke:#0078d4,color:#172033
+    class Component azure
