@@ -1,0 +1,7 @@
+flowchart TB
+    Workload[Protected workload] --> Policy[Backup policy]
+    Policy --> Vault[Supported backup vault]
+    Vault --> Recovery[Recovery points]
+    Recovery --> Monitoring[Job monitoring and alerts]
+    Recovery --> Restore[Test restore]
+    Restore --> Evidence[Application validation and evidence]
