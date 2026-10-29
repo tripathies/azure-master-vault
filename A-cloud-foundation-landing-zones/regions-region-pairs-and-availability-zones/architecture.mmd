@@ -1,7 +1,5 @@
 flowchart LR
-    Req[Workload requirements] --> Decision[Evaluate Regions, Region Pairs & Availability Zones]
-    Decision --> Guardrails[Identity, network and governance guardrails]
-    Guardrails --> Component[Regions, Region Pairs & Availability Zones]
-    Component --> Ops[Monitoring, resilience and cost controls]
-    classDef azure fill:#e8f3ff,stroke:#0078d4,color:#172033
-    class Component azure
+  Source["Organization / tenant"] --> Component["Regions Region Pairs and Availability Zones"] --> Consumer["Policy guardrails and governed workloads"]
+  Governance["Policy / compliance / ownership"] -. governs .-> Component
+  Operations["Azure Monitor / logs / alerts / cost"] -. observes .-> Component
+  Recovery["Availability / backup / DR / failover as required"] -. resilience .-> Component
