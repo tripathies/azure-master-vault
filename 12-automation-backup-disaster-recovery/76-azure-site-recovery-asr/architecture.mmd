@@ -1,0 +1,9 @@
+flowchart LR
+    Primary[Primary workload] --> Replication[ASR replication]
+    Replication --> Recovery[Recovery location]
+    Recovery --> Test[Test failover in isolated network]
+    Test --> Evidence[Validate app, DNS, identity and data]
+    Primary --> Declare{Disaster declared?}
+    Declare -->|Yes| Failover[Execute recovery plan]
+    Failover --> Business[Restore business service]
+    Business --> Failback[Reprotect / failback]
