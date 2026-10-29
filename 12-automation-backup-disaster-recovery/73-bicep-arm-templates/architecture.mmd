@@ -1,0 +1,7 @@
+flowchart LR
+    Source[Bicep source] --> Build[Build and lint]
+    Build --> Validate[ARM validation]
+    Validate --> WhatIf[What-if review]
+    WhatIf --> Approval[Approval]
+    Approval --> Deploy[ARM deployment]
+    Deploy --> Verify[Policy and resource verification]
