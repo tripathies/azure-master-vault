@@ -1,51 +1,54 @@
 # Azure Master Vault
 
-A practical, solution-architect-oriented knowledge base for designing, securing, operating, and evolving Microsoft Azure environments.
+A practical, checklist-driven Azure Solution Architect knowledge base, organized into **12 catalogues (A–L)** and dedicated component pages.
 
-## What this repository contains
+## How to use this repository
 
-The catalogue is organized into 12 domains, from cloud foundations and identity to networking, application platforms, data, security, operations, DevOps, resilience, migration, and AI.
+1. Open a domain below.
+2. Use its **checkbox checklist** to track study/review/completion.
+3. Click a component name to open its dedicated page under that domain folder.
+4. Complete the component checklist, validate its architecture, add service-specific diagrams and IaC, and use a pull request to review improvements.
 
-Each service/component guide is intended to include:
-- What it is, where it fits, when to use it, and alternatives
-- Identity, security, networking, and private connectivity considerations
-- Availability, disaster recovery, scaling, and cost considerations
-- Common mistakes and a realistic architecture scenario
-- Interview questions with model answers and a LinkedIn-ready post
-- Azure-friendly architecture diagrams (Mermaid; SVG where useful)
-- Terraform and/or Bicep examples, parameters, validation steps, and safe defaults where deployment code is appropriate
+> **Important behavior:** A normal GitHub Markdown link cannot create a file when clicked. Component pages are therefore pre-created in the repository, so clicking a catalogue item opens the page that can then be expanded through commits or pull requests.
 
-Governance and design-framework topics use policy, configuration, and decision examples rather than pretending every concept is a deployable resource.
+## Master catalogue
 
-## Catalogue
-
-| Domain | Folder |
+| Domain | Catalogue / checklist |
 |---|---|
-| A. Cloud Foundation & Landing Zones | [A-cloud-foundation-landing-zones](A-cloud-foundation-landing-zones/README.md) |
-| B. Identity & Access Management | [B-identity-access-management](B-identity-access-management/README.md) |
-| C. Networking & Private Connectivity | [C-networking-private-connectivity](C-networking-private-connectivity/README.md) |
-| D. Traffic Management & Delivery | [D-traffic-management-delivery](D-traffic-management-delivery/README.md) |
-| E. Compute & Application Hosting | [E-compute-application-hosting](E-compute-application-hosting/README.md) |
-| F. Containers & Kubernetes | [F-containers-kubernetes](F-containers-kubernetes/README.md) |
-| G. Storage & Enterprise File Services | [G-storage-enterprise-file-services](G-storage-enterprise-file-services/README.md) |
-| H. Databases & Data Platforms | [H-databases-data-platforms](H-databases-data-platforms/README.md) |
-| I. Integration & API Management | [I-integration-api-management](I-integration-api-management/README.md) |
-| J. Security, Secrets & Governance | [J-security-secrets-governance](J-security-secrets-governance/README.md) |
-| K. Monitoring, Operations & Cost | [K-monitoring-operations-cost](K-monitoring-operations-cost/README.md) |
-| L. DevOps, Resilience, Migration & AI | [L-devops-resilience-migration-ai](L-devops-resilience-migration-ai/README.md) |
+| A | [Cloud Foundation & Landing Zones](A-cloud-foundation-landing-zones/README.md) |
+| B | [Identity & Access Management](B-identity-access-management/README.md) |
+| C | [Networking & Private Connectivity](C-networking-private-connectivity/README.md) |
+| D | [Traffic Management & Delivery](D-traffic-management-delivery/README.md) |
+| E | [Compute & Application Hosting](E-compute-application-hosting/README.md) |
+| F | [Containers & Kubernetes](F-containers-kubernetes/README.md) |
+| G | [Storage & Enterprise File Services](G-storage-enterprise-file-services/README.md) |
+| H | [Databases & Data Platforms](H-databases-data-platforms/README.md) |
+| I | [Integration & API Management](I-integration-api-management/README.md) |
+| J | [Security, Secrets & Governance](J-security-secrets-governance/README.md) |
+| K | [Monitoring, Operations & Cost](K-monitoring-operations-cost/README.md) |
+| L | [DevOps, Resilience, Migration & AI](L-devops-resilience-migration-ai/README.md) |
 
-## Suggested learning path
+- [Machine-readable catalogue](catalog.json)
+- [License](LICENSE)
 
-1. Establish governance and landing-zone fundamentals.
-2. Learn identity, network segmentation, private connectivity, and perimeter controls.
-3. Select compute, container, storage, database, and integration services against requirements.
-4. Add observability, security posture management, cost controls, and operational processes.
-5. Automate repeatable deployments and test backup, recovery, migration, and AI platform patterns.
+## Definition of done for each component
 
-## Working safely
+- [ ] Service purpose, placement, use cases, alternatives
+- [ ] Identity, access, security, governance
+- [ ] Network design and private connectivity, where applicable
+- [ ] HA, scaling, backup/DR, limits and failure modes, where applicable
+- [ ] Cost model and optimization
+- [ ] Real-world scenario and decision trade-offs
+- [ ] Azure-friendly Mermaid diagram (SVG may be added for rendered diagrams)
+- [ ] Terraform/Bicep samples, parameter files and validation where appropriate
+- [ ] Interview questions and model answers
+- [ ] LinkedIn-ready post
+- [ ] Current Microsoft Learn references checked
 
-Examples are learning templates, not production approval. Review region and SKU availability, quotas, naming, RBAC scope, network ranges, data residency, compliance, private DNS, recovery objectives, and estimated cost before deployment. Never commit secrets, credentials, tenant-specific identifiers, or production state files. Pin provider/module versions and run validation and plan/what-if checks before applying changes.
+## Safe-use rules
 
-## Status
+Treat code as a learning baseline, not production approval. Verify provider/API versions, regions, SKU availability, quotas, naming, network ranges, RBAC scope, private DNS, data residency, recovery objectives, and costs before deployment. Never commit secrets or production Terraform state. Use least privilege, review plans/what-if output, and test recovery procedures.
 
-The catalogue is designed to grow incrementally. Each guide should distinguish verified platform behavior from assumptions and should link to official Microsoft documentation for service limits and changing features.
+## Architecture guide quality
+
+Every component guide should clearly label assumptions and known limitations, avoid unsupported claims, and link to current Microsoft documentation. Governance concepts (for example Azure Policy and the Well-Architected Framework) should use policy/configuration and decision records where appropriate, not misleading deployable resource templates.
