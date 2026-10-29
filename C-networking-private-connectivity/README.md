@@ -1,8 +1,11 @@
 # C. Networking & Private Connectivity
 
-![Category architecture diagram](architecture.svg)
+![Azure hub-and-spoke networking reference architecture](architecture.svg)
 
-- [Edit diagram in draw.io](architecture.drawio) · [Mermaid source](architecture.mmd)
+> **Read the topology:** public ingress is optional; hybrid connectivity terminates in the hub; spokes use explicit peering and routes; private PaaS access requires the endpoint, DNS, routing and service access settings to agree.
+
+- [Edit the network topology in draw.io](architecture.drawio) · [Mermaid source](architecture.mmd)
+- [Open the end-to-end Azure reference design](../AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
 
 ## Component completion tracker
 
