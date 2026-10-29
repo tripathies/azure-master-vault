@@ -1,0 +1,6 @@
+flowchart LR
+  Source["Source network / workload"] --> Component["Network Security Groups NSGs"] --> Consumer["Destination service / hybrid network"]
+  Identity["Microsoft Entra ID / RBAC / managed identity where supported"] -. authorizes .-> Component
+  Network["Network path / DNS / private connectivity where applicable"] -. constrains .-> Component
+  Operations["Azure Monitor / logs / alerts / cost"] -. observes .-> Component
+  Recovery["Availability / backup / DR / failover as required"] -. resilience .-> Component
