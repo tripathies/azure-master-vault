@@ -1,7 +1,5 @@
 flowchart LR
-    Req[Workload requirements] --> Decision[Evaluate Microsoft Entra ID tenants]
-    Decision --> Guardrails[Identity, network and governance guardrails]
-    Guardrails --> Component[Microsoft Entra ID tenants]
-    Component --> Ops[Monitoring, resilience and cost controls]
-    classDef azure fill:#e8f3ff,stroke:#0078d4,color:#172033
-    class Component azure
+  Source["Identity sources and administrators"] --> Component["Microsoft Entra ID tenants"] --> Consumer["Users apps policies and tenant roles"]
+  Governance["Policy / compliance / ownership"] -. governs .-> Component
+  Operations["Azure Monitor / logs / alerts / cost"] -. observes .-> Component
+  Recovery["Availability / backup / DR / failover as required"] -. resilience .-> Component
