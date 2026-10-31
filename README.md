@@ -21,6 +21,8 @@ The Vault is the **Azure theory and component knowledge base**. This repository 
 
 LittleNest is a sample children's clothing storefront backed by Node.js, Azure Functions, Cosmos DB, Storage Queue, Key Vault, managed identities, private endpoints, private DNS and Terraform. It connects the service guides in this Vault to a working application and infrastructure codebase.
 
+The project now includes a structured [Low-Level Design (LLD)](littlenest-azure-reference/lld/README.md) covering vision, scope, requirements, detailed design, identity, security, monitoring, operations and FinOps. It explicitly separates implemented controls from operational procedures and future recommendations.
+
 > **Scope and safety:** This is a low-cost, non-production learning lab, not a full enterprise landing-zone accelerator or production commerce platform. Its Azure-hosted application is private, not internet-facing. A local demo runs without Azure credentials or Azure resources. Azure deployment has not been validated by this repository's local CI alone; complete the live Azure validation checklist before treating a deployment as proven.
 
 ### Getting started
