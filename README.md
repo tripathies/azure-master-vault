@@ -19,6 +19,8 @@
 
 **[Launch the visual Azure Architecture Hub](https://tripathies.github.io/azure-master-vault/)** · [Solution blueprint catalogue](SOLUTION-BLUEPRINTS.md) · [Azure CLI and Terraform getting started](GETTING-STARTED-AZURE.md)
 
+To publish or enable the static site, follow [GitHub Pages setup](docs/PUBLISH-GITHUB-PAGES.md).
+
 The existing component Vault remains the source of truth for Azure service guidance. The Architecture Hub connects those components into foundations, reusable patterns and end-to-end business solutions.
 
 **Featured solution:** [LittleNest Kidswear — Profile A](solutions/littlenest-kidswear-profile-a/README.md) is a low-cost, non-production lab showing private App Service and Functions patterns, Cosmos DB Free Tier, Key Vault, private Storage and managed identity. It does not provision production subscriptions or claim production readiness.
