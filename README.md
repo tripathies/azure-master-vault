@@ -15,6 +15,13 @@
 
 ![Azure Master Vault architecture overview](architecture.svg)
 
+## AWS reference track — Landing Zone and Escanor
+
+The Vault now has a separate AWS architecture path: [**AWS Master Reference**](aws-master-reference/README.md). It starts with an AWS Organizations / Control Tower multi-account landing-zone blueprint and uses [**Escanor**](aws-master-reference/projects/escanor/README.md) as the first AWS workload project.
+
+The AWS design uses AWS-native terminology and controls rather than copying Azure service definitions. Its initial LLD covers the four drift planes, Amazon EKS, Argo CD, AWS observability, CUR 2.0 / Athena, IAM and a modernised Amazon Bedrock AgentCore design. The landing zone and Escanor are documentation blueprints at this stage; no AWS account, landing zone or workload resources are created by this repository change.
+
+
 ## Hands-on implementation project — LittleNest Kidswear
 
 The Vault is the **Azure theory and component knowledge base**. This repository also includes a complete, hands-on workload example: [**LittleNest Azure Reference**](littlenest-azure-reference/README.md).
