@@ -17,7 +17,7 @@ flowchart TB
       ST["Storage Account — Blob + Queue"]
     end
     USER["Approved private test client"] --> WEBPE --> APP
-    APP --> FUNC
+    APP --> FNPE --> FUNC
     FUNC --> CDBPE --> COS
     FUNC --> KVPE --> KV
     FUNC --> STPE --> ST
@@ -27,5 +27,4 @@ flowchart TB
     DNS -. name resolution .-> KVPE
     DNS -. name resolution .-> STPE
     TESTVM -. private path validation .-> WEBPE
-    ACA -. optional API hosting alternative .-> APP
     NOTE["No production subscription, hub, Front Door Premium or public ingress is deployed by default."]
