@@ -15,6 +15,12 @@
 
 ![Azure Master Vault architecture overview](architecture.svg)
 
+## Hands-on implementation reference
+
+The Vault remains the **theory and Azure component knowledge base**. For a working application and infrastructure example, explore the separate public [LittleNest Kidswear Azure workload lab](https://github.com/tripathies/tripathies/tree/main/azure-landing-zone-reference).
+
+That project contains the Node.js storefront, Azure Functions worker, Terraform infrastructure, Azure CLI setup, private networking, managed identity configuration, deployment steps and validation guidance. It is a low-cost non-production learning lab, not a full enterprise landing-zone deployment or production commerce platform.
+
 ## Your Azure learning tracker
 
 Use the checkboxes as a visible checklist and open a topic by clicking its name. Category totals are generated from the repository catalogue; the checkboxes in GitHub Markdown do **not** provide per-user automatic progress tracking or calculate a live completion percentage.
