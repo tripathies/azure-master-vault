@@ -15,11 +15,125 @@
 
 ![Azure Master Vault architecture overview](architecture.svg)
 
-## Hands-on implementation reference
+## Hands-on implementation project — LittleNest Kidswear
 
-The Vault remains the **theory and Azure component knowledge base**. For a working application and infrastructure example, explore the separate public [LittleNest Kidswear Azure workload lab](https://github.com/tripathies/tripathies/tree/main/azure-landing-zone-reference).
+The Vault is the **Azure theory and component knowledge base**. This repository also includes a complete, hands-on workload example: [**LittleNest Azure Reference**](littlenest-azure-reference/README.md).
 
-That project contains the Node.js storefront, Azure Functions worker, Terraform infrastructure, Azure CLI setup, private networking, managed identity configuration, deployment steps and validation guidance. It is a low-cost non-production learning lab, not a full enterprise landing-zone deployment or production commerce platform.
+LittleNest is a sample children's clothing storefront backed by Node.js, Azure Functions, Cosmos DB, Storage Queue, Key Vault, managed identities, private endpoints, private DNS and Terraform. It connects the service guides in this Vault to a working application and infrastructure codebase.
+
+> **Scope and safety:** This is a low-cost, non-production learning lab, not a full enterprise landing-zone accelerator or production commerce platform. Its Azure-hosted application is private, not internet-facing. A local demo runs without Azure credentials or Azure resources. Azure deployment has not been validated by this repository's local CI alone; complete the live Azure validation checklist before treating a deployment as proven.
+
+### Getting started
+
+Clone the Vault and open it in PowerShell 7 / VS Code:
+
+~~~powershell
+git clone https://github.com/tripathies/azure-master-vault.git
+Set-Location azure-master-vault
+code .
+~~~
+
+### Audit your workstation
+
+Check the tools without installing or changing anything:
+
+~~~powershell
+pwsh --version
+terraform version
+az version
+git --version
+code --version
+~~~
+
+The LittleNest Azure context preflight is read-only. It checks the active Azure CLI session, subscription state, selected resource providers and the requested region / Functions Flex Consumption runtime availability. First sign in to Azure and explicitly select the subscription:
+
+~~~powershell
+az login
+az account list --output table
+az account set --subscription '<subscription-id>'
+$subscriptionId = az account show --query id --output tsv
+az account show --query '{tenant:tenantId,subscription:id,user:user.name}' --output table
+
+./littlenest-azure-reference/scripts/Test-AzureContext.ps1 -Location centralindia -ExpectedSubscriptionId $subscriptionId
+~~~
+
+The preflight does not register providers, grant permissions or deploy resources. Provider registration, quota checks and any required access changes must be completed deliberately by an authorised subscription administrator.
+
+### Start with the credential-free local demo
+
+This is the safest first exercise. It does not require an Azure login and does not create Azure resources:
+
+~~~powershell
+Set-Location littlenest-azure-reference/app/web
+npm install
+$env:LOCAL_DEMO_MODE = "true"
+npm start
+~~~
+
+Open http://localhost:3000. The bundled sample catalogue and in-memory checkout let you explore the storefront. Run `npm test` in a second terminal to execute the local API smoke tests.
+
+### Safe Azure context
+
+Never select a subscription by display name in automation. Capture its ID, inspect the tenant and identity, and pass the ID explicitly to Terraform:
+
+~~~powershell
+$subscriptionId = az account show --query id --output tsv
+az account show --query '{tenant:tenantId,subscription:id,user:user.name}' --output table
+~~~
+
+For a deployable lesson, follow the dedicated [LittleNest README](littlenest-azure-reference/README.md) from prerequisites through cleanup. The core Terraform review sequence is:
+
+~~~powershell
+Set-Location littlenest-azure-reference/infra
+Copy-Item terraform.tfvars.example terraform.tfvars
+# Set subscription_id, terraform_runner_public_ip and deployer_principal_type in terraform.tfvars.
+terraform init
+terraform fmt -check -recursive
+terraform validate
+terraform plan -var "subscription_id=$subscriptionId" -out tfplan
+terraform show tfplan
+~~~
+
+**Do not skip the Storage bootstrap and RBAC steps in the LittleNest README.** This lab disables Storage shared-key access and uses Entra ID for Terraform data-plane operations. The README explains the staged resource-group / Storage bootstrap, the role assignments required by the Terraform caller, and the full apply sequence. Only apply a reviewed plan after confirming permissions, region support, quota and cost.
+
+~~~powershell
+terraform apply tfplan
+# After completing the lab and reviewing the destroy plan:
+terraform destroy -var "subscription_id=$subscriptionId"
+~~~
+
+Do not commit `terraform.tfvars`, plan files, state files, generated credentials or command output containing secrets. Keep local Terraform state and plans private.
+
+### Curriculum dependency map
+
+The hands-on workload follows this learning sequence. Read the linked theory guides, then inspect the matching implementation in `littlenest-azure-reference/infra` and `app`.
+
+~~~mermaid
+flowchart TD
+  A["Cloud foundation & subscription scope"] --> B["VNet, subnets & private DNS"]
+  B --> C["Private endpoints & network access"]
+  A --> D["Entra ID, RBAC & managed identities"]
+  C --> E["App Service and Azure Functions"]
+  D --> E
+  E --> F["Cosmos DB and Storage Queue"]
+  D --> F
+  D --> G["Key Vault secrets"]
+  E --> H["LittleNest storefront"]
+  F --> I["Asynchronous order worker"]
+  G --> H
+  H --> J["Validate, observe and destroy"]
+  I --> J
+~~~
+
+- [Cloud foundation and landing zones](A-cloud-foundation-landing-zones/README.md)
+- [Identity and access management](B-identity-access-management/README.md)
+- [Networking and private connectivity](C-networking-private-connectivity/README.md)
+- [Compute and application hosting](E-compute-application-hosting/README.md)
+- [Storage and enterprise file services](G-storage-enterprise-file-services/README.md)
+- [Databases and data platforms](H-databases-data-platforms/README.md)
+- [Security, secrets and governance](J-security-secrets-governance/README.md)
+- [Terraform, CI/CD and resilience](L-devops-resilience-migration-ai/README.md)
+
 
 ## Your Azure learning tracker
 
