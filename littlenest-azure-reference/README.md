@@ -4,6 +4,17 @@
 
 ![LittleNest Kidswear Profile A architecture](docs/architecture.svg)
 
+## Low-Level Design (LLD)
+
+The [LittleNest LLD](lld/README.md) documents the workload from architecture intent through implementation and operations:
+
+- [Vision, scope and requirements](lld/01-vision-scope-requirements.md)
+- [Detailed solution design](lld/02-detailed-solution-design.md)
+- [Identity and security](lld/03-identity-security.md)
+- [Monitoring, operations and FinOps](lld/04-monitoring-operations-finops.md)
+
+The LLD distinguishes implemented baseline controls from manual procedures and recommended future extensions. It is aligned to Profile A and does not claim that the lab is production-ready or that optional monitoring / budget resources are already deployed.
+
 ## What this project is
 
 This project folder contains **real application source code and Terraform infrastructure code** for a small children's clothing e-commerce learning application named **LittleNest Kidswear**.
