@@ -1,5 +1,17 @@
 # 05 — Resilience and Disaster Recovery
 
+## Lab profile limitations
+
+The current runnable lab is deliberately non-resilient:
+- One EC2 instance.
+- One Single-AZ RDS instance.
+- No cross-AZ application failover.
+- No cross-Region replication or recovery environment.
+- One small S3 bucket with versioning and a short noncurrent-version lifecycle policy.
+- Terraform state is stored separately in a versioned S3 backend bucket, but state-bucket disaster recovery is not automated.
+
+Use the recovery model below as the full-platform target design only. The lab's actual recovery procedure is to retain source / state appropriately, destroy and recreate disposable infrastructure, then re-bootstrap synthetic data. Do not quote the source document's RTO / RPO values as tested outcomes for the lab.
+
 ## 1. Objective
 
 Define the failure domains, backup dependencies and recovery approach for Escanor. The source design proposes warm recovery for important state and cold rebuild for most compute. That strategy is retained as a starting point, not as proof of a tested disaster recovery capability.
