@@ -1,5 +1,10 @@
 # Azure Master Vault
 
+<p align="center">
+  <img src="assets/azure-architecture-playbook-cover.svg" alt="Azure Architecture Playbook — From Cloud Fundamentals to Enterprise-Grade Architecture" width="100%" />
+</p>
+
+
 > **Azure Solution Architect learning portal** — track your learning, explore the end-to-end reference design, and open a focused guide for any Azure topic.
 
 [![Learning tracker](https://img.shields.io/badge/Learning%20tracker-open%20checklist-0078D4?style=for-the-badge)](#your-azure-learning-tracker)
