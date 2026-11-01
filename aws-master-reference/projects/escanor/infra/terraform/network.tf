@@ -74,7 +74,7 @@ resource "aws_vpc_endpoint" "s3" {
         Sid       = "ListEscanorUploads"
         Effect    = "Allow"
         Principal = "*"
-        Action    = ["s3:ListBucket"]
+        Action    = ["s3:ListBucket", "s3:ListBucketVersions"]
         Resource  = aws_s3_bucket.data.arn
         Condition = {
           StringLike = {
