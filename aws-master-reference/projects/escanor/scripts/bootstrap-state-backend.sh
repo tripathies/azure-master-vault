@@ -52,6 +52,26 @@ aws s3api put-bucket-encryption \
   --server-side-encryption-configuration \
   '{"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"AES256"}}]}'
 
+POLICY_FILE="$(mktemp)"
+trap 'rm -f "${POLICY_FILE}"' EXIT
+cat > "${POLICY_FILE}" <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "DenyInsecureTransport",
+    "Effect": "Deny",
+    "Principal": "*",
+    "Action": "s3:*",
+    "Resource": [
+      "arn:aws:s3:::${BUCKET}",
+      "arn:aws:s3:::${BUCKET}/*"
+    ],
+    "Condition": { "Bool": { "aws:SecureTransport": "false" } }
+  }]
+}
+EOF
+aws s3api put-bucket-policy --bucket "${BUCKET}" --region "${REGION}" --policy "file://${POLICY_FILE}"
+
 cat > "${BACKEND_FILE}" <<EOF
 bucket       = "${BUCKET}"
 key          = "escanor/${ENVIRONMENT}/terraform.tfstate"
