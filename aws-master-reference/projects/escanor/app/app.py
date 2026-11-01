@@ -167,6 +167,35 @@ def create_app() -> Flask:
             app.logger.exception("S3 list failed")
             return jsonify(error="S3 list failed", detail=type(exc).__name__), 503
 
+    @app.get("/api/objects/<name>")
+    def read_object(name: str):
+        if not valid_object_name(name):
+            return jsonify(error="name must be a simple file name"), 400
+        key = f"uploads/{name}"
+        try:
+            response = get_s3_client().get_object(
+                Bucket=required_env("S3_BUCKET"),
+                Key=key,
+            )
+            content_type = response.get("ContentType", "application/octet-stream")
+            body = response["Body"].read(48 * 1024 + 1)
+            if len(body) > 48 * 1024:
+                return jsonify(error="object is larger than the learning app read limit"), 413
+            try:
+                text = body.decode("utf-8")
+            except UnicodeDecodeError:
+                return jsonify(error="object is not UTF-8 text"), 415
+            return jsonify(key=key, content_type=content_type, content=text)
+        except ClientError as exc:
+            code = exc.response.get("Error", {}).get("Code", "")
+            if code in {"NoSuchKey", "NoSuchVersion", "404"}:
+                return jsonify(error="object not found"), 404
+            app.logger.exception("S3 object read failed")
+            return jsonify(error="S3 object read failed", detail=type(exc).__name__), 503
+        except (RuntimeError, BotoCoreError) as exc:
+            app.logger.exception("S3 object read failed")
+            return jsonify(error="S3 object read failed", detail=type(exc).__name__), 503
+
     @app.get("/api/object-versions")
     def list_object_versions():
         name = request.args.get("name", "")
