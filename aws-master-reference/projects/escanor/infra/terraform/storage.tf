@@ -1,14 +1,17 @@
 resource "aws_s3_bucket" "data" {
   bucket        = local.s3_bucket_name
   force_destroy = true
-  tags = { Name = "${local.name}-data" }
+  tags          = { Name = "${local.name}-data" }
 }
+
 resource "aws_s3_bucket_ownership_controls" "data" {
   bucket = aws_s3_bucket.data.id
+
   rule {
     object_ownership = "BucketOwnerEnforced"
   }
 }
+
 resource "aws_s3_bucket_public_access_block" "data" {
   bucket                  = aws_s3_bucket.data.id
   block_public_acls       = true
@@ -16,41 +19,52 @@ resource "aws_s3_bucket_public_access_block" "data" {
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
+
 resource "aws_s3_bucket_versioning" "data" {
   bucket = aws_s3_bucket.data.id
+
   versioning_configuration {
     status = "Enabled"
   }
 }
+
 resource "aws_s3_bucket_server_side_encryption_configuration" "data" {
   bucket = aws_s3_bucket.data.id
+
   rule {
     apply_server_side_encryption_by_default {
       sse_algorithm = "AES256"
     }
   }
 }
+
 resource "aws_s3_bucket_lifecycle_configuration" "data" {
   bucket = aws_s3_bucket.data.id
+
   rule {
     id     = "abort-incomplete-multipart-uploads"
     status = "Enabled"
     filter {}
+
     abort_incomplete_multipart_upload {
       days_after_initiation = 7
     }
   }
+
   rule {
     id     = "expire-noncurrent-versions"
     status = "Enabled"
     filter {}
+
     noncurrent_version_expiration {
       noncurrent_days = 30
     }
   }
 }
+
 resource "aws_s3_bucket_policy" "data" {
   bucket = aws_s3_bucket.data.id
+
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -66,5 +80,6 @@ resource "aws_s3_bucket_policy" "data" {
       }
     ]
   })
+
   depends_on = [aws_s3_bucket_public_access_block.data]
 }
