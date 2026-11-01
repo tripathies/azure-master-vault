@@ -178,7 +178,11 @@ def create_app() -> Flask:
                 Key=key,
             )
             content_type = response.get("ContentType", "application/octet-stream")
-            body = response["Body"].read(48 * 1024 + 1)
+            body_stream = response["Body"]
+            try:
+                body = body_stream.read(48 * 1024 + 1)
+            finally:
+                body_stream.close()
             if len(body) > 48 * 1024:
                 return jsonify(error="object is larger than the learning app read limit"), 413
             try:
