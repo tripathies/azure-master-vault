@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escanor AWS Learning Lab</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, system-ui, Arial, sans-serif; }
+    body { max-width: 980px; margin: 32px auto; padding: 0 18px; color: #172033; background: #f5f7fb; }
+    header, section { background: white; border: 1px solid #dce3ed; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+    h1 { margin: 0 0 8px; } h2 { font-size: 1.1rem; }
+    p, small { color: #526078; }
+    button { border: 0; border-radius: 7px; padding: 10px 14px; background: #1b5f9e; color: white; cursor: pointer; }
+    input, textarea { width: 100%; box-sizing: border-box; border: 1px solid #c9d3e1; border-radius: 7px; padding: 10px; margin: 6px 0 12px; font: inherit; }
+    textarea { min-height: 80px; }
+    pre { white-space: pre-wrap; background: #101b2c; color: #e7eefb; padding: 14px; border-radius: 8px; overflow-wrap: anywhere; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .muted { font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Escanor AWS Learning Lab</h1>
+    <p>EC2 → private RDS PostgreSQL using IAM database authentication, and EC2 → S3 through a VPC gateway endpoint.</p>
+    <p class="muted">This lab has no inbound EC2 security-group rules. Open it through an AWS Systems Manager port-forwarding session.</p>
+    <button onclick="runDiagnostics()">Run connectivity checks</button>
+    <pre id="diagnostics">Not checked yet.</pre>
+  </header>
+  <div class="grid">
+    <section>
+      <h2>Amazon RDS — PostgreSQL</h2>
+      <form id="noteForm">
+        <label for="note">Learning note</label>
+        <textarea id="note" maxlength="500" required placeholder="Example: EC2 reached RDS over the private subnet path."></textarea>
+        <button type="submit">Save note to RDS</button>
+      </form>
+      <button onclick="loadNotes()">Refresh notes</button>
+      <pre id="notes">No notes loaded.</pre>
+    </section>
+    <section>
+      <h2>Amazon S3 — object storage</h2>
+      <form id="objectForm">
+        <label for="filename">File name</label>
+        <input id="filename" maxlength="120" required value="aws-learning-note.txt">
+        <label for="content">Text content</label>
+        <textarea id="content" maxlength="48000" required placeholder="This object is stored in a private S3 bucket."></textarea>
+        <button type="submit">Upload object to S3</button>
+      </form>
+      <button onclick="loadObjects()">List objects</button>
+      <pre id="objects">No objects loaded.</pre>
+    </section>
+  </div>
+  <script>
+    async function show(id, value) { document.getElementById(id).textContent = JSON.stringify(value, null, 2); }
+    async function requestJson(url, options) {
+      const response = await fetch(url, options);
+      const body = await response.json();
+      if (!response.ok) throw new Error(body.error || ("HTTP " + response.status));
+      return body;
+    }
+    async function runDiagnostics() {
+      try { await show("diagnostics", await requestJson("/api/diagnostics")); }
+      catch (error) { await show("diagnostics", { error: error.message }); }
+    }
+    async function loadNotes() {
+      try { await show("notes", await requestJson("/api/notes")); }
+      catch (error) { await show("notes", { error: error.message }); }
+    }
+    async function loadObjects() {
+      try { await show("objects", await requestJson("/api/objects")); }
+      catch (error) { await show("objects", { error: error.message }); }
+    }
+    document.getElementById("noteForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      try {
+        const note = document.getElementById("note").value;
+        await requestJson("/api/notes", { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({note}) });
+        document.getElementById("note").value = "";
+        await loadNotes();
+      } catch (error) { await show("notes", { error: error.message }); }
+    });
+    document.getElementById("objectForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      try {
+        const name = document.getElementById("filename").value;
+        const content = document.getElementById("content").value;
+        await show("objects", await requestJson("/api/objects", { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({name, content}) }));
+        await loadObjects();
+      } catch (error) { await show("objects", { error: error.message }); }
+    });
+  </script>
+</body>
+</html>
