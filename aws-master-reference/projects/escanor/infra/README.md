@@ -34,6 +34,7 @@ The application source is embedded into EC2 user data using Terraform `filebase6
 The root module uses an S3 backend with native S3 lock-file support (`use_lockfile = true`). Terraform 1.10 or later is required. Bootstrap the bucket before initialising this module:
 
 ```bash
+cd aws-master-reference/projects/escanor/infra/terraform
 export AWS_PROFILE=escanor-lab
 export AWS_REGION=ap-south-1
 bash ../../scripts/bootstrap-state-backend.sh
@@ -46,7 +47,7 @@ For team use, restrict the state bucket to the approved Terraform roles, enable 
 
 ## 4. Apply workflow
 
-From this directory:
+From the repository root:
 
 ```bash
 cp terraform.tfvars.example terraform.tfvars
