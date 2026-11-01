@@ -9,7 +9,7 @@
 | [AWS landing zone](landing-zone/README.md) | Multi-account foundation, governance, identity, security, network, logging and FinOps |
 | [Escanor AWS reference project](projects/escanor/README.md) | Runnable small-footprint EC2, RDS, S3 and VPC endpoint learning lab; larger AIOps platform roadmap |
 | [Escanor low-level design](projects/escanor/lld/README.md) | Requirements, solution design, identity/security, operations/FinOps, DR and validation |
-| [Escanor infrastructure plan](projects/escanor/infra/README.md) | Planned Terraform repository structure and implementation boundaries |
+| [Escanor Terraform](projects/escanor/infra/README.md) | Executable Terraform for the EC2, private RDS, S3 and endpoint learning lab |
 
 ## Architecture principles
 
@@ -43,7 +43,7 @@ These are conceptual comparisons, not equivalence claims. Select services based 
 ## Scope and status
 
 - **Landing zone:** architecture blueprint; it has not been provisioned by this documentation change.
-- **Escanor learning lab:** Terraform and Python application code are provided for a reader-managed deployment using a small EC2 instance, private PostgreSQL RDS, S3 and VPC endpoints.
+- **Escanor learning lab:** Executable Terraform and Python application code are provided for a reader-managed deployment using a small EC2 instance, private PostgreSQL RDS, S3 and VPC endpoints. A CI pipeline runs application unit tests and Terraform static validation without AWS credentials.
 - **Full Escanor AIOps platform:** EKS, Argo CD, four drift collectors, CUR analytics and AgentCore remain the future architecture roadmap.
 - **Regions:** the reference design retains `ap-south-1` as the primary region and `us-east-1` as the proposed recovery region. Service availability, model availability, quotas, data-residency implications and costs must be reconfirmed before implementation.
 
@@ -58,7 +58,7 @@ These are conceptual comparisons, not equivalence claims. Select services based 
 
 ## Runnable first workload — Escanor learning lab
 
-The [Escanor AWS project](projects/escanor/README.md) now includes Terraform, a Python sample application, database bootstrap tooling, Session Manager helpers, validation scripts and a GitHub Actions build pipeline. It is intentionally small: EC2 `t3.micro`, PostgreSQL RDS `db.t4g.micro`, a private/versioned S3 bucket, S3 Gateway Endpoint and Systems Manager PrivateLink endpoints.
+The [Escanor AWS project](projects/escanor/README.md) includes Terraform, a Python sample application, database bootstrap tooling, Session Manager helpers, validation scripts and a GitHub Actions build pipeline. It is intentionally small: EC2 `t3.micro`, PostgreSQL RDS `db.t4g.micro`, a private/versioned S3 bucket, S3 Gateway Endpoint and Systems Manager PrivateLink endpoints.
 
 Readers deploy it only in their own disposable AWS account by following the [getting-started guide](projects/escanor/docs/getting-started.md). CI performs code and Terraform validation; it does not deploy AWS resources. The original larger Escanor EKS / AIOps design is retained as a roadmap, not represented as already implemented.
 
