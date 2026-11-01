@@ -128,7 +128,9 @@ def create_app() -> Flask:
 
     @app.post("/api/notes")
     def create_note():
-        payload = request.get_json(silent=True) or {}
+        payload = request.get_json(silent=True)
+        if not isinstance(payload, dict):
+            return jsonify(error="request body must be a JSON object"), 400
         note = payload.get("note")
         if not isinstance(note, str) or not note.strip() or len(note.strip()) > 500:
             return jsonify(error="note must contain 1 to 500 characters"), 400
@@ -238,7 +240,9 @@ def create_app() -> Flask:
 
     @app.post("/api/objects")
     def upload_object():
-        payload = request.get_json(silent=True) or {}
+        payload = request.get_json(silent=True)
+        if not isinstance(payload, dict):
+            return jsonify(error="request body must be a JSON object"), 400
         name = payload.get("name")
         content = payload.get("content")
         if not valid_object_name(name):
