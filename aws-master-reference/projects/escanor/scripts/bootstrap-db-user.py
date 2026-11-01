@@ -18,7 +18,16 @@ def main() -> int:
     parser.add_argument("--local-port", type=int, default=15432)
     parser.add_argument("--database", default="escanor")
     parser.add_argument("--app-user", default="escanor_app")
+    parser.add_argument(
+        "--ssl-root-cert",
+        default="~/.aws/rds-global-bundle.pem",
+        help="Path to the AWS RDS CA bundle used to verify the DB server certificate.",
+    )
     args = parser.parse_args()
+    from pathlib import Path
+    ca_bundle = Path(args.ssl_root_cert).expanduser()
+    if not ca_bundle.is_file():
+        parser.error(f"RDS CA bundle not found: {ca_bundle}")
 
     secret_response = boto3.client(
         "secretsmanager", region_name=args.region
@@ -31,7 +40,8 @@ def main() -> int:
         dbname=args.database,
         user=secret["username"],
         password=secret["password"],
-        sslmode="require",
+        sslmode="verify-ca",
+        sslrootcert=str(ca_bundle),
         connect_timeout=5,
     ) as connection:
         with connection.cursor() as cursor:
