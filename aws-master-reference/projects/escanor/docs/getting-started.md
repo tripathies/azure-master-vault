@@ -115,6 +115,9 @@ Only then apply the saved plan:
 
 ```bash
 terraform apply tfplan
+
+# Return to the Escanor project root for the helper scripts and app commands.
+cd ../..
 ```
 
 Terraform outputs provide the EC2 instance ID, private RDS endpoint, S3 bucket and SSM commands. The EC2 user-data process can take several minutes to install the application. Check Systems Manager managed-node status before starting a session.
