@@ -1,5 +1,15 @@
 # 04 — Monitoring, Operations and FinOps
 
+## Current lab telemetry boundary
+
+The runnable lab has basic operational visibility through:
+- EC2 / RDS standard CloudWatch service metrics.
+- SSM managed-node state and Session Manager session logs only if the reader enables the relevant account / session logging configuration.
+- Application stdout / stderr and bootstrap logs through systemd journal and the EC2 system log.
+- The application health endpoint and diagnostics check for RDS and S3 connectivity.
+
+This Terraform profile does **not** create CloudWatch Log Groups, CloudWatch Agent configuration, dashboards, alarms, SNS notifications, AWS Budgets or a FinOps CUR pipeline. The full Escanor monitoring / savings architecture below is the target design and future implementation roadmap. Add those resources as a distinct increment after the base lab has been validated.
+
 ## 1. Operational objectives
 
 Escanor has two distinct responsibilities:
