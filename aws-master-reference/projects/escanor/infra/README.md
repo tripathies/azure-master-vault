@@ -1,97 +1,76 @@
-# Escanor AWS — Terraform Infrastructure Plan
+# Escanor AWS — Terraform Infrastructure
 
-**Status:** Planned structure only; no executable Escanor Terraform modules are included in this initial documentation change.
+**Status:** Executable Terraform configuration for the small learning-lab profile. The larger EKS / AIOps roadmap is documented separately.
 
-## 1. Design rules
+## 1. Resources created
 
-- Keep AWS landing-zone provisioning separate from workload provisioning.
-- Run workload Terraform only in the dedicated Escanor member account.
-- Use the AWS provider with pinned versions and an explicit Region.
-- Use short-lived CI OIDC credentials / STS roles.
-- Use a protected S3 remote backend with versioning, encryption, restrictive policy and state locking.
-- Separate bootstrap, network, EKS, observability, drift, FinOps, AgentCore and console layers.
-- Keep secrets out of variables, outputs, plans and source.
-- Require a reviewed plan and approval before apply.
-- Do not store Terraform state in the source repository.
+| Layer | Terraform resources | Design |
+|---|---|---|
+| Network | VPC, Internet Gateway, 3 subnets, route tables and associations | One public subnet plus private subnets in two AZs |
+| Private service connectivity | S3 Gateway Endpoint; SSM, ssmmessages and optional ec2messages Interface Endpoints | Endpoint policies and security groups |
+| Compute | EC2, IAM role, instance profile, security group | Amazon Linux 2023, t3.micro default, IMDSv2 required, no inbound rules |
+| Database | RDS PostgreSQL, DB subnet group and security group | db.t4g.micro default, Single-AZ, encrypted, private, IAM DB authentication |
+| Storage | S3 bucket, ownership controls, public-access block, versioning, encryption, lifecycle, TLS-only bucket policy | Private bucket with uploads prefix |
+| IAM | EC2 trust role, SSM managed policy and inline app policy | S3 prefix access and rds-db:connect scoped to the app DB user |
 
-## 2. Planned directory layout
+The application source is embedded into EC2 user data using Terraform `filebase64()`. On first boot, the instance installs Python dependencies, downloads the RDS CA bundle and starts the Flask/Gunicorn app with systemd.
 
-```text
-infra/
-└── terraform/
-    ├── bootstrap/
-    │   ├── state-backend/
-    │   └── deployment-identity/
-    ├── environments/
-    │   ├── lab/
-    │   └── production/
-    ├── modules/
-    │   ├── network/
-    │   ├── eks/
-    │   ├── ecr/
-    │   ├── gitops/
-    │   ├── observability/
-    │   ├── drift-exporter/
-    │   ├── finops/
-    │   ├── data/
-    │   ├── agentcore/
-    │   └── console/
-    └── policies/
-        ├── iam/
-        └── bucket-policies/
-```
+## 2. Files
 
-This is a planned structure. Module boundaries may change after service availability, threat model, cost and dependency review. Do not create a single state file for the entire AWS Organization and Escanor workload.
+- `versions.tf`: Terraform version, backend and provider constraints.
+- `variables.tf`: Region, instance sizes, CIDRs, DB and endpoint variables.
+- `main.tf`: provider data, AZ selection, tags and generated S3 bucket suffix.
+- `network.tf`: VPC, subnets, routes, S3 Gateway Endpoint and Systems Manager Interface Endpoints.
+- `security.tf`: security groups; intentionally no EC2 ingress.
+- `compute.tf` and `user_data.sh.tftpl`: EC2 application host and bootstrap.
+- `database.tf`: private RDS PostgreSQL.
+- `storage.tf`: private, encrypted, versioned S3 bucket.
+- `iam.tf`: instance role and least-privilege application permissions.
+- `outputs.tf`: resource IDs and connection commands.
+- `terraform.tfvars.example`: small default lab profile.
 
 ## 3. State backend
 
-The proposed workload backend is an S3 bucket in a separately governed tooling / state account, or in the Escanor account for a strictly isolated lab where a separate account is not available.
+The root module uses an S3 backend with native S3 lock-file support (`use_lockfile = true`). Terraform 1.10 or later is required. Bootstrap the bucket before initialising this module:
 
-Required controls:
-- S3 versioning.
-- SSE-KMS or an approved encryption policy.
-- Block Public Access.
-- Bucket policy scoped to the deployment role and required state prefix.
-- Native Terraform S3 backend locking supported by the pinned Terraform version.
-- Access logging / CloudTrail data events where justified.
-- Recovery procedure for state version restore.
-- No public access or developer-wide read grants.
+```bash
+export AWS_PROFILE=escanor-lab
+export AWS_REGION=ap-south-1
+bash ../../scripts/bootstrap-state-backend.sh
+terraform init -backend-config=backend.hcl
+```
 
-The exact backend and lock configuration must be validated with the pinned Terraform version before use.
+The generated `backend.hcl` is local and git-ignored. The state bucket is deliberately separate from the workload bucket and is **not** destroyed by the Escanor workload state. Keep its name and recovery ownership documented. Do not delete the state bucket while the state is still needed.
 
-## 4. Module responsibilities
+For team use, restrict the state bucket to the approved Terraform roles, enable versioning and encryption, and establish state recovery and access review. The bootstrap script applies encryption, versioning, public-access blocking and bucket-owner-enforced ownership; a production backend should also receive an audited bucket policy and retention controls appropriate to the organization.
 
-| Module | Responsibilities |
-|---|---|
-| network | VPC, AZ-aware subnets, routes, security groups, endpoints, DNS and egress |
-| eks | Cluster, managed node groups, access entries, encryption and add-ons |
-| ecr | Container repositories, image scanning and lifecycle policy |
-| gitops | Argo CD bootstrap and repository integration |
-| observability | Prometheus / Grafana / Alertmanager / Fluent Bit and CloudWatch wiring |
-| drift-exporter | Collector deployment, schema configuration and metrics endpoints |
-| finops | CUR 2.0 destinations, S3, Glue, Athena and query resources |
-| data | RDS PostgreSQL, subnet groups, KMS, backup and security groups |
-| agentcore | Runtime / harness, Gateway, Identity, tool policies and logging configuration |
-| console | Streamlit deployment, ingress, authentication and evidence API access |
+## 4. Apply workflow
 
-Use separate state boundaries for resources with different owners, change cadence or blast radius. In particular, the landing zone and security accounts must not be managed by the Escanor workload state.
+From this directory:
 
-## 5. Required inputs
+```bash
+cp terraform.tfvars.example terraform.tfvars
+terraform fmt -check -recursive
+terraform init -backend-config=backend.hcl
+terraform validate
+terraform plan -out=tfplan
+terraform show tfplan
+# Apply only after reviewing the complete plan and account / Region:
+terraform apply tfplan
+```
 
-Avoid embedding account IDs, secrets or public IPs in code. Inputs should include:
-- AWS account ID / role context.
-- Primary Region and approved recovery Region.
-- Environment and project tags.
-- VPC CIDR and subnet plan.
-- EKS supported version selected for the release.
-- Node group instance family / size / capacity model.
-- RDS engine version, storage and backup policy.
-- S3 retention and replication requirements.
-- AgentCore runtime / model choice and feature flags.
-- Budget threshold and owner notification target.
+The root README walkthrough explains login, database bootstrap, Session Manager access, smoke tests and destroy. Never commit `terraform.tfvars`, `backend.hcl`, state, plans, credentials or generated output.
 
-Use validation blocks and preflight scripts to reject an unexpected account, unapproved Region or unsafe environment.
+## 5. Important design notes
 
-## 6. Future implementation gates
+- The EC2 public IPv4 is used for outbound package installation through the Internet Gateway. The EC2 security group has no ingress rules; do not add SSH or open the app port.
+- RDS is private and accepts PostgreSQL only from the EC2 security group.
+- The application authenticates to PostgreSQL through RDS IAM DB authentication. A one-time local script uses the RDS-managed master secret over an SSM remote-host port forward to create the `escanor_app` role and sample table. EC2 never receives the master password.
+- The S3 Gateway Endpoint policy allows the uploads prefix only. It is not the same as an S3 Interface Endpoint for hybrid / peered-VPC access.
+- SSM Interface Endpoints cost per endpoint-hour and data processing. Set `enable_ssm_vpc_endpoints = false` only if you intentionally want SSM to use the public service endpoint over the instance's outbound Internet path.
+- RDS backup retention is one day by default, deletion protection is disabled, final snapshot is skipped and S3 force_destroy is enabled for lab teardown. These are deliberately non-production settings.
+- The DB storage starts at 20 GiB and may incur cost. Sizing and instance availability must be checked in the selected Region.
 
-Before writing deployable modules, close the decisions in [02 — Detailed Solution Design](../lld/02-detailed-solution-design.md). Then implement and validate one layer at a time. A successful Terraform plan is not evidence that quotas, service-linked roles, EKS add-ons, model access or runtime networking will succeed during apply.
+## 6. No deployment is performed by CI
+
+The root GitHub Actions workflow performs app tests and Terraform static validation only. It does not assume an AWS role or provision resources. Readers deliberately run the reviewed Terraform commands from their own authenticated workstation.
