@@ -1,115 +1,103 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="857" viewBox="0 0 1536 857" role="img" aria-labelledby="title desc">
-<title id="title">Azure Architecture Playbook — End-to-End Reference Architecture</title>
-<desc id="desc">Conceptual enterprise Azure design showing global routing, landing-zone governance, identity and security, two regions, application and data tiers, private connectivity, monitoring, AI Foundry and data replication.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Azure Architecture Playbook</title>
+<desc id="desc">A readable conceptual Azure enterprise reference architecture showing global entry, landing-zone governance, shared identity and operations controls, primary and recovery regions, application and data services, private connectivity and cross-region resilience.</desc>
 <defs>
- <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020b1e"/><stop offset=".5" stop-color="#06294b"/><stop offset="1" stop-color="#010817"/></linearGradient>
- <linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9ffaff"/><stop offset=".42" stop-color="#20cffa"/><stop offset="1" stop-color="#0872d5"/></linearGradient>
- <linearGradient id="white" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#b9d9f5"/></linearGradient>
- <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b3d67"/><stop offset="1" stop-color="#06172f"/></linearGradient>
- <linearGradient id="region2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172c62"/><stop offset="1" stop-color="#07152e"/></linearGradient>
- <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
- <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#2d91c5" stroke-opacity=".16"/><circle r="1.4" fill="#50dff8" fill-opacity=".22"/></pattern>
- <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#59e9ff" stroke-width="1.2"/></marker>
- <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#53f3d7" stroke-width="1.2"/></marker>
- <symbol id="db" viewBox="0 0 52 58"><path d="M6 10V46C6 56 46 56 46 46V10" fill="#0876b9" stroke="#70eaff" stroke-width="1.5"/><path d="M6 22C6 32 46 32 46 22M6 35C6 45 46 45 46 35" fill="none" stroke="#a2f5ff" stroke-width="1.2"/><ellipse cx="26" cy="10" rx="20" ry="7" fill="#36c9f6" stroke="#a4faff" stroke-width="1.5"/></symbol>
- <symbol id="vm" viewBox="0 0 56 48"><rect x="3" y="3" width="50" height="42" rx="5" fill="#07558b" stroke="#62e9ff" stroke-width="1.5"/><rect x="9" y="9" width="38" height="25" rx="2" fill="#0c2e53" stroke="#7edfff"/><path d="M17 17H39M17 22H34M17 27H29" stroke="#56dff8" stroke-width="1.5"/><circle cx="28" cy="39" r="1.7" fill="#c5fbff"/></symbol>
- <symbol id="shield" viewBox="0 0 48 52"><path d="M24 3L43 10V24C43 37 35 45 24 50C13 45 5 37 5 24V10Z" fill="#0a4b78" stroke="#65edff" stroke-width="2"/><path d="M15 25L21 31L34 17" fill="none" stroke="#b4fbff" stroke-width="3"/></symbol>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#020d22"/><stop offset=".52" stop-color="#062b4b"/><stop offset="1" stop-color="#010918"/></linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#91f5ff"/><stop offset=".5" stop-color="#21c8f1"/><stop offset="1" stop-color="#0878cf"/></linearGradient>
+  <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b426a"/><stop offset="1" stop-color="#061c36"/></linearGradient>
+  <linearGradient id="primary" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#073e60"/><stop offset="1" stop-color="#061a32"/></linearGradient>
+  <linearGradient id="recovery" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#282d68"/><stop offset="1" stop-color="#101a3b"/></linearGradient>
+  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#3b9ac7" stroke-opacity=".14" stroke-width="1"/></pattern>
+  <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <marker id="arrowCyan" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#72eaff" stroke-width="1.5"/></marker>
+  <marker id="arrowMint" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#72f4dc" stroke-width="1.5"/></marker>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif}
+    .section{font-size:18px;font-weight:800;letter-spacing:1.2px}
+    .tileTitle{font-size:19px;font-weight:700;fill:#f4fbff}
+    .tileSub{font-size:16px;fill:#bfeeff}
+    .small{font-size:14px;fill:#a9d6ef}
+    .flow{fill:none;stroke:#5bdef5;stroke-width:2.5;marker-end:url(#arrowCyan)}
+  </style>
 </defs>
-<rect width="1536" height="857" fill="url(#bg)"/><rect width="1536" height="857" fill="url(#grid)"/>
-<g fill="none" stroke="#27b9e9" opacity=".18"><path d="M0 145H1536M0 735H1536"/><circle cx="1110" cy="425" r="385" stroke-dasharray="3 15"/><circle cx="1110" cy="425" r="330" stroke-dasharray="2 19"/><path d="M710 0V857" stroke-dasharray="5 10"/></g>
-<!-- BRAND -->
-<g font-family="Arial,Helvetica,sans-serif">
- <text x="62" y="190" font-size="115" font-weight="900" letter-spacing="2" fill="url(#cyan)" stroke="#72eaff" stroke-width="1" paint-order="stroke" filter="url(#glow)">AZURE</text>
- <text x="64" y="294" font-size="67" font-weight="900" fill="url(#cyan)">ARCHITECTURE</text>
- <text x="60" y="390" font-size="91" font-weight="900" letter-spacing="1" fill="url(#white)">PLAYBOOK</text>
- <path d="M65 420H685" stroke="#2ad9ff" stroke-width="3" filter="url(#glow)"/>
- <text x="67" y="492" font-size="34" font-weight="700" fill="#f1fbff">From Cloud Fundamentals to</text>
- <text x="67" y="538" font-size="34" font-weight="700" fill="#68edff">Enterprise-Grade Architecture</text>
- <text x="67" y="602" font-size="19" font-weight="700" letter-spacing="2.6" fill="#52bdeb">END-TO-END AZURE REFERENCE DESIGN</text>
- <path d="M66 620H682" stroke="#258fc4" stroke-width="1.5"/>
- <rect x="66" y="659" width="580" height="76" rx="38" fill="#062b4b" stroke="#48e4ff" stroke-width="2.5" filter="url(#glow)"/>
- <rect x="74" y="667" width="564" height="60" rx="30" fill="none" stroke="#9af8ff" stroke-opacity=".4"/>
- <text x="356" y="707" text-anchor="middle" font-size="23" font-weight="800" letter-spacing="2.5" fill="#d6fbff">DESIGN  •  BUILD  •  SECURE  •  AUTOMATE</text>
- <text x="68" y="790" font-size="17" letter-spacing="3.3" fill="#62b6e6">OPEN-SOURCE CLOUD ARCHITECTURE KNOWLEDGE</text>
+<rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/>
+<path d="M0 205H1600" stroke="#39b7e8" stroke-opacity=".26" stroke-width="2"/>
+<g opacity=".16" fill="none" stroke="#1ca9df"><circle cx="1350" cy="100" r="260" stroke-dasharray="4 16"/><circle cx="1350" cy="100" r="215" stroke-dasharray="2 13"/><path d="M0 810H1600"/></g>
+<!-- Brand header -->
+<g>
+  <text x="62" y="96" font-size="78" font-weight="900" letter-spacing="2" fill="url(#blue)" filter="url(#softGlow)">AZURE</text>
+  <text x="360" y="93" font-size="55" font-weight="900" letter-spacing=".8" fill="#e9f6ff">ARCHITECTURE</text>
+  <text x="880" y="93" font-size="58" font-weight="900" letter-spacing="1" fill="#ffffff">PLAYBOOK</text>
+  <text x="67" y="151" font-size="29" font-weight="700" fill="#ecf9ff">From Cloud Fundamentals to</text>
+  <text x="540" y="151" font-size="29" font-weight="700" fill="#68eaff">Enterprise-Grade Architecture</text>
+  <rect x="1110" y="119" width="425" height="48" rx="24" fill="#052d4b" stroke="#46dafa" stroke-width="2"/>
+  <text x="1322" y="150" text-anchor="middle" font-size="17" font-weight="800" letter-spacing="1.5" fill="#d5faff">DESIGN  •  BUILD  •  SECURE  •  AUTOMATE</text>
+  <text x="68" y="188" font-size="14" letter-spacing="3" fill="#66b8df">OPEN-SOURCE AZURE LEARNING &amp; IMPLEMENTATION PLAYBOOK</text>
 </g>
-<!-- ARCHITECTURE FRAME -->
-<g font-family="Arial,Helvetica,sans-serif">
- <rect x="724" y="24" width="780" height="808" rx="22" fill="#03152c" fill-opacity=".78" stroke="#22c9f6" stroke-width="2.2"/>
- <rect x="735" y="35" width="758" height="786" rx="17" fill="none" stroke="#68eaff" stroke-opacity=".24"/>
- <text x="750" y="61" font-size="15" font-weight="800" letter-spacing=".8" fill="#96f4ff">AZURE LANDING ZONE • REFERENCE ARCHITECTURE</text>
- <text x="1480" y="61" text-anchor="end" font-size="9.5" fill="#6cbde6">MULTI-REGION • ZERO-TRUST • PRIVATE-BY-DESIGN</text>
- <!-- GLOBAL EDGE -->
- <rect x="746" y="79" width="738" height="83" rx="14" fill="#062b4c" stroke="#2dcdf7" stroke-width="1.6"/>
- <text x="762" y="100" font-size="12" font-weight="800" letter-spacing="1" fill="#73eaff">GLOBAL / EDGE ENTRY</text>
- <g transform="translate(785 108)"><circle cx="25" cy="19" r="18" fill="#07588e" stroke="#6cecff" stroke-width="1.6"/><path d="M14 20L23 10L33 20L23 29Z" fill="none" stroke="#d8fbff" stroke-width="2"/><path d="M23 10V29M14 20H33" stroke="#d8fbff" stroke-width="1.5"/></g>
- <text x="831" y="126" font-size="15" font-weight="700" fill="#fff">Azure Traffic Manager</text><text x="831" y="145" font-size="11" fill="#9eeeff">DNS-based routing</text>
- <path d="M1005 124H1040" stroke="#51e5ff" stroke-width="2" marker-end="url(#arr)"/>
- <g transform="translate(1050 105)"><path d="M18 3L36 13V34L18 45L0 34V13Z" fill="#0873b8" stroke="#75efff" stroke-width="1.7"/><path d="M8 24H28M20 15L29 24L20 33" fill="none" stroke="#e0fbff" stroke-width="2.2"/></g>
- <text x="1096" y="124" font-size="15" font-weight="700" fill="#fff">Azure Front Door</text><text x="1096" y="143" font-size="11" fill="#9eeeff">Global edge • WAF • TLS</text>
- <path d="M1267 124H1300" stroke="#51e5ff" stroke-width="2" marker-end="url(#arr)"/>
- <g transform="translate(1310 108)"><circle cx="22" cy="20" r="19" fill="#073e71" stroke="#5eeaff" stroke-width="1.6"/><path d="M22 5V35M7 20H37M11 10C18 18 18 22 11 30M33 10C26 18 26 22 33 30" fill="none" stroke="#b8f8ff" stroke-width="1.4"/></g>
- <text x="1356" y="124" font-size="14" font-weight="700" fill="#fff">Azure DNS</text><text x="1356" y="143" font-size="11" fill="#9eeeff">Zones • health probes</text>
- <!-- LANDING ZONE -->
- <rect x="746" y="174" width="738" height="96" rx="13" fill="#0a3153" stroke="#e7b64d" stroke-width="1.5"/>
- <rect x="746" y="174" width="738" height="25" rx="12" fill="#6b4b12" opacity=".55"/>
- <text x="762" y="192" font-size="12" font-weight="800" letter-spacing="1" fill="#ffe09b">AZURE LANDING ZONES • MANAGEMENT GROUP HIERARCHY</text>
- <g>
-  <rect x="760" y="208" width="164" height="47" rx="8" fill="url(#panel)" stroke="#e8c36c"/><text x="842" y="228" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Platform MG</text><text x="842" y="245" text-anchor="middle" font-size="10" fill="#bfefff">Connectivity • Identity</text>
-  <rect x="936" y="208" width="164" height="47" rx="8" fill="url(#panel)" stroke="#e8c36c"/><text x="1018" y="228" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Online Workloads MG</text><text x="1018" y="245" text-anchor="middle" font-size="10" fill="#bfefff">Production subscriptions</text>
-  <rect x="1112" y="208" width="164" height="47" rx="8" fill="url(#panel)" stroke="#e8c36c"/><text x="1194" y="228" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Corp Workloads MG</text><text x="1194" y="245" text-anchor="middle" font-size="10" fill="#bfefff">Internal applications</text>
-  <rect x="1288" y="208" width="180" height="47" rx="8" fill="url(#panel)" stroke="#e8c36c"/><text x="1378" y="228" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">AI / Sandbox MG</text><text x="1378" y="245" text-anchor="middle" font-size="10" fill="#bfefff">Controlled experimentation</text>
- </g>
- <!-- SHARED CONTROLS -->
- <rect x="746" y="282" width="738" height="73" rx="12" fill="#071f3e" stroke="#448bd0" stroke-width="1.2"/>
- <text x="760" y="300" font-size="11" font-weight="800" letter-spacing=".8" fill="#9acfff">SHARED PLATFORM CONTROLS</text>
- <use href="#shield" x="765" y="307" width="24" height="29"/><text x="794" y="322" font-size="12" font-weight="700" fill="#fff">Microsoft Entra ID</text><text x="794" y="339" font-size="10" fill="#a8dff7">Identity • MFA • PIM</text>
- <path d="M947 309V344M1129 309V344M1310 309V344" stroke="#2d739f"/>
- <g transform="translate(962 307)"><use href="#shield" width="24" height="29"/></g><text x="991" y="322" font-size="12" font-weight="700" fill="#fff">Policy • RBAC</text><text x="991" y="339" font-size="10" fill="#a8dff7">Defender for Cloud</text>
- <g transform="translate(1144 311)"><circle cx="13" cy="13" r="12" fill="#075b85" stroke="#70eaff"/><path d="M7 14L11 18L19 8" fill="none" stroke="#e2fcff" stroke-width="2"/></g><text x="1175" y="322" font-size="12" font-weight="700" fill="#fff">Key Vault</text><text x="1175" y="339" font-size="10" fill="#a8dff7">Secrets • keys • certificates</text>
- <g transform="translate(1325 312)"><path d="M0 22L12 0L24 22Z" fill="#0a6497" stroke="#74eaff"/><path d="M7 16H17" stroke="#d7fbff" stroke-width="2"/></g><text x="1356" y="322" font-size="12" font-weight="700" fill="#fff">Azure Monitor</text><text x="1356" y="339" font-size="10" fill="#a8dff7">Logs • metrics • alerts</text>
- <!-- REGION 1 -->
- <rect x="746" y="368" width="354" height="410" rx="14" fill="#073454" stroke="#36d5f5" stroke-width="1.8" stroke-dasharray="8 5"/>
- <rect x="746" y="368" width="354" height="31" rx="12" fill="#0d5279" opacity=".82"/>
- <text x="762" y="389" font-size="13" font-weight="800" fill="#d9fbff">REGION 1 • PRIMARY</text><text x="1083" y="389" text-anchor="end" font-size="8" fill="#9cecff">ONLINE SUBSCRIPTION</text>
- <rect x="760" y="408" width="326" height="351" rx="10" fill="none" stroke="#55c9ef" stroke-opacity=".45" stroke-dasharray="5 5"/>
- <text x="774" y="426" font-size="10" font-weight="700" letter-spacing=".7" fill="#72dfff">VNET • HUB / SPOKE • PRIVATE SUBNETS</text>
- <rect x="780" y="440" width="130" height="46" rx="9" fill="url(#panel)" stroke="#50def8"/>
- <g transform="translate(789 447)"><path d="M14 0L28 8V25L14 33L0 25V8Z" fill="#0879ba" stroke="#79edff"/><path d="M7 17H21M14 10V24" stroke="#e1fcff" stroke-width="1.5"/></g><text x="824" y="458" font-size="11" font-weight="700" fill="#fff">Application</text><text x="824" y="473" font-size="11" fill="#b5edff">Gateway • WAF</text>
- <rect x="926" y="440" width="142" height="46" rx="9" fill="url(#panel)" stroke="#50def8"/>
- <g transform="translate(936 450)"><path d="M0 12L16 3L32 12L16 21Z" fill="#0e80b7" stroke="#83eeff"/><path d="M0 18L16 27L32 18M16 3V27" fill="none" stroke="#c9faff"/></g><text x="976" y="458" font-size="11" font-weight="700" fill="#fff">Azure AI Foundry</text><text x="976" y="473" font-size="10" fill="#b5edff">Models • agents • RAG</text>
- <rect x="780" y="499" width="140" height="85" rx="9" fill="url(#panel)" stroke="#39d3f5"/>
- <g transform="translate(790 509)"><rect width="34" height="26" rx="5" fill="#075a8e" stroke="#7beeff"/><path d="M7 8H27M7 14H24M7 20H20" stroke="#c4faff" stroke-width="1.5"/></g><text x="830" y="520" font-size="12" font-weight="700" fill="#fff">App Service</text><text x="790" y="549" font-size="10" fill="#b5edff">Web app • API</text><text x="790" y="565" font-size="10" fill="#b5edff">LittleNest • managed app</text>
- <rect x="932" y="499" width="136" height="85" rx="9" fill="url(#panel)" stroke="#39d3f5"/>
- <g transform="translate(941 508)"><rect width="27" height="25" rx="4" fill="#075a8e" stroke="#7beeff"/><path d="M6 7H21M6 13H21M6 19H17" stroke="#c4faff"/></g><text x="976" y="520" font-size="12" font-weight="700" fill="#fff">AKS + ACR</text><text x="942" y="549" font-size="10" fill="#b5edff">Kubernetes • images</text><text x="942" y="565" font-size="10" fill="#b5edff">Workload identity</text>
- <rect x="780" y="596" width="288" height="67" rx="9" fill="#061c37" stroke="#268dc7"/><text x="793" y="615" font-size="11" font-weight="700" fill="#9beeff">COMPUTE &amp; PRIVATE DATA ACCESS</text>
- <use href="#vm" x="791" y="622" width="36" height="31"/><use href="#vm" x="832" y="622" width="36" height="31"/><text x="873" y="640" font-size="10" fill="#c5edff">VM Scale Sets</text><use href="#db" x="975" y="619" width="32" height="36"/><text x="1010" y="640" font-size="10" fill="#c5edff">SQL</text>
- <rect x="780" y="675" width="288" height="65" rx="9" fill="#061c37" stroke="#268dc7"/>
- <g transform="translate(792 687)"><path d="M0 6L22 0L44 6V34L22 40L0 34Z" fill="#075b91" stroke="#5de7ff"/><path d="M0 6L22 13L44 6M22 13V40" fill="none" stroke="#b3f7ff"/></g>
- <text x="844" y="699" font-size="11" font-weight="700" fill="#fff">Storage Account</text><text x="844" y="716" font-size="10" fill="#b4eaff">Blob • Queue • lifecycle</text><text x="844" y="731" font-size="10" fill="#75c4e9">Private Endpoint • Private DNS</text>
- <!-- REGION 2 -->
- <rect x="1120" y="368" width="364" height="410" rx="14" fill="url(#region2)" stroke="#8c8cff" stroke-width="1.8" stroke-dasharray="8 5"/>
- <rect x="1120" y="368" width="364" height="31" rx="12" fill="#333d84" opacity=".82"/>
- <text x="1136" y="389" font-size="13" font-weight="800" fill="#e1e4ff">REGION 2 • RECOVERY</text><text x="1467" y="389" text-anchor="end" font-size="8" fill="#c4c8ff">DR SUB</text>
- <rect x="1134" y="408" width="336" height="351" rx="10" fill="none" stroke="#9a9bff" stroke-opacity=".45" stroke-dasharray="5 5"/>
- <text x="1148" y="426" font-size="10" font-weight="700" letter-spacing=".7" fill="#b5c3ff">VNET • ZONAL DEPLOYMENT • PRIVATE SUBNETS</text>
- <rect x="1154" y="440" width="132" height="46" rx="9" fill="url(#panel)" stroke="#8f9aff"/>
- <g transform="translate(1163 447)"><path d="M14 0L28 8V25L14 33L0 25V8Z" fill="#3d55ac" stroke="#b4c0ff"/><path d="M7 17H21M14 10V24" stroke="#e1fcff" stroke-width="1.5"/></g><text x="1198" y="458" font-size="11" font-weight="700" fill="#fff">Application</text><text x="1198" y="473" font-size="11" fill="#c8d3ff">Gateway • WAF</text>
- <rect x="1302" y="440" width="150" height="46" rx="9" fill="url(#panel)" stroke="#8f9aff"/>
- <g transform="translate(1312 450)"><path d="M0 12L16 3L32 12L16 21Z" fill="#3f56a8" stroke="#bac6ff"/><path d="M0 18L16 27L32 18M16 3V27" fill="none" stroke="#e0e7ff"/></g><text x="1352" y="458" font-size="11" font-weight="700" fill="#fff">AI Foundry</text><text x="1352" y="473" font-size="10" fill="#c8d3ff">Optional DR pattern</text>
- <rect x="1154" y="499" width="140" height="85" rx="9" fill="url(#panel)" stroke="#8396ff"/>
- <g transform="translate(1164 509)"><rect width="34" height="26" rx="5" fill="#303f91" stroke="#aabaff"/><path d="M7 8H27M7 14H24M7 20H20" stroke="#e1e7ff" stroke-width="1.5"/></g><text x="1204" y="520" font-size="12" font-weight="700" fill="#fff">App Service</text><text x="1164" y="549" font-size="10" fill="#d2d9ff">Recovery app</text><text x="1164" y="565" font-size="10" fill="#d2d9ff">Warm / cold standby</text>
- <rect x="1306" y="499" width="146" height="85" rx="9" fill="url(#panel)" stroke="#8396ff"/>
- <g transform="translate(1315 508)"><rect width="27" height="25" rx="4" fill="#303f91" stroke="#aabaff"/><path d="M6 7H21M6 13H21M6 19H17" stroke="#e1e7ff"/></g><text x="1350" y="520" font-size="12" font-weight="700" fill="#fff">AKS / VMSS</text><text x="1316" y="549" font-size="10" fill="#d2d9ff">Scaled recovery tier</text><text x="1316" y="565" font-size="10" fill="#d2d9ff">IaC • image registry</text>
- <rect x="1154" y="596" width="298" height="67" rx="9" fill="#091a3b" stroke="#656fd0"/><text x="1167" y="615" font-size="11" font-weight="700" fill="#bdc6ff">RECOVERY COMPUTE &amp; DATA</text>
- <use href="#vm" x="1166" y="622" width="36" height="31"/><use href="#vm" x="1207" y="622" width="36" height="31"/><text x="1248" y="640" font-size="10" fill="#d0d8ff">VM Scale Sets</text><use href="#db" x="1355" y="619" width="32" height="36"/><text x="1390" y="640" font-size="10" fill="#d0d8ff">SQL</text>
- <rect x="1154" y="675" width="298" height="65" rx="9" fill="#091a3b" stroke="#656fd0"/>
- <g transform="translate(1167 687)"><path d="M0 6L22 0L44 6V34L22 40L0 34Z" fill="#3949a0" stroke="#95a9ff"/><path d="M0 6L22 13L44 6M22 13V40" fill="none" stroke="#e3eaff"/></g>
- <text x="1218" y="699" font-size="11" font-weight="700" fill="#fff">Geo-redundant storage</text><text x="1218" y="716" font-size="10" fill="#d0d8ff">RA-GRS / GZRS where supported</text><text x="1218" y="731" font-size="10" fill="#aab8ff">Failover • restore • recovery</text>
- <!-- FLOWS -->
- <g fill="none" stroke="#52e8ff" stroke-width="2" opacity=".95" marker-end="url(#arr)"><path d="M925 162V176"/><path d="M1120 162V174"/><path d="M900 162V363"/><path d="M1312 162V363"/></g>
- <g fill="none" stroke="#5af3d9" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arr2)"><path d="M1069 708C1100 708 1110 708 1150 708"/><path d="M1069 735C1103 760 1120 760 1150 735"/></g>
- <text x="1115" y="756" text-anchor="middle" font-size="10" font-weight="700" fill="#7ffff0">DATA REPLICATION / RECOVERY FLOW</text>
- <rect x="746" y="790" width="738" height="27" rx="8" fill="#051a31" stroke="#2c709e"/>
- <text x="1115" y="808" text-anchor="middle" font-size="11" fill="#9ecde8">CONCEPTUAL PATTERN • CONFIRM SERVICE AVAILABILITY, TOPOLOGY, SECURITY AND RECOVERY TARGETS BEFORE IMPLEMENTATION</text>
+<!-- Global entry -->
+<g>
+  <rect x="50" y="225" width="1500" height="102" rx="16" fill="#061d37" stroke="#35cbed" stroke-width="2"/>
+  <text x="74" y="252" class="section" fill="#7deaff">01  GLOBAL / EDGE ENTRY</text>
+  <rect x="75" y="266" width="410" height="46" rx="10" fill="url(#card)" stroke="#47dafa" stroke-width="1.5"/>
+  <circle cx="103" cy="289" r="13" fill="#08618e" stroke="#92f4ff" stroke-width="1.5"/><path d="M95 289L103 281L111 289L103 297Z" fill="none" stroke="#e7fdff" stroke-width="1.8"/>
+  <text x="129" y="286" class="tileTitle">Azure Traffic Manager</text><text x="129" y="303" class="small">DNS-based traffic routing and health probes</text>
+  <path d="M495 289H555" class="flow"/>
+  <rect x="570" y="266" width="440" height="46" rx="10" fill="url(#card)" stroke="#47dafa" stroke-width="1.5"/>
+  <path d="M592 278L606 270L620 278V300L606 308L592 300Z" fill="#0874b3" stroke="#9af5ff" stroke-width="1.5"/><path d="M599 289H613M606 282V296" stroke="#e8fdff" stroke-width="1.6"/>
+  <text x="635" y="286" class="tileTitle">Azure Front Door + WAF</text><text x="635" y="303" class="small">Global edge, TLS termination and web threat protection</text>
+  <path d="M1020 289H1080" class="flow"/>
+  <rect x="1095" y="266" width="430" height="46" rx="10" fill="url(#card)" stroke="#47dafa" stroke-width="1.5"/>
+  <circle cx="1124" cy="289" r="14" fill="#075b89" stroke="#9af5ff" stroke-width="1.4"/><path d="M1124 276V302M1111 289H1137M1115 280L1133 298M1133 280L1115 298" stroke="#e7fdff" stroke-width="1.2"/>
+  <text x="1152" y="286" class="tileTitle">Azure DNS</text><text x="1152" y="303" class="small">DNS zones, records and endpoint discovery</text>
 </g>
+<!-- Governance -->
+<g>
+  <rect x="50" y="341" width="1500" height="112" rx="16" fill="#1d2b35" stroke="#e6b85a" stroke-width="2"/>
+  <text x="74" y="369" class="section" fill="#ffdc91">02  LANDING-ZONE GOVERNANCE</text>
+  <rect x="75" y="382" width="345" height="54" rx="9" fill="#142e49" stroke="#d9b565" stroke-width="1.5"/><text x="247" y="405" text-anchor="middle" class="tileTitle">Management Groups</text><text x="247" y="424" text-anchor="middle" class="tileSub">Platform • Workloads • Sandbox</text>
+  <rect x="440" y="382" width="345" height="54" rx="9" fill="#142e49" stroke="#d9b565" stroke-width="1.5"/><text x="612" y="405" text-anchor="middle" class="tileTitle">Subscriptions</text><text x="612" y="424" text-anchor="middle" class="tileSub">Connectivity • Identity • Online • Corp</text>
+  <rect x="805" y="382" width="345" height="54" rx="9" fill="#142e49" stroke="#d9b565" stroke-width="1.5"/><text x="977" y="405" text-anchor="middle" class="tileTitle">Azure Policy + RBAC</text><text x="977" y="424" text-anchor="middle" class="tileSub">Guardrails • Least privilege • Compliance</text>
+  <rect x="1170" y="382" width="355" height="54" rx="9" fill="#142e49" stroke="#d9b565" stroke-width="1.5"/><text x="1347" y="405" text-anchor="middle" class="tileTitle">Defender for Cloud</text><text x="1347" y="424" text-anchor="middle" class="tileSub">Security posture • Recommendations</text>
+</g>
+<!-- Shared platform -->
+<g>
+  <rect x="50" y="467" width="1500" height="84" rx="16" fill="#071a35" stroke="#568fc9" stroke-width="1.8"/>
+  <text x="74" y="493" class="section" fill="#a8d6ff">03  SHARED PLATFORM SERVICES</text>
+  <rect x="75" y="503" width="345" height="35" rx="8" fill="#0c3659" stroke="#4cb9e8"/><text x="247" y="526" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">Microsoft Entra ID • MFA • PIM</text>
+  <rect x="440" y="503" width="345" height="35" rx="8" fill="#0c3659" stroke="#4cb9e8"/><text x="612" y="526" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">Hub VNet • VPN / ExpressRoute</text>
+  <rect x="805" y="503" width="345" height="35" rx="8" fill="#0c3659" stroke="#4cb9e8"/><text x="977" y="526" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">Key Vault • Secrets • Certificates</text>
+  <rect x="1170" y="503" width="355" height="35" rx="8" fill="#0c3659" stroke="#4cb9e8"/><text x="1347" y="526" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">Azure Monitor • Log Analytics • Alerts</text>
+</g>
+<!-- Primary region -->
+<g>
+  <rect x="50" y="568" width="735" height="258" rx="17" fill="url(#primary)" stroke="#35d9f5" stroke-width="2.5"/>
+  <path d="M68 568H767Q785 568 785 586V603H50V586Q50 568 68 568Z" fill="#0a5a7d" opacity=".85"/>
+  <text x="76" y="593" font-size="21" font-weight="800" fill="#e9fcff">REGION 1  •  PRIMARY WORKLOADS</text><text x="758" y="592" text-anchor="end" font-size="14" font-weight="700" fill="#9fefff">ONLINE SUBSCRIPTION</text>
+  <rect x="75" y="616" width="325" height="91" rx="11" fill="url(#card)" stroke="#52dbf5" stroke-width="1.7"/>
+  <text x="94" y="642" font-size="20" font-weight="800" fill="#fff">Application Platform</text><text x="94" y="669" font-size="17" fill="#bfefff">Application Gateway • WAF</text><text x="94" y="691" font-size="17" fill="#bfefff">App Service • Functions • AI Foundry</text>
+  <rect x="420" y="616" width="340" height="91" rx="11" fill="url(#card)" stroke="#52dbf5" stroke-width="1.7"/>
+  <text x="439" y="642" font-size="20" font-weight="800" fill="#fff">Compute &amp; Containers</text><text x="439" y="669" font-size="17" fill="#bfefff">Virtual Machines • Container Apps</text><text x="439" y="691" font-size="17" fill="#bfefff">AKS • ACR • VM Scale Sets</text>
+  <rect x="75" y="721" width="325" height="91" rx="11" fill="url(#card)" stroke="#52dbf5" stroke-width="1.7"/>
+  <text x="94" y="747" font-size="20" font-weight="800" fill="#fff">Data &amp; Storage</text><text x="94" y="774" font-size="17" fill="#bfefff">Azure SQL • Cosmos DB</text><text x="94" y="796" font-size="17" fill="#bfefff">Blob Storage • Queue Storage</text>
+  <rect x="420" y="721" width="340" height="91" rx="11" fill="url(#card)" stroke="#52dbf5" stroke-width="1.7"/>
+  <text x="439" y="747" font-size="20" font-weight="800" fill="#fff">Private Connectivity</text><text x="439" y="774" font-size="17" fill="#bfefff">Spoke VNets • NSGs • Private Link</text><text x="439" y="796" font-size="17" fill="#bfefff">Private Endpoints • Private DNS</text>
+</g>
+<!-- Recovery region -->
+<g>
+  <rect x="815" y="568" width="735" height="258" rx="17" fill="url(#recovery)" stroke="#9297ff" stroke-width="2.5"/>
+  <path d="M833 568H1532Q1550 568 1550 586V603H815V586Q815 568 833 568Z" fill="#3a448e" opacity=".85"/>
+  <text x="841" y="593" font-size="21" font-weight="800" fill="#f0f0ff">REGION 2  •  RECOVERY / SECONDARY</text><text x="1523" y="592" text-anchor="end" font-size="14" font-weight="700" fill="#c9caff">DR SUBSCRIPTION</text>
+  <rect x="840" y="616" width="325" height="91" rx="11" fill="#171f4b" stroke="#9b9dff" stroke-width="1.7"/>
+  <text x="859" y="642" font-size="20" font-weight="800" fill="#fff">Application Recovery</text><text x="859" y="669" font-size="17" fill="#d5dcff">Front Door health-based failover</text><text x="859" y="691" font-size="17" fill="#d5dcff">App Service / AKS standby</text>
+  <rect x="1185" y="616" width="340" height="91" rx="11" fill="#171f4b" stroke="#9b9dff" stroke-width="1.7"/>
+  <text x="1204" y="642" font-size="20" font-weight="800" fill="#fff">Recovery Compute</text><text x="1204" y="669" font-size="17" fill="#d5dcff">VM Scale Sets • AKS capacity</text><text x="1204" y="691" font-size="17" fill="#d5dcff">Images • Infrastructure as Code</text>
+  <rect x="840" y="721" width="325" height="91" rx="11" fill="#171f4b" stroke="#9b9dff" stroke-width="1.7"/>
+  <text x="859" y="747" font-size="20" font-weight="800" fill="#fff">Data Resilience</text><text x="859" y="774" font-size="17" fill="#d5dcff">SQL geo-replication • Cosmos DB</text><text x="859" y="796" font-size="17" fill="#d5dcff">GRS / GZRS storage options</text>
+  <rect x="1185" y="721" width="340" height="91" rx="11" fill="#171f4b" stroke="#9b9dff" stroke-width="1.7"/>
+  <text x="1204" y="747" font-size="20" font-weight="800" fill="#fff">Recovery Operations</text><text x="1204" y="774" font-size="17" fill="#d5dcff">Azure Backup • Site Recovery</text><text x="1204" y="796" font-size="17" fill="#d5dcff">Monitor • Alerts • Runbooks</text>
+</g>
+<!-- Cross-region flow and footer -->
+<path d="M385 842H1215" stroke="#72f4dc" stroke-width="3" stroke-dasharray="9 7" marker-end="url(#arrowMint)" fill="none"/>
+<text x="800" y="866" text-anchor="middle" font-size="16" font-weight="800" fill="#8affea">CROSS-REGION DATA REPLICATION  •  BACKUP  •  FAILOVER</text>
+<text x="800" y="891" text-anchor="middle" font-size="12.5" letter-spacing="1" fill="#9bc9e4">CONCEPTUAL REFERENCE • VERIFY SERVICE AVAILABILITY, REGIONAL PAIRS, SECURITY AND RECOVERY TARGETS BEFORE IMPLEMENTATION</text>
 </svg>
