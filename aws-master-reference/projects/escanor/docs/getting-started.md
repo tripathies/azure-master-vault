@@ -23,7 +23,7 @@ The EC2 public IPv4 is for outbound Internet access only. The app is reached usi
 Install:
 - Git.
 - AWS CLI v2.
-- Terraform CLI 1.10 or later (the CI currently validates with 1.14.6).
+- Terraform CLI 1.10 or later (the CI currently validates with 1.17.1).
 - Python 3.11 or later.
 - A terminal with Bash. On Windows, use Git Bash or WSL for the shell scripts.
 
@@ -220,7 +220,7 @@ bash scripts/validate-local.sh
 
 This creates a local virtual environment, runs Python compilation and unit tests, then runs Terraform format, initialisation without remote state and validation. It does not deploy AWS resources.
 
-The GitHub Actions pipeline runs the same core checks on relevant pull requests and pushes to `main`.
+The GitHub Actions pipeline runs the same core checks on relevant pull requests and pushes to `main`. AWS CodeBuild readers can run the same checks using [`buildspec.yml`](../buildspec.yml); see the [CodeBuild setup guide](codebuild.md).
 
 ## 11. Destroy the learning resources
 
