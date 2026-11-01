@@ -1,0 +1,42 @@
+version: 0.2
+
+env:
+  shell: bash
+  variables:
+    TERRAFORM_VERSION: "1.17.1"
+    TERRAFORM_SHA256_LINUX_AMD64: "4638628058e71a55212b1c563712eac03b902128f40740f3dc8174df12135061"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - |
+        set -euo pipefail
+        cd "$CODEBUILD_SRC_DIR"
+        TERRAFORM_ZIP="terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+        TERRAFORM_URL="https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/${TERRAFORM_ZIP}"
+        curl --fail --silent --show-error --location "$TERRAFORM_URL" --output "/tmp/${TERRAFORM_ZIP}"
+        printf '%s  %s\n' "$TERRAFORM_SHA256_LINUX_AMD64" "/tmp/${TERRAFORM_ZIP}" | sha256sum --check -
+        unzip -q "/tmp/${TERRAFORM_ZIP}" -d /tmp/terraform-bin
+        install -m 0755 /tmp/terraform-bin/terraform /usr/local/bin/terraform
+        terraform version
+  pre_build:
+    commands:
+      - |
+        set -euo pipefail
+        PROJECT_DIR="$CODEBUILD_SRC_DIR/aws-master-reference/projects/escanor"
+        python -m pip install --disable-pip-version-check --requirement "$PROJECT_DIR/app/requirements.txt"
+        python -m compileall -q "$PROJECT_DIR/app"
+        python -m unittest discover -s "$PROJECT_DIR/app/tests" -v
+  build:
+    commands:
+      - |
+        set -euo pipefail
+        TF_DIR="$CODEBUILD_SRC_DIR/aws-master-reference/projects/escanor/infra/terraform"
+        terraform -chdir="$TF_DIR" fmt -check -recursive
+        terraform -chdir="$TF_DIR" init -backend=false -input=false
+        terraform -chdir="$TF_DIR" validate
+  post_build:
+    commands:
+      - echo "Escanor AWS build validation completed. No AWS resources were deployed."
