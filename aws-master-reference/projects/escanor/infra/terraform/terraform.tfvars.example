@@ -1,0 +1,17 @@
+aws_region                         = "ap-south-1"
+name_prefix                        = "escanor"
+environment                        = "lab"
+owner                              = "learning"
+vpc_cidr                           = "10.40.0.0/16"
+ec2_instance_type                  = "t3.micro"
+db_instance_class                  = "db.t4g.micro"
+db_engine_major_version            = "16"
+db_allocated_storage_gib           = 20
+db_backup_retention_days           = 1
+enable_ssm_vpc_endpoints           = true
+enable_legacy_ec2messages_endpoint = true
+create_public_ipv4_for_ec2         = true
+db_app_username                    = "escanor_app"
+tags = {
+  CostCenter = "learning"
+}
