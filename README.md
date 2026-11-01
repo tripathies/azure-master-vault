@@ -19,7 +19,7 @@
 
 The Vault now has a separate AWS architecture path: [**AWS Master Reference**](aws-master-reference/README.md). It starts with an AWS Organizations / Control Tower multi-account landing-zone blueprint and uses [**Escanor**](aws-master-reference/projects/escanor/README.md) as the first AWS workload project.
 
-The AWS design uses AWS-native terminology and controls rather than copying Azure service definitions. Its initial LLD covers the four drift planes, Amazon EKS, Argo CD, AWS observability, CUR 2.0 / Athena, IAM and a modernised Amazon Bedrock AgentCore design. The landing zone and Escanor are documentation blueprints at this stage; no AWS account, landing zone or workload resources are created by this repository change.
+The AWS track uses AWS-native terminology and includes an account-governance landing-zone guide plus a runnable, small-footprint Escanor learning workload. Escanor includes Terraform for EC2, private RDS PostgreSQL, S3, VPC endpoints and IAM; a Python sample app; Session Manager helpers; validation scripts; and a GitHub Actions build pipeline. The larger EKS / AIOps / FinOps / AgentCore design remains the documented roadmap. Readers deploy the lab in their own AWS account; the repository and CI do not deploy resources.
 
 
 ## Hands-on implementation project — LittleNest Kidswear
