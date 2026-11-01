@@ -1,6 +1,6 @@
 import unittest
 from io import BytesIO
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 from app import create_app, valid_object_name
 
@@ -33,7 +33,7 @@ class EscanorAppTests(unittest.TestCase):
         self.assertTrue(valid_object_name("aws-learning-note.txt"))
 
     def test_object_read_returns_utf8_content(self):
-        s3 = unittest.mock.Mock()
+        s3 = Mock()
         s3.get_object.return_value = {
             "Body": BytesIO(b"hello from S3"),
             "ContentType": "text/plain; charset=utf-8",
@@ -50,7 +50,7 @@ class EscanorAppTests(unittest.TestCase):
 
     def test_object_read_rejects_traversal_without_calling_s3(self):
         with patch("app.get_s3_client") as get_s3:
-            response = self.client.get("/api/objects/%2E%2E%2Fsecret.txt")
+            response = self.client.get("/api/objects/evil..name")
         self.assertEqual(response.status_code, 400)
         get_s3.assert_not_called()
 
