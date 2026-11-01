@@ -56,6 +56,8 @@ jobs:
         with:
           terraform_version: "1.14.6"
           terraform_wrapper: false
+      - name: Show required Terraform formatting changes
+        run: terraform fmt -diff -recursive
       - name: Check formatting
         run: terraform fmt -check -recursive
       - name: Initialize providers without remote state
