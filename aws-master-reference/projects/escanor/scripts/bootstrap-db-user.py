@@ -16,6 +16,7 @@ def main() -> int:
     parser.add_argument("--region", required=True)
     parser.add_argument("--secret-arn", required=True)
     parser.add_argument("--local-port", type=int, default=15432)
+    parser.add_argument("--db-host", required=True, help="Actual RDS endpoint hostname used for TLS verification.")
     parser.add_argument("--database", default="escanor")
     parser.add_argument("--app-user", default="escanor_app")
     parser.add_argument(
@@ -35,12 +36,13 @@ def main() -> int:
     secret = json.loads(secret_response["SecretString"])
 
     with psycopg.connect(
-        host="127.0.0.1",
+        host=args.db_host,
+        hostaddr="127.0.0.1",
         port=args.local_port,
         dbname=args.database,
         user=secret["username"],
         password=secret["password"],
-        sslmode="verify-ca",
+        sslmode="verify-full",
         sslrootcert=str(ca_bundle),
         connect_timeout=5,
     ) as connection:
