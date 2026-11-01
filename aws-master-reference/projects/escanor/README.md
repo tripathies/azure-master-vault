@@ -15,7 +15,7 @@ The **learning lab profile** uses:
 - One private, encrypted, versioned S3 bucket.
 - An S3 Gateway VPC Endpoint.
 - AWS Systems Manager interface VPC endpoints powered by AWS PrivateLink.
-- A sample Python application that writes notes to RDS and uploads/list objects in S3.
+- A sample Python application that writes and reads notes in RDS and uploads, reads, lists and inspects versions of S3 objects.
 - IAM instance role, RDS IAM database authentication, Terraform and GitHub Actions CI.
 
 The lab has an outbound Internet path for package installation, but no inbound EC2 security-group rules and no SSH exposure. Operators connect with Systems Manager Session Manager.
@@ -78,7 +78,7 @@ Follow the full [clone, login, build, test and cleanup guide](docs/getting-start
 5. Run Terraform format, validate and plan; review the plan before apply.
 6. Create the learning lab in the reader's AWS account.
 7. Use Session Manager to bootstrap the database role and open the sample app locally.
-8. Test RDS, S3, VPC endpoints, IAM and S3 object versioning.
+8. Test RDS, S3 object upload/read/list/versioning, VPC endpoints and IAM.
 9. Destroy the lab and review retained resources and billing.
 
 ## 6. Project map
