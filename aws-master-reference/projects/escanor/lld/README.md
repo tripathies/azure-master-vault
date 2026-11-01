@@ -1,10 +1,10 @@
 # Escanor AWS — Low-Level Design
 
-**Document status:** Design baseline; implementation not yet validated  
+**Document status:** Full target design plus low-footprint runnable learning profile; AWS deployment validation is reader-owned  
 **Version:** 0.1  
 **Audience:** Cloud architects, platform engineers, SRE, security reviewers, FinOps and AI engineering teams
 
-This LLD adapts the supplied Escanor design to current AWS architecture guidance. It preserves the four drift planes and evidence-driven operating model while updating service choices that are no longer suitable for a new implementation.
+This LLD has two deliberate views. The **learning-lab profile** is implemented as Terraform and a sample Python app for EC2, private RDS PostgreSQL, S3, S3 Gateway Endpoint and Systems Manager PrivateLink endpoints. The **full Escanor target** preserves the four drift planes and evidence-driven AIOps / FinOps design from the source document, updated for current AWS architecture guidance. The larger EKS / Argo CD / telemetry / CUR 2.0 / AgentCore platform is a roadmap, not a claim about the current code.
 
 ## Document map
 
