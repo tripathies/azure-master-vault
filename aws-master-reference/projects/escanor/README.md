@@ -94,7 +94,7 @@ Follow the full [clone, login, build, test and cleanup guide](docs/getting-start
 
 ## 7. Build pipeline
 
-[`.github/workflows/aws-escanor-ci.yml`](../../../../.github/workflows/aws-escanor-ci.yml) runs on relevant pull requests and pushes to `main`. It compiles and tests the Python application and runs Terraform format / init / validate. It does not use AWS credentials and does not create or modify AWS resources.
+[`.github/workflows/aws-escanor-ci.yml`](../../../.github/workflows/aws-escanor-ci.yml) runs on relevant pull requests and pushes to `main`. It compiles and tests the Python application and runs Terraform format / init / validate. It does not use AWS credentials and does not create or modify AWS resources.
 
 A successful pipeline proves static checks passed for that commit. It does not prove an AWS deployment, quota availability, IAM permissions, live endpoint connectivity or cost.
 
