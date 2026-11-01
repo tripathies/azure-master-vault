@@ -1,11 +1,11 @@
-# Azure Master Vault
+# Cloud Architecture Playbook
 
 <p align="center">
   <img src="assets/azure-architecture-playbook-cover.svg" alt="Azure Architecture Playbook — From Cloud Fundamentals to Enterprise-Grade Architecture" width="100%" />
 </p>
 
 
-> **Azure Solution Architect learning portal** — track your learning, explore the end-to-end reference design, and open a focused guide for any Azure topic.
+> **Azure Edition** — From Cloud Fundamentals to Enterprise-Grade Architecture. An open-source Solution Architect learning portal with service guides, reference architecture, diagrams and hands-on implementation projects.
 
 [![Learning tracker](https://img.shields.io/badge/Learning%20tracker-open%20checklist-0078D4?style=for-the-badge)](#your-azure-learning-tracker)
 [![Reference architecture](https://img.shields.io/badge/Reference%20architecture-open%20design-107C10?style=for-the-badge)](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
