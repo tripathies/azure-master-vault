@@ -150,10 +150,12 @@ python -m pip install --upgrade pip
 python -m pip install -r app/requirements.txt
 
 REGION="$(terraform -chdir=infra/terraform output -raw aws_region)"
+DB_HOST="$(terraform -chdir=infra/terraform output -raw rds_endpoint)"
 SECRET_ARN="$(terraform -chdir=infra/terraform output -raw rds_master_secret_arn)"
 
 python scripts/bootstrap-db-user.py \
   --region "$REGION" \
+  --db-host "$DB_HOST" \
   --secret-arn "$SECRET_ARN" \
   --local-port 15432 \
   --ssl-root-cert "$HOME/.aws/rds-global-bundle.pem"
