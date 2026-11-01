@@ -20,8 +20,24 @@ class EscanorAppTests(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
         get_db.assert_not_called()
 
+    def test_note_rejects_non_object_json(self):
+        response = self.client.post(
+            "/api/notes",
+            data='["not", "an", "object"]',
+            content_type="application/json",
+        )
+        self.assertEqual(response.status_code, 400)
+
     def test_note_rejects_overlong_value(self):
         response = self.client.post("/api/notes", json={"note": "x" * 501})
+        self.assertEqual(response.status_code, 400)
+
+    def test_object_upload_rejects_non_object_json(self):
+        response = self.client.post(
+            "/api/objects",
+            data='["not", "an", "object"]',
+            content_type="application/json",
+        )
         self.assertEqual(response.status_code, 400)
 
     def test_object_name_rejects_path_traversal(self):
