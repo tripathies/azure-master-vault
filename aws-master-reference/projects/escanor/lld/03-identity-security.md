@@ -1,5 +1,21 @@
 # 03 — Identity and Security
 
+## Controls represented in the runnable lab
+
+The current EC2 / RDS / S3 profile includes the following code-level controls:
+- EC2 instance profile; no local AWS access keys.
+- `AmazonSSMManagedInstanceCore` for Session Manager.
+- Custom IAM permissions limited to the Escanor S3 uploads prefix and RDS `rds-db:connect` for the application DB resource / user.
+- RDS-managed master password in Secrets Manager; used only by the one-time local bootstrap step.
+- Application DB role uses `rds_iam` and short-lived IAM DB tokens.
+- RDS TLS is verified against the AWS RDS CA bundle; the bootstrap tunnel preserves the RDS endpoint hostname for full certificate verification.
+- IMDSv2 required on EC2; encrypted gp3 root volume.
+- S3 Block Public Access, bucket-owner-enforced ownership, encryption, versioning and deny-insecure-transport policy.
+- No inbound EC2 security-group rules; operator access is through SSM.
+- RDS is not publicly accessible and only accepts TCP 5432 from the EC2 security group.
+
+Controls such as organization SCPs, Control Tower, GuardDuty, Security Hub, EKS workload identity and AgentCore tool isolation belong to the broader landing-zone / future platform design; they are not created by this learning-lab Terraform root.
+
 ## 1. Security objectives
 
 Escanor observes and recommends. It must not obtain broad control of the AWS environment simply because an AI agent is part of the design.
