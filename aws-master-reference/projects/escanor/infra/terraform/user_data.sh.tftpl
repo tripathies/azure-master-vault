@@ -1,0 +1,62 @@
+#!/bin/bash
+set -euo pipefail
+exec > >(tee /var/log/escanor-bootstrap.log | logger -t user-data -s 2>/dev/console) 2>&1
+
+dnf install -y python3.11 python3.11-pip curl
+install -d -o ec2-user -g ec2-user /opt/escanor/app/templates
+install -d -o ec2-user -g ec2-user /var/lib/escanor
+install -d /etc/escanor
+
+echo '${app_py_b64}' | base64 --decode > /opt/escanor/app/app.py
+echo '${index_html_b64}' | base64 --decode > /opt/escanor/app/templates/index.html
+echo '${requirements_b64}' | base64 --decode > /opt/escanor/app/requirements.txt
+chown -R ec2-user:ec2-user /opt/escanor
+
+python3.11 -m venv /opt/escanor/venv
+/opt/escanor/venv/bin/pip install --no-cache-dir --requirement /opt/escanor/app/requirements.txt
+
+curl --fail --silent --show-error --location \
+  https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem \
+  --output /etc/pki/tls/certs/rds-global-bundle.pem
+chmod 0644 /etc/pki/tls/certs/rds-global-bundle.pem
+
+cat > /etc/escanor/escanor.env <<'ENVVARS'
+AWS_REGION=${aws_region}
+DB_HOST=${db_host}
+DB_PORT=${db_port}
+DB_NAME=${db_name}
+DB_USER=${db_user}
+S3_BUCKET=${s3_bucket}
+RDS_CA_BUNDLE=/etc/pki/tls/certs/rds-global-bundle.pem
+ENVVARS
+chmod 0640 /etc/escanor/escanor.env
+chown root:ec2-user /etc/escanor/escanor.env
+
+cat > /etc/systemd/system/escanor-app.service <<'SERVICE'
+[Unit]
+Description=Escanor AWS Learning Application
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/opt/escanor/app
+EnvironmentFile=/etc/escanor/escanor.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/escanor/venv/bin/gunicorn --workers 1 --threads 4 --timeout 30 --bind 0.0.0.0:8080 --access-logfile - --error-logfile - app:app
+Restart=on-failure
+RestartSec=5
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
+SERVICE
+
+systemctl daemon-reload
+systemctl enable --now escanor-app.service
