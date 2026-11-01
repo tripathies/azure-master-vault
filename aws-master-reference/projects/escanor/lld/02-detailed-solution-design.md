@@ -1,5 +1,23 @@
 # 02 — Detailed Solution Design
 
+## Learning-lab implementation profile
+
+The code currently present in this repository implements a smaller AWS service-learning stack:
+
+| Component | Lab implementation | Purpose |
+|---|---|---|
+| Compute | Amazon Linux 2023 EC2 `t3.micro` | Hosts a Flask / Gunicorn learning app |
+| Database | RDS PostgreSQL `db.t4g.micro`, Single-AZ, 20 GiB gp3 | Stores notes and demonstrates private DB connectivity |
+| Object storage | Private S3 bucket, Block Public Access, SSE-S3 and versioning | Upload, list and inspect object versions |
+| Private connectivity | S3 Gateway Endpoint; SSM / ssmmessages Interface Endpoints | Demonstrates gateway endpoint routing and AWS PrivateLink |
+| Workload identity | EC2 instance profile | S3 prefix actions and scoped `rds-db:connect` |
+| Database authentication | RDS IAM DB authentication | Short-lived token on each app DB connection |
+| Operator access | Systems Manager Session Manager | No SSH and no inbound EC2 security-group rules |
+| Infrastructure | Terraform with S3 backend and lock file | Repeatable account-local provisioning |
+| CI | GitHub Actions | Python tests and Terraform static validation only |
+
+The lab EC2 instance has a public IPv4 for outbound OS / Python package installation, but its security group has no inbound rules. The application is accessed through Session Manager port forwarding. RDS remains in private subnets and has no public endpoint. Private RDS subnets have no NAT route. Interface endpoint hourly / data-processing charges and public IPv4 charges must be included in cost review.
+
 ## 1. Logical architecture
 
 Escanor is organised into five logical layers. The AWS landing zone provides the account and governance boundary; Escanor itself is deployed into a dedicated workload account.
