@@ -47,6 +47,7 @@
         <button type="submit">Upload object to S3</button>
       </form>
       <button onclick="loadObjects()">List objects</button>
+      <button onclick="readObject()">Read the file name above</button>
       <button onclick="loadVersions()">List versions for the file name above</button>
       <pre id="objects">No objects loaded.</pre>
     </section>
@@ -70,6 +71,12 @@
     async function loadObjects() {
       try { await show("objects", await requestJson("/api/objects")); }
       catch (error) { await show("objects", { error: error.message }); }
+    }
+    async function readObject() {
+      try {
+        const name = encodeURIComponent(document.getElementById("filename").value);
+        await show("objects", await requestJson("/api/objects/" + name));
+      } catch (error) { await show("objects", { error: error.message }); }
     }
     async function loadVersions() {
       try {
