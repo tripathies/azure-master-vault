@@ -11,5 +11,5 @@ echo "Keep this terminal open while running bootstrap-db-user.py."
 aws ssm start-session \
   --target "${INSTANCE_ID}" \
   --document-name AWS-StartPortForwardingSessionToRemoteHost \
-  --parameters "{\"host\":[\"\${DB_HOST}\"],\"portNumber\":[\"5432\"],\"localPortNumber\":[\"15432\"]}" \
+  --parameters "{\"host\":[\"${DB_HOST}\"],\"portNumber\":[\"5432\"],\"localPortNumber\":[\"15432\"]}" \
   --region "${REGION}"
