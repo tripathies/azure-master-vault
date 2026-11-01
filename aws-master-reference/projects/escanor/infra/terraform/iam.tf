@@ -30,6 +30,18 @@ data "aws_iam_policy_document" "ec2_app" {
     }
   }
   statement {
+    sid       = "S3ListObjectVersions"
+    effect    = "Allow"
+    actions   = ["s3:ListBucketVersions"]
+    resources = [aws_s3_bucket.data.arn]
+    condition {
+      test     = "StringLike"
+      variable = "s3:prefix"
+      values   = ["uploads/*"]
+    }
+  }
+
+  statement {
     sid       = "S3ReadWriteUploads"
     effect    = "Allow"
     actions   = ["s3:GetObject", "s3:PutObject"]
