@@ -186,7 +186,8 @@ Use the page to:
 2. Save a learning note to RDS.
 3. Upload an object to S3.
 4. List objects in the `uploads/` prefix.
-5. Upload a second version using the same filename, then list versions to observe S3 versioning.
+5. Read the uploaded text object back from S3.
+6. Upload a second version using the same filename, then list versions to observe S3 versioning.
 
 The application uses the EC2 instance profile for AWS API access and RDS IAM database authentication. No database password or AWS access key is placed in the app's environment file.
 
