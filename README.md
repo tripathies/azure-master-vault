@@ -1,7 +1,7 @@
 # Azure Master Vault
 
 <p align="center">
-  <img src="assets/azure-architecture-playbook-cover.jpg" alt="Azure Architecture Playbook — From Cloud Fundamentals to Enterprise-Grade Architecture" width="100%" />
+  <img src="assets/azure-architecture-playbook-cover.svg" alt="Azure Architecture Playbook — From Cloud Fundamentals to Enterprise-Grade Architecture" width="100%" />
 </p>
 
 
