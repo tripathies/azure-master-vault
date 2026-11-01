@@ -20,7 +20,7 @@ When creating a CodeBuild project from the AWS Vault repository, set the Buildsp
 |---|---|
 | Source | This GitHub repository |
 | Source version | Branch or pull-request ref to validate |
-| Environment image | AWS managed Linux Standard image with Python 3.11 |
+| Environment image | AWS managed Ubuntu 24.04 Standard image (`aws/codebuild/standard:8.0`), x86_64; Python 3.11 runtime is supported |
 | Environment compute | Small build environment |
 | Privileged mode | Off |
 | Service role | Build-only role; no deployment permissions |
@@ -28,7 +28,7 @@ When creating a CodeBuild project from the AWS Vault repository, set the Buildsp
 | Artifacts | None required for the static validation workflow |
 | VPC | Do not attach a VPC for this build-only job unless the organization requires it; dependency downloads need outbound HTTPS |
 
-The build role needs permission to write its CloudWatch Logs and retrieve the source from the configured source connection. It does **not** need EC2, RDS, S3 workload, IAM deployment, CloudFormation or Terraform apply permissions.
+The build role needs permission to write its CloudWatch Logs and retrieve the source from the configured source connection. It does **not** need EC2, RDS, S3 workload, IAM deployment, CloudFormation or Terraform apply permissions. Select the CodeBuild managed Ubuntu 24.04 Standard 8.0 image explicitly so the `python: 3.11` runtime in the buildspec matches a supported image.
 
 ## 3. What the build runs
 
