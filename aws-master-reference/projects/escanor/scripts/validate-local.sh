@@ -8,8 +8,10 @@ TF_DIR="${PROJECT_DIR}/infra/terraform"
 python3 -m venv "${PROJECT_DIR}/.venv"
 "${PROJECT_DIR}/.venv/bin/python" -m pip install --upgrade pip
 "${PROJECT_DIR}/.venv/bin/python" -m pip install -r "${APP_DIR}/requirements.txt"
-"${PROJECT_DIR}/.venv/bin/python" -m compileall -q "${APP_DIR}"
-"${PROJECT_DIR}/.venv/bin/python" -m unittest discover -s "${APP_DIR}/tests" -v
+cd "${APP_DIR}"
+"${PROJECT_DIR}/.venv/bin/python" -m compileall -q app.py tests ../scripts
+bash -n ../scripts/*.sh
+"${PROJECT_DIR}/.venv/bin/python" -m unittest discover -s tests -v
 
 terraform -chdir="${TF_DIR}" fmt -check -recursive
 terraform -chdir="${TF_DIR}" init -backend=false -input=false
