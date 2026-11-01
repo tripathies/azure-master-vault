@@ -51,7 +51,7 @@
 - [ ] Bucket policy denies non-TLS transport.
 - [ ] S3 Gateway Endpoint is associated with the public and private route tables.
 - [ ] Endpoint policy permits only the Escanor upload-prefix actions.
-- [ ] App can upload and list objects through the S3 SDK.
+- [ ] App can upload, read and list objects through the S3 SDK.
 - [ ] Re-uploading the same object name creates a new object version.
 - [ ] App can list object versions.
 - [ ] Systems Manager interface endpoints resolve through private DNS and allow HTTPS from EC2.
@@ -62,7 +62,7 @@
 - [ ] `GET /healthz` returns success.
 - [ ] Diagnostics show RDS and S3 access success.
 - [ ] A note can be inserted into RDS and retrieved.
-- [ ] An S3 object can be uploaded and listed.
+- [ ] An S3 object can be uploaded, read back and listed.
 - [ ] Invalid file names / traversal paths are rejected.
 - [ ] No static AWS credentials or DB master password are present in source or EC2 app environment.
 - [ ] EC2 uses the instance profile, not a local credentials file.
