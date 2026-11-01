@@ -37,8 +37,10 @@ jobs:
           cache-dependency-path: aws-master-reference/projects/escanor/app/requirements.txt
       - name: Install application dependencies
         run: python -m pip install --disable-pip-version-check -r requirements.txt
-      - name: Compile Python sources
-        run: python -m compileall -q app.py tests
+      - name: Compile Python sources and helper scripts
+        run: |
+          python -m compileall -q app.py tests ../scripts
+          bash -n ../scripts/*.sh
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
 
