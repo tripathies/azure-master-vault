@@ -89,6 +89,8 @@ Follow the full [clone, login, build, test and cleanup guide](docs/getting-start
 | `infra/terraform/` | VPC, EC2, RDS, S3, endpoints, IAM and outputs |
 | `scripts/` | Preflight, state bootstrap, Session Manager port forwarding and DB role bootstrap |
 | `docs/getting-started.md` | Full learner walkthrough |
+| `buildspec.yml` | AWS CodeBuild build specification (no AWS deploy permissions required) |
+| `docs/codebuild.md` | Configure CodeBuild and optional CodePipeline build-only path |
 | `docs/validation.md` | Acceptance tests and evidence checklist |
 | `lld/` | Design, security, FinOps, DR and future Escanor roadmap |
 
