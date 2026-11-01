@@ -1,5 +1,16 @@
 # 01 — Vision, Scope and Requirements
 
+## Implementation profile boundary
+
+This document describes the full Escanor target capability. The runnable repository profile is intentionally smaller and currently demonstrates:
+- A single Amazon Linux EC2 application host.
+- Private Single-AZ PostgreSQL on Amazon RDS.
+- Private S3 object storage with versioning.
+- S3 Gateway Endpoint and Systems Manager interface endpoints.
+- IAM instance role, RDS IAM DB authentication, Session Manager and a Python Flask learning app.
+
+EKS, Argo CD, the four drift collectors, Prometheus / Grafana, CUR 2.0 analytics and AgentCore remain roadmap items. Do not mark those requirements implemented based only on this LLD.
+
 ## 1. Vision
 
 Build Escanor as an AWS-native AIOps and cloud-economics control plane that detects four classes of drift, presents source-backed evidence, and helps operators make safer decisions.
