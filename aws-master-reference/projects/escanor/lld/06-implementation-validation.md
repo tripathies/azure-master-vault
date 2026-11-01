@@ -1,5 +1,19 @@
 # 06 — Implementation and Validation Plan
 
+## Current runnable learning-lab delivery
+
+The initial code increment maps to these learning steps:
+1. Clone the Vault and configure AWS IAM Identity Center.
+2. Verify the target account with STS before creating resources.
+3. Bootstrap a separate encrypted / versioned S3 Terraform state bucket.
+4. Run Terraform formatting, validation and a reviewed plan.
+5. Provision the VPC, EC2, RDS, S3 and endpoints from the reader's account.
+6. Bootstrap the restricted PostgreSQL application role through an SSM remote-host port forward.
+7. Open the local app through SSM port forwarding; validate RDS IAM auth, S3 upload/list/versioning and the health endpoint.
+8. Destroy the lab and check residual resources and billing.
+
+GitHub Actions tests the Python code and runs Terraform static validation. It does not assume AWS credentials or run Terraform apply. The larger stages below describe the future EKS / AIOps platform build.
+
 ## 1. Delivery approach
 
 Implement Escanor in controlled increments. Do not deploy the entire production diagram as a single Terraform apply. Establish the AWS foundation, build the non-production profile, validate each drift plane, then introduce AgentCore after the evidence and tool contracts are stable.
