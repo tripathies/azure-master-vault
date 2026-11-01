@@ -50,6 +50,7 @@ For team use, restrict the state bucket to the approved Terraform roles, enable 
 From the repository root:
 
 ```bash
+cd aws-master-reference/projects/escanor/infra/terraform
 cp terraform.tfvars.example terraform.tfvars
 terraform fmt -check -recursive
 terraform init -backend-config=backend.hcl
