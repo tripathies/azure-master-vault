@@ -167,6 +167,42 @@ def create_app() -> Flask:
             app.logger.exception("S3 list failed")
             return jsonify(error="S3 list failed", detail=type(exc).__name__), 503
 
+    @app.get("/api/object-versions")
+    def list_object_versions():
+        name = request.args.get("name", "")
+        if not valid_object_name(name):
+            return jsonify(error="name must be a simple file name"), 400
+        key = f"uploads/{name}"
+        try:
+            bucket = required_env("S3_BUCKET")
+            response = get_s3_client().list_object_versions(
+                Bucket=bucket, Prefix=key
+            )
+            versions = [
+                {
+                    "version_id": item["VersionId"],
+                    "is_latest": item["IsLatest"],
+                    "last_modified": item["LastModified"].isoformat(),
+                    "size_bytes": item["Size"],
+                }
+                for item in response.get("Versions", [])
+                if item["Key"] == key
+            ]
+            delete_markers = [
+                {
+                    "version_id": item["VersionId"],
+                    "is_latest": item["IsLatest"],
+                    "last_modified": item["LastModified"].isoformat(),
+                    "delete_marker": True,
+                }
+                for item in response.get("DeleteMarkers", [])
+                if item["Key"] == key
+            ]
+            return jsonify(key=key, versions=versions, delete_markers=delete_markers)
+        except (RuntimeError, BotoCoreError, ClientError) as exc:
+            app.logger.exception("S3 version listing failed")
+            return jsonify(error="S3 version listing failed", detail=type(exc).__name__), 503
+
     @app.post("/api/objects")
     def upload_object():
         payload = request.get_json(silent=True) or {}
