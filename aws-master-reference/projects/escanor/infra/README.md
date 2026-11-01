@@ -75,4 +75,4 @@ The root README walkthrough explains login, database bootstrap, Session Manager 
 
 ## 6. No deployment is performed by CI
 
-The root GitHub Actions workflow performs app tests and Terraform static validation only. It does not assume an AWS role or provision resources. Readers deliberately run the reviewed Terraform commands from their own authenticated workstation.
+The root GitHub Actions workflow and the project CodeBuild buildspec perform app tests and Terraform static validation only. They do not assume a workload deployment role or provision resources. Readers deliberately run the reviewed Terraform commands from their own authenticated workstation.
