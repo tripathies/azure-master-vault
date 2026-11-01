@@ -8,7 +8,7 @@ The code currently present in this repository implements a smaller AWS service-l
 |---|---|---|
 | Compute | Amazon Linux 2023 EC2 `t3.micro` | Hosts a Flask / Gunicorn learning app |
 | Database | RDS PostgreSQL `db.t4g.micro`, Single-AZ, 20 GiB gp3 | Stores notes and demonstrates private DB connectivity |
-| Object storage | Private S3 bucket, Block Public Access, SSE-S3 and versioning | Upload, list and inspect object versions |
+| Object storage | Private S3 bucket, Block Public Access, SSE-S3 and versioning | Upload, read, list and inspect object versions |
 | Private connectivity | S3 Gateway Endpoint; SSM / ssmmessages Interface Endpoints | Demonstrates gateway endpoint routing and AWS PrivateLink |
 | Workload identity | EC2 instance profile | S3 prefix actions and scoped `rds-db:connect` |
 | Database authentication | RDS IAM DB authentication | Short-lived token on each app DB connection |
