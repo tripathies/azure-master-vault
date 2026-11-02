@@ -11,6 +11,10 @@
 [![Reference architecture](https://img.shields.io/badge/Reference%20architecture-open%20design-107C10?style=for-the-badge)](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
 [![Visual library](https://img.shields.io/badge/Diagrams-SVG%20%7C%20draw.io-7F56D9?style=for-the-badge)](VISUAL-DIAGRAMS.md)
 
+## 📖 Azure Cloud Architecture Playbook — Book project
+
+The structured PDF textbook is being developed from this Vault catalogue, architecture reference and LittleNest implementation. [View the book blueprint, proposed table of contents and deployment-page standard](book/README.md).
+
 ## Start here
 
 | <div align="center">📚 Learning tracker</div> | <div align="center">🏗️ End-to-end design</div> | <div align="center">🗺️ Diagram library</div> |
