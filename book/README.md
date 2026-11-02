@@ -47,7 +47,7 @@ This is not a direct Markdown-to-PDF export. The book must provide a progressive
 - List of figures, tables, labs and code listings
 
 ### Main matter
-See [TABLE-OF-CONTENTS.md](TABLE-OF-CONTENTS.md) for the proposed chapter sequence and catalogue mapping.
+See [TABLE-OF-CONTENTS.md](TABLE-OF-CONTENTS.md) for the proposed chapter sequence and [source-crosswalk.json](source-crosswalk.json) for the 111-entry source inventory. The crosswalk is generated from the repository catalogue; chapter-level mapping and deployment status are deliberately marked pending until each source guide and code sample is audited.
 
 ### Back matter
 - Glossary and acronym list
