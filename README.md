@@ -11,6 +11,16 @@
 [![Architecture map](https://img.shields.io/badge/Architecture%20map-10%20lenses-005A9E?style=for-the-badge)](AZURE-MASTER-ARCHITECTURE-MAP.md)
 [![Azure book](https://img.shields.io/badge/Book-production%20blueprint-5B5BD6?style=for-the-badge)](book/README.md)
 
+## Azure Component Mind Map
+
+<p align="center">
+  <a href="AZURE-COMPONENT-MINDMAP.svg">
+    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Azure Master Vault component mind map with 13 catalogue categories and 111 linked guide entries" width="100%" />
+  </a>
+</p>
+
+**Every component node links to its existing guide.** Open the [full-size SVG mind map](AZURE-COMPONENT-MINDMAP.svg) or the [editable draw.io source](AZURE-COMPONENT-MINDMAP.drawio). For the broader architectural view, see the [Azure Master Architecture Map](AZURE-MASTER-ARCHITECTURE-MAP.md).
+
 ## Azure Master Architecture Map
 
 <p align="center">
