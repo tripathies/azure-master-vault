@@ -1,7 +1,9 @@
 # Azure Site Recovery — canonical guide moved
 
-Azure Site Recovery belongs exclusively to **12 — Business Continuity, Backup & Disaster Recovery**.
+This topic is maintained in its dedicated catalogue category to prevent duplicate component ownership.
 
-[Open Azure Site Recovery & Replication](../../12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md) · [Open category 12](../../12-automation-backup-disaster-recovery/README.md)
+- [Open the canonical guide](../../12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md)
+- [Open the canonical category](../../12-automation-backup-disaster-recovery/README.md)
+- [Return to the master catalogue](../../README.md)
 
-This legacy path remains as a redirect for existing bookmarks.
+Do not maintain a second copy here. The canonical guide is the source of truth for this topic.
