@@ -108,7 +108,7 @@ The individual component pages provide deeper topic material. Treat any sample c
 
 ## AI platform and engineering
 
-For AI services and engineering practices, see [M — AI Platform & Engineering](M-ai-platform-engineering/README.md). The AI category covers Microsoft Foundry, Azure OpenAI, Azure AI Search, Azure Machine Learning, GPU infrastructure, model lifecycle, inference, RAG, agents, evaluation, LLMOps and responsible AI. These capabilities depend on the same identity, network, data, security and operations foundations described above.
+For AI services and engineering practices, see [M — AI Platform & Engineering](M-ai-platform-engineering/README.md). This category is separate from DevOps/migration and from Category 12 recovery operations. The AI category covers Microsoft Foundry, Azure OpenAI, Azure AI Search, Azure Machine Learning, GPU infrastructure, model lifecycle, inference, RAG, agents, evaluation, LLMOps and responsible AI. These capabilities depend on the same identity, network, data, security and operations foundations described above.
 
 ## 10. Related learning paths
 
