@@ -28,6 +28,14 @@ The mindmap mirrors the canonical `catalog.json`: 13 domains and 111 component g
 
 The architecture map groups the existing A–L catalogue into ten architecture lenses and provides a separate AI infrastructure specialization path. The SVG is a navigation overview; detailed service guidance remains in the existing category/component pages.
 
+
+## Azure Component Mind Map
+
+- [View the full component mind map (SVG)](AZURE-COMPONENT-MINDMAP.svg)
+- [Edit the component mind map (draw.io)](AZURE-COMPONENT-MINDMAP.drawio)
+
+The map contains all 13 catalogue categories and links every component node to its existing guide.
+
 ## Category maps
 
 - **A · Cloud Foundation & Landing Zones** — [SVG preview](A-cloud-foundation-landing-zones/architecture.svg) · [Editable draw.io](A-cloud-foundation-landing-zones/architecture.drawio) · [Category guide](A-cloud-foundation-landing-zones/README.md)
