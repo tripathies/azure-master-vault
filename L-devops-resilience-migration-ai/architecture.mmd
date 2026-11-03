@@ -1,31 +1,13 @@
-flowchart LR
-  subgraph L["L · DevOps Resilience Migration and AI"]
-    n1["Terraform"]
-    n2["Bicep / ARM Templates"]
-    n1 --> n2
-    n3["Azure DevOps Pipelines"]
-    n2 --> n3
-    n4["GitHub Actions"]
-    n3 --> n4
-    n5["Azure Backup"]
-    n4 --> n5
-    n6["Azure Site Recovery"]
-    n5 --> n6
-    n7["Azure Migrate"]
-    n6 --> n7
-    n8["Azure Arc"]
-    n7 --> n8
-    n9["Microsoft Foundry"]
-    n8 --> n9
-    n10["Azure OpenAI"]
-    n9 --> n10
-    n11["Azure AI Search"]
-    n10 --> n11
-    n12["Azure Machine Learning"]
-    n11 --> n12
-  end
-  Identity["Entra ID / RBAC"] -. cross-cutting .-> n1
-  Network["Network / DNS / private access where applicable"] -. cross-cutting .-> n6
-  Monitor["Azure Monitor / logs / cost"] -. cross-cutting .-> n12
-  Foundation["A · Cloud foundation / landing zones"] --> n1
-  n12 -. telemetry / governance .-> Operations["K · Operations / security review"]
+flowchart TB
+  Repo["Git repository / pull request"] --> Validate["Format, lint, test and security scan"]
+  Validate --> Pipeline["Azure DevOps Pipelines or GitHub Actions"]
+  Pipeline --> Identity["OIDC / workload identity federation"]
+  Identity --> Plan["Terraform plan or Bicep what-if"]
+  Plan --> Review["Approval and controlled release"]
+  Review --> Deploy["Deploy and verify Azure resources"]
+  Estate["Existing on-premises / multicloud estate"] --> Discover["Discover and assess dependencies"]
+  Discover --> Migrate["Azure Migrate: migration waves and cutover"]
+  Estate --> Arc["Azure Arc: hybrid inventory, policy and management"]
+  Migrate --> Target["Azure landing zone / modernized workload"]
+  Arc --> Control["Govern and operate supported hybrid resources"]
+  Deploy --> Observe["Post-deployment checks and drift management"]
