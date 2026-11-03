@@ -33,7 +33,7 @@
 
 [**Open the linked architecture map and navigation guide →**](AZURE-MASTER-ARCHITECTURE-MAP.md) · [Open editable mindmap](AZURE-MASTER-MINDMAP.drawio) · [Open all architecture diagrams](ARCHITECTURE-MAPS.md)
 
-> **Catalogue accounting:** the repository's machine-readable tracker contains 120 entries across 14 categories. Domains A–M hold 115 unique core topics; domain 12 is a focused path that intentionally cross-lists five topics from domain L. The map therefore groups the platform into ten architecture lenses without double-counting those pathway entries.
+> **Catalogue accounting:** the repository's machine-readable tracker contains 118 unique topics across 14 categories. L owns DevOps, IaC, migration and hybrid management; M owns AI platform engineering; category 12 owns business continuity, backup and disaster recovery. Each component has exactly one canonical category.
 
 ## Start here
 
@@ -196,40 +196,40 @@ The diagram follows the canonical `catalog.json` and links component labels to t
 
 ## Your Azure learning tracker
 
-Use the checkboxes as a visible checklist and open a topic by clicking its name. Category totals are generated from the repository catalogue; GitHub Markdown checkboxes do not provide synced progress tracking.
+Use this checklist to move through the catalogue. Every topic has one canonical category and one primary component guide. GitHub Markdown checkboxes are a visible checklist; they do not sync private progress or calculate a live completion percentage.
 
-**Catalogue size:** 120 entries across 14 categories — 115 core topics plus five cross-listed learning-path entries.
+**Catalogue size: 120 unique topics across 14 categories.** No component is counted in more than one category.
 
 ### Visual catalogue mind map
 
 <p align="center">
   <a href="AZURE-COMPONENT-MINDMAP.svg">
-    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Azure Cloud Mindmap — 14 categories and 120 catalogue entries, created by Rahul Tripathi" width="100%" />
+    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Cloud Architecture Playbook Azure mind map showing 14 categories and 118 unique component guides, created by Rahul Tripathi" width="100%" />
   </a>
 </p>
 
 <p align="center"><strong>Created by Rahul Tripathi</strong> · Cloud Architecture Playbook</p>
 
-[**Open full-resolution mind map**](AZURE-COMPONENT-MINDMAP.svg) · [**Edit mind map**](AZURE-COMPONENT-MINDMAP.drawio)
+[**Open full-resolution mind map**](AZURE-COMPONENT-MINDMAP.svg) · [**Edit mind map in diagrams.net**](AZURE-COMPONENT-MINDMAP.drawio)
 
 ### Browse categories
 
-| Domain | Category | Topics | Tracker |
+| Domain | Category | Topics | Guide |
 |---|---|---:|---|
-| **A** | [Cloud Foundation & Landing Zones](A-cloud-foundation-landing-zones/README.md) | 10 | [Open tracker](#a-cloud-foundation-landing-zones) |
-| **B** | [Identity & Access Management](B-identity-access-management/README.md) | 8 | [Open tracker](#b-identity-access-management) |
-| **C** | [Networking & Private Connectivity](C-networking-private-connectivity/README.md) | 12 | [Open tracker](#c-networking-private-connectivity) |
-| **D** | [Traffic Management & Delivery](D-traffic-management-delivery/README.md) | 8 | [Open tracker](#d-traffic-management-delivery) |
-| **E** | [Compute & Application Hosting](E-compute-application-hosting/README.md) | 8 | [Open tracker](#e-compute-application-hosting) |
-| **F** | [Containers & Kubernetes](F-containers-kubernetes/README.md) | 6 | [Open tracker](#f-containers-kubernetes) |
-| **G** | [Storage & Enterprise File Services](G-storage-enterprise-file-services/README.md) | 8 | [Open tracker](#g-storage-enterprise-file-services) |
-| **H** | [Databases & Data Platforms](H-databases-data-platforms/README.md) | 10 | [Open tracker](#h-databases-data-platforms) |
-| **I** | [Integration & API Management](I-integration-api-management/README.md) | 6 | [Open tracker](#i-integration-api-management) |
-| **J** | [Security, Secrets & Governance](J-security-secrets-governance/README.md) | 8 | [Open tracker](#j-security-secrets-governance) |
-| **K** | [Monitoring, Operations & Cost](K-monitoring-operations-cost/README.md) | 10 | [Open tracker](#k-monitoring-operations-cost) |
-| **L** | [DevOps, Resilience & Migration](L-devops-resilience-migration-ai/README.md) | 8 | [Open tracker](#l-devops-resilience-migration) |
-| **M** | [AI Platform & Engineering](M-ai-platform-engineering/README.md) | 13 | [Open tracker](#m-ai-platform-engineering) |
-| **12** | [Automation, Backup and Disaster Recovery](12-automation-backup-disaster-recovery/README.md) | 5 | [Open tracker](#12-automation-backup-and-disaster-recovery) |
+| **A** | [Cloud Foundation & Landing Zones](A-cloud-foundation-landing-zones/README.md) | 10 | [Open guide](A-cloud-foundation-landing-zones/README.md) |
+| **B** | [Identity & Access Management](B-identity-access-management/README.md) | 8 | [Open guide](B-identity-access-management/README.md) |
+| **C** | [Networking & Private Connectivity](C-networking-private-connectivity/README.md) | 12 | [Open guide](C-networking-private-connectivity/README.md) |
+| **D** | [Traffic Management & Delivery](D-traffic-management-delivery/README.md) | 8 | [Open guide](D-traffic-management-delivery/README.md) |
+| **E** | [Compute & Application Hosting](E-compute-application-hosting/README.md) | 8 | [Open guide](E-compute-application-hosting/README.md) |
+| **F** | [Containers & Kubernetes](F-containers-kubernetes/README.md) | 6 | [Open guide](F-containers-kubernetes/README.md) |
+| **G** | [Storage & Enterprise File Services](G-storage-enterprise-file-services/README.md) | 8 | [Open guide](G-storage-enterprise-file-services/README.md) |
+| **H** | [Databases & Data Platforms](H-databases-data-platforms/README.md) | 10 | [Open guide](H-databases-data-platforms/README.md) |
+| **I** | [Integration & API Management](I-integration-api-management/README.md) | 6 | [Open guide](I-integration-api-management/README.md) |
+| **J** | [Security, Secrets & Governance](J-security-secrets-governance/README.md) | 8 | [Open guide](J-security-secrets-governance/README.md) |
+| **K** | [Monitoring, Operations & Cost](K-monitoring-operations-cost/README.md) | 10 | [Open guide](K-monitoring-operations-cost/README.md) |
+| **L** | [DevOps, IaC, Migration & Hybrid Management](L-devops-resilience-migration-ai/README.md) | 6 | [Open guide](L-devops-resilience-migration-ai/README.md) |
+| **M** | [AI Platform & Engineering](M-ai-platform-engineering/README.md) | 13 | [Open guide](M-ai-platform-engineering/README.md) |
+| **12** | [Business Continuity, Backup & Disaster Recovery](12-automation-backup-disaster-recovery/README.md) | 7 | [Open guide](12-automation-backup-disaster-recovery/README.md) |
 
 ### Component checklist
 
@@ -416,14 +416,12 @@ Use the checkboxes as a visible checklist and open a topic by clicking its name.
 </details>
 
 <details>
-<summary><strong>L. DevOps, Resilience & Migration</strong> — 8 topics</summary>
+<summary><strong>L. DevOps, IaC, Migration & Hybrid Management</strong> — 6 topics</summary>
 
 - [ ] [Terraform](L-devops-resilience-migration-ai/terraform/README.md)
 - [ ] [Bicep / ARM Templates](L-devops-resilience-migration-ai/bicep-arm-templates/README.md)
 - [ ] [Azure DevOps Pipelines](L-devops-resilience-migration-ai/azure-devops-pipelines/README.md)
 - [ ] [GitHub Actions](L-devops-resilience-migration-ai/github-actions/README.md)
-- [ ] [Azure Backup](L-devops-resilience-migration-ai/azure-backup/README.md)
-- [ ] [Azure Site Recovery](L-devops-resilience-migration-ai/azure-site-recovery/README.md)
 - [ ] [Azure Migrate](L-devops-resilience-migration-ai/azure-migrate/README.md)
 - [ ] [Azure Arc](L-devops-resilience-migration-ai/azure-arc/README.md)
 
@@ -453,13 +451,15 @@ Use the checkboxes as a visible checklist and open a topic by clicking its name.
 </details>
 
 <details>
-<summary><strong>12. Automation, Backup and Disaster Recovery</strong> — 5 topics</summary>
+<summary><strong>12. Business Continuity, Backup & Disaster Recovery</strong> — 7 topics</summary>
 
-- [ ] [Terraform — Infrastructure as Code](12-automation-backup-disaster-recovery/72-terraform/README.md)
-- [ ] [Bicep and ARM Templates](12-automation-backup-disaster-recovery/73-bicep-arm-templates/README.md)
-- [ ] [Azure DevOps Pipelines and GitHub Actions](12-automation-backup-disaster-recovery/74-ci-cd-azure-devops-github-actions/README.md)
-- [ ] [Azure Backup](12-automation-backup-disaster-recovery/75-azure-backup/README.md)
-- [ ] [Azure Site Recovery (ASR)](12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md)
+- [ ] [Business Continuity & Disaster Recovery Strategy](12-automation-backup-disaster-recovery/77-business-continuity-disaster-recovery-strategy/README.md)
+- [ ] [Workload Criticality, BIA, RTO & RPO](12-automation-backup-disaster-recovery/78-workload-criticality-bia-rto-rpo/README.md)
+- [ ] [Azure Backup & Workload Protection](12-automation-backup-disaster-recovery/75-azure-backup/README.md)
+- [ ] [Backup Policy, Retention & Vault Security](12-automation-backup-disaster-recovery/79-backup-policy-retention-vault-security/README.md)
+- [ ] [Restore Operations & Recovery Testing](12-automation-backup-disaster-recovery/80-restore-operations-recovery-testing/README.md)
+- [ ] [Azure Site Recovery & Replication](12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md)
+- [ ] [Recovery Plans, Failover & Failback](12-automation-backup-disaster-recovery/81-recovery-plans-failover-failback/README.md)
 
 [Open full category guide](<12-automation-backup-disaster-recovery/README.md>)
 
