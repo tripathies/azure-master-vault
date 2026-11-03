@@ -663,9 +663,29 @@
       "folder": "12-automation-backup-disaster-recovery",
       "components": [
         {
+          "name": "Business Continuity & Disaster Recovery Strategy",
+          "slug": "business-continuity-disaster-recovery-strategy",
+          "path": "12-automation-backup-disaster-recovery/77-business-continuity-disaster-recovery-strategy/README.md"
+        },
+        {
+          "name": "Workload Criticality, BIA, RTO & RPO",
+          "slug": "workload-criticality-bia-rto-rpo",
+          "path": "12-automation-backup-disaster-recovery/78-workload-criticality-bia-rto-rpo/README.md"
+        },
+        {
           "name": "Azure Backup & Workload Protection",
           "slug": "azure-backup-workload-protection",
           "path": "12-automation-backup-disaster-recovery/75-azure-backup/README.md"
+        },
+        {
+          "name": "Backup Policy, Retention & Vault Security",
+          "slug": "backup-policy-retention-vault-security",
+          "path": "12-automation-backup-disaster-recovery/79-backup-policy-retention-vault-security/README.md"
+        },
+        {
+          "name": "Restore Operations & Recovery Testing",
+          "slug": "restore-operations-recovery-testing",
+          "path": "12-automation-backup-disaster-recovery/80-restore-operations-recovery-testing/README.md"
         },
         {
           "name": "Azure Site Recovery & Replication",
@@ -673,24 +693,14 @@
           "path": "12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md"
         },
         {
-          "name": "Backup Vault Architecture & Security Controls",
-          "slug": "backup-vault-architecture-security",
-          "path": "12-automation-backup-disaster-recovery/77-backup-vault-architecture-security/README.md"
-        },
-        {
-          "name": "Business Continuity & Disaster Recovery Planning",
-          "slug": "bcdr-strategy-rto-rpo",
-          "path": "12-automation-backup-disaster-recovery/78-bcdr-strategy-rto-rpo/README.md"
-        },
-        {
-          "name": "Recovery Plans, Failover & DR Testing",
-          "slug": "recovery-plans-failover-testing",
-          "path": "12-automation-backup-disaster-recovery/79-recovery-plans-failover-testing/README.md"
+          "name": "Recovery Plans, Failover & Failback",
+          "slug": "recovery-plans-failover-failback",
+          "path": "12-automation-backup-disaster-recovery/81-recovery-plans-failover-failback/README.md"
         }
       ]
     }
   ],
-  "componentCount": 118,
-  "note": "All catalogue topics have one canonical category and one primary guide. DevOps and Infrastructure as Code are in L; backup, business continuity and disaster recovery are in category 12. The AI platform is maintained separately in M.",
-  "uniqueComponentCount": 118
+  "componentCount": 120,
+  "note": "Every catalogue topic has one canonical category and one primary guide. L owns Infrastructure as Code, CI/CD, migration and hybrid management. M owns AI platform and engineering. Category 12 owns business continuity, backup and disaster recovery. No component is intentionally cross-listed between categories.",
+  "uniqueComponentCount": 120
 }
