@@ -192,6 +192,18 @@ flowchart TD
 
 The Vault is a component catalogue rather than a numbered CLZ lesson sequence. It therefore uses topic dependencies and the LittleNest project walkthrough instead of CLZ-090 / CLZ-100 / CLZ-110 / CLZ-120 lesson IDs. Do not assume those lesson IDs or the other repository's toolchain script exist here.
 
+## Azure Master Vault — Component catalogue mind map
+
+<p align="center">
+  <a href="AZURE-COMPONENT-MINDMAP.svg">
+    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Azure Master Vault Azure Cloud Mindmap showing all 13 catalogue categories and 111 component entries" width="100%" />
+  </a>
+</p>
+
+[**Open the full-resolution mind map**](AZURE-COMPONENT-MINDMAP.svg) · [**Edit the mind map in draw.io**](AZURE-COMPONENT-MINDMAP.drawio) · [**Open the architecture map index**](ARCHITECTURE-MAPS.md)
+
+The diagram follows the canonical `catalog.json` and links component labels to their existing topic guides. Domain 12 is a focused learning path that intentionally cross-lists selected subjects from domain L.
+
 ## Your Azure learning tracker
 
 Use the checkboxes as a visible checklist and open a topic by clicking its name. Category totals are generated from the repository catalogue; the checkboxes in GitHub Markdown do **not** provide per-user automatic progress tracking or calculate a live completion percentage.
