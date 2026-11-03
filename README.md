@@ -8,32 +8,7 @@
 
 [![Learning tracker](https://img.shields.io/badge/Learning%20tracker-open%20checklist-0078D4?style=for-the-badge)](#your-azure-learning-tracker)
 [![Reference architecture](https://img.shields.io/badge/Reference%20architecture-open%20design-107C10?style=for-the-badge)](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
-[![Architecture map](https://img.shields.io/badge/Architecture%20map-14%20categories-005A9E?style=for-the-badge)](AZURE-MASTER-ARCHITECTURE-MAP.md)
 [![Azure book](https://img.shields.io/badge/Book-production%20blueprint-5B5BD6?style=for-the-badge)](book/README.md)
-
-## Network architecture — topology-first view
-
-<p align="center">
-  <a href="AZURE-NETWORK-ARCHITECTURE-MAP.svg">
-    <img src="AZURE-NETWORK-ARCHITECTURE-MAP.svg" alt="Azure network architecture topology map" width="100%" />
-  </a>
-</p>
-
-[**Open network map (SVG) →**](AZURE-NETWORK-ARCHITECTURE-MAP.svg) · [**Edit in draw.io →**](AZURE-NETWORK-ARCHITECTURE-MAP.drawio) · [**Networking component guides →**](C-networking-private-connectivity/README.md)
-
-## Cloud Architecture Playbook — Architecture Map
-
-<p align="center">
-  <a href="AZURE-MASTER-ARCHITECTURE-MAP.md">
-    <img src="AZURE-MASTER-ARCHITECTURE-MAP.svg" alt="Cloud Architecture Playbook — architecture map covering cloud foundation, identity, networking, compute, data, operations, DevOps and AI infrastructure" width="100%" />
-  </a>
-</p>
-
-**Navigate the platform by architecture concern:** foundation and governance → identity and security → network and edge → compute and containers → storage and data → integration → operations and FinOps → DevOps and resilience → AI infrastructure specialization.
-
-[**Open the linked architecture map and navigation guide →**](AZURE-MASTER-ARCHITECTURE-MAP.md) · [Open editable mindmap](AZURE-MASTER-MINDMAP.drawio) · [Open all architecture diagrams](ARCHITECTURE-MAPS.md)
-
-> **Catalogue accounting:** the repository's machine-readable tracker contains 120 unique topics across 14 categories. L owns DevOps, IaC, migration and hybrid management; M owns AI platform engineering; category 12 owns business continuity, backup and disaster recovery. Each component has exactly one canonical category.
 
 ## Start here
 
@@ -192,45 +167,13 @@ The Vault is a component catalogue rather than a numbered CLZ lesson sequence. I
 
 [**Open the full-resolution mind map**](AZURE-COMPONENT-MINDMAP.svg) · [**Edit the mind map in draw.io**](AZURE-COMPONENT-MINDMAP.drawio) · [**Open the architecture map index**](ARCHITECTURE-MAPS.md)
 
-The diagram follows the canonical `catalog.json` and links component labels to their existing topic guides. Domain 12 is a focused learning path that intentionally cross-lists selected subjects from domain L.
+The diagram follows the canonical `catalog.json` and links component labels to their existing topic guides. Every topic has one canonical category; Category 12 is dedicated to business continuity, backup and disaster recovery.
 
 ## Your Azure learning tracker
 
 Use this catalogue to navigate from an architecture domain to its dedicated component guide. Each topic has one canonical category and one primary guide.
 
 **Catalogue size:** 120 unique topics across 14 categories.
-
-### Visual catalogue mind map
-
-<p align="center">
-  <a href="AZURE-COMPONENT-MINDMAP.svg">
-    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Cloud Architecture Playbook Azure Cloud Mindmap — 14 categories and 120 unique component guides, created by Rahul Tripathi" width="100%" />
-  </a>
-</p>
-
-<p align="center"><strong>Created by Rahul Tripathi</strong> · Cloud Architecture Playbook — Azure Edition</p>
-
-[**Open full-resolution mind map**](AZURE-COMPONENT-MINDMAP.svg) · [**Edit the mind map**](AZURE-COMPONENT-MINDMAP.drawio)
-
-### Browse categories
-
-| Domain | Category | Topics | Tracker |
-|---|---|---:|---|
-| **A** | [Cloud Foundation & Landing Zones](A-cloud-foundation-landing-zones/README.md) | 10 | [Open tracker](#a-cloud-foundation-landing-zones) |
-| **B** | [Identity & Access Management](B-identity-access-management/README.md) | 8 | [Open tracker](#b-identity-access-management) |
-| **C** | [Networking & Private Connectivity](C-networking-private-connectivity/README.md) | 12 | [Open tracker](#c-networking-private-connectivity) |
-| **D** | [Traffic Management & Delivery](D-traffic-management-delivery/README.md) | 8 | [Open tracker](#d-traffic-management-delivery) |
-| **E** | [Compute & Application Hosting](E-compute-application-hosting/README.md) | 8 | [Open tracker](#e-compute-application-hosting) |
-| **F** | [Containers & Kubernetes](F-containers-kubernetes/README.md) | 6 | [Open tracker](#f-containers-kubernetes) |
-| **G** | [Storage & Enterprise File Services](G-storage-enterprise-file-services/README.md) | 8 | [Open tracker](#g-storage-enterprise-file-services) |
-| **H** | [Databases & Data Platforms](H-databases-data-platforms/README.md) | 10 | [Open tracker](#h-databases-data-platforms) |
-| **I** | [Integration & API Management](I-integration-api-management/README.md) | 6 | [Open tracker](#i-integration-api-management) |
-| **J** | [Security, Secrets & Governance](J-security-secrets-governance/README.md) | 8 | [Open tracker](#j-security-secrets-governance) |
-| **K** | [Monitoring, Operations & Cost](K-monitoring-operations-cost/README.md) | 10 | [Open tracker](#k-monitoring-operations-cost) |
-| **L** | [DevOps, IaC, Migration & Hybrid Management](L-devops-resilience-migration-ai/README.md) | 6 | [Open tracker](#l-devops-iac-migration-hybrid-management) |
-| **M** | [AI Platform & Engineering](M-ai-platform-engineering/README.md) | 13 | [Open tracker](#m-ai-platform-engineering) |
-| **12** | [Business Continuity, Backup & Disaster Recovery](12-automation-backup-disaster-recovery/README.md) | 7 | [Open tracker](#12-business-continuity-backup-disaster-recovery) |
-
 
 ### Component checklist
 
