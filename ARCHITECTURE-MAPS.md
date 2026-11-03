@@ -36,6 +36,14 @@ The architecture map groups the existing A–L catalogue into ten architecture l
 
 The map contains all 13 catalogue categories and links every component node to its existing guide.
 
+
+## Azure Network Architecture Map
+
+- [View network topology (SVG)](AZURE-NETWORK-ARCHITECTURE-MAP.svg)
+- [Edit network topology (draw.io)](AZURE-NETWORK-ARCHITECTURE-MAP.drawio)
+
+A topology-first view covering hybrid connectivity, hub-and-spoke VNets, ingress, egress, segmentation, Private Link/DNS and observability.
+
 ## Category maps
 
 - **A · Cloud Foundation & Landing Zones** — [SVG preview](A-cloud-foundation-landing-zones/architecture.svg) · [Editable draw.io](A-cloud-foundation-landing-zones/architecture.drawio) · [Category guide](A-cloud-foundation-landing-zones/README.md)
