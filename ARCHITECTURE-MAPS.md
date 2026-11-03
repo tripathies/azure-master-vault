@@ -2,7 +2,7 @@
 
 ## Master architecture flow
 
-- [View all 111 catalog components as an SVG diagram](architecture.svg)
+- [View all 120 catalogue entries as an SVG diagram](architecture.svg)
 - [Open the editable master diagram in diagrams.net](architecture.drawio)
 
 
@@ -12,17 +12,17 @@
 **Text model:** `.mmd` files are supplementary Mermaid source.
 
 
-## Azure Master Vault — Azure Cloud Mindmap
+## Cloud Architecture Playbook — Azure Cloud Mindmap
 
-- [View the complete Azure Master Vault — Azure Cloud Mindmap — all 111 catalogue components](AZURE-MASTER-MINDMAP.svg)
+- [View the complete Cloud Architecture Playbook — Azure Cloud Mindmap — all 120 catalogue entries](AZURE-MASTER-MINDMAP.svg)
 - [Open the editable mindmap in diagrams.net](AZURE-MASTER-MINDMAP.drawio)
 
-The mindmap mirrors the canonical `catalog.json`: 13 domains and 111 component guides. The SVG is the quick visual preview; the draw.io file is the editable source. Select services according to workload requirements rather than treating the catalogue as a mandatory deployment stack.
+The mindmap mirrors the canonical `catalog.json`: 14 categories and 120 catalogue entries. The SVG is the quick visual preview; the draw.io file is the editable source. Select services according to workload requirements rather than treating the catalogue as a mandatory deployment stack.
 
 
-## Azure Master Vault — Architecture Map
+## Cloud Architecture Playbook — Architecture Map
 
-- [Open the linked Azure Master Vault — Architecture Map](AZURE-MASTER-ARCHITECTURE-MAP.md)
+- [Open the linked Cloud Architecture Playbook — Architecture Map](AZURE-MASTER-ARCHITECTURE-MAP.md)
 - [View the SVG overview](AZURE-MASTER-ARCHITECTURE-MAP.svg)
 - [Open the editable catalogue mindmap](AZURE-MASTER-MINDMAP.drawio)
 
@@ -34,7 +34,7 @@ The architecture map groups the existing A–L catalogue into ten architecture l
 - [View the full component mind map (SVG)](AZURE-COMPONENT-MINDMAP.svg)
 - [Edit the component mind map (draw.io)](AZURE-COMPONENT-MINDMAP.drawio)
 
-The map contains all 13 catalogue categories and links every component node to its existing guide.
+The map contains all 14 catalogue categories and links every component node to its existing guide.
 
 
 ## Azure Network Architecture Map
@@ -43,6 +43,8 @@ The map contains all 13 catalogue categories and links every component node to i
 - [Edit network topology (draw.io)](AZURE-NETWORK-ARCHITECTURE-MAP.drawio)
 
 A topology-first view covering hybrid connectivity, hub-and-spoke VNets, ingress, egress, segmentation, Private Link/DNS and observability.
+
+- **M · AI Platform & Engineering** — [Category guide](M-ai-platform-engineering/README.md)
 
 ## Category maps
 
@@ -57,7 +59,7 @@ A topology-first view covering hybrid connectivity, hub-and-spoke VNets, ingress
 - **I · Integration & API Management** — [SVG preview](I-integration-api-management/architecture.svg) · [Editable draw.io](I-integration-api-management/architecture.drawio) · [Category guide](I-integration-api-management/README.md)
 - **J · Security, Secrets & Governance** — [SVG preview](J-security-secrets-governance/architecture.svg) · [Editable draw.io](J-security-secrets-governance/architecture.drawio) · [Category guide](J-security-secrets-governance/README.md)
 - **K · Monitoring, Operations & Cost** — [SVG preview](K-monitoring-operations-cost/architecture.svg) · [Editable draw.io](K-monitoring-operations-cost/architecture.drawio) · [Category guide](K-monitoring-operations-cost/README.md)
-- **L · DevOps, Resilience, Migration & AI** — [SVG preview](L-devops-resilience-migration-ai/architecture.svg) · [Editable draw.io](L-devops-resilience-migration-ai/architecture.drawio) · [Category guide](L-devops-resilience-migration-ai/README.md)
+- **L · DevOps, Resilience & Migration** — [SVG preview](L-devops-resilience-migration-ai/architecture.svg) · [Editable draw.io](L-devops-resilience-migration-ai/architecture.drawio) · [Category guide](L-devops-resilience-migration-ai/README.md)
 - **12 · Automation, Backup and Disaster Recovery** — [SVG preview](12-automation-backup-disaster-recovery/architecture.svg) · [Editable draw.io](12-automation-backup-disaster-recovery/architecture.drawio) · [Category guide](12-automation-backup-disaster-recovery/README.md)
 
 ## Diagram standards
