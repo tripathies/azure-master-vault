@@ -23,7 +23,10 @@ This design describes a representative enterprise platform for hosting internet-
 | Application and compute | Host application services using a runtime appropriate to the workload | [Compute and application hosting](E-compute-application-hosting/README.md), [Containers and Kubernetes](F-containers-kubernetes/README.md) |
 | Data and integration | Persist data, integrate services and publish governed APIs | [Storage and enterprise file services](G-storage-enterprise-file-services/README.md), [Databases and data platforms](H-databases-data-platforms/README.md), [Integration and API management](I-integration-api-management/README.md) |
 | Security and secrets | Protect secrets, posture, workload access and threat detection | [Security, secrets and governance](J-security-secrets-governance/README.md) |
-| Operations and delivery | Observe health, manage cost, automate delivery and recover from failures | [Monitoring, operations and cost](K-monitoring-operations-cost/README.md), [DevOps, resilience and migration](L-devops-resilience-migration-ai/README.md), [Automation, backup and disaster recovery](12-automation-backup-disaster-recovery/README.md) |
+| Operations and FinOps | Observe health, manage cost, resource inventory and operational automation | [Monitoring, operations and cost](K-monitoring-operations-cost/README.md) |
+| DevOps, IaC, migration and hybrid management | Provision infrastructure, validate and deploy changes, migrate workloads and govern eligible hybrid resources | [DevOps, IaC, migration and hybrid management](L-devops-resilience-migration-ai/README.md) |
+| AI platform and engineering | Build, ground, deploy, evaluate and operate AI workloads, models and agents | [AI Platform & Engineering](M-ai-platform-engineering/README.md) |
+| Business continuity and disaster recovery | Set BIA/RTO/RPO, protect workloads, prove restores and orchestrate regional recovery | [Business Continuity, Backup & Disaster Recovery](12-automation-backup-disaster-recovery/README.md) |
 
 > If a link's path differs in the catalogue, use the category tracker to find the canonical component page. Component pages are the source of detailed service guidance.
 
@@ -120,7 +123,9 @@ For AI services and engineering practices, see [M — AI Platform & Engineering]
 - [I — Integration & API Management](I-integration-api-management/README.md)
 - [J — Security, Secrets & Governance](J-security-secrets-governance/README.md)
 - [K — Monitoring, Operations & Cost](K-monitoring-operations-cost/README.md)
-- [L — DevOps, Resilience, Migration & AI](L-devops-resilience-migration-ai/README.md)
+- [L — DevOps, IaC, Migration & Hybrid Management](L-devops-resilience-migration-ai/README.md)
+- [M — AI Platform & Engineering](M-ai-platform-engineering/README.md)
+- [12 — Business Continuity, Backup & Disaster Recovery](12-automation-backup-disaster-recovery/README.md)
 
 ## 11. Official starting references
 
