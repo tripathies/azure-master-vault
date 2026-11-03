@@ -23,7 +23,7 @@ The book will be technically honest. A diagram is not proof of deployment. A Ter
 
 ## 2. Repository audit — baseline
 
-The current Azure repository README identifies the project as **Cloud Architecture Playbook — Azure Edition** and reports **111 component/topic catalogue entries across 13 categories**.
+The current Azure repository README identifies the project as **Cloud Architecture Playbook — Azure Edition** and reports **120 unique component/topic catalogue entries across 14 categories**.
 
 ### Existing source assets
 
@@ -32,7 +32,7 @@ The current Azure repository README identifies the project as **Cloud Architectu
 | Master catalogue and learning tracker | `README.md`, `catalog.json` | Canonical chapter and topic inventory |
 | Enterprise reference design | `AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md` | End-to-end architecture and design narrative |
 | Master/category/component diagrams | `architecture.svg`, category and component `architecture.svg`, `.drawio`, `.mmd` | Figures, topology explanations and visual cross-references |
-| Component guides | Category folders A–L and Category 12 | Service chapters, checklists, scenarios and references |
+| Component guides | Category folders A–M and Category 12 | Service chapters, checklists, scenarios and references |
 | Implementation project | `littlenest-azure-reference/` | End-to-end deployable learning case study |
 | LittleNest LLD | `littlenest-azure-reference/lld/` | Requirements, design, identity/security and operations/FinOps |
 | Validation guide | `littlenest-azure-reference/docs/validation.md` | Test procedures and troubleshooting |
@@ -53,11 +53,12 @@ The current Azure repository README identifies the project as **Cloud Architectu
 | I. Integration & API Management | 6 | Part V — Data and integration |
 | J. Security, Secrets & Governance | 8 | Part VI — Security architecture |
 | K. Monitoring, Operations & Cost | 10 | Part VII — Operations and FinOps |
-| L. DevOps, Resilience, Migration & AI | 12 | Part VIII — Engineering, resilience and AI |
-| 12. Automation, Backup and Disaster Recovery | 5 | Part VIII — Engineering, resilience and AI |
-| **Total catalogue entries** | **111** | **13 source domains, consolidated into 8 book parts plus capstone** |
+| L. DevOps, IaC, Migration & Hybrid Management | 6 | Part VIII — Engineering and platform delivery |
+| M. AI Platform & Engineering | 13 | Part IX — AI platform engineering |
+| 12. Business Continuity, Backup & Disaster Recovery | 7 | Part X — Business continuity and recovery |
+| **Total unique catalogue topics** | **120** | **14 source categories, consolidated into guided book parts plus capstone** |
 
-**Editorial note:** Category L and Category 12 contain overlapping themes (Terraform, Bicep/ARM, CI/CD, Backup and Site Recovery). The book will not repeat the same lesson twice. It will consolidate related coverage into one coherent chapter, preserve the useful implementation depth, and cross-reference the original source guides. The catalogue remains unchanged as the repository's navigation model.
+**Editorial note:** Category L and Category 12 now have distinct responsibilities and no shared component entries. L covers IaC, CI/CD, migration and hybrid management. Category 12 covers BCDR strategy, workload criticality, backup, vault security, restore testing, Site Recovery and recovery orchestration. The book should preserve that separation and cross-reference between topics only where a real dependency exists.
 
 ### Important source-quality finding
 
