@@ -19,6 +19,15 @@
 
 The mindmap mirrors the canonical `catalog.json`: 13 domains and 111 component guides. The SVG is the quick visual preview; the draw.io file is the editable source. Select services according to workload requirements rather than treating the catalogue as a mandatory deployment stack.
 
+
+## Azure Master Architecture Map
+
+- [Open the linked Azure Master Architecture Map](AZURE-MASTER-ARCHITECTURE-MAP.md)
+- [View the SVG overview](AZURE-MASTER-ARCHITECTURE-MAP.svg)
+- [Open the editable catalogue mindmap](AZURE-MASTER-MINDMAP.drawio)
+
+The architecture map groups the existing A–L catalogue into ten architecture lenses and provides a separate AI infrastructure specialization path. The SVG is a navigation overview; detailed service guidance remains in the existing category/component pages.
+
 ## Category maps
 
 - **A · Cloud Foundation & Landing Zones** — [SVG preview](A-cloud-foundation-landing-zones/architecture.svg) · [Editable draw.io](A-cloud-foundation-landing-zones/architecture.drawio) · [Category guide](A-cloud-foundation-landing-zones/README.md)
