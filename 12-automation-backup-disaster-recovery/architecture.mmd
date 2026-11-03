@@ -1,10 +1,9 @@
 flowchart TB
-  BIA["Business impact analysis and workload criticality"] --> Objectives["Business-approved RTO / RPO / recovery level"]
-  Objectives --> Pattern{"Select workload protection pattern"}
-  Pattern --> Backup["Azure Backup: point-in-time recovery"]
-  Pattern --> ASR["Azure Site Recovery: replication and failover"]
-  Backup --> Vault["Vault architecture and anti-tampering controls"]
-  ASR --> Vault
-  Vault --> Plan["Recovery plan, sequencing and test drill"]
-  Plan --> Evidence["Measured RTO / RPO and application validation"]
-  Evidence --> Review["Remediation, sign-off and periodic review"]
+  Strategy["Business Continuity & Disaster Recovery Strategy"] --> BIA["Workload Criticality, BIA, RTO & RPO"]
+  BIA --> Backup["Azure Backup & Workload Protection"]
+  Backup --> Policy["Backup Policy, Retention & Vault Security"]
+  Policy --> Restore["Restore Operations & Recovery Testing"]
+  BIA --> ASR["Azure Site Recovery & Replication"]
+  ASR --> Plans["Recovery Plans, Failover & Failback"]
+  Restore --> Evidence["Measured recovery evidence"]
+  Plans --> Evidence
