@@ -1,491 +1,519 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2800" height="2627" viewBox="0 0 2800 2627">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="2832" viewBox="0 0 3000 2832">
 <defs>
- <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F6FAFE"/></linearGradient>
- <linearGradient id="azure" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1396E5"/><stop offset="1" stop-color="#0063A9"/></linearGradient>
- <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#15324B" flood-opacity=".13"/></filter>
+ <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F8FBFE"/></linearGradient>
+ <linearGradient id="azure" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1598E8"/><stop offset="1" stop-color="#0063A9"/></linearGradient>
+ <filter id="shadow" x="-12%" y="-12%" width="124%" height="135%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#16324B" flood-opacity=".13"/></filter>
  <style>
- .main{font:800 58px 'Segoe UI',Arial,sans-serif;fill:#101820;letter-spacing:1px}
- .sub{font:400 27px 'Segoe UI',Arial,sans-serif;fill:#334E68;letter-spacing:2px}
- .domain{font:700 23px 'Segoe UI',Arial,sans-serif;fill:#172B4D}
- .count{font:600 16px 'Segoe UI',Arial,sans-serif;fill:#526D82}
- .pill{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#263746}
+ .title{font:800 60px 'Segoe UI',Arial,sans-serif;fill:#111827;letter-spacing:1.2px}
+ .subtitle{font:400 27px 'Segoe UI',Arial,sans-serif;fill:#253B53;letter-spacing:2px}
+ .small{font:600 17px 'Segoe UI',Arial,sans-serif;fill:#5B7083}
+ .cat{font:700 22px 'Segoe UI',Arial,sans-serif;fill:#182B42}
+ .pill{font:500 19px 'Consolas','Courier New',monospace;fill:#253449}
  .num{font:800 18px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF}
- .foot{font:500 17px 'Segoe UI',Arial,sans-serif;fill:#526D82}
+ .roottext{font:800 26px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF}
+ .rootsub{font:600 15px 'Segoe UI',Arial,sans-serif;fill:#EAF6FF}
+ .count{font:700 15px 'Segoe UI',Arial,sans-serif;fill:#62788C}
+ .foot{font:500 16px 'Segoe UI',Arial,sans-serif;fill:#5B7083}
  </style>
 </defs>
-<rect width="2800" height="2627" fill="url(#bg)"/>
-<path d="M0 195 H2800" stroke="#E2EAF1" stroke-width="2"/>
-<text x="110" y="90" class="main">AZURE MASTER VAULT</text>
-<text x="115" y="143" class="sub">A PRACTICAL GUIDE TO AZURE CLOUD ARCHITECTURE</text>
-<text x="2680" y="82" text-anchor="end" class="count">13 CATEGORIES  •  111 CATALOGUE ENTRIES</text>
-<text x="2680" y="112" text-anchor="end" class="count">Click a component to open its guide</text>
-<rect x="85" y="1204" width="220" height="220" rx="28" fill="url(#azure)" stroke="#7CC8F4" stroke-width="4" filter="url(#shadow)"/>
-<path d="M130 1309 L190 1232 L250 1309 L190 1309 L155 1359 L225 1359 L190 1402 L130 1309" fill="#FFFFFF"/>
-<text x="195" y="1454" text-anchor="middle" class="domain">AZURE</text>
-<text x="195" y="1483" text-anchor="middle" class="count">MASTER VAULT</text>
-<text x="195" y="1514" text-anchor="middle" class="count">CLOUD PLATFORM</text>
-<path d="M305 1314 C435 1314, 240 317, 355 317" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="317" r="7" fill="#1596D2"/>
- <rect x="375" y="269" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#0078D4" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="265" r="19" fill="#0078D4" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="272" text-anchor="middle" class="num">1</text>
- <text x="421" y="325" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#0078D4">☁</text>
- <text x="421" y="390" text-anchor="middle" class="domain">Cloud Foundation &amp; Landing Zones</text>
- <path d="M468 317 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 317 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="252" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#0078D4" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="279" class="count">A  •  10 TOPICS</text><a xlink:href="A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/README.md" target="_blank">
-  <rect x="794" y="295" width="346" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="967" y="322" text-anchor="middle" class="pill">Microsoft Azure fundamentals</text>
+<rect width="3000" height="2832" fill="url(#paper)"/>
+<path d="M0 204 H3000" stroke="#E3EAF1" stroke-width="2"/>
+<text x="110" y="92" class="title">AZURE CLOUD MINDMAP</text>
+<text x="116" y="145" class="subtitle">A PRACTICAL GUIDE TO AZURE MASTER VAULT</text>
+<text x="2870" y="86" text-anchor="end" class="small">CLOUD • DATA • NETWORK • SECURITY • DEVOPS</text>
+<text x="2870" y="119" text-anchor="end" class="small">13 CATEGORIES • 111 CATALOGUE ENTRIES</text>
+<text x="2870" y="151" text-anchor="end" class="small">CLICK ANY COMPONENT TO OPEN ITS GUIDE</text>
+<rect x="82" y="1311" width="230" height="210" rx="28" fill="#FFFFFF" stroke="#A7B6C4" stroke-width="3" filter="url(#shadow)"/>
+<path d="M112 1421 L169 1339 L226 1421 L169 1421 L137 1467 L201 1467 L169 1506 L112 1421" fill="url(#azure)"/>
+<text x="197" y="1557" text-anchor="middle" class="roottext">AZURE</text>
+<text x="197" y="1584" text-anchor="middle" class="rootsub">MASTER VAULT</text><path d="M312 1416 C370.05 1416, 477.55 338, 527 338" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="812.3199999999999" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 338 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="262" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#0078D4" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="266" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="272" text-anchor="middle" class="num">1</text>
+ <text x="585" y="322" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">☁</text>
+ <text x="585" y="382" text-anchor="middle" class="cat">Cloud Foundation &amp; Landing Zones</text>
+ <path d="M637 338 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="338" r="7" fill="#1599D2"/>
+ <path d="M872 338 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="250" width="2030" height="176" rx="19" fill="#FFFFFF" stroke="#0078D4" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="275" class="count">A  •  10 TOPICS</text><a xlink:href="A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/README.md" target="_blank">
+  <rect x="928" y="286" width="339" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1097.5" y="313" text-anchor="middle" class="pill">Microsoft Azure fundamentals</text>
   </a><a xlink:href="A-cloud-foundation-landing-zones/regions-region-pairs-and-availability-zones/README.md" target="_blank">
-  <rect x="1150" y="295" width="460" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1380" y="322" text-anchor="middle" class="pill">Regions, Region Pairs &amp; Availability Zones</text>
+  <rect x="1279" y="286" width="485" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1521.5" y="313" text-anchor="middle" class="pill">Regions, Region Pairs &amp; Availability Zones</text>
   </a><a xlink:href="A-cloud-foundation-landing-zones/microsoft-entra-id-tenants/README.md" target="_blank">
-  <rect x="1620" y="295" width="324" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1782" y="322" text-anchor="middle" class="pill">Microsoft Entra ID tenants</text>
+  <rect x="1776" y="286" width="318" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1935" y="313" text-anchor="middle" class="pill">Microsoft Entra ID tenants</text>
   </a><a xlink:href="A-cloud-foundation-landing-zones/management-groups/README.md" target="_blank">
-  <rect x="1954" y="295" width="228" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2068" y="322" text-anchor="middle" class="pill">Management Groups</text>
+  <rect x="2106" y="286" width="225" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2218.5" y="313" text-anchor="middle" class="pill">Management Groups</text>
   </a><a xlink:href="A-cloud-foundation-landing-zones/azure-subscriptions/README.md" target="_blank">
-  <rect x="2192" y="295" width="249" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2316.5" y="322" text-anchor="middle" class="pill">Azure Subscriptions</text>
+  <rect x="2343" y="286" width="246" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2466" y="313" text-anchor="middle" class="pill">Azure Subscriptions</text>
   </a><a xlink:href="A-cloud-foundation-landing-zones/resource-groups/README.md" target="_blank">
-  <rect x="2451" y="295" width="207" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2554.5" y="322" text-anchor="middle" class="pill">Resource Groups</text>
+  <rect x="2601" y="286" width="204" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2703" y="313" text-anchor="middle" class="pill">Resource Groups</text>
   </a><a xlink:href="A-cloud-foundation-landing-zones/azure-resource-manager-arm/README.md" target="_blank">
-  <rect x="794" y="350" width="346" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="967" y="377" text-anchor="middle" class="pill">Azure Resource Manager (ARM)</text>
+  <rect x="928" y="342" width="339" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1097.5" y="369" text-anchor="middle" class="pill">Azure Resource Manager (ARM)</text>
   </a><a xlink:href="A-cloud-foundation-landing-zones/azure-policy/README.md" target="_blank">
-  <rect x="1150" y="350" width="174" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1237" y="377" text-anchor="middle" class="pill">Azure Policy</text>
+  <rect x="1279" y="342" width="173" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1365.5" y="369" text-anchor="middle" class="pill">Azure Policy</text>
   </a><a xlink:href="A-cloud-foundation-landing-zones/azure-landing-zones/README.md" target="_blank">
-  <rect x="1334" y="350" width="249" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1458.5" y="377" text-anchor="middle" class="pill">Azure Landing Zones</text>
+  <rect x="1464" y="342" width="246" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1587" y="369" text-anchor="middle" class="pill">Azure Landing Zones</text>
   </a><a xlink:href="A-cloud-foundation-landing-zones/azure-well-architected-framework/README.md" target="_blank">
-  <rect x="1593" y="350" width="388" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1787" y="377" text-anchor="middle" class="pill">Azure Well-Architected Framework</text>
-  </a><path d="M305 1314 C435 1314, 240 491, 355 491" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="491" r="7" fill="#1596D2"/>
- <rect x="375" y="443" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#176B87" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="439" r="19" fill="#176B87" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="446" text-anchor="middle" class="num">2</text>
- <text x="421" y="499" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#176B87">◉</text>
- <text x="421" y="564" text-anchor="middle" class="domain">Identity &amp; Access Management</text>
- <path d="M468 491 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 491 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="426" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#176B87" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="453" class="count">B  •  8 TOPICS</text><a xlink:href="B-identity-access-management/microsoft-entra-id/README.md" target="_blank">
-  <rect x="794" y="469" width="239" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="913.5" y="496" text-anchor="middle" class="pill">Microsoft Entra ID</text>
+  <rect x="1722" y="342" width="381" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1912.5" y="369" text-anchor="middle" class="pill">Azure Well-Architected Framework</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 532, 527 532" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="920.96" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 532 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="456" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#176B87" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="460" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="466" text-anchor="middle" class="num">2</text>
+ <text x="585" y="516" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">♙</text>
+ <text x="585" y="576" text-anchor="middle" class="cat">Identity &amp; Access Management</text>
+ <path d="M637 532 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="532" r="7" fill="#1599D2"/>
+ <path d="M872 532 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="444" width="2030" height="176" rx="19" fill="#FFFFFF" stroke="#176B87" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="469" class="count">B  •  8 TOPICS</text><a xlink:href="B-identity-access-management/microsoft-entra-id/README.md" target="_blank">
+  <rect x="928" y="480" width="235" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1045.5" y="507" text-anchor="middle" class="pill">Microsoft Entra ID</text>
   </a><a xlink:href="B-identity-access-management/app-registrations/README.md" target="_blank">
-  <rect x="1043" y="469" width="228" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1157" y="496" text-anchor="middle" class="pill">App Registrations</text>
+  <rect x="1175" y="480" width="225" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1287.5" y="507" text-anchor="middle" class="pill">App Registrations</text>
   </a><a xlink:href="B-identity-access-management/enterprise-applications-and-service-principals/README.md" target="_blank">
-  <rect x="1281" y="469" width="460" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1511" y="496" text-anchor="middle" class="pill">Enterprise Applications &amp; Service Principals</text>
+  <rect x="1412" y="480" width="490" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1657" y="507" text-anchor="middle" class="pill">Enterprise Applications &amp; Service Principals</text>
   </a><a xlink:href="B-identity-access-management/managed-identities/README.md" target="_blank">
-  <rect x="1751" y="469" width="239" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1870.5" y="496" text-anchor="middle" class="pill">Managed Identities</text>
+  <rect x="1914" y="480" width="235" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2031.5" y="507" text-anchor="middle" class="pill">Managed Identities</text>
   </a><a xlink:href="B-identity-access-management/azure-rbac/README.md" target="_blank">
-  <rect x="2000" y="469" width="160" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2080" y="496" text-anchor="middle" class="pill">Azure RBAC</text>
+  <rect x="2161" y="480" width="152" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2237" y="507" text-anchor="middle" class="pill">Azure RBAC</text>
   </a><a xlink:href="B-identity-access-management/mfa-and-conditional-access/README.md" target="_blank">
-  <rect x="2170" y="469" width="303" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2321.5" y="496" text-anchor="middle" class="pill">MFA &amp; Conditional Access</text>
+  <rect x="2325" y="480" width="298" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2474" y="507" text-anchor="middle" class="pill">MFA &amp; Conditional Access</text>
   </a><a xlink:href="B-identity-access-management/privileged-identity-management-pim/README.md" target="_blank">
-  <rect x="794" y="524" width="431" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1009.5" y="551" text-anchor="middle" class="pill">Privileged Identity Management (PIM)</text>
+  <rect x="928" y="536" width="422" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1139" y="563" text-anchor="middle" class="pill">Privileged Identity Management (PIM)</text>
   </a><a xlink:href="B-identity-access-management/oauth-2-0-and-openid-connect/README.md" target="_blank">
-  <rect x="1235" y="524" width="324" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1397" y="551" text-anchor="middle" class="pill">OAuth 2.0 &amp; OpenID Connect</text>
-  </a><path d="M305 1314 C435 1314, 240 665, 355 665" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="665" r="7" fill="#1596D2"/>
- <rect x="375" y="617" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#386CB0" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="613" r="19" fill="#386CB0" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="620" text-anchor="middle" class="num">3</text>
- <text x="421" y="673" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#386CB0">⌘</text>
- <text x="421" y="738" text-anchor="middle" class="domain">Networking &amp; Private Connectivity</text>
- <path d="M468 665 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 665 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="600" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#386CB0" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="627" class="count">C  •  12 TOPICS</text><a xlink:href="C-networking-private-connectivity/virtual-networks-vnet/README.md" target="_blank">
-  <rect x="794" y="643" width="292" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="940" y="670" text-anchor="middle" class="pill">Virtual Networks (VNet)</text>
+  <rect x="1362" y="536" width="318" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1521" y="563" text-anchor="middle" class="pill">OAuth 2.0 &amp; OpenID Connect</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 726, 527 726" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1029.6" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 726 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="650" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#386CB0" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="654" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="660" text-anchor="middle" class="num">3</text>
+ <text x="585" y="710" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">⌘</text>
+ <text x="585" y="770" text-anchor="middle" class="cat">Networking &amp; Private Connectivity</text>
+ <path d="M637 726 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="726" r="7" fill="#1599D2"/>
+ <path d="M872 726 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="638" width="2030" height="176" rx="19" fill="#FFFFFF" stroke="#386CB0" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="663" class="count">C  •  12 TOPICS</text><a xlink:href="C-networking-private-connectivity/virtual-networks-vnet/README.md" target="_blank">
+  <rect x="928" y="674" width="287" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1071.5" y="701" text-anchor="middle" class="pill">Virtual Networks (VNet)</text>
   </a><a xlink:href="C-networking-private-connectivity/subnets-and-cidr-planning/README.md" target="_blank">
-  <rect x="1096" y="643" width="292" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1242" y="670" text-anchor="middle" class="pill">Subnets &amp; CIDR Planning</text>
+  <rect x="1227" y="674" width="287" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1370.5" y="701" text-anchor="middle" class="pill">Subnets &amp; CIDR Planning</text>
   </a><a xlink:href="C-networking-private-connectivity/network-security-groups-nsgs/README.md" target="_blank">
-  <rect x="1398" y="643" width="367" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1581.5" y="670" text-anchor="middle" class="pill">Network Security Groups (NSGs)</text>
+  <rect x="1526" y="674" width="360" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1706" y="701" text-anchor="middle" class="pill">Network Security Groups (NSGs)</text>
   </a><a xlink:href="C-networking-private-connectivity/application-security-groups-asgs/README.md" target="_blank">
-  <rect x="1775" y="643" width="410" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1980" y="670" text-anchor="middle" class="pill">Application Security Groups (ASGs)</text>
+  <rect x="1898" y="674" width="402" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2099" y="701" text-anchor="middle" class="pill">Application Security Groups (ASGs)</text>
   </a><a xlink:href="C-networking-private-connectivity/vnet-peering/README.md" target="_blank">
-  <rect x="2195" y="643" width="174" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2282" y="670" text-anchor="middle" class="pill">VNet Peering</text>
+  <rect x="2312" y="674" width="173" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2398.5" y="701" text-anchor="middle" class="pill">VNet Peering</text>
   </a><a xlink:href="C-networking-private-connectivity/user-defined-routes-udrs/README.md" target="_blank">
-  <rect x="794" y="698" width="324" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="956" y="725" text-anchor="middle" class="pill">User-Defined Routes (UDRs)</text>
+  <rect x="2497" y="674" width="318" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2656" y="701" text-anchor="middle" class="pill">User-Defined Routes (UDRs)</text>
   </a><a xlink:href="C-networking-private-connectivity/azure-firewall/README.md" target="_blank">
-  <rect x="1128" y="698" width="196" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1226" y="725" text-anchor="middle" class="pill">Azure Firewall</text>
+  <rect x="928" y="730" width="194" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1025" y="757" text-anchor="middle" class="pill">Azure Firewall</text>
   </a><a xlink:href="C-networking-private-connectivity/vpn-gateway/README.md" target="_blank">
-  <rect x="1334" y="698" width="164" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1416" y="725" text-anchor="middle" class="pill">VPN Gateway</text>
+  <rect x="1134" y="730" width="162" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1215" y="757" text-anchor="middle" class="pill">VPN Gateway</text>
   </a><a xlink:href="C-networking-private-connectivity/expressroute/README.md" target="_blank">
-  <rect x="1508" y="698" width="174" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1595" y="725" text-anchor="middle" class="pill">ExpressRoute</text>
+  <rect x="1308" y="730" width="173" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1394.5" y="757" text-anchor="middle" class="pill">ExpressRoute</text>
   </a><a xlink:href="C-networking-private-connectivity/private-link-and-private-endpoints/README.md" target="_blank">
-  <rect x="1692" y="698" width="388" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1886" y="725" text-anchor="middle" class="pill">Private Link &amp; Private Endpoints</text>
+  <rect x="1493" y="730" width="381" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1683.5" y="757" text-anchor="middle" class="pill">Private Link &amp; Private Endpoints</text>
   </a><a xlink:href="C-networking-private-connectivity/private-dns-zones/README.md" target="_blank">
-  <rect x="2090" y="698" width="228" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2204" y="725" text-anchor="middle" class="pill">Private DNS Zones</text>
+  <rect x="1886" y="730" width="225" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1998.5" y="757" text-anchor="middle" class="pill">Private DNS Zones</text>
   </a><a xlink:href="C-networking-private-connectivity/nat-gateway/README.md" target="_blank">
-  <rect x="2328" y="698" width="164" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2410" y="725" text-anchor="middle" class="pill">NAT Gateway</text>
-  </a><path d="M305 1314 C435 1314, 240 839, 355 839" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="839" r="7" fill="#1596D2"/>
- <rect x="375" y="791" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#5B5BD6" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="787" r="19" fill="#5B5BD6" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="794" text-anchor="middle" class="num">4</text>
- <text x="421" y="847" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#5B5BD6">⇄</text>
- <text x="421" y="912" text-anchor="middle" class="domain">Traffic Management &amp; Delivery</text>
- <path d="M468 839 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 839 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="774" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#5B5BD6" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="801" class="count">D  •  8 TOPICS</text><a xlink:href="D-traffic-management-delivery/azure-load-balancer/README.md" target="_blank">
-  <rect x="794" y="817" width="249" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="918.5" y="844" text-anchor="middle" class="pill">Azure Load Balancer</text>
+  <rect x="2123" y="730" width="162" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2204" y="757" text-anchor="middle" class="pill">NAT Gateway</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 915, 527 915" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1135.44" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 915 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="844" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#5B5BD6" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="848" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="854" text-anchor="middle" class="num">4</text>
+ <text x="585" y="904" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">⇄</text>
+ <text x="585" y="964" text-anchor="middle" class="cat">Traffic Management &amp; Delivery</text>
+ <path d="M637 915 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="915" r="7" fill="#1599D2"/>
+ <path d="M872 915 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="832" width="2030" height="166" rx="19" fill="#FFFFFF" stroke="#5B5BD6" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="857" class="count">D  •  8 TOPICS</text><a xlink:href="D-traffic-management-delivery/azure-load-balancer/README.md" target="_blank">
+  <rect x="928" y="868" width="246" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1051" y="895" text-anchor="middle" class="pill">Azure Load Balancer</text>
   </a><a xlink:href="D-traffic-management-delivery/application-gateway-and-waf/README.md" target="_blank">
-  <rect x="1053" y="817" width="314" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1210" y="844" text-anchor="middle" class="pill">Application Gateway &amp; WAF</text>
+  <rect x="1186" y="868" width="308" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1340" y="895" text-anchor="middle" class="pill">Application Gateway &amp; WAF</text>
   </a><a xlink:href="D-traffic-management-delivery/azure-front-door/README.md" target="_blank">
-  <rect x="1377" y="817" width="217" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1485.5" y="844" text-anchor="middle" class="pill">Azure Front Door</text>
+  <rect x="1506" y="868" width="214" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1613" y="895" text-anchor="middle" class="pill">Azure Front Door</text>
   </a><a xlink:href="D-traffic-management-delivery/traffic-manager/README.md" target="_blank">
-  <rect x="1604" y="817" width="207" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1707.5" y="844" text-anchor="middle" class="pill">Traffic Manager</text>
+  <rect x="1732" y="868" width="204" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1834" y="895" text-anchor="middle" class="pill">Traffic Manager</text>
   </a><a xlink:href="D-traffic-management-delivery/azure-bastion/README.md" target="_blank">
-  <rect x="1821" y="817" width="185" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1913.5" y="844" text-anchor="middle" class="pill">Azure Bastion</text>
+  <rect x="1948" y="868" width="183" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2039.5" y="895" text-anchor="middle" class="pill">Azure Bastion</text>
   </a><a xlink:href="D-traffic-management-delivery/azure-dns/README.md" target="_blank">
-  <rect x="2016" y="817" width="160" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2096" y="844" text-anchor="middle" class="pill">Azure DNS</text>
+  <rect x="2143" y="868" width="145" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2215.5" y="895" text-anchor="middle" class="pill">Azure DNS</text>
   </a><a xlink:href="D-traffic-management-delivery/ddos-protection/README.md" target="_blank">
-  <rect x="2186" y="817" width="207" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2289.5" y="844" text-anchor="middle" class="pill">DDoS Protection</text>
+  <rect x="2300" y="868" width="204" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2402" y="895" text-anchor="middle" class="pill">DDoS Protection</text>
   </a><a xlink:href="D-traffic-management-delivery/network-watcher/README.md" target="_blank">
-  <rect x="2403" y="817" width="207" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2506.5" y="844" text-anchor="middle" class="pill">Network Watcher</text>
-  </a><path d="M305 1314 C435 1314, 240 1013, 355 1013" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="1013" r="7" fill="#1596D2"/>
- <rect x="375" y="965" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#087E8B" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="961" r="19" fill="#087E8B" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="968" text-anchor="middle" class="num">5</text>
- <text x="421" y="1021" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#087E8B">▣</text>
- <text x="421" y="1086" text-anchor="middle" class="domain">Compute &amp; Application Hosting</text>
- <path d="M468 1013 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 1013 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="948" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#087E8B" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="975" class="count">E  •  8 TOPICS</text><a xlink:href="E-compute-application-hosting/virtual-machines/README.md" target="_blank">
-  <rect x="794" y="991" width="217" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="902.5" y="1018" text-anchor="middle" class="pill">Virtual Machines</text>
+  <rect x="2516" y="868" width="204" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2618" y="895" text-anchor="middle" class="pill">Network Watcher</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 1099, 527 1099" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1238.48" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 1099 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="1028" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#087E8B" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="1032" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="1038" text-anchor="middle" class="num">5</text>
+ <text x="585" y="1088" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">▣</text>
+ <text x="585" y="1148" text-anchor="middle" class="cat">Compute &amp; Application Hosting</text>
+ <path d="M637 1099 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="1099" r="7" fill="#1599D2"/>
+ <path d="M872 1099 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="1016" width="2030" height="166" rx="19" fill="#FFFFFF" stroke="#087E8B" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="1041" class="count">E  •  8 TOPICS</text><a xlink:href="E-compute-application-hosting/virtual-machines/README.md" target="_blank">
+  <rect x="928" y="1052" width="214" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1035" y="1079" text-anchor="middle" class="pill">Virtual Machines</text>
   </a><a xlink:href="E-compute-application-hosting/managed-disks/README.md" target="_blank">
-  <rect x="1021" y="991" width="185" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1113.5" y="1018" text-anchor="middle" class="pill">Managed Disks</text>
+  <rect x="1154" y="1052" width="183" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1245.5" y="1079" text-anchor="middle" class="pill">Managed Disks</text>
   </a><a xlink:href="E-compute-application-hosting/availability-sets-and-zones/README.md" target="_blank">
-  <rect x="1216" y="991" width="314" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1373" y="1018" text-anchor="middle" class="pill">Availability Sets &amp; Zones</text>
+  <rect x="1349" y="1052" width="308" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1503" y="1079" text-anchor="middle" class="pill">Availability Sets &amp; Zones</text>
   </a><a xlink:href="E-compute-application-hosting/virtual-machine-scale-sets/README.md" target="_blank">
-  <rect x="1540" y="991" width="324" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1702" y="1018" text-anchor="middle" class="pill">Virtual Machine Scale Sets</text>
+  <rect x="1669" y="1052" width="318" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1828" y="1079" text-anchor="middle" class="pill">Virtual Machine Scale Sets</text>
   </a><a xlink:href="E-compute-application-hosting/azure-app-service/README.md" target="_blank">
-  <rect x="1874" y="991" width="228" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1988" y="1018" text-anchor="middle" class="pill">Azure App Service</text>
+  <rect x="1999" y="1052" width="225" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2111.5" y="1079" text-anchor="middle" class="pill">Azure App Service</text>
   </a><a xlink:href="E-compute-application-hosting/azure-functions/README.md" target="_blank">
-  <rect x="2112" y="991" width="207" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2215.5" y="1018" text-anchor="middle" class="pill">Azure Functions</text>
+  <rect x="2236" y="1052" width="204" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2338" y="1079" text-anchor="middle" class="pill">Azure Functions</text>
   </a><a xlink:href="E-compute-application-hosting/logic-apps/README.md" target="_blank">
-  <rect x="2329" y="991" width="160" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2409" y="1018" text-anchor="middle" class="pill">Logic Apps</text>
+  <rect x="2452" y="1052" width="152" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2528" y="1079" text-anchor="middle" class="pill">Logic Apps</text>
   </a><a xlink:href="E-compute-application-hosting/azure-batch/README.md" target="_blank">
-  <rect x="2499" y="991" width="164" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2581" y="1018" text-anchor="middle" class="pill">Azure Batch</text>
-  </a><path d="M305 1314 C435 1314, 240 1187, 355 1187" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="1187" r="7" fill="#1596D2"/>
- <rect x="375" y="1139" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#355C7D" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="1135" r="19" fill="#355C7D" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="1142" text-anchor="middle" class="num">6</text>
- <text x="421" y="1195" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#355C7D">⬡</text>
- <text x="421" y="1260" text-anchor="middle" class="domain">Containers &amp; Kubernetes</text>
- <path d="M468 1187 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 1187 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="1122" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#355C7D" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="1149" class="count">F  •  6 TOPICS</text><a xlink:href="F-containers-kubernetes/docker-and-container-fundamentals/README.md" target="_blank">
-  <rect x="794" y="1165" width="378" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="983" y="1192" text-anchor="middle" class="pill">Docker &amp; Container Fundamentals</text>
+  <rect x="2616" y="1052" width="162" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2697" y="1079" text-anchor="middle" class="pill">Azure Batch</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 1288, 527 1288" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1344.32" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 1288 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="1212" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#355C7D" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="1216" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="1222" text-anchor="middle" class="num">6</text>
+ <text x="585" y="1272" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">⬡</text>
+ <text x="585" y="1332" text-anchor="middle" class="cat">Containers &amp; Kubernetes</text>
+ <path d="M637 1288 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="1288" r="7" fill="#1599D2"/>
+ <path d="M872 1288 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="1200" width="2030" height="176" rx="19" fill="#FFFFFF" stroke="#355C7D" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="1225" class="count">F  •  6 TOPICS</text><a xlink:href="F-containers-kubernetes/docker-and-container-fundamentals/README.md" target="_blank">
+  <rect x="928" y="1236" width="370" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1113" y="1263" text-anchor="middle" class="pill">Docker &amp; Container Fundamentals</text>
   </a><a xlink:href="F-containers-kubernetes/azure-container-registry-acr/README.md" target="_blank">
-  <rect x="1182" y="1165" width="367" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1365.5" y="1192" text-anchor="middle" class="pill">Azure Container Registry (ACR)</text>
+  <rect x="1310" y="1236" width="360" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1490" y="1263" text-anchor="middle" class="pill">Azure Container Registry (ACR)</text>
   </a><a xlink:href="F-containers-kubernetes/azure-container-apps/README.md" target="_blank">
-  <rect x="1559" y="1165" width="260" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1689" y="1192" text-anchor="middle" class="pill">Azure Container Apps</text>
+  <rect x="1682" y="1236" width="256" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1810" y="1263" text-anchor="middle" class="pill">Azure Container Apps</text>
   </a><a xlink:href="F-containers-kubernetes/azure-kubernetes-service-aks/README.md" target="_blank">
-  <rect x="1829" y="1165" width="367" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2012.5" y="1192" text-anchor="middle" class="pill">Azure Kubernetes Service (AKS)</text>
+  <rect x="1950" y="1236" width="360" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2130" y="1263" text-anchor="middle" class="pill">Azure Kubernetes Service (AKS)</text>
   </a><a xlink:href="F-containers-kubernetes/azure-container-instances-aci/README.md" target="_blank">
-  <rect x="2206" y="1165" width="378" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2395" y="1192" text-anchor="middle" class="pill">Azure Container Instances (ACI)</text>
+  <rect x="2322" y="1236" width="370" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2507" y="1263" text-anchor="middle" class="pill">Azure Container Instances (ACI)</text>
   </a><a xlink:href="F-containers-kubernetes/aks-ingress-scaling-and-workload-identity/README.md" target="_blank">
-  <rect x="794" y="1220" width="460" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1024" y="1247" text-anchor="middle" class="pill">AKS Ingress, Scaling &amp; Workload Identity</text>
-  </a><path d="M305 1314 C435 1314, 240 1361, 355 1361" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="1361" r="7" fill="#1596D2"/>
- <rect x="375" y="1313" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#168AAD" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="1309" r="19" fill="#168AAD" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="1316" text-anchor="middle" class="num">7</text>
- <text x="421" y="1369" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#168AAD">▤</text>
- <text x="421" y="1434" text-anchor="middle" class="domain">Storage &amp; Enterprise File Services</text>
- <path d="M468 1361 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 1361 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="1296" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#168AAD" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="1323" class="count">G  •  8 TOPICS</text><a xlink:href="G-storage-enterprise-file-services/storage-accounts/README.md" target="_blank">
-  <rect x="794" y="1339" width="217" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="902.5" y="1366" text-anchor="middle" class="pill">Storage Accounts</text>
+  <rect x="928" y="1292" width="464" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1160" y="1319" text-anchor="middle" class="pill">AKS Ingress, Scaling &amp; Workload Identity</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 1482, 527 1482" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1452.96" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 1482 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="1406" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#168AAD" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="1410" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="1416" text-anchor="middle" class="num">7</text>
+ <text x="585" y="1466" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">▤</text>
+ <text x="585" y="1526" text-anchor="middle" class="cat">Storage &amp; Enterprise File Services</text>
+ <path d="M637 1482 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="1482" r="7" fill="#1599D2"/>
+ <path d="M872 1482 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="1394" width="2030" height="176" rx="19" fill="#FFFFFF" stroke="#168AAD" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="1419" class="count">G  •  8 TOPICS</text><a xlink:href="G-storage-enterprise-file-services/storage-accounts/README.md" target="_blank">
+  <rect x="928" y="1430" width="214" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1035" y="1457" text-anchor="middle" class="pill">Storage Accounts</text>
   </a><a xlink:href="G-storage-enterprise-file-services/blob-storage/README.md" target="_blank">
-  <rect x="1021" y="1339" width="174" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1108" y="1366" text-anchor="middle" class="pill">Blob Storage</text>
+  <rect x="1154" y="1430" width="173" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1240.5" y="1457" text-anchor="middle" class="pill">Blob Storage</text>
   </a><a xlink:href="G-storage-enterprise-file-services/azure-data-lake-storage-gen2/README.md" target="_blank">
-  <rect x="1205" y="1339" width="346" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1378" y="1366" text-anchor="middle" class="pill">Azure Data Lake Storage Gen2</text>
+  <rect x="1339" y="1430" width="339" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1508.5" y="1457" text-anchor="middle" class="pill">Azure Data Lake Storage Gen2</text>
   </a><a xlink:href="G-storage-enterprise-file-services/azure-files/README.md" target="_blank">
-  <rect x="1561" y="1339" width="164" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1643" y="1366" text-anchor="middle" class="pill">Azure Files</text>
+  <rect x="1690" y="1430" width="162" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1771" y="1457" text-anchor="middle" class="pill">Azure Files</text>
   </a><a xlink:href="G-storage-enterprise-file-services/azure-netapp-files/README.md" target="_blank">
-  <rect x="1735" y="1339" width="239" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1854.5" y="1366" text-anchor="middle" class="pill">Azure NetApp Files</text>
+  <rect x="1864" y="1430" width="235" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1981.5" y="1457" text-anchor="middle" class="pill">Azure NetApp Files</text>
   </a><a xlink:href="G-storage-enterprise-file-services/queue-storage/README.md" target="_blank">
-  <rect x="1984" y="1339" width="185" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2076.5" y="1366" text-anchor="middle" class="pill">Queue Storage</text>
+  <rect x="2111" y="1430" width="183" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2202.5" y="1457" text-anchor="middle" class="pill">Queue Storage</text>
   </a><a xlink:href="G-storage-enterprise-file-services/table-storage/README.md" target="_blank">
-  <rect x="2179" y="1339" width="185" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2271.5" y="1366" text-anchor="middle" class="pill">Table Storage</text>
+  <rect x="2306" y="1430" width="183" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2397.5" y="1457" text-anchor="middle" class="pill">Table Storage</text>
   </a><a xlink:href="G-storage-enterprise-file-services/storage-redundancy-lrs-zrs-grs-and-gzrs/README.md" target="_blank">
-  <rect x="794" y="1394" width="460" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1024" y="1421" text-anchor="middle" class="pill">Storage Redundancy: LRS, ZRS, GRS &amp; GZRS</text>
-  </a><path d="M305 1314 C435 1314, 240 1535, 355 1535" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="1535" r="7" fill="#1596D2"/>
- <rect x="375" y="1487" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#2A6F97" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="1483" r="19" fill="#2A6F97" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="1490" text-anchor="middle" class="num">8</text>
- <text x="421" y="1543" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#2A6F97">▥</text>
- <text x="421" y="1608" text-anchor="middle" class="domain">Databases &amp; Data Platforms</text>
- <path d="M468 1535 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 1535 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="1470" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#2A6F97" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="1497" class="count">H  •  10 TOPICS</text><a xlink:href="H-databases-data-platforms/azure-sql-database/README.md" target="_blank">
-  <rect x="794" y="1513" width="239" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="913.5" y="1540" text-anchor="middle" class="pill">Azure SQL Database</text>
+  <rect x="928" y="1486" width="464" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1160" y="1513" text-anchor="middle" class="pill">Storage Redundancy: LRS, ZRS, GRS &amp; GZRS</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 1676, 527 1676" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1561.6" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 1676 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="1600" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#2A6F97" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="1604" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="1610" text-anchor="middle" class="num">8</text>
+ <text x="585" y="1660" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">▥</text>
+ <text x="585" y="1720" text-anchor="middle" class="cat">Databases &amp; Data Platforms</text>
+ <path d="M637 1676 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="1676" r="7" fill="#1599D2"/>
+ <path d="M872 1676 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="1588" width="2030" height="176" rx="19" fill="#FFFFFF" stroke="#2A6F97" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="1613" class="count">H  •  10 TOPICS</text><a xlink:href="H-databases-data-platforms/azure-sql-database/README.md" target="_blank">
+  <rect x="928" y="1624" width="235" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1045.5" y="1651" text-anchor="middle" class="pill">Azure SQL Database</text>
   </a><a xlink:href="H-databases-data-platforms/azure-sql-managed-instance/README.md" target="_blank">
-  <rect x="1043" y="1513" width="324" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1205" y="1540" text-anchor="middle" class="pill">Azure SQL Managed Instance</text>
+  <rect x="1175" y="1624" width="318" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1334" y="1651" text-anchor="middle" class="pill">Azure SQL Managed Instance</text>
   </a><a xlink:href="H-databases-data-platforms/sql-server-on-azure-vms/README.md" target="_blank">
-  <rect x="1377" y="1513" width="292" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1523" y="1540" text-anchor="middle" class="pill">SQL Server on Azure VMs</text>
+  <rect x="1505" y="1624" width="287" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1648.5" y="1651" text-anchor="middle" class="pill">SQL Server on Azure VMs</text>
   </a><a xlink:href="H-databases-data-platforms/azure-cosmos-db/README.md" target="_blank">
-  <rect x="1679" y="1513" width="207" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1782.5" y="1540" text-anchor="middle" class="pill">Azure Cosmos DB</text>
+  <rect x="1804" y="1624" width="204" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1906" y="1651" text-anchor="middle" class="pill">Azure Cosmos DB</text>
   </a><a xlink:href="H-databases-data-platforms/azure-database-for-postgresql/README.md" target="_blank">
-  <rect x="1896" y="1513" width="356" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2074" y="1540" text-anchor="middle" class="pill">Azure Database for PostgreSQL</text>
+  <rect x="2020" y="1624" width="350" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2195" y="1651" text-anchor="middle" class="pill">Azure Database for PostgreSQL</text>
   </a><a xlink:href="H-databases-data-platforms/azure-database-for-mysql/README.md" target="_blank">
-  <rect x="2262" y="1513" width="303" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2413.5" y="1540" text-anchor="middle" class="pill">Azure Database for MySQL</text>
+  <rect x="2382" y="1624" width="298" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2531" y="1651" text-anchor="middle" class="pill">Azure Database for MySQL</text>
   </a><a xlink:href="H-databases-data-platforms/azure-managed-redis/README.md" target="_blank">
-  <rect x="794" y="1568" width="249" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="918.5" y="1595" text-anchor="middle" class="pill">Azure Managed Redis</text>
+  <rect x="928" y="1680" width="246" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1051" y="1707" text-anchor="middle" class="pill">Azure Managed Redis</text>
   </a><a xlink:href="H-databases-data-platforms/azure-data-factory/README.md" target="_blank">
-  <rect x="1053" y="1568" width="239" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1172.5" y="1595" text-anchor="middle" class="pill">Azure Data Factory</text>
+  <rect x="1186" y="1680" width="235" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1303.5" y="1707" text-anchor="middle" class="pill">Azure Data Factory</text>
   </a><a xlink:href="H-databases-data-platforms/azure-databricks/README.md" target="_blank">
-  <rect x="1302" y="1568" width="217" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1410.5" y="1595" text-anchor="middle" class="pill">Azure Databricks</text>
+  <rect x="1433" y="1680" width="214" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1540" y="1707" text-anchor="middle" class="pill">Azure Databricks</text>
   </a><a xlink:href="H-databases-data-platforms/microsoft-fabric-onelake/README.md" target="_blank">
-  <rect x="1529" y="1568" width="324" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1691" y="1595" text-anchor="middle" class="pill">Microsoft Fabric / OneLake</text>
-  </a><path d="M305 1314 C435 1314, 240 1709, 355 1709" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="1709" r="7" fill="#1596D2"/>
- <rect x="375" y="1661" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#6C63A8" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="1657" r="19" fill="#6C63A8" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="1664" text-anchor="middle" class="num">9</text>
- <text x="421" y="1717" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#6C63A8">✉</text>
- <text x="421" y="1782" text-anchor="middle" class="domain">Integration &amp; API Management</text>
- <path d="M468 1709 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 1709 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="1644" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#6C63A8" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="1671" class="count">I  •  6 TOPICS</text><a xlink:href="I-integration-api-management/api-management/README.md" target="_blank">
-  <rect x="794" y="1687" width="196" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="892" y="1714" text-anchor="middle" class="pill">API Management</text>
+  <rect x="1659" y="1680" width="318" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1818" y="1707" text-anchor="middle" class="pill">Microsoft Fabric / OneLake</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 1865, 527 1865" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1667.44" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 1865 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="1794" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#6C63A8" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="1798" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="1804" text-anchor="middle" class="num">9</text>
+ <text x="585" y="1854" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">✉</text>
+ <text x="585" y="1914" text-anchor="middle" class="cat">Integration &amp; API Management</text>
+ <path d="M637 1865 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="1865" r="7" fill="#1599D2"/>
+ <path d="M872 1865 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="1782" width="2030" height="166" rx="19" fill="#FFFFFF" stroke="#6C63A8" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="1807" class="count">I  •  6 TOPICS</text><a xlink:href="I-integration-api-management/api-management/README.md" target="_blank">
+  <rect x="928" y="1818" width="194" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1025" y="1845" text-anchor="middle" class="pill">API Management</text>
   </a><a xlink:href="I-integration-api-management/azure-service-bus/README.md" target="_blank">
-  <rect x="1000" y="1687" width="228" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1114" y="1714" text-anchor="middle" class="pill">Azure Service Bus</text>
+  <rect x="1134" y="1818" width="225" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1246.5" y="1845" text-anchor="middle" class="pill">Azure Service Bus</text>
   </a><a xlink:href="I-integration-api-management/azure-event-grid/README.md" target="_blank">
-  <rect x="1238" y="1687" width="217" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1346.5" y="1714" text-anchor="middle" class="pill">Azure Event Grid</text>
+  <rect x="1371" y="1818" width="214" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1478" y="1845" text-anchor="middle" class="pill">Azure Event Grid</text>
   </a><a xlink:href="I-integration-api-management/azure-event-hubs/README.md" target="_blank">
-  <rect x="1465" y="1687" width="217" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1573.5" y="1714" text-anchor="middle" class="pill">Azure Event Hubs</text>
+  <rect x="1597" y="1818" width="214" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1704" y="1845" text-anchor="middle" class="pill">Azure Event Hubs</text>
   </a><a xlink:href="I-integration-api-management/azure-stream-analytics/README.md" target="_blank">
-  <rect x="1692" y="1687" width="281" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1832.5" y="1714" text-anchor="middle" class="pill">Azure Stream Analytics</text>
+  <rect x="1823" y="1818" width="277" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1961.5" y="1845" text-anchor="middle" class="pill">Azure Stream Analytics</text>
   </a><a xlink:href="I-integration-api-management/azure-data-explorer/README.md" target="_blank">
-  <rect x="1983" y="1687" width="249" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2107.5" y="1714" text-anchor="middle" class="pill">Azure Data Explorer</text>
-  </a><path d="M305 1314 C435 1314, 240 1883, 355 1883" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="1883" r="7" fill="#1596D2"/>
- <rect x="375" y="1835" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#B45F06" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="1831" r="19" fill="#B45F06" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="1838" text-anchor="middle" class="num">10</text>
- <text x="421" y="1891" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#B45F06">⬟</text>
- <text x="421" y="1956" text-anchor="middle" class="domain">Security, Secrets &amp; Governance</text>
- <path d="M468 1883 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 1883 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="1818" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#B45F06" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="1845" class="count">J  •  8 TOPICS</text><a xlink:href="J-security-secrets-governance/azure-key-vault/README.md" target="_blank">
-  <rect x="794" y="1861" width="207" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="897.5" y="1888" text-anchor="middle" class="pill">Azure Key Vault</text>
+  <rect x="2112" y="1818" width="246" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2235" y="1845" text-anchor="middle" class="pill">Azure Data Explorer</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 2054, 527 2054" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1773.28" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 2054 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="1978" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#B45F06" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="1982" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="1988" text-anchor="middle" class="num">10</text>
+ <text x="585" y="2038" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">⬟</text>
+ <text x="585" y="2098" text-anchor="middle" class="cat">Security, Secrets &amp; Governance</text>
+ <path d="M637 2054 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="2054" r="7" fill="#1599D2"/>
+ <path d="M872 2054 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="1966" width="2030" height="176" rx="19" fill="#FFFFFF" stroke="#B45F06" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="1991" class="count">J  •  8 TOPICS</text><a xlink:href="J-security-secrets-governance/azure-key-vault/README.md" target="_blank">
+  <rect x="928" y="2002" width="204" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1030" y="2029" text-anchor="middle" class="pill">Azure Key Vault</text>
   </a><a xlink:href="J-security-secrets-governance/key-vault-access-policies-and-rbac/README.md" target="_blank">
-  <rect x="1011" y="1861" width="388" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1205" y="1888" text-anchor="middle" class="pill">Key Vault Access Policies &amp; RBAC</text>
+  <rect x="1144" y="2002" width="381" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1334.5" y="2029" text-anchor="middle" class="pill">Key Vault Access Policies &amp; RBAC</text>
   </a><a xlink:href="J-security-secrets-governance/microsoft-defender-for-cloud/README.md" target="_blank">
-  <rect x="1409" y="1861" width="346" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1582" y="1888" text-anchor="middle" class="pill">Microsoft Defender for Cloud</text>
+  <rect x="1537" y="2002" width="339" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1706.5" y="2029" text-anchor="middle" class="pill">Microsoft Defender for Cloud</text>
   </a><a xlink:href="J-security-secrets-governance/microsoft-sentinel/README.md" target="_blank">
-  <rect x="1765" y="1861" width="239" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1884.5" y="1888" text-anchor="middle" class="pill">Microsoft Sentinel</text>
+  <rect x="1888" y="2002" width="235" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2005.5" y="2029" text-anchor="middle" class="pill">Microsoft Sentinel</text>
   </a><a xlink:href="J-security-secrets-governance/microsoft-purview/README.md" target="_blank">
-  <rect x="2014" y="1861" width="228" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2128" y="1888" text-anchor="middle" class="pill">Microsoft Purview</text>
+  <rect x="2135" y="2002" width="225" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2247.5" y="2029" text-anchor="middle" class="pill">Microsoft Purview</text>
   </a><a xlink:href="J-security-secrets-governance/azure-resource-locks/README.md" target="_blank">
-  <rect x="2252" y="1861" width="260" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2382" y="1888" text-anchor="middle" class="pill">Azure Resource Locks</text>
+  <rect x="2372" y="2002" width="256" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2500" y="2029" text-anchor="middle" class="pill">Azure Resource Locks</text>
   </a><a xlink:href="J-security-secrets-governance/tagging-and-naming-standards/README.md" target="_blank">
-  <rect x="794" y="1916" width="324" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="956" y="1943" text-anchor="middle" class="pill">Tagging &amp; Naming Standards</text>
+  <rect x="928" y="2058" width="318" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1087" y="2085" text-anchor="middle" class="pill">Tagging &amp; Naming Standards</text>
   </a><a xlink:href="J-security-secrets-governance/zero-trust-architecture/README.md" target="_blank">
-  <rect x="1128" y="1916" width="292" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1274" y="1943" text-anchor="middle" class="pill">Zero Trust Architecture</text>
-  </a><path d="M305 1314 C435 1314, 240 2057, 355 2057" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="2057" r="7" fill="#1596D2"/>
- <rect x="375" y="2009" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#3B6C70" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="2005" r="19" fill="#3B6C70" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="2012" text-anchor="middle" class="num">11</text>
- <text x="421" y="2065" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#3B6C70">◷</text>
- <text x="421" y="2130" text-anchor="middle" class="domain">Monitoring, Operations &amp; Cost</text>
- <path d="M468 2057 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 2057 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="1992" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#3B6C70" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="2019" class="count">K  •  10 TOPICS</text><a xlink:href="K-monitoring-operations-cost/azure-monitor/README.md" target="_blank">
-  <rect x="794" y="2035" width="185" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="886.5" y="2062" text-anchor="middle" class="pill">Azure Monitor</text>
+  <rect x="1258" y="2058" width="287" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1401.5" y="2085" text-anchor="middle" class="pill">Zero Trust Architecture</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 2248, 527 2248" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1881.92" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 2248 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="2172" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#3B6C70" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="2176" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="2182" text-anchor="middle" class="num">11</text>
+ <text x="585" y="2232" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">◷</text>
+ <text x="585" y="2292" text-anchor="middle" class="cat">Monitoring, Operations &amp; Cost</text>
+ <path d="M637 2248 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="2248" r="7" fill="#1599D2"/>
+ <path d="M872 2248 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="2160" width="2030" height="176" rx="19" fill="#FFFFFF" stroke="#3B6C70" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="2185" class="count">K  •  10 TOPICS</text><a xlink:href="K-monitoring-operations-cost/azure-monitor/README.md" target="_blank">
+  <rect x="928" y="2196" width="183" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1019.5" y="2223" text-anchor="middle" class="pill">Azure Monitor</text>
   </a><a xlink:href="K-monitoring-operations-cost/log-analytics-workspace-and-kql/README.md" target="_blank">
-  <rect x="989" y="2035" width="356" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1167" y="2062" text-anchor="middle" class="pill">Log Analytics Workspace &amp; KQL</text>
+  <rect x="1123" y="2196" width="350" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1298" y="2223" text-anchor="middle" class="pill">Log Analytics Workspace &amp; KQL</text>
   </a><a xlink:href="K-monitoring-operations-cost/application-insights/README.md" target="_blank">
-  <rect x="1355" y="2035" width="260" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1485" y="2062" text-anchor="middle" class="pill">Application Insights</text>
+  <rect x="1485" y="2196" width="256" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1613" y="2223" text-anchor="middle" class="pill">Application Insights</text>
   </a><a xlink:href="K-monitoring-operations-cost/azure-monitor-alerts-and-action-groups/README.md" target="_blank">
-  <rect x="1625" y="2035" width="431" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1840.5" y="2062" text-anchor="middle" class="pill">Azure Monitor Alerts &amp; Action Groups</text>
+  <rect x="1753" y="2196" width="422" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1964" y="2223" text-anchor="middle" class="pill">Azure Monitor Alerts &amp; Action Groups</text>
   </a><a xlink:href="K-monitoring-operations-cost/service-health-and-resource-health/README.md" target="_blank">
-  <rect x="2066" y="2035" width="388" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2260" y="2062" text-anchor="middle" class="pill">Service Health &amp; Resource Health</text>
+  <rect x="2187" y="2196" width="381" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2377.5" y="2223" text-anchor="middle" class="pill">Service Health &amp; Resource Health</text>
   </a><a xlink:href="K-monitoring-operations-cost/cost-management/README.md" target="_blank">
-  <rect x="794" y="2090" width="207" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="897.5" y="2117" text-anchor="middle" class="pill">Cost Management</text>
+  <rect x="2580" y="2196" width="204" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2682" y="2223" text-anchor="middle" class="pill">Cost Management</text>
   </a><a xlink:href="K-monitoring-operations-cost/azure-advisor/README.md" target="_blank">
-  <rect x="1011" y="2090" width="185" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1103.5" y="2117" text-anchor="middle" class="pill">Azure Advisor</text>
+  <rect x="928" y="2252" width="183" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1019.5" y="2279" text-anchor="middle" class="pill">Azure Advisor</text>
   </a><a xlink:href="K-monitoring-operations-cost/azure-automation/README.md" target="_blank">
-  <rect x="1206" y="2090" width="217" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1314.5" y="2117" text-anchor="middle" class="pill">Azure Automation</text>
+  <rect x="1123" y="2252" width="214" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1230" y="2279" text-anchor="middle" class="pill">Azure Automation</text>
   </a><a xlink:href="K-monitoring-operations-cost/azure-update-manager/README.md" target="_blank">
-  <rect x="1433" y="2090" width="260" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1563" y="2117" text-anchor="middle" class="pill">Azure Update Manager</text>
+  <rect x="1349" y="2252" width="256" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1477" y="2279" text-anchor="middle" class="pill">Azure Update Manager</text>
   </a><a xlink:href="K-monitoring-operations-cost/azure-resource-graph/README.md" target="_blank">
-  <rect x="1703" y="2090" width="260" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1833" y="2117" text-anchor="middle" class="pill">Azure Resource Graph</text>
-  </a><path d="M305 1314 C435 1314, 240 2231, 355 2231" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="2231" r="7" fill="#1596D2"/>
- <rect x="375" y="2183" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#58508D" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="2179" r="19" fill="#58508D" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="2186" text-anchor="middle" class="num">12</text>
- <text x="421" y="2239" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#58508D">⚙</text>
- <text x="421" y="2304" text-anchor="middle" class="domain">DevOps, Resilience, Migration &amp; AI</text>
- <path d="M468 2231 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 2231 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="2166" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#58508D" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="2193" class="count">L  •  12 TOPICS</text><a xlink:href="L-devops-resilience-migration-ai/terraform/README.md" target="_blank">
-  <rect x="794" y="2209" width="160" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="874" y="2236" text-anchor="middle" class="pill">Terraform</text>
+  <rect x="1617" y="2252" width="256" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1745" y="2279" text-anchor="middle" class="pill">Azure Resource Graph</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 2442, 527 2442" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="1990.56" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 2442 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="2366" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#58508D" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="2370" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="2376" text-anchor="middle" class="num">12</text>
+ <text x="585" y="2426" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">⚙</text>
+ <text x="585" y="2486" text-anchor="middle" class="cat">DevOps, Resilience, Migration &amp; AI</text>
+ <path d="M637 2442 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="2442" r="7" fill="#1599D2"/>
+ <path d="M872 2442 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="2354" width="2030" height="176" rx="19" fill="#FFFFFF" stroke="#58508D" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="2379" class="count">L  •  12 TOPICS</text><a xlink:href="L-devops-resilience-migration-ai/terraform/README.md" target="_blank">
+  <rect x="928" y="2390" width="145" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1000.5" y="2417" text-anchor="middle" class="pill">Terraform</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/bicep-arm-templates/README.md" target="_blank">
-  <rect x="964" y="2209" width="271" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1099.5" y="2236" text-anchor="middle" class="pill">Bicep / ARM Templates</text>
+  <rect x="1085" y="2390" width="266" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1218" y="2417" text-anchor="middle" class="pill">Bicep / ARM Templates</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/azure-devops-pipelines/README.md" target="_blank">
-  <rect x="1245" y="2209" width="281" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1385.5" y="2236" text-anchor="middle" class="pill">Azure DevOps Pipelines</text>
+  <rect x="1363" y="2390" width="277" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1501.5" y="2417" text-anchor="middle" class="pill">Azure DevOps Pipelines</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/github-actions/README.md" target="_blank">
-  <rect x="1536" y="2209" width="196" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1634" y="2236" text-anchor="middle" class="pill">GitHub Actions</text>
+  <rect x="1652" y="2390" width="194" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1749" y="2417" text-anchor="middle" class="pill">GitHub Actions</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/azure-backup/README.md" target="_blank">
-  <rect x="1742" y="2209" width="174" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1829" y="2236" text-anchor="middle" class="pill">Azure Backup</text>
+  <rect x="1858" y="2390" width="173" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1944.5" y="2417" text-anchor="middle" class="pill">Azure Backup</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/azure-site-recovery/README.md" target="_blank">
-  <rect x="1926" y="2209" width="249" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2050.5" y="2236" text-anchor="middle" class="pill">Azure Site Recovery</text>
+  <rect x="2043" y="2390" width="246" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2166" y="2417" text-anchor="middle" class="pill">Azure Site Recovery</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/azure-migrate/README.md" target="_blank">
-  <rect x="2185" y="2209" width="185" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2277.5" y="2236" text-anchor="middle" class="pill">Azure Migrate</text>
+  <rect x="2301" y="2390" width="183" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2392.5" y="2417" text-anchor="middle" class="pill">Azure Migrate</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/azure-arc/README.md" target="_blank">
-  <rect x="2380" y="2209" width="160" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2460" y="2236" text-anchor="middle" class="pill">Azure Arc</text>
+  <rect x="2496" y="2390" width="145" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2568.5" y="2417" text-anchor="middle" class="pill">Azure Arc</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/microsoft-foundry/README.md" target="_blank">
-  <rect x="794" y="2264" width="228" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="908" y="2291" text-anchor="middle" class="pill">Microsoft Foundry</text>
+  <rect x="2653" y="2390" width="225" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2765.5" y="2417" text-anchor="middle" class="pill">Microsoft Foundry</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/azure-openai/README.md" target="_blank">
-  <rect x="1032" y="2264" width="174" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1119" y="2291" text-anchor="middle" class="pill">Azure OpenAI</text>
+  <rect x="928" y="2446" width="173" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1014.5" y="2473" text-anchor="middle" class="pill">Azure OpenAI</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/azure-ai-search/README.md" target="_blank">
-  <rect x="1216" y="2264" width="207" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1319.5" y="2291" text-anchor="middle" class="pill">Azure AI Search</text>
+  <rect x="1113" y="2446" width="204" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1215" y="2473" text-anchor="middle" class="pill">Azure AI Search</text>
   </a><a xlink:href="L-devops-resilience-migration-ai/azure-machine-learning/README.md" target="_blank">
-  <rect x="1433" y="2264" width="281" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1573.5" y="2291" text-anchor="middle" class="pill">Azure Machine Learning</text>
-  </a><path d="M305 1314 C435 1314, 240 2405, 355 2405" fill="none" stroke="#1D252C" stroke-width="3.4"/>
- <circle cx="355" cy="2405" r="7" fill="#1596D2"/>
- <rect x="375" y="2357" width="92" height="92" rx="18" fill="#FFFFFF" stroke="#4F6D7A" stroke-width="3" filter="url(#shadow)"/>
- <circle cx="371" cy="2353" r="19" fill="#4F6D7A" stroke="#FFFFFF" stroke-width="2"/>
- <text x="371" y="2360" text-anchor="middle" class="num">13</text>
- <text x="421" y="2413" text-anchor="middle" font="700 48px 'Segoe UI Symbol',Arial" fill="#4F6D7A">↻</text>
- <text x="421" y="2478" text-anchor="middle" class="domain">Automation, Backup and Disaster Recovery</text>
- <path d="M468 2405 H735" stroke="#1D252C" stroke-width="3.2" fill="none"/>
- <path d="M735 2405 l-14 -8 v16 z" fill="#1D252C"/>
- <rect x="770" y="2340" width="1920" height="160" rx="20" fill="#FFFFFF" stroke="#4F6D7A" stroke-width="2.4" filter="url(#shadow)"/>
- <text x="796" y="2367" class="count">M  •  5 TOPICS</text><a xlink:href="12-automation-backup-disaster-recovery/72-terraform/README.md" target="_blank">
-  <rect x="794" y="2383" width="410" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="999" y="2410" text-anchor="middle" class="pill">Terraform — Infrastructure as Code</text>
+  <rect x="1329" y="2446" width="277" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1467.5" y="2473" text-anchor="middle" class="pill">Azure Machine Learning</text>
+  </a><path d="M312 1416 C370.05 1416, 477.55 2631, 527 2631" fill="none" stroke="#222B35" stroke-width="3.2" stroke-linecap="round"/>
+ <circle cx="432.4" cy="2096.4" r="7.5" fill="#1699D1" stroke="#FFFFFF" stroke-width="2"/>
+ <path d="M527 2631 l-14 -8 v16 z" fill="#222B35"/>
+ <rect x="538" y="2560" width="94" height="88" rx="17" fill="#FFFFFF" stroke="#4F6D7A" stroke-width="2.5" filter="url(#shadow)"/>
+ <circle cx="537" cy="2564" r="19" fill="#155EEF" stroke="#FFFFFF" stroke-width="2"/>
+ <text x="537" y="2570" text-anchor="middle" class="num">13</text>
+ <text x="585" y="2620" text-anchor="middle" font="700 50px 'Segoe UI Symbol','Arial Unicode MS',Arial">↻</text>
+ <text x="585" y="2680" text-anchor="middle" class="cat">Automation, Backup and Disaster Recovery</text>
+ <path d="M637 2631 H872" fill="none" stroke="#222B35" stroke-width="3.2"/>
+ <circle cx="872" cy="2631" r="7" fill="#1599D2"/>
+ <path d="M872 2631 l14 -8 v16 z" fill="#222B35"/>
+ <rect x="900" y="2548" width="2030" height="166" rx="19" fill="#FFFFFF" stroke="#4F6D7A" stroke-width="2.5" filter="url(#shadow)"/>
+ <text x="926" y="2573" class="count">12  •  5 TOPICS</text><a xlink:href="12-automation-backup-disaster-recovery/72-terraform/README.md" target="_blank">
+  <rect x="928" y="2584" width="402" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1129" y="2611" text-anchor="middle" class="pill">Terraform — Infrastructure as Code</text>
   </a><a xlink:href="12-automation-backup-disaster-recovery/73-bicep-arm-templates/README.md" target="_blank">
-  <rect x="1214" y="2383" width="292" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1360" y="2410" text-anchor="middle" class="pill">Bicep and ARM Templates</text>
+  <rect x="1342" y="2584" width="287" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1485.5" y="2611" text-anchor="middle" class="pill">Bicep and ARM Templates</text>
   </a><a xlink:href="12-automation-backup-disaster-recovery/74-ci-cd-azure-devops-github-actions/README.md" target="_blank">
-  <rect x="1516" y="2383" width="460" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="1746" y="2410" text-anchor="middle" class="pill">Azure DevOps Pipelines and GitHub Actions</text>
+  <rect x="1641" y="2584" width="474" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="1878" y="2611" text-anchor="middle" class="pill">Azure DevOps Pipelines and GitHub Actions</text>
   </a><a xlink:href="12-automation-backup-disaster-recovery/75-azure-backup/README.md" target="_blank">
-  <rect x="1986" y="2383" width="174" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2073" y="2410" text-anchor="middle" class="pill">Azure Backup</text>
+  <rect x="2127" y="2584" width="173" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2213.5" y="2611" text-anchor="middle" class="pill">Azure Backup</text>
   </a><a xlink:href="12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md" target="_blank">
-  <rect x="2170" y="2383" width="314" height="42" rx="10" fill="#FBFDFF" stroke="#D6E0E8" stroke-width="1.5"/>
-  <text x="2327" y="2410" text-anchor="middle" class="pill">Azure Site Recovery (ASR)</text>
-  </a><text x="105" y="2585" class="foot">Architecture learning map • Each component links to its existing guide • Category groupings follow catalog.json</text>
-<text x="2690" y="2585" text-anchor="end" class="foot">Azure Master Vault • GitHub</text></svg>
+  <rect x="2312" y="2584" width="308" height="42" rx="10" fill="#FCFDFE" stroke="#D9E1E8" stroke-width="1.5"/>
+  <text x="2466" y="2611" text-anchor="middle" class="pill">Azure Site Recovery (ASR)</text>
+  </a><text x="86" y="2793" class="foot">Category 12 is a focused learning path and intentionally cross-lists selected topics from category L.</text>
+<text x="2910" y="2793" text-anchor="end" class="foot">Azure Master Vault • catalog.json • All component names link to guides</text></svg>
