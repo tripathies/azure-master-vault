@@ -33,7 +33,7 @@
 
 [**Open the linked architecture map and navigation guide →**](AZURE-MASTER-ARCHITECTURE-MAP.md) · [Open editable mindmap](AZURE-MASTER-MINDMAP.drawio) · [Open all architecture diagrams](ARCHITECTURE-MAPS.md)
 
-> **Catalogue accounting:** the repository's machine-readable tracker contains 118 unique topics across 14 categories. L owns DevOps, IaC, migration and hybrid management; M owns AI platform engineering; category 12 owns business continuity, backup and disaster recovery. Each component has exactly one canonical category.
+> **Catalogue accounting:** the repository's machine-readable tracker contains 120 unique topics across 14 categories. L owns DevOps, IaC, migration and hybrid management; M owns AI platform engineering; category 12 owns business continuity, backup and disaster recovery. Each component has exactly one canonical category.
 
 ## Start here
 
