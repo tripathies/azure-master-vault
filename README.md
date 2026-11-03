@@ -196,40 +196,41 @@ The diagram follows the canonical `catalog.json` and links component labels to t
 
 ## Your Azure learning tracker
 
-Use this checklist to move through the catalogue. Every topic has one canonical category and one primary component guide. GitHub Markdown checkboxes are a visible checklist; they do not sync private progress or calculate a live completion percentage.
+Use this catalogue to navigate from an architecture domain to its dedicated component guide. Each topic has one canonical category and one primary guide.
 
-**Catalogue size: 120 unique topics across 14 categories.** No component is counted in more than one category.
+**Catalogue size:** 120 unique topics across 14 categories.
 
 ### Visual catalogue mind map
 
 <p align="center">
   <a href="AZURE-COMPONENT-MINDMAP.svg">
-    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Cloud Architecture Playbook Azure mind map showing 14 categories and 118 unique component guides, created by Rahul Tripathi" width="100%" />
+    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Cloud Architecture Playbook Azure Cloud Mindmap — 14 categories and 120 unique component guides, created by Rahul Tripathi" width="100%" />
   </a>
 </p>
 
-<p align="center"><strong>Created by Rahul Tripathi</strong> · Cloud Architecture Playbook</p>
+<p align="center"><strong>Created by Rahul Tripathi</strong> · Cloud Architecture Playbook — Azure Edition</p>
 
-[**Open full-resolution mind map**](AZURE-COMPONENT-MINDMAP.svg) · [**Edit mind map in diagrams.net**](AZURE-COMPONENT-MINDMAP.drawio)
+[**Open full-resolution mind map**](AZURE-COMPONENT-MINDMAP.svg) · [**Edit the mind map**](AZURE-COMPONENT-MINDMAP.drawio)
 
 ### Browse categories
 
-| Domain | Category | Topics | Guide |
+| Domain | Category | Topics | Tracker |
 |---|---|---:|---|
-| **A** | [Cloud Foundation & Landing Zones](A-cloud-foundation-landing-zones/README.md) | 10 | [Open guide](A-cloud-foundation-landing-zones/README.md) |
-| **B** | [Identity & Access Management](B-identity-access-management/README.md) | 8 | [Open guide](B-identity-access-management/README.md) |
-| **C** | [Networking & Private Connectivity](C-networking-private-connectivity/README.md) | 12 | [Open guide](C-networking-private-connectivity/README.md) |
-| **D** | [Traffic Management & Delivery](D-traffic-management-delivery/README.md) | 8 | [Open guide](D-traffic-management-delivery/README.md) |
-| **E** | [Compute & Application Hosting](E-compute-application-hosting/README.md) | 8 | [Open guide](E-compute-application-hosting/README.md) |
-| **F** | [Containers & Kubernetes](F-containers-kubernetes/README.md) | 6 | [Open guide](F-containers-kubernetes/README.md) |
-| **G** | [Storage & Enterprise File Services](G-storage-enterprise-file-services/README.md) | 8 | [Open guide](G-storage-enterprise-file-services/README.md) |
-| **H** | [Databases & Data Platforms](H-databases-data-platforms/README.md) | 10 | [Open guide](H-databases-data-platforms/README.md) |
-| **I** | [Integration & API Management](I-integration-api-management/README.md) | 6 | [Open guide](I-integration-api-management/README.md) |
-| **J** | [Security, Secrets & Governance](J-security-secrets-governance/README.md) | 8 | [Open guide](J-security-secrets-governance/README.md) |
-| **K** | [Monitoring, Operations & Cost](K-monitoring-operations-cost/README.md) | 10 | [Open guide](K-monitoring-operations-cost/README.md) |
-| **L** | [DevOps, IaC, Migration & Hybrid Management](L-devops-resilience-migration-ai/README.md) | 6 | [Open guide](L-devops-resilience-migration-ai/README.md) |
-| **M** | [AI Platform & Engineering](M-ai-platform-engineering/README.md) | 13 | [Open guide](M-ai-platform-engineering/README.md) |
-| **12** | [Business Continuity, Backup & Disaster Recovery](12-automation-backup-disaster-recovery/README.md) | 7 | [Open guide](12-automation-backup-disaster-recovery/README.md) |
+| **A** | [Cloud Foundation & Landing Zones](A-cloud-foundation-landing-zones/README.md) | 10 | [Open tracker](#a-cloud-foundation-landing-zones) |
+| **B** | [Identity & Access Management](B-identity-access-management/README.md) | 8 | [Open tracker](#b-identity-access-management) |
+| **C** | [Networking & Private Connectivity](C-networking-private-connectivity/README.md) | 12 | [Open tracker](#c-networking-private-connectivity) |
+| **D** | [Traffic Management & Delivery](D-traffic-management-delivery/README.md) | 8 | [Open tracker](#d-traffic-management-delivery) |
+| **E** | [Compute & Application Hosting](E-compute-application-hosting/README.md) | 8 | [Open tracker](#e-compute-application-hosting) |
+| **F** | [Containers & Kubernetes](F-containers-kubernetes/README.md) | 6 | [Open tracker](#f-containers-kubernetes) |
+| **G** | [Storage & Enterprise File Services](G-storage-enterprise-file-services/README.md) | 8 | [Open tracker](#g-storage-enterprise-file-services) |
+| **H** | [Databases & Data Platforms](H-databases-data-platforms/README.md) | 10 | [Open tracker](#h-databases-data-platforms) |
+| **I** | [Integration & API Management](I-integration-api-management/README.md) | 6 | [Open tracker](#i-integration-api-management) |
+| **J** | [Security, Secrets & Governance](J-security-secrets-governance/README.md) | 8 | [Open tracker](#j-security-secrets-governance) |
+| **K** | [Monitoring, Operations & Cost](K-monitoring-operations-cost/README.md) | 10 | [Open tracker](#k-monitoring-operations-cost) |
+| **L** | [DevOps, IaC, Migration & Hybrid Management](L-devops-resilience-migration-ai/README.md) | 6 | [Open tracker](#l-devops-iac-migration-hybrid-management) |
+| **M** | [AI Platform & Engineering](M-ai-platform-engineering/README.md) | 13 | [Open tracker](#m-ai-platform-engineering) |
+| **12** | [Business Continuity, Backup & Disaster Recovery](12-automation-backup-disaster-recovery/README.md) | 7 | [Open tracker](#12-business-continuity-backup-disaster-recovery) |
+
 
 ### Component checklist
 
