@@ -1,8 +1,8 @@
-# Azure Master Vault — Architecture Map
+# Cloud Architecture Playbook — Architecture Map
 
 > A linked architectural map of the Azure platform learning catalogue. Use it to navigate from the platform's foundational capabilities to workload services and cross-cutting engineering practices.
 
-![Azure Master Vault architecture map](AZURE-MASTER-ARCHITECTURE-MAP.svg)
+![Cloud Architecture Playbook architecture map](AZURE-MASTER-ARCHITECTURE-MAP.svg)
 
 ## How to read this map
 
@@ -74,7 +74,10 @@ AI services, Foundry, Azure OpenAI and AI Search, GPU capacity, model deployment
 **Open the learning guides:** [L — DevOps, Resilience, Migration & AI](L-devops-resilience-migration-ai/README.md)
 
 
-## AI infrastructure specialization — suggested progression
+## AI infrastructure specialization
+
+- [M — AI Platform & Engineering](M-ai-platform-engineering/README.md)
+ — suggested progression
 
 This is an extension path, not part of the current 106 unique component count. Use the existing Vault guides for the Azure platform prerequisites and add specialist labs as they are authored.
 
