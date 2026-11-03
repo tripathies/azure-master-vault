@@ -21,11 +21,11 @@
 
 [**Open network map (SVG) →**](AZURE-NETWORK-ARCHITECTURE-MAP.svg) · [**Edit in draw.io →**](AZURE-NETWORK-ARCHITECTURE-MAP.drawio) · [**Networking component guides →**](C-networking-private-connectivity/README.md)
 
-## Azure Master Vault — Architecture Map
+## Cloud Architecture Playbook — Architecture Map
 
 <p align="center">
   <a href="AZURE-MASTER-ARCHITECTURE-MAP.md">
-    <img src="AZURE-MASTER-ARCHITECTURE-MAP.svg" alt="Azure Master Vault — architecture map covering cloud foundation, identity, networking, compute, data, operations, DevOps and AI infrastructure" width="100%" />
+    <img src="AZURE-MASTER-ARCHITECTURE-MAP.svg" alt="Cloud Architecture Playbook — architecture map covering cloud foundation, identity, networking, compute, data, operations, DevOps and AI infrastructure" width="100%" />
   </a>
 </p>
 
@@ -42,7 +42,7 @@
 | Work through the catalogue by category. Every topic name opens its own guide. | Explore how governance, identity, network, application, data, security and operations fit together. | Preview category diagrams and open editable draw.io sources. |
 | [**Track topics below ↓**](#your-azure-learning-tracker) | [**Open reference design →**](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md) | [**Open visual library →**](ARCHITECTURE-MAPS.md) |
 
-![Azure Master Vault architecture overview](architecture.svg)
+![Cloud Architecture Playbook architecture overview](architecture.svg)
 
 ## Hands-on implementation project — LittleNest Kidswear
 
@@ -182,11 +182,11 @@ flowchart TD
 
 The Vault is a component catalogue rather than a numbered CLZ lesson sequence. It therefore uses topic dependencies and the LittleNest project walkthrough instead of CLZ-090 / CLZ-100 / CLZ-110 / CLZ-120 lesson IDs. Do not assume those lesson IDs or the other repository's toolchain script exist here.
 
-## Azure Master Vault — Component catalogue mind map
+## Cloud Architecture Playbook — Component catalogue mind map
 
 <p align="center">
   <a href="AZURE-COMPONENT-MINDMAP.svg">
-    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Azure Master Vault Azure Cloud Mindmap showing all 13 catalogue categories and 111 component entries" width="100%" />
+    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Cloud Architecture Playbook Azure Cloud Mindmap showing all 13 catalogue categories and 111 component entries" width="100%" />
   </a>
 </p>
 
@@ -208,7 +208,7 @@ Use the checkboxes as a visible checklist and open a topic by clicking its name.
   </a>
 </p>
 
-<p align="center"><strong>Created by Rahul Tripathi</strong> · Azure Master Vault</p>
+<p align="center"><strong>Created by Rahul Tripathi</strong> · Cloud Architecture Playbook</p>
 
 [**Open full-resolution mind map**](AZURE-COMPONENT-MINDMAP.svg) · [**Edit mind map**](AZURE-COMPONENT-MINDMAP.drawio)
 
