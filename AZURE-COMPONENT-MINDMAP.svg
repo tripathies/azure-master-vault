@@ -1,0 +1,466 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="1912" viewBox="0 0 3000 1912">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7FBFF"/><stop offset="1" stop-color="#EAF3FB"/></linearGradient>
+ <linearGradient id="azure" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1597E5"/><stop offset="1" stop-color="#005A9E"/></linearGradient>
+ <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#15324B" flood-opacity=".12"/></filter>
+ <style>
+ .title{font:800 54px 'Segoe UI',Arial,sans-serif;fill:#102A43;letter-spacing:1px}
+ .subtitle{font:400 25px 'Segoe UI',Arial,sans-serif;fill:#486581}
+ .meta{font:600 18px 'Segoe UI',Arial,sans-serif;fill:#526D82}
+ .domain{font:700 24px 'Segoe UI',Arial,sans-serif;fill:#123B5D}
+ .count{font:600 17px 'Segoe UI',Arial,sans-serif;fill:#526D82}
+ .chip{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#243B53}
+ .root{font:800 30px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF}
+ .rootSub{font:600 16px 'Segoe UI',Arial,sans-serif;fill:#EAF5FF}
+ .foot{font:500 17px 'Segoe UI',Arial,sans-serif;fill:#526D82}
+ </style>
+</defs>
+<rect width="3000" height="1912" fill="url(#bg)"/>
+<text x="80" y="82" class="title">AZURE MASTER VAULT — COMPONENT MIND MAP</text>
+<text x="84" y="125" class="subtitle">A practical guide to Azure architecture, services and engineering practices</text>
+<text x="84" y="164" class="meta">13 catalogue categories • 111 guide entries • click any category or component to open its GitHub guide</text>
+<rect x="60" y="841" width="250" height="230" rx="28" fill="url(#azure)" stroke="#74BDF1" stroke-width="3" filter="url(#shadow)"/>
+<path d="M102 931 L145 863 L188 931 L145 931 L122 973 L168 973 L145 1022 L102 931" fill="#FFFFFF"/>
+<text x="185" y="1028" text-anchor="middle" class="root">AZURE</text>
+<text x="185" y="1057" text-anchor="middle" class="rootSub">MASTER VAULT</text>
+<path d="M310 956 H365" stroke="#0078D4" stroke-width="7" stroke-linecap="round"/>
+<path d="M365 178 V1778" stroke="#0078D4" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M365 178 C415 178, 415 178, 475 178" stroke="#0078D4" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="178" r="8" fill="#0078D4" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="A-cloud-foundation-landing-zones/README.md">
+ <rect x="475" y="130" width="2440" height="134" rx="18" fill="#FFFFFF" stroke="#0078D4" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="172" r="21" fill="#0078D4"/>
+ <text x="513" y="179" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">A</text>
+ <text x="551" y="179" class="domain">Cloud Foundation &amp; Landing Zones</text>
+ <text x="2887" y="177" text-anchor="end" class="count">10 topics  •  open category ↗</text>
+ </a><a xlink:href="A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/README.md">
+  <rect x="503" y="210" width="421" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="713.5" y="238" text-anchor="middle" class="chip">Microsoft Azure fundamentals</text>
+  </a><a xlink:href="A-cloud-foundation-landing-zones/regions-region-pairs-and-availability-zones/README.md">
+  <rect x="936" y="210" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1166" y="238" text-anchor="middle" class="chip">Regions, Region Pairs &amp; Availability Zones</text>
+  </a><a xlink:href="A-cloud-foundation-landing-zones/microsoft-entra-id-tenants/README.md">
+  <rect x="1408" y="210" width="394" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1605" y="238" text-anchor="middle" class="chip">Microsoft Entra ID tenants</text>
+  </a><a xlink:href="A-cloud-foundation-landing-zones/management-groups/README.md">
+  <rect x="1814" y="210" width="274" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1951" y="238" text-anchor="middle" class="chip">Management Groups</text>
+  </a><a xlink:href="A-cloud-foundation-landing-zones/azure-subscriptions/README.md">
+  <rect x="2100" y="210" width="301" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2250.5" y="238" text-anchor="middle" class="chip">Azure Subscriptions</text>
+  </a><a xlink:href="A-cloud-foundation-landing-zones/resource-groups/README.md">
+  <rect x="2413" y="210" width="247" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2536.5" y="238" text-anchor="middle" class="chip">Resource Groups</text>
+  </a><a xlink:href="A-cloud-foundation-landing-zones/azure-resource-manager-arm/README.md">
+  <rect x="503" y="272" width="421" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="713.5" y="300" text-anchor="middle" class="chip">Azure Resource Manager (ARM)</text>
+  </a><a xlink:href="A-cloud-foundation-landing-zones/azure-policy/README.md">
+  <rect x="936" y="272" width="207" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1039.5" y="300" text-anchor="middle" class="chip">Azure Policy</text>
+  </a><a xlink:href="A-cloud-foundation-landing-zones/azure-landing-zones/README.md">
+  <rect x="1155" y="272" width="301" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1305.5" y="300" text-anchor="middle" class="chip">Azure Landing Zones</text>
+  </a><a xlink:href="A-cloud-foundation-landing-zones/azure-well-architected-framework/README.md">
+  <rect x="1468" y="272" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1698" y="300" text-anchor="middle" class="chip">Azure Well-Architected Framework</text>
+  </a><path d="M365 332 C415 332, 415 332, 475 332" stroke="#176B87" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="332" r="8" fill="#176B87" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="B-identity-access-management/README.md">
+ <rect x="475" y="284" width="2440" height="134" rx="18" fill="#FFFFFF" stroke="#176B87" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="326" r="21" fill="#176B87"/>
+ <text x="513" y="333" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">B</text>
+ <text x="551" y="333" class="domain">Identity &amp; Access Management</text>
+ <text x="2887" y="331" text-anchor="end" class="count">8 topics  •  open category ↗</text>
+ </a><a xlink:href="B-identity-access-management/microsoft-entra-id/README.md">
+  <rect x="503" y="364" width="287" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="646.5" y="392" text-anchor="middle" class="chip">Microsoft Entra ID</text>
+  </a><a xlink:href="B-identity-access-management/app-registrations/README.md">
+  <rect x="802" y="364" width="274" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="939" y="392" text-anchor="middle" class="chip">App Registrations</text>
+  </a><a xlink:href="B-identity-access-management/enterprise-applications-and-service-principals/README.md">
+  <rect x="1088" y="364" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1318" y="392" text-anchor="middle" class="chip">Enterprise Applications &amp; Service Principals</text>
+  </a><a xlink:href="B-identity-access-management/managed-identities/README.md">
+  <rect x="1560" y="364" width="287" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1703.5" y="392" text-anchor="middle" class="chip">Managed Identities</text>
+  </a><a xlink:href="B-identity-access-management/azure-rbac/README.md">
+  <rect x="1859" y="364" width="180" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1949" y="392" text-anchor="middle" class="chip">Azure RBAC</text>
+  </a><a xlink:href="B-identity-access-management/mfa-and-conditional-access/README.md">
+  <rect x="2051" y="364" width="368" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2235" y="392" text-anchor="middle" class="chip">MFA &amp; Conditional Access</text>
+  </a><a xlink:href="B-identity-access-management/privileged-identity-management-pim/README.md">
+  <rect x="2431" y="364" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2661" y="392" text-anchor="middle" class="chip">Privileged Identity Management (PIM)</text>
+  </a><a xlink:href="B-identity-access-management/oauth-2-0-and-openid-connect/README.md">
+  <rect x="503" y="426" width="394" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="700" y="454" text-anchor="middle" class="chip">OAuth 2.0 &amp; OpenID Connect</text>
+  </a><path d="M365 486 C415 486, 415 486, 475 486" stroke="#386CB0" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="486" r="8" fill="#386CB0" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="C-networking-private-connectivity/README.md">
+ <rect x="475" y="438" width="2440" height="134" rx="18" fill="#FFFFFF" stroke="#386CB0" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="480" r="21" fill="#386CB0"/>
+ <text x="513" y="487" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">C</text>
+ <text x="551" y="487" class="domain">Networking &amp; Private Connectivity</text>
+ <text x="2887" y="485" text-anchor="end" class="count">12 topics  •  open category ↗</text>
+ </a><a xlink:href="C-networking-private-connectivity/virtual-networks-vnet/README.md">
+  <rect x="503" y="518" width="354" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="680" y="546" text-anchor="middle" class="chip">Virtual Networks (VNet)</text>
+  </a><a xlink:href="C-networking-private-connectivity/subnets-and-cidr-planning/README.md">
+  <rect x="869" y="518" width="354" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1046" y="546" text-anchor="middle" class="chip">Subnets &amp; CIDR Planning</text>
+  </a><a xlink:href="C-networking-private-connectivity/network-security-groups-nsgs/README.md">
+  <rect x="1235" y="518" width="448" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1459" y="546" text-anchor="middle" class="chip">Network Security Groups (NSGs)</text>
+  </a><a xlink:href="C-networking-private-connectivity/application-security-groups-asgs/README.md">
+  <rect x="1695" y="518" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1925" y="546" text-anchor="middle" class="chip">Application Security Groups (ASGs)</text>
+  </a><a xlink:href="C-networking-private-connectivity/vnet-peering/README.md">
+  <rect x="2167" y="518" width="207" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2270.5" y="546" text-anchor="middle" class="chip">VNet Peering</text>
+  </a><a xlink:href="C-networking-private-connectivity/user-defined-routes-udrs/README.md">
+  <rect x="2386" y="518" width="394" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2583" y="546" text-anchor="middle" class="chip">User-Defined Routes (UDRs)</text>
+  </a><a xlink:href="C-networking-private-connectivity/azure-firewall/README.md">
+  <rect x="503" y="580" width="234" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="620" y="608" text-anchor="middle" class="chip">Azure Firewall</text>
+  </a><a xlink:href="C-networking-private-connectivity/vpn-gateway/README.md">
+  <rect x="749" y="580" width="193" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="845.5" y="608" text-anchor="middle" class="chip">VPN Gateway</text>
+  </a><a xlink:href="C-networking-private-connectivity/expressroute/README.md">
+  <rect x="954" y="580" width="207" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1057.5" y="608" text-anchor="middle" class="chip">ExpressRoute</text>
+  </a><a xlink:href="C-networking-private-connectivity/private-link-and-private-endpoints/README.md">
+  <rect x="1173" y="580" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1403" y="608" text-anchor="middle" class="chip">Private Link &amp; Private Endpoints</text>
+  </a><a xlink:href="C-networking-private-connectivity/private-dns-zones/README.md">
+  <rect x="1645" y="580" width="274" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1782" y="608" text-anchor="middle" class="chip">Private DNS Zones</text>
+  </a><a xlink:href="C-networking-private-connectivity/nat-gateway/README.md">
+  <rect x="1931" y="580" width="193" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2027.5" y="608" text-anchor="middle" class="chip">NAT Gateway</text>
+  </a><path d="M365 640 C415 640, 415 640, 475 640" stroke="#5B5BD6" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="640" r="8" fill="#5B5BD6" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="D-traffic-management-delivery/README.md">
+ <rect x="475" y="592" width="2440" height="72" rx="18" fill="#FFFFFF" stroke="#5B5BD6" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="634" r="21" fill="#5B5BD6"/>
+ <text x="513" y="641" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">D</text>
+ <text x="551" y="641" class="domain">Traffic Management &amp; Delivery</text>
+ <text x="2887" y="639" text-anchor="end" class="count">8 topics  •  open category ↗</text>
+ </a><a xlink:href="D-traffic-management-delivery/azure-load-balancer/README.md">
+  <rect x="503" y="672" width="301" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="653.5" y="700" text-anchor="middle" class="chip">Azure Load Balancer</text>
+  </a><a xlink:href="D-traffic-management-delivery/application-gateway-and-waf/README.md">
+  <rect x="816" y="672" width="381" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1006.5" y="700" text-anchor="middle" class="chip">Application Gateway &amp; WAF</text>
+  </a><a xlink:href="D-traffic-management-delivery/azure-front-door/README.md">
+  <rect x="1209" y="672" width="260" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1339" y="700" text-anchor="middle" class="chip">Azure Front Door</text>
+  </a><a xlink:href="D-traffic-management-delivery/traffic-manager/README.md">
+  <rect x="1481" y="672" width="247" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1604.5" y="700" text-anchor="middle" class="chip">Traffic Manager</text>
+  </a><a xlink:href="D-traffic-management-delivery/azure-bastion/README.md">
+  <rect x="1740" y="672" width="220" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1850" y="700" text-anchor="middle" class="chip">Azure Bastion</text>
+  </a><a xlink:href="D-traffic-management-delivery/azure-dns/README.md">
+  <rect x="1972" y="672" width="167" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2055.5" y="700" text-anchor="middle" class="chip">Azure DNS</text>
+  </a><a xlink:href="D-traffic-management-delivery/ddos-protection/README.md">
+  <rect x="2151" y="672" width="247" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2274.5" y="700" text-anchor="middle" class="chip">DDoS Protection</text>
+  </a><a xlink:href="D-traffic-management-delivery/network-watcher/README.md">
+  <rect x="2410" y="672" width="247" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2533.5" y="700" text-anchor="middle" class="chip">Network Watcher</text>
+  </a><path d="M365 732 C415 732, 415 732, 475 732" stroke="#087E8B" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="732" r="8" fill="#087E8B" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="E-compute-application-hosting/README.md">
+ <rect x="475" y="684" width="2440" height="72" rx="18" fill="#FFFFFF" stroke="#087E8B" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="726" r="21" fill="#087E8B"/>
+ <text x="513" y="733" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">E</text>
+ <text x="551" y="733" class="domain">Compute &amp; Application Hosting</text>
+ <text x="2887" y="731" text-anchor="end" class="count">8 topics  •  open category ↗</text>
+ </a><a xlink:href="E-compute-application-hosting/virtual-machines/README.md">
+  <rect x="503" y="764" width="260" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="633" y="792" text-anchor="middle" class="chip">Virtual Machines</text>
+  </a><a xlink:href="E-compute-application-hosting/managed-disks/README.md">
+  <rect x="775" y="764" width="220" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="885" y="792" text-anchor="middle" class="chip">Managed Disks</text>
+  </a><a xlink:href="E-compute-application-hosting/availability-sets-and-zones/README.md">
+  <rect x="1007" y="764" width="381" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1197.5" y="792" text-anchor="middle" class="chip">Availability Sets &amp; Zones</text>
+  </a><a xlink:href="E-compute-application-hosting/virtual-machine-scale-sets/README.md">
+  <rect x="1400" y="764" width="394" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1597" y="792" text-anchor="middle" class="chip">Virtual Machine Scale Sets</text>
+  </a><a xlink:href="E-compute-application-hosting/azure-app-service/README.md">
+  <rect x="1806" y="764" width="274" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1943" y="792" text-anchor="middle" class="chip">Azure App Service</text>
+  </a><a xlink:href="E-compute-application-hosting/azure-functions/README.md">
+  <rect x="2092" y="764" width="247" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2215.5" y="792" text-anchor="middle" class="chip">Azure Functions</text>
+  </a><a xlink:href="E-compute-application-hosting/logic-apps/README.md">
+  <rect x="2351" y="764" width="180" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2441" y="792" text-anchor="middle" class="chip">Logic Apps</text>
+  </a><a xlink:href="E-compute-application-hosting/azure-batch/README.md">
+  <rect x="2543" y="764" width="193" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2639.5" y="792" text-anchor="middle" class="chip">Azure Batch</text>
+  </a><path d="M365 824 C415 824, 415 824, 475 824" stroke="#355C7D" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="824" r="8" fill="#355C7D" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="F-containers-kubernetes/README.md">
+ <rect x="475" y="776" width="2440" height="134" rx="18" fill="#FFFFFF" stroke="#355C7D" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="818" r="21" fill="#355C7D"/>
+ <text x="513" y="825" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">F</text>
+ <text x="551" y="825" class="domain">Containers &amp; Kubernetes</text>
+ <text x="2887" y="823" text-anchor="end" class="count">6 topics  •  open category ↗</text>
+ </a><a xlink:href="F-containers-kubernetes/docker-and-container-fundamentals/README.md">
+  <rect x="503" y="856" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="733" y="884" text-anchor="middle" class="chip">Docker &amp; Container Fundamentals</text>
+  </a><a xlink:href="F-containers-kubernetes/azure-container-registry-acr/README.md">
+  <rect x="975" y="856" width="448" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1199" y="884" text-anchor="middle" class="chip">Azure Container Registry (ACR)</text>
+  </a><a xlink:href="F-containers-kubernetes/azure-container-apps/README.md">
+  <rect x="1435" y="856" width="314" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1592" y="884" text-anchor="middle" class="chip">Azure Container Apps</text>
+  </a><a xlink:href="F-containers-kubernetes/azure-kubernetes-service-aks/README.md">
+  <rect x="1761" y="856" width="448" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1985" y="884" text-anchor="middle" class="chip">Azure Kubernetes Service (AKS)</text>
+  </a><a xlink:href="F-containers-kubernetes/azure-container-instances-aci/README.md">
+  <rect x="2221" y="856" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2451" y="884" text-anchor="middle" class="chip">Azure Container Instances (ACI)</text>
+  </a><a xlink:href="F-containers-kubernetes/aks-ingress-scaling-and-workload-identity/README.md">
+  <rect x="503" y="918" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="733" y="946" text-anchor="middle" class="chip">AKS Ingress, Scaling &amp; Workload Identity</text>
+  </a><path d="M365 978 C415 978, 415 978, 475 978" stroke="#168AAD" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="978" r="8" fill="#168AAD" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="G-storage-enterprise-file-services/README.md">
+ <rect x="475" y="930" width="2440" height="72" rx="18" fill="#FFFFFF" stroke="#168AAD" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="972" r="21" fill="#168AAD"/>
+ <text x="513" y="979" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">G</text>
+ <text x="551" y="979" class="domain">Storage &amp; Enterprise File Services</text>
+ <text x="2887" y="977" text-anchor="end" class="count">8 topics  •  open category ↗</text>
+ </a><a xlink:href="G-storage-enterprise-file-services/storage-accounts/README.md">
+  <rect x="503" y="1010" width="260" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="633" y="1038" text-anchor="middle" class="chip">Storage Accounts</text>
+  </a><a xlink:href="G-storage-enterprise-file-services/blob-storage/README.md">
+  <rect x="775" y="1010" width="207" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="878.5" y="1038" text-anchor="middle" class="chip">Blob Storage</text>
+  </a><a xlink:href="G-storage-enterprise-file-services/azure-data-lake-storage-gen2/README.md">
+  <rect x="994" y="1010" width="421" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1204.5" y="1038" text-anchor="middle" class="chip">Azure Data Lake Storage Gen2</text>
+  </a><a xlink:href="G-storage-enterprise-file-services/azure-files/README.md">
+  <rect x="1427" y="1010" width="193" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1523.5" y="1038" text-anchor="middle" class="chip">Azure Files</text>
+  </a><a xlink:href="G-storage-enterprise-file-services/azure-netapp-files/README.md">
+  <rect x="1632" y="1010" width="287" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1775.5" y="1038" text-anchor="middle" class="chip">Azure NetApp Files</text>
+  </a><a xlink:href="G-storage-enterprise-file-services/queue-storage/README.md">
+  <rect x="1931" y="1010" width="220" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2041" y="1038" text-anchor="middle" class="chip">Queue Storage</text>
+  </a><a xlink:href="G-storage-enterprise-file-services/table-storage/README.md">
+  <rect x="2163" y="1010" width="220" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2273" y="1038" text-anchor="middle" class="chip">Table Storage</text>
+  </a><a xlink:href="G-storage-enterprise-file-services/storage-redundancy-lrs-zrs-grs-and-gzrs/README.md">
+  <rect x="2395" y="1010" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2625" y="1038" text-anchor="middle" class="chip">Storage Redundancy: LRS, ZRS, GRS &amp; GZRS</text>
+  </a><path d="M365 1070 C415 1070, 415 1070, 475 1070" stroke="#2A6F97" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="1070" r="8" fill="#2A6F97" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="H-databases-data-platforms/README.md">
+ <rect x="475" y="1022" width="2440" height="134" rx="18" fill="#FFFFFF" stroke="#2A6F97" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="1064" r="21" fill="#2A6F97"/>
+ <text x="513" y="1071" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">H</text>
+ <text x="551" y="1071" class="domain">Databases &amp; Data Platforms</text>
+ <text x="2887" y="1069" text-anchor="end" class="count">10 topics  •  open category ↗</text>
+ </a><a xlink:href="H-databases-data-platforms/azure-sql-database/README.md">
+  <rect x="503" y="1102" width="287" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="646.5" y="1130" text-anchor="middle" class="chip">Azure SQL Database</text>
+  </a><a xlink:href="H-databases-data-platforms/azure-sql-managed-instance/README.md">
+  <rect x="802" y="1102" width="394" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="999" y="1130" text-anchor="middle" class="chip">Azure SQL Managed Instance</text>
+  </a><a xlink:href="H-databases-data-platforms/sql-server-on-azure-vms/README.md">
+  <rect x="1208" y="1102" width="354" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1385" y="1130" text-anchor="middle" class="chip">SQL Server on Azure VMs</text>
+  </a><a xlink:href="H-databases-data-platforms/azure-cosmos-db/README.md">
+  <rect x="1574" y="1102" width="247" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1697.5" y="1130" text-anchor="middle" class="chip">Azure Cosmos DB</text>
+  </a><a xlink:href="H-databases-data-platforms/azure-database-for-postgresql/README.md">
+  <rect x="1833" y="1102" width="435" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2050.5" y="1130" text-anchor="middle" class="chip">Azure Database for PostgreSQL</text>
+  </a><a xlink:href="H-databases-data-platforms/azure-database-for-mysql/README.md">
+  <rect x="2280" y="1102" width="368" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2464" y="1130" text-anchor="middle" class="chip">Azure Database for MySQL</text>
+  </a><a xlink:href="H-databases-data-platforms/azure-managed-redis/README.md">
+  <rect x="503" y="1164" width="301" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="653.5" y="1192" text-anchor="middle" class="chip">Azure Managed Redis</text>
+  </a><a xlink:href="H-databases-data-platforms/azure-data-factory/README.md">
+  <rect x="816" y="1164" width="287" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="959.5" y="1192" text-anchor="middle" class="chip">Azure Data Factory</text>
+  </a><a xlink:href="H-databases-data-platforms/azure-databricks/README.md">
+  <rect x="1115" y="1164" width="260" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1245" y="1192" text-anchor="middle" class="chip">Azure Databricks</text>
+  </a><a xlink:href="H-databases-data-platforms/microsoft-fabric-onelake/README.md">
+  <rect x="1387" y="1164" width="394" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1584" y="1192" text-anchor="middle" class="chip">Microsoft Fabric / OneLake</text>
+  </a><path d="M365 1224 C415 1224, 415 1224, 475 1224" stroke="#6C63A8" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="1224" r="8" fill="#6C63A8" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="I-integration-api-management/README.md">
+ <rect x="475" y="1176" width="2440" height="72" rx="18" fill="#FFFFFF" stroke="#6C63A8" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="1218" r="21" fill="#6C63A8"/>
+ <text x="513" y="1225" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">I</text>
+ <text x="551" y="1225" class="domain">Integration &amp; API Management</text>
+ <text x="2887" y="1223" text-anchor="end" class="count">6 topics  •  open category ↗</text>
+ </a><a xlink:href="I-integration-api-management/api-management/README.md">
+  <rect x="503" y="1256" width="234" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="620" y="1284" text-anchor="middle" class="chip">API Management</text>
+  </a><a xlink:href="I-integration-api-management/azure-service-bus/README.md">
+  <rect x="749" y="1256" width="274" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="886" y="1284" text-anchor="middle" class="chip">Azure Service Bus</text>
+  </a><a xlink:href="I-integration-api-management/azure-event-grid/README.md">
+  <rect x="1035" y="1256" width="260" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1165" y="1284" text-anchor="middle" class="chip">Azure Event Grid</text>
+  </a><a xlink:href="I-integration-api-management/azure-event-hubs/README.md">
+  <rect x="1307" y="1256" width="260" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1437" y="1284" text-anchor="middle" class="chip">Azure Event Hubs</text>
+  </a><a xlink:href="I-integration-api-management/azure-stream-analytics/README.md">
+  <rect x="1579" y="1256" width="341" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1749.5" y="1284" text-anchor="middle" class="chip">Azure Stream Analytics</text>
+  </a><a xlink:href="I-integration-api-management/azure-data-explorer/README.md">
+  <rect x="1932" y="1256" width="301" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2082.5" y="1284" text-anchor="middle" class="chip">Azure Data Explorer</text>
+  </a><path d="M365 1316 C415 1316, 415 1316, 475 1316" stroke="#B45F06" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="1316" r="8" fill="#B45F06" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="J-security-secrets-governance/README.md">
+ <rect x="475" y="1268" width="2440" height="134" rx="18" fill="#FFFFFF" stroke="#B45F06" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="1310" r="21" fill="#B45F06"/>
+ <text x="513" y="1317" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">J</text>
+ <text x="551" y="1317" class="domain">Security, Secrets &amp; Governance</text>
+ <text x="2887" y="1315" text-anchor="end" class="count">8 topics  •  open category ↗</text>
+ </a><a xlink:href="J-security-secrets-governance/azure-key-vault/README.md">
+  <rect x="503" y="1348" width="247" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="626.5" y="1376" text-anchor="middle" class="chip">Azure Key Vault</text>
+  </a><a xlink:href="J-security-secrets-governance/key-vault-access-policies-and-rbac/README.md">
+  <rect x="762" y="1348" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="992" y="1376" text-anchor="middle" class="chip">Key Vault Access Policies &amp; RBAC</text>
+  </a><a xlink:href="J-security-secrets-governance/microsoft-defender-for-cloud/README.md">
+  <rect x="1234" y="1348" width="421" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1444.5" y="1376" text-anchor="middle" class="chip">Microsoft Defender for Cloud</text>
+  </a><a xlink:href="J-security-secrets-governance/microsoft-sentinel/README.md">
+  <rect x="1667" y="1348" width="287" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1810.5" y="1376" text-anchor="middle" class="chip">Microsoft Sentinel</text>
+  </a><a xlink:href="J-security-secrets-governance/microsoft-purview/README.md">
+  <rect x="1966" y="1348" width="274" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2103" y="1376" text-anchor="middle" class="chip">Microsoft Purview</text>
+  </a><a xlink:href="J-security-secrets-governance/azure-resource-locks/README.md">
+  <rect x="2252" y="1348" width="314" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2409" y="1376" text-anchor="middle" class="chip">Azure Resource Locks</text>
+  </a><a xlink:href="J-security-secrets-governance/tagging-and-naming-standards/README.md">
+  <rect x="503" y="1410" width="394" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="700" y="1438" text-anchor="middle" class="chip">Tagging &amp; Naming Standards</text>
+  </a><a xlink:href="J-security-secrets-governance/zero-trust-architecture/README.md">
+  <rect x="909" y="1410" width="354" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1086" y="1438" text-anchor="middle" class="chip">Zero Trust Architecture</text>
+  </a><path d="M365 1470 C415 1470, 415 1470, 475 1470" stroke="#3B6C70" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="1470" r="8" fill="#3B6C70" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="K-monitoring-operations-cost/README.md">
+ <rect x="475" y="1422" width="2440" height="134" rx="18" fill="#FFFFFF" stroke="#3B6C70" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="1464" r="21" fill="#3B6C70"/>
+ <text x="513" y="1471" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">K</text>
+ <text x="551" y="1471" class="domain">Monitoring, Operations &amp; Cost</text>
+ <text x="2887" y="1469" text-anchor="end" class="count">10 topics  •  open category ↗</text>
+ </a><a xlink:href="K-monitoring-operations-cost/azure-monitor/README.md">
+  <rect x="503" y="1502" width="220" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="613" y="1530" text-anchor="middle" class="chip">Azure Monitor</text>
+  </a><a xlink:href="K-monitoring-operations-cost/log-analytics-workspace-and-kql/README.md">
+  <rect x="735" y="1502" width="435" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="952.5" y="1530" text-anchor="middle" class="chip">Log Analytics Workspace &amp; KQL</text>
+  </a><a xlink:href="K-monitoring-operations-cost/application-insights/README.md">
+  <rect x="1182" y="1502" width="314" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1339" y="1530" text-anchor="middle" class="chip">Application Insights</text>
+  </a><a xlink:href="K-monitoring-operations-cost/azure-monitor-alerts-and-action-groups/README.md">
+  <rect x="1508" y="1502" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1738" y="1530" text-anchor="middle" class="chip">Azure Monitor Alerts &amp; Action Groups</text>
+  </a><a xlink:href="K-monitoring-operations-cost/service-health-and-resource-health/README.md">
+  <rect x="1980" y="1502" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2210" y="1530" text-anchor="middle" class="chip">Service Health &amp; Resource Health</text>
+  </a><a xlink:href="K-monitoring-operations-cost/cost-management/README.md">
+  <rect x="2452" y="1502" width="247" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2575.5" y="1530" text-anchor="middle" class="chip">Cost Management</text>
+  </a><a xlink:href="K-monitoring-operations-cost/azure-advisor/README.md">
+  <rect x="503" y="1564" width="220" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="613" y="1592" text-anchor="middle" class="chip">Azure Advisor</text>
+  </a><a xlink:href="K-monitoring-operations-cost/azure-automation/README.md">
+  <rect x="735" y="1564" width="260" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="865" y="1592" text-anchor="middle" class="chip">Azure Automation</text>
+  </a><a xlink:href="K-monitoring-operations-cost/azure-update-manager/README.md">
+  <rect x="1007" y="1564" width="314" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1164" y="1592" text-anchor="middle" class="chip">Azure Update Manager</text>
+  </a><a xlink:href="K-monitoring-operations-cost/azure-resource-graph/README.md">
+  <rect x="1333" y="1564" width="314" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1490" y="1592" text-anchor="middle" class="chip">Azure Resource Graph</text>
+  </a><path d="M365 1624 C415 1624, 415 1624, 475 1624" stroke="#58508D" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="1624" r="8" fill="#58508D" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="L-devops-resilience-migration-ai/README.md">
+ <rect x="475" y="1576" width="2440" height="134" rx="18" fill="#FFFFFF" stroke="#58508D" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="1618" r="21" fill="#58508D"/>
+ <text x="513" y="1625" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">L</text>
+ <text x="551" y="1625" class="domain">DevOps, Resilience, Migration &amp; AI</text>
+ <text x="2887" y="1623" text-anchor="end" class="count">12 topics  •  open category ↗</text>
+ </a><a xlink:href="L-devops-resilience-migration-ai/terraform/README.md">
+  <rect x="503" y="1656" width="167" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="586.5" y="1684" text-anchor="middle" class="chip">Terraform</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/bicep-arm-templates/README.md">
+  <rect x="682" y="1656" width="327" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="845.5" y="1684" text-anchor="middle" class="chip">Bicep / ARM Templates</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/azure-devops-pipelines/README.md">
+  <rect x="1021" y="1656" width="341" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1191.5" y="1684" text-anchor="middle" class="chip">Azure DevOps Pipelines</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/github-actions/README.md">
+  <rect x="1374" y="1656" width="234" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1491" y="1684" text-anchor="middle" class="chip">GitHub Actions</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/azure-backup/README.md">
+  <rect x="1620" y="1656" width="207" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1723.5" y="1684" text-anchor="middle" class="chip">Azure Backup</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/azure-site-recovery/README.md">
+  <rect x="1839" y="1656" width="301" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1989.5" y="1684" text-anchor="middle" class="chip">Azure Site Recovery</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/azure-migrate/README.md">
+  <rect x="2152" y="1656" width="220" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2262" y="1684" text-anchor="middle" class="chip">Azure Migrate</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/azure-arc/README.md">
+  <rect x="2384" y="1656" width="167" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2467.5" y="1684" text-anchor="middle" class="chip">Azure Arc</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/microsoft-foundry/README.md">
+  <rect x="2563" y="1656" width="274" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2700" y="1684" text-anchor="middle" class="chip">Microsoft Foundry</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/azure-openai/README.md">
+  <rect x="503" y="1718" width="207" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="606.5" y="1746" text-anchor="middle" class="chip">Azure OpenAI</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/azure-ai-search/README.md">
+  <rect x="722" y="1718" width="247" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="845.5" y="1746" text-anchor="middle" class="chip">Azure AI Search</text>
+  </a><a xlink:href="L-devops-resilience-migration-ai/azure-machine-learning/README.md">
+  <rect x="981" y="1718" width="341" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1151.5" y="1746" text-anchor="middle" class="chip">Azure Machine Learning</text>
+  </a><path d="M365 1778 C415 1778, 415 1778, 475 1778" stroke="#4F6D7A" stroke-width="4" fill="none"/>
+ <circle cx="365" cy="1778" r="8" fill="#4F6D7A" stroke="#FFFFFF" stroke-width="3"/>
+ <a xlink:href="12-automation-backup-disaster-recovery/README.md">
+ <rect x="475" y="1730" width="2440" height="72" rx="18" fill="#FFFFFF" stroke="#4F6D7A" stroke-width="2" filter="url(#shadow)"/>
+ <circle cx="513" cy="1772" r="21" fill="#4F6D7A"/>
+ <text x="513" y="1779" text-anchor="middle" font="700 18px Arial" fill="#FFFFFF">12</text>
+ <text x="551" y="1779" class="domain">Automation, Backup and Disaster Recovery</text>
+ <text x="2887" y="1777" text-anchor="end" class="count">5 topics  •  open category ↗</text>
+ </a><a xlink:href="12-automation-backup-disaster-recovery/72-terraform/README.md">
+  <rect x="503" y="1810" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="733" y="1838" text-anchor="middle" class="chip">Terraform — Infrastructure as Code</text>
+  </a><a xlink:href="12-automation-backup-disaster-recovery/73-bicep-arm-templates/README.md">
+  <rect x="975" y="1810" width="354" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1152" y="1838" text-anchor="middle" class="chip">Bicep and ARM Templates</text>
+  </a><a xlink:href="12-automation-backup-disaster-recovery/74-ci-cd-azure-devops-github-actions/README.md">
+  <rect x="1341" y="1810" width="460" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1571" y="1838" text-anchor="middle" class="chip">Azure DevOps Pipelines and GitHub Actions</text>
+  </a><a xlink:href="12-automation-backup-disaster-recovery/75-azure-backup/README.md">
+  <rect x="1813" y="1810" width="207" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="1916.5" y="1838" text-anchor="middle" class="chip">Azure Backup</text>
+  </a><a xlink:href="12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md">
+  <rect x="2032" y="1810" width="381" height="44" rx="11" fill="#F8FBFE" stroke="#B7CDE0" stroke-width="1.6"/>
+  <text x="2222.5" y="1838" text-anchor="middle" class="chip">Azure Site Recovery (ASR)</text>
+  </a><text x="80" y="1870" class="foot">Note: Category 12 is a focused learning path and intentionally cross-lists five subjects also covered in domain L. Catalogue entry count is not a unique-service count.</text>
+<text x="2920" y="1870" text-anchor="end" class="foot">Azure Master Vault • main branch</text></svg>
