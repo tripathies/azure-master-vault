@@ -19,144 +19,6 @@
 
 ![Cloud Architecture Playbook architecture overview](architecture.svg)
 
-## Hands-on implementation project — LittleNest Kidswear
-
-The Vault is the **Azure theory and component knowledge base**. This repository also includes a complete, hands-on workload example: [**LittleNest Azure Reference**](littlenest-azure-reference/README.md).
-
-LittleNest is a sample children's clothing storefront backed by Node.js, Azure Functions, Cosmos DB, Storage Queue, Key Vault, managed identities, private endpoints, private DNS and Terraform. It connects the service guides in this Vault to a working application and infrastructure codebase.
-
-The project now includes a structured [Low-Level Design (LLD)](littlenest-azure-reference/lld/README.md) covering vision, scope, requirements, detailed design, identity, security, monitoring, operations and FinOps. It explicitly separates implemented controls from operational procedures and future recommendations.
-
-> **Scope and safety:** This is a low-cost, non-production learning lab, not a full enterprise landing-zone accelerator or production commerce platform. Its Azure-hosted application is private, not internet-facing. A local demo runs without Azure credentials or Azure resources. Azure deployment has not been validated by this repository's local CI alone; complete the live Azure validation checklist before treating a deployment as proven.
-
-### Getting started
-
-Clone the Vault and open it in PowerShell 7 / VS Code:
-
-~~~powershell
-git clone https://github.com/tripathies/azure-master-vault.git
-Set-Location azure-master-vault
-code .
-~~~
-
-### Audit your workstation
-
-Check the toolchain without installing or changing anything. The audit script only reads local command versions and the current Azure CLI session:
-
-~~~powershell
-pwsh --version
-terraform version
-az version
-git --version
-code --version
-node --version
-npm --version
-./scripts/Test-AzureMasterVaultToolchain.ps1 -Profile Learner
-~~~
-
-Use `-Profile Contributor` if you also plan to publish the Azure Functions worker; that profile additionally checks for Azure Functions Core Tools (`func`). The local storefront demo needs Node.js 22 or later. Terraform 1.9.0 or later is required by the LittleNest configuration.
-
-Start with the credential-free [LittleNest local demo](littlenest-azure-reference/README.md#local-website-preview--no-azure-resources-required). It does not need an Azure login and does not create Azure resources. Read the relevant Vault component guides alongside the implementation. Before any Azure deployment, run the Azure context preflight below and complete the prerequisites in the LittleNest README. The first Azure resource is created only when you deliberately run the reviewed Terraform apply.
-
-The LittleNest Azure context preflight is read-only. It checks the active Azure CLI session, subscription state, selected resource providers and the requested region / Functions Flex Consumption runtime availability. First sign in to Azure and explicitly select the subscription:
-
-~~~powershell
-az login
-az account list --output table
-az account set --subscription '<subscription-id>'
-$subscriptionId = az account show --query id --output tsv
-az account show --query '{tenant:tenantId,subscription:id,user:user.name}' --output table
-
-./littlenest-azure-reference/scripts/Test-AzureContext.ps1 -Location centralindia -ExpectedSubscriptionId $subscriptionId
-~~~
-
-The preflight does not register providers, grant permissions or deploy resources. Provider registration, quota checks and any required access changes must be completed deliberately by an authorised subscription administrator.
-
-### Start with the credential-free local demo
-
-This is the safest first exercise. It does not require an Azure login and does not create Azure resources:
-
-~~~powershell
-Set-Location littlenest-azure-reference/app/web
-npm install
-$env:LOCAL_DEMO_MODE = "true"
-npm start
-~~~
-
-Open http://localhost:3000. The bundled sample catalogue and in-memory checkout let you explore the storefront. Run `npm test` in a second terminal to execute the local API smoke tests.
-
-### Safe Azure context
-
-Never select a subscription by display name in automation. Capture its ID, inspect the tenant and identity, and pass the ID explicitly to Terraform:
-
-~~~powershell
-$subscriptionId = az account show --query id --output tsv
-az account show --query '{tenant:tenantId,subscription:id,user:user.name}' --output table
-~~~
-
-For a deployable lesson, follow the dedicated [LittleNest README](littlenest-azure-reference/README.md) from prerequisites through cleanup. The core Terraform review sequence is:
-
-~~~powershell
-Set-Location littlenest-azure-reference/infra
-Copy-Item terraform.tfvars.example terraform.tfvars
-# Set subscription_id, terraform_runner_public_ip and deployer_principal_type in terraform.tfvars.
-terraform init
-terraform fmt -check -recursive
-terraform validate
-terraform plan -var "subscription_id=$subscriptionId" -out tfplan
-terraform show tfplan
-~~~
-
-**Do not skip the Storage bootstrap and RBAC steps in the LittleNest README.** This lab disables Storage shared-key access and uses Entra ID for Terraform data-plane operations. The README explains the staged resource-group / Storage bootstrap, the role assignments required by the Terraform caller, and the full apply sequence. Only apply a reviewed plan after confirming permissions, region support, quota and cost.
-
-~~~powershell
-terraform apply tfplan
-# After completing the lab and reviewing the destroy plan:
-terraform destroy -var "subscription_id=$subscriptionId"
-~~~
-
-Do not commit `terraform.tfvars`, plan files, state files, generated credentials or command output containing secrets. Keep local Terraform state and plans private.
-
-### Dependency Map — Curriculum dependency map
-
-The hands-on workload follows this learning sequence. Read the linked theory guides, then inspect the matching implementation in `littlenest-azure-reference/infra` and `app`.
-
-~~~mermaid
-flowchart TD
-  A["Cloud foundation & subscription scope"] --> B["VNet, subnets & private DNS"]
-  B --> C["Private endpoints & network access"]
-  A --> D["Entra ID, RBAC & managed identities"]
-  C --> E["App Service and Azure Functions"]
-  D --> E
-  E --> F["Cosmos DB and Storage Queue"]
-  D --> F
-  D --> G["Key Vault secrets"]
-  E --> H["LittleNest storefront"]
-  F --> I["Asynchronous order worker"]
-  G --> H
-  H --> J["Validate, observe and destroy"]
-  I --> J
-~~~
-
-- [Cloud foundation and landing zones](A-cloud-foundation-landing-zones/README.md)
-- [Identity and access management](B-identity-access-management/README.md)
-- [Networking and private connectivity](C-networking-private-connectivity/README.md)
-- [Compute and application hosting](E-compute-application-hosting/README.md)
-- [Storage and enterprise file services](G-storage-enterprise-file-services/README.md)
-- [Databases and data platforms](H-databases-data-platforms/README.md)
-- [Security, secrets and governance](J-security-secrets-governance/README.md)
-- [Terraform, CI/CD and resilience](L-devops-resilience-migration-ai/README.md)
-
-| Learning path | Dependency / order |
-|---|---|
-| Cloud foundation → networking → private endpoints | Understand subscription scope and address planning before private connectivity. |
-| Identity and RBAC → managed identities | Establish least-privilege identities before enabling app-to-service access. |
-| App Service + Functions → Cosmos DB + Storage Queue | Deploy the workload services and data dependencies described in the LittleNest project. |
-| Key Vault + managed identity → storefront | Add the optional secret exercise after the application identity and private DNS are ready. |
-| Seed data → deploy app and worker → validate order flow | Validate private DNS, data access, queue processing and cleanup only after dependencies are deployed. |
-
-The Vault is a component catalogue rather than a numbered CLZ lesson sequence. It therefore uses topic dependencies and the LittleNest project walkthrough instead of CLZ-090 / CLZ-100 / CLZ-110 / CLZ-120 lesson IDs. Do not assume those lesson IDs or the other repository's toolchain script exist here.
-
 ## Cloud Architecture Playbook — Component catalogue mind map
 
 <p align="center">
@@ -435,6 +297,144 @@ A topic is only considered learned when you can explain its purpose and alternat
 - Diagrams are learning aids. Verify service-specific traffic flows, limits, SKU availability and topology before using them as implementation designs.
 - Never commit credentials, secrets, production Terraform state or sensitive environment details.
 - Prefer official Microsoft Learn documentation for current service behavior and implementation details.
+
+## Hands-on implementation project — LittleNest Kidswear
+
+The Vault is the **Azure theory and component knowledge base**. This repository also includes a complete, hands-on workload example: [**LittleNest Azure Reference**](littlenest-azure-reference/README.md).
+
+LittleNest is a sample children's clothing storefront backed by Node.js, Azure Functions, Cosmos DB, Storage Queue, Key Vault, managed identities, private endpoints, private DNS and Terraform. It connects the service guides in this Vault to a working application and infrastructure codebase.
+
+The project now includes a structured [Low-Level Design (LLD)](littlenest-azure-reference/lld/README.md) covering vision, scope, requirements, detailed design, identity, security, monitoring, operations and FinOps. It explicitly separates implemented controls from operational procedures and future recommendations.
+
+> **Scope and safety:** This is a low-cost, non-production learning lab, not a full enterprise landing-zone accelerator or production commerce platform. Its Azure-hosted application is private, not internet-facing. A local demo runs without Azure credentials or Azure resources. Azure deployment has not been validated by this repository's local CI alone; complete the live Azure validation checklist before treating a deployment as proven.
+
+### Getting started
+
+Clone the Vault and open it in PowerShell 7 / VS Code:
+
+~~~powershell
+git clone https://github.com/tripathies/azure-master-vault.git
+Set-Location azure-master-vault
+code .
+~~~
+
+### Audit your workstation
+
+Check the toolchain without installing or changing anything. The audit script only reads local command versions and the current Azure CLI session:
+
+~~~powershell
+pwsh --version
+terraform version
+az version
+git --version
+code --version
+node --version
+npm --version
+./scripts/Test-AzureMasterVaultToolchain.ps1 -Profile Learner
+~~~
+
+Use `-Profile Contributor` if you also plan to publish the Azure Functions worker; that profile additionally checks for Azure Functions Core Tools (`func`). The local storefront demo needs Node.js 22 or later. Terraform 1.9.0 or later is required by the LittleNest configuration.
+
+Start with the credential-free [LittleNest local demo](littlenest-azure-reference/README.md#local-website-preview--no-azure-resources-required). It does not need an Azure login and does not create Azure resources. Read the relevant Vault component guides alongside the implementation. Before any Azure deployment, run the Azure context preflight below and complete the prerequisites in the LittleNest README. The first Azure resource is created only when you deliberately run the reviewed Terraform apply.
+
+The LittleNest Azure context preflight is read-only. It checks the active Azure CLI session, subscription state, selected resource providers and the requested region / Functions Flex Consumption runtime availability. First sign in to Azure and explicitly select the subscription:
+
+~~~powershell
+az login
+az account list --output table
+az account set --subscription '<subscription-id>'
+$subscriptionId = az account show --query id --output tsv
+az account show --query '{tenant:tenantId,subscription:id,user:user.name}' --output table
+
+./littlenest-azure-reference/scripts/Test-AzureContext.ps1 -Location centralindia -ExpectedSubscriptionId $subscriptionId
+~~~
+
+The preflight does not register providers, grant permissions or deploy resources. Provider registration, quota checks and any required access changes must be completed deliberately by an authorised subscription administrator.
+
+### Start with the credential-free local demo
+
+This is the safest first exercise. It does not require an Azure login and does not create Azure resources:
+
+~~~powershell
+Set-Location littlenest-azure-reference/app/web
+npm install
+$env:LOCAL_DEMO_MODE = "true"
+npm start
+~~~
+
+Open http://localhost:3000. The bundled sample catalogue and in-memory checkout let you explore the storefront. Run `npm test` in a second terminal to execute the local API smoke tests.
+
+### Safe Azure context
+
+Never select a subscription by display name in automation. Capture its ID, inspect the tenant and identity, and pass the ID explicitly to Terraform:
+
+~~~powershell
+$subscriptionId = az account show --query id --output tsv
+az account show --query '{tenant:tenantId,subscription:id,user:user.name}' --output table
+~~~
+
+For a deployable lesson, follow the dedicated [LittleNest README](littlenest-azure-reference/README.md) from prerequisites through cleanup. The core Terraform review sequence is:
+
+~~~powershell
+Set-Location littlenest-azure-reference/infra
+Copy-Item terraform.tfvars.example terraform.tfvars
+# Set subscription_id, terraform_runner_public_ip and deployer_principal_type in terraform.tfvars.
+terraform init
+terraform fmt -check -recursive
+terraform validate
+terraform plan -var "subscription_id=$subscriptionId" -out tfplan
+terraform show tfplan
+~~~
+
+**Do not skip the Storage bootstrap and RBAC steps in the LittleNest README.** This lab disables Storage shared-key access and uses Entra ID for Terraform data-plane operations. The README explains the staged resource-group / Storage bootstrap, the role assignments required by the Terraform caller, and the full apply sequence. Only apply a reviewed plan after confirming permissions, region support, quota and cost.
+
+~~~powershell
+terraform apply tfplan
+# After completing the lab and reviewing the destroy plan:
+terraform destroy -var "subscription_id=$subscriptionId"
+~~~
+
+Do not commit `terraform.tfvars`, plan files, state files, generated credentials or command output containing secrets. Keep local Terraform state and plans private.
+
+### Dependency Map — Curriculum dependency map
+
+The hands-on workload follows this learning sequence. Read the linked theory guides, then inspect the matching implementation in `littlenest-azure-reference/infra` and `app`.
+
+~~~mermaid
+flowchart TD
+  A["Cloud foundation & subscription scope"] --> B["VNet, subnets & private DNS"]
+  B --> C["Private endpoints & network access"]
+  A --> D["Entra ID, RBAC & managed identities"]
+  C --> E["App Service and Azure Functions"]
+  D --> E
+  E --> F["Cosmos DB and Storage Queue"]
+  D --> F
+  D --> G["Key Vault secrets"]
+  E --> H["LittleNest storefront"]
+  F --> I["Asynchronous order worker"]
+  G --> H
+  H --> J["Validate, observe and destroy"]
+  I --> J
+~~~
+
+- [Cloud foundation and landing zones](A-cloud-foundation-landing-zones/README.md)
+- [Identity and access management](B-identity-access-management/README.md)
+- [Networking and private connectivity](C-networking-private-connectivity/README.md)
+- [Compute and application hosting](E-compute-application-hosting/README.md)
+- [Storage and enterprise file services](G-storage-enterprise-file-services/README.md)
+- [Databases and data platforms](H-databases-data-platforms/README.md)
+- [Security, secrets and governance](J-security-secrets-governance/README.md)
+- [Terraform, CI/CD and resilience](L-devops-resilience-migration-ai/README.md)
+
+| Learning path | Dependency / order |
+|---|---|
+| Cloud foundation → networking → private endpoints | Understand subscription scope and address planning before private connectivity. |
+| Identity and RBAC → managed identities | Establish least-privilege identities before enabling app-to-service access. |
+| App Service + Functions → Cosmos DB + Storage Queue | Deploy the workload services and data dependencies described in the LittleNest project. |
+| Key Vault + managed identity → storefront | Add the optional secret exercise after the application identity and private DNS are ready. |
+| Seed data → deploy app and worker → validate order flow | Validate private DNS, data access, queue processing and cleanup only after dependencies are deployed. |
+
+The Vault is a component catalogue rather than a numbered CLZ lesson sequence. It therefore uses topic dependencies and the LittleNest project walkthrough instead of CLZ-090 / CLZ-100 / CLZ-110 / CLZ-120 lesson IDs. Do not assume those lesson IDs or the other repository's toolchain script exist here.
 
 ## Catalogue and assets
 
