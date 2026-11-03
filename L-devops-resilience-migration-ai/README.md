@@ -1,6 +1,6 @@
-# L. DevOps, Resilience & Migration
+# L. DevOps, IaC, Migration & Hybrid Management
 
-> Delivery automation, infrastructure as code, workload continuity, migration and hybrid management.
+> Build, release, migrate and manage Azure infrastructure and workloads. This category owns the engineering lifecycle; it does **not** own backup policy or disaster-recovery design.
 
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json) · [Architecture map index](../ARCHITECTURE-MAPS.md)
 
@@ -10,8 +10,6 @@
 - [ ] [Bicep / ARM Templates](bicep-arm-templates/README.md)
 - [ ] [Azure DevOps Pipelines](azure-devops-pipelines/README.md)
 - [ ] [GitHub Actions](github-actions/README.md)
-- [ ] [Azure Backup](azure-backup/README.md)
-- [ ] [Azure Site Recovery](azure-site-recovery/README.md)
 - [ ] [Azure Migrate](azure-migrate/README.md)
 - [ ] [Azure Arc](azure-arc/README.md)
 
@@ -19,60 +17,59 @@
 
 ~~~mermaid
 flowchart LR
-  A[Plan infrastructure] --> B[Terraform / Bicep]
-  B --> C[CI validation and security scans]
-  C --> D[Approval and deployment]
-  D --> E[Operate and monitor]
-  E --> F[Backup and recovery]
-  E --> G[Migration and hybrid management]
+  Plan[Design and plan] --> IaC[Terraform or Bicep]
+  IaC --> PR[Pull request and validation]
+  PR --> Scan[Security, policy and quality checks]
+  Scan --> Approve[Approval and release gates]
+  Approve --> Deploy[Deploy infrastructure and application]
+  Deploy --> Observe[Verify, monitor and manage drift]
+  Estate[Existing on-premises / multicloud estate] --> Migrate[Azure Migrate assessment and migration]
+  Estate --> Arc[Azure Arc hybrid management]
+  Migrate --> Landing[Azure landing zone / target workload]
+  Arc --> Govern[Azure governance and operations]
 ~~~
+
+## Dedicated responsibility by topic
+
+| Topic | Owns | Does not own |
+|---|---|---|
+| Terraform | Provider-based IaC, modules, state, plan/apply, drift | Backup retention or DR runbooks |
+| Bicep / ARM | Azure-native templates, deployment scopes, modules, what-if | CI/CD orchestration itself |
+| Azure DevOps Pipelines | Pipeline stages, artifacts, approvals, deployment evidence | IaC language or backup policy |
+| GitHub Actions | Workflow orchestration, OIDC federation, protected environments | Azure resource definitions themselves |
+| Azure Migrate | Discovery, assessment, dependency mapping, migration waves and cutover | Ongoing hybrid governance after migration |
+| Azure Arc | Hybrid resource onboarding, connected management, policy and inventory | Workload migration or backup by itself |
 
 ## Design principles
 
-- Prefer reviewed, reusable infrastructure-as-code with pinned versions and controlled state.
-- Use workload identity federation and least privilege in delivery pipelines; avoid long-lived credentials.
-- Define RTO and RPO with business owners before selecting backup, replication or failover.
-- Discover dependencies, data movement, downtime and rollback before migration.
-- Use Azure Arc where hybrid management requirements justify its agent, connectivity and governance footprint.
-- Test recovery and migration outcomes at the application level, not only at the infrastructure level.
+- Separate source control, pipeline orchestration, IaC definitions and runtime configuration.
+- Use workload identity federation/OIDC, least privilege, protected environments and reviewed changes.
+- Keep Terraform state and deployment artifacts protected; never commit secrets or sensitive plans.
+- Make Bicep deployment scope explicit and review what-if output before deployment.
+- Discover workload dependencies and migration readiness before creating migration waves.
+- Use Azure Arc only where hybrid control-plane management provides value; define agent, connectivity and ownership boundaries.
+- Validate the destination workload after migration; a completed move does not prove the application is healthy.
 
-## Topics
+## Migration and hybrid decision path
 
-### Terraform
-Use modules, remote state with access controls, version pinning, reviewed plans and controlled apply. Terraform state and plan files may contain sensitive information; do not commit them.
+1. **Discover:** inventory servers, applications, databases, dependencies, licensing and owners.
+2. **Assess:** select rehost, replatform, refactor, replace or retire; estimate target capacity and cost.
+3. **Plan:** group dependencies into migration waves; define downtime, rollback, DNS and identity changes.
+4. **Migrate:** execute a pilot, validate data and transactions, then progress in controlled waves.
+5. **Operate:** onboard eligible hybrid resources to Arc where useful; apply policy, inventory and monitoring standards.
+6. **Optimize:** right-size, modernize and decommission source systems only after formal acceptance.
 
-### Bicep / ARM templates
-Use Bicep for Azure-native declarative deployments, explicit scopes, parameters and reusable modules. Review what-if output and validate API versions and regional support.
+## Scope boundary
 
-### Azure DevOps Pipelines
-Use protected branches, PR validation, dependency and secret scanning, environment approvals, workload federation, deployment gates and post-deployment smoke tests.
-
-### GitHub Actions
-Use protected environments, least-privilege GitHub tokens, OIDC federation to Azure, reusable workflows and artifact provenance. Treat pipeline identities as production principals.
-
-### Azure Backup
-Define protected workload scope, retention, vault security, immutability requirements and restore testing. Backup provides point-in-time recovery; it does not alone provide application failover.
-
-### Azure Site Recovery
-Design replication and orchestrated recovery around supported source/target combinations, RTO/RPO, network mapping, DNS, identity dependencies and tested failover/failback.
-
-### Azure Migrate
-Discover inventory and dependencies; assess rehost/replatform/refactor/replace/retire; validate target region, quotas, licensing, network and data movement; plan cutover, rollback and business sign-off.
-
-### Azure Arc
-Extend supported Azure management capabilities to eligible hybrid and multicloud resources. Define connectivity, agent lifecycle, policy scope, patch ownership and the boundary of operational responsibility.
-
-## Related learning paths
-
-- [M — AI Platform & Engineering](../M-ai-platform-engineering/README.md)
-- [12 — Automation, Backup and Disaster Recovery](../12-automation-backup-disaster-recovery/README.md)
-- [LittleNest hands-on reference implementation](../littlenest-azure-reference/README.md)
+- **Backup, recovery vaults, RTO/RPO and DR testing:** [Category 12 — Business Continuity, Backup & Disaster Recovery](../12-automation-backup-disaster-recovery/README.md).
+- **AI services and model engineering:** [M — AI Platform & Engineering](../M-ai-platform-engineering/README.md).
+- **Azure platform foundation:** [A — Cloud Foundation & Landing Zones](../A-cloud-foundation-landing-zones/README.md).
 
 ## Official starting points
 
 - [Terraform on Azure](https://learn.microsoft.com/en-us/azure/developer/terraform/)
 - [Bicep documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/)
-- [Azure Backup](https://learn.microsoft.com/en-us/azure/backup/backup-overview)
-- [Azure Site Recovery](https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview)
+- [Azure DevOps Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/)
+- [GitHub Actions documentation](https://docs.github.com/en/actions)
 - [Azure Migrate](https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview)
-- [Azure Arc](https://learn.microsoft.com/en-us/azure/azure-arc/overview)
+- [Azure Arc overview](https://learn.microsoft.com/en-us/azure/azure-arc/overview)
