@@ -23,18 +23,18 @@
 <rect width="3000" height="2718" fill="url(#paper)"/>
 <rect x="0" y="0" width="3000" height="12" fill="url(#blueband)"/>
 <rect x="60" y="38" width="310" height="48" rx="24" fill="#EAF5FE" stroke="#B5D8F2" stroke-width="1.5"/>
-<text x="215" y="69" text-anchor="middle" class="meta" fill="#075A9E">AZURE MASTER VAULT</text>
+<text x="215" y="69" text-anchor="middle" class="meta" fill="#075A9E">CLOUD ARCHITECTURE PLAYBOOK</text>
 <rect x="2580" y="38" width="350" height="48" rx="24" fill="#F4F0FF" stroke="#C8B5F7" stroke-width="1.5"/>
 <text x="2755" y="69" text-anchor="middle" class="meta" fill="#4C2C91">120 CATALOGUE ENTRIES</text>
 <text x="1500" y="105" text-anchor="middle" class="title">AZURE CLOUD MINDMAP</text>
-<text x="1500" y="148" text-anchor="middle" class="subtitle">A PRACTICAL GUIDE TO AZURE MASTER VAULT</text>
+<text x="1500" y="148" text-anchor="middle" class="subtitle">A PRACTICAL GUIDE TO CLOUD ARCHITECTURE PLAYBOOK</text>
 <text x="1500" y="181" text-anchor="middle" class="meta">CLOUD ARCHITECTURE  •  PLATFORM SERVICES  •  ENGINEERING  •  AI</text>
 <path d="M0 205 H3000" stroke="#E3EAF1" stroke-width="2"/>
 <rect x="65" y="1249" width="245" height="220" rx="28" fill="#FFFFFF" stroke="#9EADBA" stroke-width="3" filter="url(#shadow)"/>
 <path d="M103 1369 L170 1277 L237 1369 L170 1369 L132 1421 L208 1421 L170 1464 L103 1369" fill="url(#azure)"/>
 <text x="187.5" y="1514" text-anchor="middle" class="hub" fill="#005A9E">MICROSOFT</text>
 <text x="187.5" y="1545" text-anchor="middle" class="hub" fill="#005A9E">AZURE</text>
-<text x="187.5" y="1572" text-anchor="middle" class="hubsub" fill="#536A7D">MASTER VAULT</text><path d="M310 1359 C380 1359, 445 322, 545 322" fill="none" stroke="#182632" stroke-width="3.2" stroke-linecap="round"/>
+<text x="187.5" y="1572" text-anchor="middle" class="hubsub" fill="#536A7D">CLOUD ARCHITECTURE PLAYBOOK</text><path d="M310 1359 C380 1359, 445 322, 545 322" fill="none" stroke="#182632" stroke-width="3.2" stroke-linecap="round"/>
  <circle cx="443.95" cy="767.9100000000001" r="7.5" fill="#159BD7" stroke="#FFFFFF" stroke-width="2"/>
  <path d="M545 322 l-14 -8 v16 z" fill="#182632"/>
  <rect x="560" y="253" width="100" height="87" rx="17" fill="#FFFFFF" stroke="#0078D4" stroke-width="2.7" filter="url(#shadow)"/>
@@ -563,5 +563,5 @@
   <rect x="2266" y="2475" width="277" height="37" rx="9" fill="#FBFDFF" stroke="#D5E0E9" stroke-width="1.4"/>
   <text x="2404.5" y="2499" text-anchor="middle" class="pill">Azure Site Recovery (ASR)</text>
   </a><path d="M65 2613 H2935" stroke="#D6E2EC" stroke-width="2"/>
-<text x="1500" y="2653" text-anchor="middle" class="footer">Created by Rahul Tripathi  •  Azure Master Vault</text>
+<text x="1500" y="2653" text-anchor="middle" class="footer">Created by Rahul Tripathi  •  Cloud Architecture Playbook</text>
 <text x="1500" y="2683" text-anchor="middle" class="footer2">A practical learning map for cloud architects, engineers and platform teams  •  Category 12 is a focused cross-listed learning path</text></svg>
