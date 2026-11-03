@@ -1,71 +1,78 @@
 # 12. Business Continuity, Backup & Disaster Recovery
 
-> Protect recoverable data, maintain continuity through major disruptions, and prove that critical workloads can be restored or failed over within business-approved objectives.
+> This category is about keeping business services running through disruption and proving recovery. It is **not** the Infrastructure as Code or CI/CD category; those topics live in [L — DevOps, IaC, Migration & Hybrid Management](../L-devops-resilience-migration-ai/README.md).
 
-[← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json) · [Architecture map index](../ARCHITECTURE-MAPS.md)
+<p align="center">
+  <img src="architecture.svg" alt="Business continuity, Azure backup, recovery testing and disaster recovery architecture" width="100%" />
+</p>
 
-## This category owns recovery — not delivery engineering
+- [Edit the category architecture in draw.io](architecture.drawio) · [Mermaid source](architecture.mmd)
 
-- **L — DevOps, IaC, Migration & Hybrid Management** owns Terraform, Bicep, pipelines, migration and Arc.
-- **12 — Business Continuity, Backup & Disaster Recovery** owns data protection, recovery architecture, vault security, business recovery objectives and DR exercises.
-- Each component has one canonical category and one primary guide. Backup and Site Recovery appear only here.
+[← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json) · [Enterprise reference architecture](../AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
 
-## Component checklist
+## Category boundary
 
-- [ ] [Azure Backup & Workload Protection](75-azure-backup/README.md)
-- [ ] [Azure Site Recovery & Replication](76-azure-site-recovery-asr/README.md)
-- [ ] [Backup Vault Architecture & Security Controls](77-backup-vault-architecture-security/README.md)
-- [ ] [Business Continuity & Disaster Recovery Planning](78-bcdr-strategy-rto-rpo/README.md)
-- [ ] [Recovery Plans, Failover & DR Testing](79-recovery-plans-failover-testing/README.md)
+This category owns the **business recovery lifecycle**: strategy, business impact, recovery objectives, backup protection, restore proof, replication, failover and failback.
 
-## Reference recovery lifecycle
-
-~~~mermaid
-flowchart TB
-  Workload[Business workload and data] --> BIA[Business impact and criticality]
-  BIA --> Objectives[Approved RTO / RPO / recovery priority]
-  Objectives --> Strategy{Choose protection pattern}
-  Strategy --> Backup[Azure Backup: point-in-time restore]
-  Strategy --> ASR[Azure Site Recovery: continuous replication]
-  Backup --> Vault[Vault architecture and security controls]
-  ASR --> Target[Recovery region / target environment]
-  Vault --> Exercise[Recovery plan and DR exercise]
-  Target --> Exercise
-  Exercise --> Evidence[Measured recovery evidence and remediation]
-  Evidence --> Review[Review objectives and update design]
-~~~
-
-## Five deliberately separate topics
-
-| Topic | Primary question | Boundary |
+| Topic | What it owns | It does not duplicate |
 |---|---|---|
-| Azure Backup | What data must be protected and how is it restored? | Backup workload and restore operations |
-| Azure Site Recovery | How are supported workloads replicated and brought up at a recovery site? | Replication and failover service |
-| Backup Vault Architecture & Security | How are vaults structured and protected from destructive access? | Vault boundary, MUA, immutability, soft delete and access |
-| BCDR Planning | What does the business need to recover, and at what cost? | Criticality, risk, RTO/RPO and strategy selection |
-| Recovery Plans & DR Testing | How is recovery executed and proven? | Sequencing, test failover, validation, failback and evidence |
+| Business continuity strategy | Business service continuity, disruption scenarios, ownership and crisis governance | IaC pipelines or Azure product configuration |
+| Workload criticality, BIA, RTO & RPO | Business impact, service tiers, tolerable outage and data-loss objectives | Backup schedules or ASR replication settings |
+| Azure Backup & workload protection | Azure Backup service, supported workload protection and recovery points | Business continuity strategy or restore-exercise governance |
+| Backup policy, retention & vault security | Policy design, retention, vault protection and separation of duties | General Key Vault or identity service fundamentals |
+| Restore operations & recovery testing | Clean recovery targets, restore runbooks, application validation and test evidence | Replication-based regional failover |
+| Azure Site Recovery & replication | ASR service, replication health and supported recovery targets | Backup retention and point-in-time restore |
+| Recovery plans, failover & failback | Multi-tier recovery sequence, decision gates, network/DNS mapping and return to primary | Underlying ASR service configuration guide |
 
-## Core architecture principles
+## Learning sequence
 
-1. Define recovery from business impact, not from whichever Azure service is easiest to deploy.
-2. Assign RTO and RPO per workload and, where necessary, per critical application flow or data store.
-3. Treat high availability, backup and disaster recovery as related but distinct controls.
-4. Use backup for point-in-time recovery and retention; use replication/failover when the design requires a recovery environment. Some workloads need both.
-5. Design identity, DNS, networking, secrets, certificates, capacity and external dependencies into the recovery path.
-6. Protect backup administration separately from production administration. A compromised production admin must not automatically be able to destroy recovery copies.
-7. Test restores and failovers regularly, measure achieved RTO/RPO and track corrective actions to closure.
+1. **Understand the business obligation:** identify critical services, impact and continuity requirements.
+2. **Set measurable objectives:** agree service tier, RTO, RPO and dependency order.
+3. **Choose protection:** select supported backup, replication or combined patterns per workload.
+4. **Prove recovery:** restore to a clean target and validate data and application behavior.
+5. **Exercise disaster recovery:** test failover, business acceptance, reprotect and failback.
+6. **Improve continuously:** measure gaps, cost, test outcomes and changes in workload dependencies.
 
-## Important distinctions
+## Component catalogue
 
-- A backup job marked successful does not prove that the application can be restored.
-- Replication health does not prove that a multi-tier application starts in the right order or passes business tests.
-- A Recovery Services vault and a Backup vault are different vault types with workload-specific support. Select from the current workload support matrix.
-- A DR diagram is not evidence. Only measured exercises establish whether recovery objectives are met.
+- [ ] **1. [Business Continuity & Disaster Recovery Strategy](77-business-continuity-disaster-recovery-strategy/README.md)**
+- [ ] **2. [Workload Criticality, BIA, RTO & RPO](78-workload-criticality-bia-rto-rpo/README.md)**
+- [ ] **3. [Azure Backup & Workload Protection](75-azure-backup/README.md)**
+- [ ] **4. [Backup Policy, Retention & Vault Security](79-backup-policy-retention-vault-security/README.md)**
+- [ ] **5. [Restore Operations & Recovery Testing](80-restore-operations-recovery-testing/README.md)**
+- [ ] **6. [Azure Site Recovery & Replication](76-azure-site-recovery-asr/README.md)**
+- [ ] **7. [Recovery Plans, Failover & Failback](81-recovery-plans-failover-failback/README.md)**
 
-## Official Microsoft guidance
+## Reference architecture principles
+
+- Business service recovery is the success criterion; a green backup job or healthy replication status is not sufficient.
+- RTO and RPO are business-approved targets and must be measured in exercises.
+- Backup and replication solve different problems. Use each according to workload support and recovery objectives.
+- Keep recovery credentials, vault administration and production administration separated where practical.
+- Test in an isolated environment before connecting recovered workloads to production networks.
+- Recovery plans must include identity, DNS, routing, certificates, secrets, external dependencies and application validation.
+- Validate current workload support, region/SKU availability, quotas, vault features and service limits before production design.
+
+## Quick decision guide
+
+| Need | Start with | Architect's question |
+|---|---|---|
+| Recover deleted or corrupted data | Azure Backup | What recovery point, retention and clean target are required? |
+| Recover a supported workload in another location | Azure Site Recovery | Does the exact source/target and region pattern meet RTO/RPO? |
+| Decide how important a workload is | BIA and criticality | What is the business impact of outage or data loss? |
+| Prove recovery is possible | Restore testing | Can the application be used after restore, not just mounted? |
+| Recover multiple dependent tiers | Recovery plans | Are dependencies ordered and failback safe? |
+
+## Related categories
+
+- [L — DevOps, IaC, Migration & Hybrid Management](../L-devops-resilience-migration-ai/README.md)
+- [K — Monitoring, Operations & Cost](../K-monitoring-operations-cost/README.md)
+- [J — Security, Secrets & Governance](../J-security-secrets-governance/README.md)
+- [C — Networking & Private Connectivity](../C-networking-private-connectivity/README.md)
+
+## Official references
 
 - [Azure Backup overview](https://learn.microsoft.com/en-us/azure/backup/backup-overview)
-- [Azure Backup security overview](https://learn.microsoft.com/en-us/azure/backup/security-overview)
 - [Azure Site Recovery overview](https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview)
-- [Business continuity, high availability and disaster recovery](https://learn.microsoft.com/en-us/azure/reliability/concept-business-continuity-high-availability-disaster-recovery)
-- [Azure Well-Architected disaster recovery strategies](https://learn.microsoft.com/en-us/azure/well-architected/reliability/disaster-recovery)
+- [Azure Well-Architected reliability](https://learn.microsoft.com/en-us/azure/well-architected/reliability/)
+- [Mission-critical business continuity](https://learn.microsoft.com/en-us/azure/well-architected/mission-critical/mission-critical-business-continuity)
