@@ -7,6 +7,19 @@
 - [Edit the network topology in draw.io](architecture.drawio) · [Mermaid source](architecture.mmd)
 - [Open the end-to-end Azure reference design](../AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
 
+## Network-first reference topology
+
+<p align="center">
+  <a href="../AZURE-NETWORK-ARCHITECTURE-MAP.svg">
+    <img src="../AZURE-NETWORK-ARCHITECTURE-MAP.svg" alt="Azure network topology showing hybrid connectivity, hub VNet, application and data spokes, ingress, egress, private endpoints, DNS and observability" width="100%" />
+  </a>
+</p>
+
+- [Open full-size network architecture map](../AZURE-NETWORK-ARCHITECTURE-MAP.svg)
+- [Edit the network topology in draw.io](../AZURE-NETWORK-ARCHITECTURE-MAP.drawio)
+
+This topology-first diagram is the network view; the component checklist below remains the detailed service catalogue. It is a reference pattern, not a mandatory deployment template.
+
 ## Component completion tracker
 
 Use this checklist to review every component page. Mark an item complete only when content is present and verified; if an item is not applicable, record why.
