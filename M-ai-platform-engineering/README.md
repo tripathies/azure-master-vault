@@ -1,6 +1,6 @@
 # M. AI Platform & Engineering
 
-> Build, ground, deploy, evaluate and govern AI applications, models and agents on Azure. This category covers both Microsoft AI services and the platform engineering capabilities needed to operate AI workloads responsibly.
+<p align="center"><img src="architecture.svg" alt="AI platform engineering architecture lifecycle" width="100%" /></p>\n\n- [Editable diagram](architecture.drawio) · [Mermaid source](architecture.mmd)\n\n> Build, ground, deploy, evaluate and govern AI applications, models and agents on Azure. This category covers both Microsoft AI services and the platform engineering capabilities needed to operate AI workloads responsibly.
 
 [← Master catalogue](../README.md) · [Machine-readable catalogue](../catalog.json) · [Azure reference architecture](../AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
 
