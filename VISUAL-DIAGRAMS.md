@@ -1,265 +1,210 @@
-# Azure Master Vault — Visual Architecture Library
+# Cloud Architecture Playbook — Visual Architecture Library
 
-This page is the visual index for the repository. Every category has a rendered SVG, editable diagrams.net/draw.io source, and Mermaid source. Component folders also contain their own SVG and editable draw.io files.
+Use this page to browse visual assets and the canonical guide for each catalogue topic. The SVG mind map is the full catalogue overview; category diagrams explain architecture flows; component guides contain service-specific detail.
 
-## Master architecture
+## Master diagrams
 
-![Azure Master Vault master architecture](architecture.svg)
+- [Azure Cloud Mindmap (SVG)](AZURE-COMPONENT-MINDMAP.svg) — 14 categories, 120 unique topics; component labels link to their guides.
+- [Editable Azure Cloud Mindmap (draw.io)](AZURE-COMPONENT-MINDMAP.drawio)
+- [Azure enterprise reference architecture (SVG)](architecture.svg) · [draw.io](architecture.drawio) · [Mermaid](architecture.mmd)
+- [Network topology (SVG)](AZURE-NETWORK-ARCHITECTURE-MAP.svg) · [draw.io](AZURE-NETWORK-ARCHITECTURE-MAP.drawio)
+- [Business continuity and disaster recovery architecture](12-automation-backup-disaster-recovery/architecture.svg) · [draw.io](12-automation-backup-disaster-recovery/architecture.drawio)
 
-- [Open/edit master diagram in draw.io](architecture.drawio)
-- [Mermaid source](architecture.mmd)
-
-## Category maps
+## Category diagrams and component guides
 
 ### A — Cloud Foundation & Landing Zones
 
-![ A Cloud Foundation & Landing Zones architecture ](A-cloud-foundation-landing-zones/architecture.svg)
+**10 dedicated topics** · [Category guide](A-cloud-foundation-landing-zones/README.md) · [SVG](A-cloud-foundation-landing-zones/architecture.svg) · [draw.io](A-cloud-foundation-landing-zones/architecture.drawio) · [Mermaid](A-cloud-foundation-landing-zones/architecture.mmd)
 
-- [Editable draw.io diagram](A-cloud-foundation-landing-zones/architecture.drawio)
-- [Mermaid source](A-cloud-foundation-landing-zones/architecture.mmd)
-- [Category tracker and design notes](A-cloud-foundation-landing-zones/README.md)
-
-Components (10):
-- [Microsoft Azure fundamentals](A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/README.md) · [SVG](A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/architecture.drawio)
-- [Regions, Region Pairs & Availability Zones](A-cloud-foundation-landing-zones/regions-region-pairs-and-availability-zones/README.md) · [SVG](A-cloud-foundation-landing-zones/regions-region-pairs-and-availability-zones/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/regions-region-pairs-and-availability-zones/architecture.drawio)
-- [Microsoft Entra ID tenants](A-cloud-foundation-landing-zones/microsoft-entra-id-tenants/README.md) · [SVG](A-cloud-foundation-landing-zones/microsoft-entra-id-tenants/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/microsoft-entra-id-tenants/architecture.drawio)
-- [Management Groups](A-cloud-foundation-landing-zones/management-groups/README.md) · [SVG](A-cloud-foundation-landing-zones/management-groups/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/management-groups/architecture.drawio)
-- [Azure Subscriptions](A-cloud-foundation-landing-zones/azure-subscriptions/README.md) · [SVG](A-cloud-foundation-landing-zones/azure-subscriptions/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/azure-subscriptions/architecture.drawio)
-- [Resource Groups](A-cloud-foundation-landing-zones/resource-groups/README.md) · [SVG](A-cloud-foundation-landing-zones/resource-groups/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/resource-groups/architecture.drawio)
-- [Azure Resource Manager (ARM)](A-cloud-foundation-landing-zones/azure-resource-manager-arm/README.md) · [SVG](A-cloud-foundation-landing-zones/azure-resource-manager-arm/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/azure-resource-manager-arm/architecture.drawio)
-- [Azure Policy](A-cloud-foundation-landing-zones/azure-policy/README.md) · [SVG](A-cloud-foundation-landing-zones/azure-policy/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/azure-policy/architecture.drawio)
-- [Azure Landing Zones](A-cloud-foundation-landing-zones/azure-landing-zones/README.md) · [SVG](A-cloud-foundation-landing-zones/azure-landing-zones/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/azure-landing-zones/architecture.drawio)
-- [Azure Well-Architected Framework](A-cloud-foundation-landing-zones/azure-well-architected-framework/README.md) · [SVG](A-cloud-foundation-landing-zones/azure-well-architected-framework/architecture.svg) · [editable draw.io](A-cloud-foundation-landing-zones/azure-well-architected-framework/architecture.drawio)
+- [Microsoft Azure fundamentals](A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/README.md)
+- [Regions, Region Pairs & Availability Zones](A-cloud-foundation-landing-zones/regions-region-pairs-and-availability-zones/README.md)
+- [Microsoft Entra ID tenants](A-cloud-foundation-landing-zones/microsoft-entra-id-tenants/README.md)
+- [Management Groups](A-cloud-foundation-landing-zones/management-groups/README.md)
+- [Azure Subscriptions](A-cloud-foundation-landing-zones/azure-subscriptions/README.md)
+- [Resource Groups](A-cloud-foundation-landing-zones/resource-groups/README.md)
+- [Azure Resource Manager (ARM)](A-cloud-foundation-landing-zones/azure-resource-manager-arm/README.md)
+- [Azure Policy](A-cloud-foundation-landing-zones/azure-policy/README.md)
+- [Azure Landing Zones](A-cloud-foundation-landing-zones/azure-landing-zones/README.md)
+- [Azure Well-Architected Framework](A-cloud-foundation-landing-zones/azure-well-architected-framework/README.md)
 
 ### B — Identity & Access Management
 
-![ B Identity & Access Management architecture ](B-identity-access-management/architecture.svg)
+**8 dedicated topics** · [Category guide](B-identity-access-management/README.md) · [SVG](B-identity-access-management/architecture.svg) · [draw.io](B-identity-access-management/architecture.drawio) · [Mermaid](B-identity-access-management/architecture.mmd)
 
-- [Editable draw.io diagram](B-identity-access-management/architecture.drawio)
-- [Mermaid source](B-identity-access-management/architecture.mmd)
-- [Category tracker and design notes](B-identity-access-management/README.md)
-
-Components (8):
-- [Microsoft Entra ID](B-identity-access-management/microsoft-entra-id/README.md) · [SVG](B-identity-access-management/microsoft-entra-id/architecture.svg) · [editable draw.io](B-identity-access-management/microsoft-entra-id/architecture.drawio)
-- [App Registrations](B-identity-access-management/app-registrations/README.md) · [SVG](B-identity-access-management/app-registrations/architecture.svg) · [editable draw.io](B-identity-access-management/app-registrations/architecture.drawio)
-- [Enterprise Applications & Service Principals](B-identity-access-management/enterprise-applications-and-service-principals/README.md) · [SVG](B-identity-access-management/enterprise-applications-and-service-principals/architecture.svg) · [editable draw.io](B-identity-access-management/enterprise-applications-and-service-principals/architecture.drawio)
-- [Managed Identities](B-identity-access-management/managed-identities/README.md) · [SVG](B-identity-access-management/managed-identities/architecture.svg) · [editable draw.io](B-identity-access-management/managed-identities/architecture.drawio)
-- [Azure RBAC](B-identity-access-management/azure-rbac/README.md) · [SVG](B-identity-access-management/azure-rbac/architecture.svg) · [editable draw.io](B-identity-access-management/azure-rbac/architecture.drawio)
-- [MFA & Conditional Access](B-identity-access-management/mfa-and-conditional-access/README.md) · [SVG](B-identity-access-management/mfa-and-conditional-access/architecture.svg) · [editable draw.io](B-identity-access-management/mfa-and-conditional-access/architecture.drawio)
-- [Privileged Identity Management (PIM)](B-identity-access-management/privileged-identity-management-pim/README.md) · [SVG](B-identity-access-management/privileged-identity-management-pim/architecture.svg) · [editable draw.io](B-identity-access-management/privileged-identity-management-pim/architecture.drawio)
-- [OAuth 2.0 & OpenID Connect](B-identity-access-management/oauth-2-0-and-openid-connect/README.md) · [SVG](B-identity-access-management/oauth-2-0-and-openid-connect/architecture.svg) · [editable draw.io](B-identity-access-management/oauth-2-0-and-openid-connect/architecture.drawio)
+- [Microsoft Entra ID](B-identity-access-management/microsoft-entra-id/README.md)
+- [App Registrations](B-identity-access-management/app-registrations/README.md)
+- [Enterprise Applications & Service Principals](B-identity-access-management/enterprise-applications-and-service-principals/README.md)
+- [Managed Identities](B-identity-access-management/managed-identities/README.md)
+- [Azure RBAC](B-identity-access-management/azure-rbac/README.md)
+- [MFA & Conditional Access](B-identity-access-management/mfa-and-conditional-access/README.md)
+- [Privileged Identity Management (PIM)](B-identity-access-management/privileged-identity-management-pim/README.md)
+- [OAuth 2.0 & OpenID Connect](B-identity-access-management/oauth-2-0-and-openid-connect/README.md)
 
 ### C — Networking & Private Connectivity
 
-![ C Networking & Private Connectivity architecture ](C-networking-private-connectivity/architecture.svg)
+**12 dedicated topics** · [Category guide](C-networking-private-connectivity/README.md) · [SVG](C-networking-private-connectivity/architecture.svg) · [draw.io](C-networking-private-connectivity/architecture.drawio) · [Mermaid](C-networking-private-connectivity/architecture.mmd)
 
-- [Editable draw.io diagram](C-networking-private-connectivity/architecture.drawio)
-- [Mermaid source](C-networking-private-connectivity/architecture.mmd)
-- [Category tracker and design notes](C-networking-private-connectivity/README.md)
-
-Components (12):
-- [Virtual Networks (VNet)](C-networking-private-connectivity/virtual-networks-vnet/README.md) · [SVG](C-networking-private-connectivity/virtual-networks-vnet/architecture.svg) · [editable draw.io](C-networking-private-connectivity/virtual-networks-vnet/architecture.drawio)
-- [Subnets & CIDR Planning](C-networking-private-connectivity/subnets-and-cidr-planning/README.md) · [SVG](C-networking-private-connectivity/subnets-and-cidr-planning/architecture.svg) · [editable draw.io](C-networking-private-connectivity/subnets-and-cidr-planning/architecture.drawio)
-- [Network Security Groups (NSGs)](C-networking-private-connectivity/network-security-groups-nsgs/README.md) · [SVG](C-networking-private-connectivity/network-security-groups-nsgs/architecture.svg) · [editable draw.io](C-networking-private-connectivity/network-security-groups-nsgs/architecture.drawio)
-- [Application Security Groups (ASGs)](C-networking-private-connectivity/application-security-groups-asgs/README.md) · [SVG](C-networking-private-connectivity/application-security-groups-asgs/architecture.svg) · [editable draw.io](C-networking-private-connectivity/application-security-groups-asgs/architecture.drawio)
-- [VNet Peering](C-networking-private-connectivity/vnet-peering/README.md) · [SVG](C-networking-private-connectivity/vnet-peering/architecture.svg) · [editable draw.io](C-networking-private-connectivity/vnet-peering/architecture.drawio)
-- [User-Defined Routes (UDRs)](C-networking-private-connectivity/user-defined-routes-udrs/README.md) · [SVG](C-networking-private-connectivity/user-defined-routes-udrs/architecture.svg) · [editable draw.io](C-networking-private-connectivity/user-defined-routes-udrs/architecture.drawio)
-- [Azure Firewall](C-networking-private-connectivity/azure-firewall/README.md) · [SVG](C-networking-private-connectivity/azure-firewall/architecture.svg) · [editable draw.io](C-networking-private-connectivity/azure-firewall/architecture.drawio)
-- [VPN Gateway](C-networking-private-connectivity/vpn-gateway/README.md) · [SVG](C-networking-private-connectivity/vpn-gateway/architecture.svg) · [editable draw.io](C-networking-private-connectivity/vpn-gateway/architecture.drawio)
-- [ExpressRoute](C-networking-private-connectivity/expressroute/README.md) · [SVG](C-networking-private-connectivity/expressroute/architecture.svg) · [editable draw.io](C-networking-private-connectivity/expressroute/architecture.drawio)
-- [Private Link & Private Endpoints](C-networking-private-connectivity/private-link-and-private-endpoints/README.md) · [SVG](C-networking-private-connectivity/private-link-and-private-endpoints/architecture.svg) · [editable draw.io](C-networking-private-connectivity/private-link-and-private-endpoints/architecture.drawio)
-- [Private DNS Zones](C-networking-private-connectivity/private-dns-zones/README.md) · [SVG](C-networking-private-connectivity/private-dns-zones/architecture.svg) · [editable draw.io](C-networking-private-connectivity/private-dns-zones/architecture.drawio)
-- [NAT Gateway](C-networking-private-connectivity/nat-gateway/README.md) · [SVG](C-networking-private-connectivity/nat-gateway/architecture.svg) · [editable draw.io](C-networking-private-connectivity/nat-gateway/architecture.drawio)
+- [Virtual Networks (VNet)](C-networking-private-connectivity/virtual-networks-vnet/README.md)
+- [Subnets & CIDR Planning](C-networking-private-connectivity/subnets-and-cidr-planning/README.md)
+- [Network Security Groups (NSGs)](C-networking-private-connectivity/network-security-groups-nsgs/README.md)
+- [Application Security Groups (ASGs)](C-networking-private-connectivity/application-security-groups-asgs/README.md)
+- [VNet Peering](C-networking-private-connectivity/vnet-peering/README.md)
+- [User-Defined Routes (UDRs)](C-networking-private-connectivity/user-defined-routes-udrs/README.md)
+- [Azure Firewall](C-networking-private-connectivity/azure-firewall/README.md)
+- [VPN Gateway](C-networking-private-connectivity/vpn-gateway/README.md)
+- [ExpressRoute](C-networking-private-connectivity/expressroute/README.md)
+- [Private Link & Private Endpoints](C-networking-private-connectivity/private-link-and-private-endpoints/README.md)
+- [Private DNS Zones](C-networking-private-connectivity/private-dns-zones/README.md)
+- [NAT Gateway](C-networking-private-connectivity/nat-gateway/README.md)
 
 ### D — Traffic Management & Delivery
 
-![ D Traffic Management & Delivery architecture ](D-traffic-management-delivery/architecture.svg)
+**8 dedicated topics** · [Category guide](D-traffic-management-delivery/README.md) · [SVG](D-traffic-management-delivery/architecture.svg) · [draw.io](D-traffic-management-delivery/architecture.drawio) · [Mermaid](D-traffic-management-delivery/architecture.mmd)
 
-- [Editable draw.io diagram](D-traffic-management-delivery/architecture.drawio)
-- [Mermaid source](D-traffic-management-delivery/architecture.mmd)
-- [Category tracker and design notes](D-traffic-management-delivery/README.md)
-
-Components (8):
-- [Azure Load Balancer](D-traffic-management-delivery/azure-load-balancer/README.md) · [SVG](D-traffic-management-delivery/azure-load-balancer/architecture.svg) · [editable draw.io](D-traffic-management-delivery/azure-load-balancer/architecture.drawio)
-- [Application Gateway & WAF](D-traffic-management-delivery/application-gateway-and-waf/README.md) · [SVG](D-traffic-management-delivery/application-gateway-and-waf/architecture.svg) · [editable draw.io](D-traffic-management-delivery/application-gateway-and-waf/architecture.drawio)
-- [Azure Front Door](D-traffic-management-delivery/azure-front-door/README.md) · [SVG](D-traffic-management-delivery/azure-front-door/architecture.svg) · [editable draw.io](D-traffic-management-delivery/azure-front-door/architecture.drawio)
-- [Traffic Manager](D-traffic-management-delivery/traffic-manager/README.md) · [SVG](D-traffic-management-delivery/traffic-manager/architecture.svg) · [editable draw.io](D-traffic-management-delivery/traffic-manager/architecture.drawio)
-- [Azure Bastion](D-traffic-management-delivery/azure-bastion/README.md) · [SVG](D-traffic-management-delivery/azure-bastion/architecture.svg) · [editable draw.io](D-traffic-management-delivery/azure-bastion/architecture.drawio)
-- [Azure DNS](D-traffic-management-delivery/azure-dns/README.md) · [SVG](D-traffic-management-delivery/azure-dns/architecture.svg) · [editable draw.io](D-traffic-management-delivery/azure-dns/architecture.drawio)
-- [DDoS Protection](D-traffic-management-delivery/ddos-protection/README.md) · [SVG](D-traffic-management-delivery/ddos-protection/architecture.svg) · [editable draw.io](D-traffic-management-delivery/ddos-protection/architecture.drawio)
-- [Network Watcher](D-traffic-management-delivery/network-watcher/README.md) · [SVG](D-traffic-management-delivery/network-watcher/architecture.svg) · [editable draw.io](D-traffic-management-delivery/network-watcher/architecture.drawio)
+- [Azure Load Balancer](D-traffic-management-delivery/azure-load-balancer/README.md)
+- [Application Gateway & WAF](D-traffic-management-delivery/application-gateway-and-waf/README.md)
+- [Azure Front Door](D-traffic-management-delivery/azure-front-door/README.md)
+- [Traffic Manager](D-traffic-management-delivery/traffic-manager/README.md)
+- [Azure Bastion](D-traffic-management-delivery/azure-bastion/README.md)
+- [Azure DNS](D-traffic-management-delivery/azure-dns/README.md)
+- [DDoS Protection](D-traffic-management-delivery/ddos-protection/README.md)
+- [Network Watcher](D-traffic-management-delivery/network-watcher/README.md)
 
 ### E — Compute & Application Hosting
 
-![ E Compute & Application Hosting architecture ](E-compute-application-hosting/architecture.svg)
+**8 dedicated topics** · [Category guide](E-compute-application-hosting/README.md) · [SVG](E-compute-application-hosting/architecture.svg) · [draw.io](E-compute-application-hosting/architecture.drawio) · [Mermaid](E-compute-application-hosting/architecture.mmd)
 
-- [Editable draw.io diagram](E-compute-application-hosting/architecture.drawio)
-- [Mermaid source](E-compute-application-hosting/architecture.mmd)
-- [Category tracker and design notes](E-compute-application-hosting/README.md)
-
-Components (8):
-- [Virtual Machines](E-compute-application-hosting/virtual-machines/README.md) · [SVG](E-compute-application-hosting/virtual-machines/architecture.svg) · [editable draw.io](E-compute-application-hosting/virtual-machines/architecture.drawio)
-- [Managed Disks](E-compute-application-hosting/managed-disks/README.md) · [SVG](E-compute-application-hosting/managed-disks/architecture.svg) · [editable draw.io](E-compute-application-hosting/managed-disks/architecture.drawio)
-- [Availability Sets & Zones](E-compute-application-hosting/availability-sets-and-zones/README.md) · [SVG](E-compute-application-hosting/availability-sets-and-zones/architecture.svg) · [editable draw.io](E-compute-application-hosting/availability-sets-and-zones/architecture.drawio)
-- [Virtual Machine Scale Sets](E-compute-application-hosting/virtual-machine-scale-sets/README.md) · [SVG](E-compute-application-hosting/virtual-machine-scale-sets/architecture.svg) · [editable draw.io](E-compute-application-hosting/virtual-machine-scale-sets/architecture.drawio)
-- [Azure App Service](E-compute-application-hosting/azure-app-service/README.md) · [SVG](E-compute-application-hosting/azure-app-service/architecture.svg) · [editable draw.io](E-compute-application-hosting/azure-app-service/architecture.drawio)
-- [Azure Functions](E-compute-application-hosting/azure-functions/README.md) · [SVG](E-compute-application-hosting/azure-functions/architecture.svg) · [editable draw.io](E-compute-application-hosting/azure-functions/architecture.drawio)
-- [Logic Apps](E-compute-application-hosting/logic-apps/README.md) · [SVG](E-compute-application-hosting/logic-apps/architecture.svg) · [editable draw.io](E-compute-application-hosting/logic-apps/architecture.drawio)
-- [Azure Batch](E-compute-application-hosting/azure-batch/README.md) · [SVG](E-compute-application-hosting/azure-batch/architecture.svg) · [editable draw.io](E-compute-application-hosting/azure-batch/architecture.drawio)
+- [Virtual Machines](E-compute-application-hosting/virtual-machines/README.md)
+- [Managed Disks](E-compute-application-hosting/managed-disks/README.md)
+- [Availability Sets & Zones](E-compute-application-hosting/availability-sets-and-zones/README.md)
+- [Virtual Machine Scale Sets](E-compute-application-hosting/virtual-machine-scale-sets/README.md)
+- [Azure App Service](E-compute-application-hosting/azure-app-service/README.md)
+- [Azure Functions](E-compute-application-hosting/azure-functions/README.md)
+- [Logic Apps](E-compute-application-hosting/logic-apps/README.md)
+- [Azure Batch](E-compute-application-hosting/azure-batch/README.md)
 
 ### F — Containers & Kubernetes
 
-![ F Containers & Kubernetes architecture ](F-containers-kubernetes/architecture.svg)
+**6 dedicated topics** · [Category guide](F-containers-kubernetes/README.md) · [SVG](F-containers-kubernetes/architecture.svg) · [draw.io](F-containers-kubernetes/architecture.drawio) · [Mermaid](F-containers-kubernetes/architecture.mmd)
 
-- [Editable draw.io diagram](F-containers-kubernetes/architecture.drawio)
-- [Mermaid source](F-containers-kubernetes/architecture.mmd)
-- [Category tracker and design notes](F-containers-kubernetes/README.md)
-
-Components (6):
-- [Docker & Container Fundamentals](F-containers-kubernetes/docker-and-container-fundamentals/README.md) · [SVG](F-containers-kubernetes/docker-and-container-fundamentals/architecture.svg) · [editable draw.io](F-containers-kubernetes/docker-and-container-fundamentals/architecture.drawio)
-- [Azure Container Registry (ACR)](F-containers-kubernetes/azure-container-registry-acr/README.md) · [SVG](F-containers-kubernetes/azure-container-registry-acr/architecture.svg) · [editable draw.io](F-containers-kubernetes/azure-container-registry-acr/architecture.drawio)
-- [Azure Container Apps](F-containers-kubernetes/azure-container-apps/README.md) · [SVG](F-containers-kubernetes/azure-container-apps/architecture.svg) · [editable draw.io](F-containers-kubernetes/azure-container-apps/architecture.drawio)
-- [Azure Kubernetes Service (AKS)](F-containers-kubernetes/azure-kubernetes-service-aks/README.md) · [SVG](F-containers-kubernetes/azure-kubernetes-service-aks/architecture.svg) · [editable draw.io](F-containers-kubernetes/azure-kubernetes-service-aks/architecture.drawio)
-- [Azure Container Instances (ACI)](F-containers-kubernetes/azure-container-instances-aci/README.md) · [SVG](F-containers-kubernetes/azure-container-instances-aci/architecture.svg) · [editable draw.io](F-containers-kubernetes/azure-container-instances-aci/architecture.drawio)
-- [AKS Ingress, Scaling & Workload Identity](F-containers-kubernetes/aks-ingress-scaling-and-workload-identity/README.md) · [SVG](F-containers-kubernetes/aks-ingress-scaling-and-workload-identity/architecture.svg) · [editable draw.io](F-containers-kubernetes/aks-ingress-scaling-and-workload-identity/architecture.drawio)
+- [Docker & Container Fundamentals](F-containers-kubernetes/docker-and-container-fundamentals/README.md)
+- [Azure Container Registry (ACR)](F-containers-kubernetes/azure-container-registry-acr/README.md)
+- [Azure Container Apps](F-containers-kubernetes/azure-container-apps/README.md)
+- [Azure Kubernetes Service (AKS)](F-containers-kubernetes/azure-kubernetes-service-aks/README.md)
+- [Azure Container Instances (ACI)](F-containers-kubernetes/azure-container-instances-aci/README.md)
+- [AKS Ingress, Scaling & Workload Identity](F-containers-kubernetes/aks-ingress-scaling-and-workload-identity/README.md)
 
 ### G — Storage & Enterprise File Services
 
-![ G Storage & Enterprise File Services architecture ](G-storage-enterprise-file-services/architecture.svg)
+**8 dedicated topics** · [Category guide](G-storage-enterprise-file-services/README.md) · [SVG](G-storage-enterprise-file-services/architecture.svg) · [draw.io](G-storage-enterprise-file-services/architecture.drawio) · [Mermaid](G-storage-enterprise-file-services/architecture.mmd)
 
-- [Editable draw.io diagram](G-storage-enterprise-file-services/architecture.drawio)
-- [Mermaid source](G-storage-enterprise-file-services/architecture.mmd)
-- [Category tracker and design notes](G-storage-enterprise-file-services/README.md)
-
-Components (8):
-- [Storage Accounts](G-storage-enterprise-file-services/storage-accounts/README.md) · [SVG](G-storage-enterprise-file-services/storage-accounts/architecture.svg) · [editable draw.io](G-storage-enterprise-file-services/storage-accounts/architecture.drawio)
-- [Blob Storage](G-storage-enterprise-file-services/blob-storage/README.md) · [SVG](G-storage-enterprise-file-services/blob-storage/architecture.svg) · [editable draw.io](G-storage-enterprise-file-services/blob-storage/architecture.drawio)
-- [Azure Data Lake Storage Gen2](G-storage-enterprise-file-services/azure-data-lake-storage-gen2/README.md) · [SVG](G-storage-enterprise-file-services/azure-data-lake-storage-gen2/architecture.svg) · [editable draw.io](G-storage-enterprise-file-services/azure-data-lake-storage-gen2/architecture.drawio)
-- [Azure Files](G-storage-enterprise-file-services/azure-files/README.md) · [SVG](G-storage-enterprise-file-services/azure-files/architecture.svg) · [editable draw.io](G-storage-enterprise-file-services/azure-files/architecture.drawio)
-- [Azure NetApp Files](G-storage-enterprise-file-services/azure-netapp-files/README.md) · [SVG](G-storage-enterprise-file-services/azure-netapp-files/architecture.svg) · [editable draw.io](G-storage-enterprise-file-services/azure-netapp-files/architecture.drawio)
-- [Queue Storage](G-storage-enterprise-file-services/queue-storage/README.md) · [SVG](G-storage-enterprise-file-services/queue-storage/architecture.svg) · [editable draw.io](G-storage-enterprise-file-services/queue-storage/architecture.drawio)
-- [Table Storage](G-storage-enterprise-file-services/table-storage/README.md) · [SVG](G-storage-enterprise-file-services/table-storage/architecture.svg) · [editable draw.io](G-storage-enterprise-file-services/table-storage/architecture.drawio)
-- [Storage Redundancy: LRS, ZRS, GRS & GZRS](G-storage-enterprise-file-services/storage-redundancy-lrs-zrs-grs-and-gzrs/README.md) · [SVG](G-storage-enterprise-file-services/storage-redundancy-lrs-zrs-grs-and-gzrs/architecture.svg) · [editable draw.io](G-storage-enterprise-file-services/storage-redundancy-lrs-zrs-grs-and-gzrs/architecture.drawio)
+- [Storage Accounts](G-storage-enterprise-file-services/storage-accounts/README.md)
+- [Blob Storage](G-storage-enterprise-file-services/blob-storage/README.md)
+- [Azure Data Lake Storage Gen2](G-storage-enterprise-file-services/azure-data-lake-storage-gen2/README.md)
+- [Azure Files](G-storage-enterprise-file-services/azure-files/README.md)
+- [Azure NetApp Files](G-storage-enterprise-file-services/azure-netapp-files/README.md)
+- [Queue Storage](G-storage-enterprise-file-services/queue-storage/README.md)
+- [Table Storage](G-storage-enterprise-file-services/table-storage/README.md)
+- [Storage Redundancy: LRS, ZRS, GRS & GZRS](G-storage-enterprise-file-services/storage-redundancy-lrs-zrs-grs-and-gzrs/README.md)
 
 ### H — Databases & Data Platforms
 
-![ H Databases & Data Platforms architecture ](H-databases-data-platforms/architecture.svg)
+**10 dedicated topics** · [Category guide](H-databases-data-platforms/README.md) · [SVG](H-databases-data-platforms/architecture.svg) · [draw.io](H-databases-data-platforms/architecture.drawio) · [Mermaid](H-databases-data-platforms/architecture.mmd)
 
-- [Editable draw.io diagram](H-databases-data-platforms/architecture.drawio)
-- [Mermaid source](H-databases-data-platforms/architecture.mmd)
-- [Category tracker and design notes](H-databases-data-platforms/README.md)
-
-Components (10):
-- [Azure SQL Database](H-databases-data-platforms/azure-sql-database/README.md) · [SVG](H-databases-data-platforms/azure-sql-database/architecture.svg) · [editable draw.io](H-databases-data-platforms/azure-sql-database/architecture.drawio)
-- [Azure SQL Managed Instance](H-databases-data-platforms/azure-sql-managed-instance/README.md) · [SVG](H-databases-data-platforms/azure-sql-managed-instance/architecture.svg) · [editable draw.io](H-databases-data-platforms/azure-sql-managed-instance/architecture.drawio)
-- [SQL Server on Azure VMs](H-databases-data-platforms/sql-server-on-azure-vms/README.md) · [SVG](H-databases-data-platforms/sql-server-on-azure-vms/architecture.svg) · [editable draw.io](H-databases-data-platforms/sql-server-on-azure-vms/architecture.drawio)
-- [Azure Cosmos DB](H-databases-data-platforms/azure-cosmos-db/README.md) · [SVG](H-databases-data-platforms/azure-cosmos-db/architecture.svg) · [editable draw.io](H-databases-data-platforms/azure-cosmos-db/architecture.drawio)
-- [Azure Database for PostgreSQL](H-databases-data-platforms/azure-database-for-postgresql/README.md) · [SVG](H-databases-data-platforms/azure-database-for-postgresql/architecture.svg) · [editable draw.io](H-databases-data-platforms/azure-database-for-postgresql/architecture.drawio)
-- [Azure Database for MySQL](H-databases-data-platforms/azure-database-for-mysql/README.md) · [SVG](H-databases-data-platforms/azure-database-for-mysql/architecture.svg) · [editable draw.io](H-databases-data-platforms/azure-database-for-mysql/architecture.drawio)
-- [Azure Managed Redis](H-databases-data-platforms/azure-managed-redis/README.md) · [SVG](H-databases-data-platforms/azure-managed-redis/architecture.svg) · [editable draw.io](H-databases-data-platforms/azure-managed-redis/architecture.drawio)
-- [Azure Data Factory](H-databases-data-platforms/azure-data-factory/README.md) · [SVG](H-databases-data-platforms/azure-data-factory/architecture.svg) · [editable draw.io](H-databases-data-platforms/azure-data-factory/architecture.drawio)
-- [Azure Databricks](H-databases-data-platforms/azure-databricks/README.md) · [SVG](H-databases-data-platforms/azure-databricks/architecture.svg) · [editable draw.io](H-databases-data-platforms/azure-databricks/architecture.drawio)
-- [Microsoft Fabric / OneLake](H-databases-data-platforms/microsoft-fabric-onelake/README.md) · [SVG](H-databases-data-platforms/microsoft-fabric-onelake/architecture.svg) · [editable draw.io](H-databases-data-platforms/microsoft-fabric-onelake/architecture.drawio)
+- [Azure SQL Database](H-databases-data-platforms/azure-sql-database/README.md)
+- [Azure SQL Managed Instance](H-databases-data-platforms/azure-sql-managed-instance/README.md)
+- [SQL Server on Azure VMs](H-databases-data-platforms/sql-server-on-azure-vms/README.md)
+- [Azure Cosmos DB](H-databases-data-platforms/azure-cosmos-db/README.md)
+- [Azure Database for PostgreSQL](H-databases-data-platforms/azure-database-for-postgresql/README.md)
+- [Azure Database for MySQL](H-databases-data-platforms/azure-database-for-mysql/README.md)
+- [Azure Managed Redis](H-databases-data-platforms/azure-managed-redis/README.md)
+- [Azure Data Factory](H-databases-data-platforms/azure-data-factory/README.md)
+- [Azure Databricks](H-databases-data-platforms/azure-databricks/README.md)
+- [Microsoft Fabric / OneLake](H-databases-data-platforms/microsoft-fabric-onelake/README.md)
 
 ### I — Integration & API Management
 
-![ I Integration & API Management architecture ](I-integration-api-management/architecture.svg)
+**6 dedicated topics** · [Category guide](I-integration-api-management/README.md) · [SVG](I-integration-api-management/architecture.svg) · [draw.io](I-integration-api-management/architecture.drawio) · [Mermaid](I-integration-api-management/architecture.mmd)
 
-- [Editable draw.io diagram](I-integration-api-management/architecture.drawio)
-- [Mermaid source](I-integration-api-management/architecture.mmd)
-- [Category tracker and design notes](I-integration-api-management/README.md)
-
-Components (6):
-- [API Management](I-integration-api-management/api-management/README.md) · [SVG](I-integration-api-management/api-management/architecture.svg) · [editable draw.io](I-integration-api-management/api-management/architecture.drawio)
-- [Azure Service Bus](I-integration-api-management/azure-service-bus/README.md) · [SVG](I-integration-api-management/azure-service-bus/architecture.svg) · [editable draw.io](I-integration-api-management/azure-service-bus/architecture.drawio)
-- [Azure Event Grid](I-integration-api-management/azure-event-grid/README.md) · [SVG](I-integration-api-management/azure-event-grid/architecture.svg) · [editable draw.io](I-integration-api-management/azure-event-grid/architecture.drawio)
-- [Azure Event Hubs](I-integration-api-management/azure-event-hubs/README.md) · [SVG](I-integration-api-management/azure-event-hubs/architecture.svg) · [editable draw.io](I-integration-api-management/azure-event-hubs/architecture.drawio)
-- [Azure Stream Analytics](I-integration-api-management/azure-stream-analytics/README.md) · [SVG](I-integration-api-management/azure-stream-analytics/architecture.svg) · [editable draw.io](I-integration-api-management/azure-stream-analytics/architecture.drawio)
-- [Azure Data Explorer](I-integration-api-management/azure-data-explorer/README.md) · [SVG](I-integration-api-management/azure-data-explorer/architecture.svg) · [editable draw.io](I-integration-api-management/azure-data-explorer/architecture.drawio)
+- [API Management](I-integration-api-management/api-management/README.md)
+- [Azure Service Bus](I-integration-api-management/azure-service-bus/README.md)
+- [Azure Event Grid](I-integration-api-management/azure-event-grid/README.md)
+- [Azure Event Hubs](I-integration-api-management/azure-event-hubs/README.md)
+- [Azure Stream Analytics](I-integration-api-management/azure-stream-analytics/README.md)
+- [Azure Data Explorer](I-integration-api-management/azure-data-explorer/README.md)
 
 ### J — Security, Secrets & Governance
 
-![ J Security, Secrets & Governance architecture ](J-security-secrets-governance/architecture.svg)
+**8 dedicated topics** · [Category guide](J-security-secrets-governance/README.md) · [SVG](J-security-secrets-governance/architecture.svg) · [draw.io](J-security-secrets-governance/architecture.drawio) · [Mermaid](J-security-secrets-governance/architecture.mmd)
 
-- [Editable draw.io diagram](J-security-secrets-governance/architecture.drawio)
-- [Mermaid source](J-security-secrets-governance/architecture.mmd)
-- [Category tracker and design notes](J-security-secrets-governance/README.md)
-
-Components (8):
-- [Azure Key Vault](J-security-secrets-governance/azure-key-vault/README.md) · [SVG](J-security-secrets-governance/azure-key-vault/architecture.svg) · [editable draw.io](J-security-secrets-governance/azure-key-vault/architecture.drawio)
-- [Key Vault Access Policies & RBAC](J-security-secrets-governance/key-vault-access-policies-and-rbac/README.md) · [SVG](J-security-secrets-governance/key-vault-access-policies-and-rbac/architecture.svg) · [editable draw.io](J-security-secrets-governance/key-vault-access-policies-and-rbac/architecture.drawio)
-- [Microsoft Defender for Cloud](J-security-secrets-governance/microsoft-defender-for-cloud/README.md) · [SVG](J-security-secrets-governance/microsoft-defender-for-cloud/architecture.svg) · [editable draw.io](J-security-secrets-governance/microsoft-defender-for-cloud/architecture.drawio)
-- [Microsoft Sentinel](J-security-secrets-governance/microsoft-sentinel/README.md) · [SVG](J-security-secrets-governance/microsoft-sentinel/architecture.svg) · [editable draw.io](J-security-secrets-governance/microsoft-sentinel/architecture.drawio)
-- [Microsoft Purview](J-security-secrets-governance/microsoft-purview/README.md) · [SVG](J-security-secrets-governance/microsoft-purview/architecture.svg) · [editable draw.io](J-security-secrets-governance/microsoft-purview/architecture.drawio)
-- [Azure Resource Locks](J-security-secrets-governance/azure-resource-locks/README.md) · [SVG](J-security-secrets-governance/azure-resource-locks/architecture.svg) · [editable draw.io](J-security-secrets-governance/azure-resource-locks/architecture.drawio)
-- [Tagging & Naming Standards](J-security-secrets-governance/tagging-and-naming-standards/README.md) · [SVG](J-security-secrets-governance/tagging-and-naming-standards/architecture.svg) · [editable draw.io](J-security-secrets-governance/tagging-and-naming-standards/architecture.drawio)
-- [Zero Trust Architecture](J-security-secrets-governance/zero-trust-architecture/README.md) · [SVG](J-security-secrets-governance/zero-trust-architecture/architecture.svg) · [editable draw.io](J-security-secrets-governance/zero-trust-architecture/architecture.drawio)
+- [Azure Key Vault](J-security-secrets-governance/azure-key-vault/README.md)
+- [Key Vault Access Policies & RBAC](J-security-secrets-governance/key-vault-access-policies-and-rbac/README.md)
+- [Microsoft Defender for Cloud](J-security-secrets-governance/microsoft-defender-for-cloud/README.md)
+- [Microsoft Sentinel](J-security-secrets-governance/microsoft-sentinel/README.md)
+- [Microsoft Purview](J-security-secrets-governance/microsoft-purview/README.md)
+- [Azure Resource Locks](J-security-secrets-governance/azure-resource-locks/README.md)
+- [Tagging & Naming Standards](J-security-secrets-governance/tagging-and-naming-standards/README.md)
+- [Zero Trust Architecture](J-security-secrets-governance/zero-trust-architecture/README.md)
 
 ### K — Monitoring, Operations & Cost
 
-![ K Monitoring, Operations & Cost architecture ](K-monitoring-operations-cost/architecture.svg)
+**10 dedicated topics** · [Category guide](K-monitoring-operations-cost/README.md) · [SVG](K-monitoring-operations-cost/architecture.svg) · [draw.io](K-monitoring-operations-cost/architecture.drawio) · [Mermaid](K-monitoring-operations-cost/architecture.mmd)
 
-- [Editable draw.io diagram](K-monitoring-operations-cost/architecture.drawio)
-- [Mermaid source](K-monitoring-operations-cost/architecture.mmd)
-- [Category tracker and design notes](K-monitoring-operations-cost/README.md)
+- [Azure Monitor](K-monitoring-operations-cost/azure-monitor/README.md)
+- [Log Analytics Workspace & KQL](K-monitoring-operations-cost/log-analytics-workspace-and-kql/README.md)
+- [Application Insights](K-monitoring-operations-cost/application-insights/README.md)
+- [Azure Monitor Alerts & Action Groups](K-monitoring-operations-cost/azure-monitor-alerts-and-action-groups/README.md)
+- [Service Health & Resource Health](K-monitoring-operations-cost/service-health-and-resource-health/README.md)
+- [Cost Management](K-monitoring-operations-cost/cost-management/README.md)
+- [Azure Advisor](K-monitoring-operations-cost/azure-advisor/README.md)
+- [Azure Automation](K-monitoring-operations-cost/azure-automation/README.md)
+- [Azure Update Manager](K-monitoring-operations-cost/azure-update-manager/README.md)
+- [Azure Resource Graph](K-monitoring-operations-cost/azure-resource-graph/README.md)
 
-Components (10):
-- [Azure Monitor](K-monitoring-operations-cost/azure-monitor/README.md) · [SVG](K-monitoring-operations-cost/azure-monitor/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/azure-monitor/architecture.drawio)
-- [Log Analytics Workspace & KQL](K-monitoring-operations-cost/log-analytics-workspace-and-kql/README.md) · [SVG](K-monitoring-operations-cost/log-analytics-workspace-and-kql/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/log-analytics-workspace-and-kql/architecture.drawio)
-- [Application Insights](K-monitoring-operations-cost/application-insights/README.md) · [SVG](K-monitoring-operations-cost/application-insights/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/application-insights/architecture.drawio)
-- [Azure Monitor Alerts & Action Groups](K-monitoring-operations-cost/azure-monitor-alerts-and-action-groups/README.md) · [SVG](K-monitoring-operations-cost/azure-monitor-alerts-and-action-groups/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/azure-monitor-alerts-and-action-groups/architecture.drawio)
-- [Service Health & Resource Health](K-monitoring-operations-cost/service-health-and-resource-health/README.md) · [SVG](K-monitoring-operations-cost/service-health-and-resource-health/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/service-health-and-resource-health/architecture.drawio)
-- [Cost Management](K-monitoring-operations-cost/cost-management/README.md) · [SVG](K-monitoring-operations-cost/cost-management/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/cost-management/architecture.drawio)
-- [Azure Advisor](K-monitoring-operations-cost/azure-advisor/README.md) · [SVG](K-monitoring-operations-cost/azure-advisor/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/azure-advisor/architecture.drawio)
-- [Azure Automation](K-monitoring-operations-cost/azure-automation/README.md) · [SVG](K-monitoring-operations-cost/azure-automation/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/azure-automation/architecture.drawio)
-- [Azure Update Manager](K-monitoring-operations-cost/azure-update-manager/README.md) · [SVG](K-monitoring-operations-cost/azure-update-manager/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/azure-update-manager/architecture.drawio)
-- [Azure Resource Graph](K-monitoring-operations-cost/azure-resource-graph/README.md) · [SVG](K-monitoring-operations-cost/azure-resource-graph/architecture.svg) · [editable draw.io](K-monitoring-operations-cost/azure-resource-graph/architecture.drawio)
+### L — DevOps, IaC, Migration & Hybrid Management
 
-### L — DevOps, Resilience, Migration & AI
+**6 dedicated topics** · [Category guide](L-devops-resilience-migration-ai/README.md) · [SVG](L-devops-resilience-migration-ai/architecture.svg) · [draw.io](L-devops-resilience-migration-ai/architecture.drawio) · [Mermaid](L-devops-resilience-migration-ai/architecture.mmd)
 
-![ L DevOps, Resilience, Migration & AI architecture ](L-devops-resilience-migration-ai/architecture.svg)
+- [Terraform](L-devops-resilience-migration-ai/terraform/README.md)
+- [Bicep / ARM Templates](L-devops-resilience-migration-ai/bicep-arm-templates/README.md)
+- [Azure DevOps Pipelines](L-devops-resilience-migration-ai/azure-devops-pipelines/README.md)
+- [GitHub Actions](L-devops-resilience-migration-ai/github-actions/README.md)
+- [Azure Migrate](L-devops-resilience-migration-ai/azure-migrate/README.md)
+- [Azure Arc](L-devops-resilience-migration-ai/azure-arc/README.md)
 
-- [Editable draw.io diagram](L-devops-resilience-migration-ai/architecture.drawio)
-- [Mermaid source](L-devops-resilience-migration-ai/architecture.mmd)
-- [Category tracker and design notes](L-devops-resilience-migration-ai/README.md)
+### M — AI Platform & Engineering
 
-Components (12):
-- [Terraform](L-devops-resilience-migration-ai/terraform/README.md) · [SVG](L-devops-resilience-migration-ai/terraform/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/terraform/architecture.drawio)
-- [Bicep / ARM Templates](L-devops-resilience-migration-ai/bicep-arm-templates/README.md) · [SVG](L-devops-resilience-migration-ai/bicep-arm-templates/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/bicep-arm-templates/architecture.drawio)
-- [Azure DevOps Pipelines](L-devops-resilience-migration-ai/azure-devops-pipelines/README.md) · [SVG](L-devops-resilience-migration-ai/azure-devops-pipelines/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/azure-devops-pipelines/architecture.drawio)
-- [GitHub Actions](L-devops-resilience-migration-ai/github-actions/README.md) · [SVG](L-devops-resilience-migration-ai/github-actions/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/github-actions/architecture.drawio)
-- [Azure Backup](L-devops-resilience-migration-ai/azure-backup/README.md) · [SVG](L-devops-resilience-migration-ai/azure-backup/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/azure-backup/architecture.drawio)
-- [Azure Site Recovery](L-devops-resilience-migration-ai/azure-site-recovery/README.md) · [SVG](L-devops-resilience-migration-ai/azure-site-recovery/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/azure-site-recovery/architecture.drawio)
-- [Azure Migrate](L-devops-resilience-migration-ai/azure-migrate/README.md) · [SVG](L-devops-resilience-migration-ai/azure-migrate/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/azure-migrate/architecture.drawio)
-- [Azure Arc](L-devops-resilience-migration-ai/azure-arc/README.md) · [SVG](L-devops-resilience-migration-ai/azure-arc/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/azure-arc/architecture.drawio)
-- [Microsoft Foundry](L-devops-resilience-migration-ai/microsoft-foundry/README.md) · [SVG](L-devops-resilience-migration-ai/microsoft-foundry/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/microsoft-foundry/architecture.drawio)
-- [Azure OpenAI](L-devops-resilience-migration-ai/azure-openai/README.md) · [SVG](L-devops-resilience-migration-ai/azure-openai/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/azure-openai/architecture.drawio)
-- [Azure AI Search](L-devops-resilience-migration-ai/azure-ai-search/README.md) · [SVG](L-devops-resilience-migration-ai/azure-ai-search/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/azure-ai-search/architecture.drawio)
-- [Azure Machine Learning](L-devops-resilience-migration-ai/azure-machine-learning/README.md) · [SVG](L-devops-resilience-migration-ai/azure-machine-learning/architecture.svg) · [editable draw.io](L-devops-resilience-migration-ai/azure-machine-learning/architecture.drawio)
+**13 dedicated topics** · [Category guide](M-ai-platform-engineering/README.md) · [SVG](M-ai-platform-engineering/architecture.svg) · [draw.io](M-ai-platform-engineering/architecture.drawio) · [Mermaid](M-ai-platform-engineering/architecture.mmd)
 
-### 12 — Automation, Backup and Disaster Recovery
+- [Microsoft Foundry](M-ai-platform-engineering/microsoft-foundry/README.md)
+- [Azure OpenAI](M-ai-platform-engineering/azure-openai/README.md)
+- [Azure AI Search](M-ai-platform-engineering/azure-ai-search/README.md)
+- [Azure Machine Learning](M-ai-platform-engineering/azure-machine-learning/README.md)
+- [AI Infrastructure Foundations](M-ai-platform-engineering/ai-infrastructure-foundations/README.md)
+- [GPU & Accelerated Compute](M-ai-platform-engineering/gpu-accelerated-compute/README.md)
+- [Model Catalog, Registry & Lifecycle](M-ai-platform-engineering/model-catalog-registry-lifecycle/README.md)
+- [Model Deployment & Inference](M-ai-platform-engineering/model-deployment-inference/README.md)
+- [RAG & Vector Search Architecture](M-ai-platform-engineering/rag-vector-search-architecture/README.md)
+- [AI Agents & Orchestration](M-ai-platform-engineering/ai-agents-orchestration/README.md)
+- [Prompt Engineering & Evaluation](M-ai-platform-engineering/prompt-engineering-evaluation/README.md)
+- [LLMOps & AI Observability](M-ai-platform-engineering/llmops-ai-observability/README.md)
+- [Responsible AI, Security & Governance](M-ai-platform-engineering/responsible-ai-security-governance/README.md)
 
-![ 12 Automation, Backup and Disaster Recovery architecture ](12-automation-backup-disaster-recovery/architecture.svg)
+### 12 — Business Continuity, Backup & Disaster Recovery
 
-- [Editable draw.io diagram](12-automation-backup-disaster-recovery/architecture.drawio)
-- [Mermaid source](12-automation-backup-disaster-recovery/architecture.mmd)
-- [Category tracker and design notes](12-automation-backup-disaster-recovery/README.md)
+**7 dedicated topics** · [Category guide](12-automation-backup-disaster-recovery/README.md) · [SVG](12-automation-backup-disaster-recovery/architecture.svg) · [draw.io](12-automation-backup-disaster-recovery/architecture.drawio) · [Mermaid](12-automation-backup-disaster-recovery/architecture.mmd)
 
-Components (5):
-- [Terraform — Infrastructure as Code](12-automation-backup-disaster-recovery/72-terraform/README.md) · [SVG](12-automation-backup-disaster-recovery/72-terraform/architecture.svg) · [editable draw.io](12-automation-backup-disaster-recovery/72-terraform/architecture.drawio)
-- [Bicep and ARM Templates](12-automation-backup-disaster-recovery/73-bicep-arm-templates/README.md) · [SVG](12-automation-backup-disaster-recovery/73-bicep-arm-templates/architecture.svg) · [editable draw.io](12-automation-backup-disaster-recovery/73-bicep-arm-templates/architecture.drawio)
-- [Azure DevOps Pipelines and GitHub Actions](12-automation-backup-disaster-recovery/74-ci-cd-azure-devops-github-actions/README.md) · [SVG](12-automation-backup-disaster-recovery/74-ci-cd-azure-devops-github-actions/architecture.svg) · [editable draw.io](12-automation-backup-disaster-recovery/74-ci-cd-azure-devops-github-actions/architecture.drawio)
-- [Azure Backup](12-automation-backup-disaster-recovery/75-azure-backup/README.md) · [SVG](12-automation-backup-disaster-recovery/75-azure-backup/architecture.svg) · [editable draw.io](12-automation-backup-disaster-recovery/75-azure-backup/architecture.drawio)
-- [Azure Site Recovery (ASR)](12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md) · [SVG](12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/architecture.svg) · [editable draw.io](12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/architecture.drawio)
+- [Business Continuity & Disaster Recovery Strategy](12-automation-backup-disaster-recovery/77-business-continuity-disaster-recovery-strategy/README.md)
+- [Workload Criticality, BIA, RTO & RPO](12-automation-backup-disaster-recovery/78-workload-criticality-bia-rto-rpo/README.md)
+- [Azure Backup & Workload Protection](12-automation-backup-disaster-recovery/75-azure-backup/README.md)
+- [Backup Policy, Retention & Vault Security](12-automation-backup-disaster-recovery/79-backup-policy-retention-vault-security/README.md)
+- [Restore Operations & Recovery Testing](12-automation-backup-disaster-recovery/80-restore-operations-recovery-testing/README.md)
+- [Azure Site Recovery & Replication](12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md)
+- [Recovery Plans, Failover & Failback](12-automation-backup-disaster-recovery/81-recovery-plans-failover-failback/README.md)
 
 ## Diagram conventions
 
-- **Solid arrows** represent conceptual flow or dependency.
-- **Dashed arrows** in Mermaid sources represent cross-cutting controls such as identity, governance, networking, monitoring or recovery.
-- SVG files are for quick viewing in GitHub; `.drawio` files are editable in [diagrams.net](https://app.diagrams.net/).
-- These are architecture learning diagrams, not a live Azure topology. Validate SKU/region support, exact network paths, security configuration and failure behavior against workload requirements and current Microsoft Learn before production use.
-
-## Design references
-
-- [Microsoft Azure Architecture Icons](https://learn.microsoft.com/en-us/azure/architecture/icons/)
-- [draw.io Azure architecture diagrams](https://www.drawio.com/docs/diagram-types/azure-diagrams/)
+- Category diagrams show the logical flow and major relationships within that domain.
+- Component guides are the source of truth for detailed service design, examples, caveats and validation.
+- A conceptual arrow does not prove a network path, an authorization grant or a service dependency.
+- Verify current Azure service behavior, supported regions/SKUs, quotas and pricing before production decisions.
