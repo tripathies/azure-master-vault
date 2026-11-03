@@ -29,9 +29,9 @@
   </a>
 </p>
 
-**Every component node links to its existing guide.** Open the [full-size SVG mind map](AZURE-COMPONENT-MINDMAP.svg) or the [editable draw.io source](AZURE-COMPONENT-MINDMAP.drawio). For the broader architectural view, see the [Azure Master Architecture Map](AZURE-MASTER-ARCHITECTURE-MAP.md).
+**Every component node links to its existing guide.** Open the [full-size SVG mind map](AZURE-COMPONENT-MINDMAP.svg) or the [editable draw.io source](AZURE-COMPONENT-MINDMAP.drawio). For the broader architectural view, see the [Azure Master Vault — Architecture Map](AZURE-MASTER-ARCHITECTURE-MAP.md).
 
-## Azure Master Architecture Map
+## Azure Master Vault — Architecture Map
 
 <p align="center">
   <a href="AZURE-MASTER-ARCHITECTURE-MAP.md">
