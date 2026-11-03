@@ -11,6 +11,16 @@
 [![Architecture map](https://img.shields.io/badge/Architecture%20map-10%20lenses-005A9E?style=for-the-badge)](AZURE-MASTER-ARCHITECTURE-MAP.md)
 [![Azure book](https://img.shields.io/badge/Book-production%20blueprint-5B5BD6?style=for-the-badge)](book/README.md)
 
+## Network architecture — topology-first view
+
+<p align="center">
+  <a href="AZURE-NETWORK-ARCHITECTURE-MAP.svg">
+    <img src="AZURE-NETWORK-ARCHITECTURE-MAP.svg" alt="Azure network architecture topology map" width="100%" />
+  </a>
+</p>
+
+[**Open network map (SVG) →**](AZURE-NETWORK-ARCHITECTURE-MAP.svg) · [**Edit in draw.io →**](AZURE-NETWORK-ARCHITECTURE-MAP.drawio) · [**Networking component guides →**](C-networking-private-connectivity/README.md)
+
 ## Azure Component Mind Map
 
 <p align="center">
