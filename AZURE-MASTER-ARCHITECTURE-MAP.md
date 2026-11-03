@@ -1,110 +1,55 @@
 # Cloud Architecture Playbook — Architecture Map
 
-> A linked architectural map of the Azure platform learning catalogue. Use it to navigate from the platform's foundational capabilities to workload services and cross-cutting engineering practices.
+> The high-level platform view is complemented by a component catalogue and separate domain diagrams. Use diagrams to understand relationships; use canonical guide pages for service-level design details.
 
-![Cloud Architecture Playbook architecture map](AZURE-MASTER-ARCHITECTURE-MAP.svg)
+![Azure Cloud Mindmap](AZURE-COMPONENT-MINDMAP.svg)
 
-## How to read this map
+**Catalogue:** 120 unique topics across 14 categories. [Open machine-readable catalogue](catalog.json) · [Open visual library](VISUAL-DIAGRAMS.md)
 
-- **Core catalogue:** the authoritative service/component guides in domains A–L. Every component page remains the source of detailed explanation, design decisions and implementation guidance.
-- **Architecture lenses:** the ten views below group existing catalogue domains by the way architects reason about platforms. These are navigation groupings, not new service inventories.
-- **AI specialization:** an advanced overlay built on compute, containers, data, identity, networking, security, observability and IaC. It does not imply that all example ecosystem tools are native Azure services.
-- **Focused learning path:** [Domain 12 — Automation, Backup and Disaster Recovery](12-automation-backup-disaster-recovery/README.md) remains in the repository tracker. It intentionally repeats selected topics found in domain L, so it is not counted as additional unique components.
+## Platform architecture layers
 
-## Architecture lenses and navigation
+- **Foundation and governance:** tenant, subscriptions, management groups, landing zones and policy.
+- **Identity and security:** Entra ID, workload identity, authorization, privileged access, secrets, threat protection and data governance.
+- **Connectivity and traffic:** VNets, subnetting, routing, hybrid links, firewalls, Private Link, DNS, ingress and egress.
+- **Compute and runtime:** VMs, app platforms, functions, containers and Kubernetes.
+- **Storage and data:** object/file storage, databases, analytics and integration.
+- **Operations and delivery:** monitoring, FinOps, infrastructure as code, CI/CD, migration and hybrid management.
+- **AI engineering:** model platform, GPU/accelerated compute, model lifecycle, inference, RAG, agents, evaluation, LLMOps and responsible AI.
+- **Business continuity and recovery:** impact analysis, RTO/RPO, backup, restore validation, replication, failover and failback.
 
-### 01 • Cloud foundation & governance
+## Category ownership
 
-Tenant, management groups, subscriptions, resource groups, Azure Policy, landing zones and Well-Architected design.
+- **A — Cloud Foundation & Landing Zones (10)**: [Open category guide](A-cloud-foundation-landing-zones/README.md)
+- **B — Identity & Access Management (8)**: [Open category guide](B-identity-access-management/README.md)
+- **C — Networking & Private Connectivity (12)**: [Open category guide](C-networking-private-connectivity/README.md)
+- **D — Traffic Management & Delivery (8)**: [Open category guide](D-traffic-management-delivery/README.md)
+- **E — Compute & Application Hosting (8)**: [Open category guide](E-compute-application-hosting/README.md)
+- **F — Containers & Kubernetes (6)**: [Open category guide](F-containers-kubernetes/README.md)
+- **G — Storage & Enterprise File Services (8)**: [Open category guide](G-storage-enterprise-file-services/README.md)
+- **H — Databases & Data Platforms (10)**: [Open category guide](H-databases-data-platforms/README.md)
+- **I — Integration & API Management (6)**: [Open category guide](I-integration-api-management/README.md)
+- **J — Security, Secrets & Governance (8)**: [Open category guide](J-security-secrets-governance/README.md)
+- **K — Monitoring, Operations & Cost (10)**: [Open category guide](K-monitoring-operations-cost/README.md)
+- **L — DevOps, IaC, Migration & Hybrid Management (6)**: [Open category guide](L-devops-resilience-migration-ai/README.md)
+- **M — AI Platform & Engineering (13)**: [Open category guide](M-ai-platform-engineering/README.md)
+- **12 — Business Continuity, Backup & Disaster Recovery (7)**: [Open category guide](12-automation-backup-disaster-recovery/README.md)
 
-**Open the learning guides:** [A — Cloud Foundation & Landing Zones](A-cloud-foundation-landing-zones/README.md)
+### Keep L and 12 separate
 
-### 02 • Identity & security
+**L — DevOps, IaC, Migration & Hybrid Management** owns Terraform, Bicep/ARM, Azure DevOps Pipelines, GitHub Actions, Azure Migrate and Azure Arc.
 
-Entra ID, app registrations, managed identities, RBAC, PIM, MFA, Key Vault, Defender, Sentinel and Zero Trust.
+**12 — Business Continuity, Backup & Disaster Recovery** owns business continuity strategy, BIA/RTO/RPO, Azure Backup, backup policy and vault security, restore testing, Azure Site Recovery and recovery plans/failover/failback.
 
-**Open the learning guides:** [B — Identity & Access Management](B-identity-access-management/README.md) · [J — Security, Secrets & Governance](J-security-secrets-governance/README.md)
+They are related in enterprise architecture, but they are not interchangeable and should not share duplicate catalogue entries.
 
-### 03 • Network & private connectivity
+## AI platform and engineering
 
-VNet, subnet and CIDR planning, NSG, ASG, UDR, peering, Firewall, VPN, ExpressRoute, Private Link, private DNS and NAT.
+[M — AI Platform & Engineering](M-ai-platform-engineering/README.md) is a dedicated category with 13 component guides. AI workloads also consume foundation, identity, networking, compute, data, security, monitoring and delivery capabilities from other categories.
 
-**Open the learning guides:** [C — Networking & Private Connectivity](C-networking-private-connectivity/README.md)
+## Architecture decision principles
 
-### 04 • Traffic management & edge
-
-Front Door, Application Gateway and WAF, Load Balancer, Traffic Manager, Bastion, DNS and DDoS protection.
-
-**Open the learning guides:** [D — Traffic Management & Delivery](D-traffic-management-delivery/README.md)
-
-### 05 • Compute & containers
-
-VMs, disks, availability, scale sets, App Service, Functions, Logic Apps, Batch, ACR, Container Apps, AKS and ACI.
-
-**Open the learning guides:** [E — Compute & Application Hosting](E-compute-application-hosting/README.md) · [F — Containers & Kubernetes](F-containers-kubernetes/README.md)
-
-### 06 • Storage & data platforms
-
-Storage Accounts, Blob, ADLS, Azure Files, redundancy, Azure SQL, Cosmos DB, PostgreSQL, MySQL, Redis, Data Factory, Databricks and Fabric.
-
-**Open the learning guides:** [G — Storage & Enterprise File Services](G-storage-enterprise-file-services/README.md) · [H — Databases & Data Platforms](H-databases-data-platforms/README.md)
-
-### 07 • Integration & API
-
-API Management, Service Bus, Event Grid, Event Hubs, Stream Analytics and Data Explorer.
-
-**Open the learning guides:** [I — Integration & API Management](I-integration-api-management/README.md)
-
-### 08 • Operations & FinOps
-
-Azure Monitor, Log Analytics, Application Insights, alerts, Service Health, Resource Graph, Cost Management, Advisor and Automation.
-
-**Open the learning guides:** [K — Monitoring, Operations & Cost](K-monitoring-operations-cost/README.md)
-
-### 09 • DevOps, IaC & resilience
-
-Terraform, Bicep/ARM, Azure DevOps, GitHub Actions, Backup, Site Recovery, migration and Azure Arc.
-
-**Open the learning guides:** [L — DevOps, Resilience, Migration & AI](L-devops-resilience-migration-ai/README.md)
-
-### 10 • AI platform & infrastructure specialization
-
-AI services, Foundry, Azure OpenAI and AI Search, GPU capacity, model deployment, inference serving, RAG, evaluation, LLMOps, AI security and AI observability. Advanced roadmap—not counted as a separate existing catalogue category.
-
-**Open the learning guides:** [L — DevOps, Resilience, Migration & AI](L-devops-resilience-migration-ai/README.md)
-
-
-## AI infrastructure specialization
-
-- [M — AI Platform & Engineering](M-ai-platform-engineering/README.md)
- — suggested progression
-
-This is an extension path, not part of the current 106 unique component count. Use the existing Vault guides for the Azure platform prerequisites and add specialist labs as they are authored.
-
-1. **AI workload foundations:** Linux, Python, networking, storage, containers, Kubernetes, Terraform and CI/CD.
-2. **AI compute and acceleration:** GPU-capable compute, accelerator drivers/runtime, capacity/quota planning, node pools, scheduling and utilization economics.
-3. **Model lifecycle:** model sources and registries, artifact storage, versioning, deployment patterns, endpoints, rollout and rollback.
-4. **Inference serving:** batching, concurrency, caching, latency/throughput trade-offs, autoscaling and serving frameworks such as vLLM or KServe where supported.
-5. **Data and RAG:** ingestion, chunking, embeddings, vector/hybrid search, retrieval evaluation, access-aware retrieval and data governance.
-6. **AI applications and agents:** tool calling, workflow orchestration, MCP integration, human approvals and bounded execution.
-7. **LLMOps and observability:** quality evaluation, token/latency/cost telemetry, traces, drift, prompt/model version tracking and incident response.
-8. **AI security and responsible operations:** identity, private networking, secrets, data protection, prompt-injection controls, output validation, auditability and abuse prevention.
-
-### Design boundaries
-
-- Separate the **Azure service catalogue** from the **vendor-neutral AI ecosystem**. For example, Kubernetes is an orchestration layer; vLLM and KServe are ecosystem serving technologies, not Azure-managed services by default.
-- Choose managed services where they meet requirements; use self-managed frameworks only when control, portability or workload characteristics justify operational overhead.
-- Validate current region, SKU, GPU-family availability, quotas, service support and pricing before committing to a design.
-- Define workload objectives first: latency, throughput, availability, data residency, privacy, model quality, RTO/RPO and cost per request.
-- AI does not remove platform engineering requirements. Identity, network, data, security, observability and FinOps remain foundational.
-
-## Reference architecture and learning projects
-
-- [Enterprise Azure reference architecture](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
-- [Visual architecture library](ARCHITECTURE-MAPS.md)
-- [LittleNest hands-on reference implementation](littlenest-azure-reference/README.md)
-- [Machine-readable component catalogue](catalog.json)
-
-## Catalogue accounting
-
-The current machine-readable catalogue declares **111 entries across 13 categories**. Domains A–L contain **106 unique core entries**. Domain 12 contains five focused learning-path entries that intentionally overlap with domain L. Treat these as 106 unique catalogue subjects plus five cross-listed pathway entries—not 111 unique services.
+1. Choose components from business and workload requirements, not catalogue popularity.
+2. Separate control plane, data plane and workload identity.
+3. Design private connectivity, DNS and authorization together.
+4. Test failure modes, restore and failover, not only deployment success.
+5. Capture operational owner, monitoring, limits, cost and regional constraints.
