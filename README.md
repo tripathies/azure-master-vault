@@ -8,7 +8,7 @@
 
 [![Learning tracker](https://img.shields.io/badge/Learning%20tracker-open%20checklist-0078D4?style=for-the-badge)](#your-azure-learning-tracker)
 [![Reference architecture](https://img.shields.io/badge/Reference%20architecture-open%20design-107C10?style=for-the-badge)](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
-[![Architecture map](https://img.shields.io/badge/Architecture%20map-10%20lenses-005A9E?style=for-the-badge)](AZURE-MASTER-ARCHITECTURE-MAP.md)
+[![Architecture map](https://img.shields.io/badge/Architecture%20map-14%20categories-005A9E?style=for-the-badge)](AZURE-MASTER-ARCHITECTURE-MAP.md)
 [![Azure book](https://img.shields.io/badge/Book-production%20blueprint-5B5BD6?style=for-the-badge)](book/README.md)
 
 ## Network architecture — topology-first view
@@ -186,7 +186,7 @@ The Vault is a component catalogue rather than a numbered CLZ lesson sequence. I
 
 <p align="center">
   <a href="AZURE-COMPONENT-MINDMAP.svg">
-    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Cloud Architecture Playbook Azure Cloud Mindmap showing all 13 catalogue categories and 111 component entries" width="100%" />
+    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Cloud Architecture Playbook Azure Cloud Mindmap showing all 14 catalogue categories and 120 unique component entries" width="100%" />
   </a>
 </p>
 
