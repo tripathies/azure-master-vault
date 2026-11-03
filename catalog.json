@@ -550,7 +550,7 @@
     },
     {
       "letter": "L",
-      "title": "DevOps, Resilience & Migration",
+      "title": "DevOps, IaC, Migration & Hybrid Management",
       "folder": "L-devops-resilience-migration-ai",
       "components": [
         {
@@ -572,16 +572,6 @@
           "name": "GitHub Actions",
           "slug": "github-actions",
           "path": "L-devops-resilience-migration-ai/github-actions/README.md"
-        },
-        {
-          "name": "Azure Backup",
-          "slug": "azure-backup",
-          "path": "L-devops-resilience-migration-ai/azure-backup/README.md"
-        },
-        {
-          "name": "Azure Site Recovery",
-          "slug": "azure-site-recovery",
-          "path": "L-devops-resilience-migration-ai/azure-site-recovery/README.md"
         },
         {
           "name": "Azure Migrate",
@@ -669,42 +659,38 @@
     },
     {
       "letter": "12",
-      "title": "Automation, Backup and Disaster Recovery",
+      "title": "Business Continuity, Backup & Disaster Recovery",
       "folder": "12-automation-backup-disaster-recovery",
       "components": [
         {
-          "name": "Terraform — Infrastructure as Code",
-          "slug": "72-terraform",
-          "path": "12-automation-backup-disaster-recovery/72-terraform/README.md",
-          "topic": 72
+          "name": "Azure Backup & Workload Protection",
+          "slug": "azure-backup-workload-protection",
+          "path": "12-automation-backup-disaster-recovery/75-azure-backup/README.md"
         },
         {
-          "name": "Bicep and ARM Templates",
-          "slug": "73-bicep-arm-templates",
-          "path": "12-automation-backup-disaster-recovery/73-bicep-arm-templates/README.md",
-          "topic": 73
+          "name": "Azure Site Recovery & Replication",
+          "slug": "azure-site-recovery-replication",
+          "path": "12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md"
         },
         {
-          "name": "Azure DevOps Pipelines and GitHub Actions",
-          "slug": "74-ci-cd-azure-devops-github-actions",
-          "path": "12-automation-backup-disaster-recovery/74-ci-cd-azure-devops-github-actions/README.md",
-          "topic": 74
+          "name": "Backup Vault Architecture & Security Controls",
+          "slug": "backup-vault-architecture-security",
+          "path": "12-automation-backup-disaster-recovery/77-backup-vault-architecture-security/README.md"
         },
         {
-          "name": "Azure Backup",
-          "slug": "75-azure-backup",
-          "path": "12-automation-backup-disaster-recovery/75-azure-backup/README.md",
-          "topic": 75
+          "name": "Business Continuity & Disaster Recovery Planning",
+          "slug": "bcdr-strategy-rto-rpo",
+          "path": "12-automation-backup-disaster-recovery/78-bcdr-strategy-rto-rpo/README.md"
         },
         {
-          "name": "Azure Site Recovery (ASR)",
-          "slug": "76-azure-site-recovery-asr",
-          "path": "12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md",
-          "topic": 76
+          "name": "Recovery Plans, Failover & DR Testing",
+          "slug": "recovery-plans-failover-testing",
+          "path": "12-automation-backup-disaster-recovery/79-recovery-plans-failover-testing/README.md"
         }
       ]
     }
   ],
-  "componentCount": 120,
-  "note": "Each component has a linked guide. Domain 12 is a focused learning path and intentionally cross-lists five DevOps/backup/DR topics also covered in domain L. Domains A–M contain 115 unique core catalogue topics; with the five cross-listed pathway entries the catalogue contains 120 entries."
+  "componentCount": 118,
+  "note": "All catalogue topics have one canonical category and one primary guide. DevOps and Infrastructure as Code are in L; backup, business continuity and disaster recovery are in category 12. The AI platform is maintained separately in M.",
+  "uniqueComponentCount": 118
 }
