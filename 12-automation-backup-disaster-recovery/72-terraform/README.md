@@ -1,7 +1,9 @@
-# Terraform — canonical guide moved
+# 72. Terraform — Infrastructure as Code — canonical guide moved
 
-Terraform has one canonical catalogue location under **L — DevOps, IaC, Migration & Hybrid Management**.
+This topic is maintained in its dedicated catalogue category to prevent duplicate component ownership.
 
-[Open the Terraform component guide](../../L-devops-resilience-migration-ai/terraform/README.md) · [Open category L](../../L-devops-resilience-migration-ai/README.md)
+- [Open the canonical guide](../../L-devops-resilience-migration-ai/terraform/README.md)
+- [Open the canonical category](../../L-devops-resilience-migration-ai/README.md)
+- [Return to the master catalogue](../../README.md)
 
-This legacy path remains as a redirect so older bookmarks continue to work.
+Do not maintain a second copy here. The canonical guide is the source of truth for this topic.
