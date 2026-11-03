@@ -1,20 +1,24 @@
 # Cloud Architecture Playbook — Visual Architecture Library
 
-Use this page to browse visual assets and the canonical guide for each catalogue topic. The SVG mind map is the full catalogue overview; category diagrams explain architecture flows; component guides contain service-specific detail.
+This is the visual index for the Azure Edition. The machine-readable catalogue is `catalog.json`; component guides linked below are its canonical destinations.
 
-## Master diagrams
+## Master architecture and catalogue
 
-- [Azure Cloud Mindmap (SVG)](AZURE-COMPONENT-MINDMAP.svg) — 14 categories, 120 unique topics; component labels link to their guides.
-- [Editable Azure Cloud Mindmap (draw.io)](AZURE-COMPONENT-MINDMAP.drawio)
-- [Azure enterprise reference architecture (SVG)](architecture.svg) · [draw.io](architecture.drawio) · [Mermaid](architecture.mmd)
-- [Network topology (SVG)](AZURE-NETWORK-ARCHITECTURE-MAP.svg) · [draw.io](AZURE-NETWORK-ARCHITECTURE-MAP.drawio)
-- [Business continuity and disaster recovery architecture](12-automation-backup-disaster-recovery/architecture.svg) · [draw.io](12-automation-backup-disaster-recovery/architecture.drawio)
+![Azure Cloud Mindmap](AZURE-COMPONENT-MINDMAP.svg)
 
-## Category diagrams and component guides
+- [Full Azure Cloud Mindmap](AZURE-COMPONENT-MINDMAP.svg)
+- [Editable mind map](AZURE-COMPONENT-MINDMAP.drawio)
+- [Enterprise reference architecture](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
+- [Master architecture SVG](architecture.svg) · [Editable draw.io](architecture.drawio) · [Mermaid](architecture.mmd)
+- [Network topology SVG](AZURE-NETWORK-ARCHITECTURE-MAP.svg) · [Editable draw.io](AZURE-NETWORK-ARCHITECTURE-MAP.drawio)
+
+## Category maps and topic guides
 
 ### A — Cloud Foundation & Landing Zones
 
-**10 dedicated topics** · [Category guide](A-cloud-foundation-landing-zones/README.md) · [SVG](A-cloud-foundation-landing-zones/architecture.svg) · [draw.io](A-cloud-foundation-landing-zones/architecture.drawio) · [Mermaid](A-cloud-foundation-landing-zones/architecture.mmd)
+![Cloud Foundation & Landing Zones architecture](A-cloud-foundation-landing-zones/architecture.svg)
+
+- [Category guide](A-cloud-foundation-landing-zones/README.md) · [SVG](A-cloud-foundation-landing-zones/architecture.svg) · [Editable draw.io](A-cloud-foundation-landing-zones/architecture.drawio) · [Mermaid](A-cloud-foundation-landing-zones/architecture.mmd)
 
 - [Microsoft Azure fundamentals](A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/README.md)
 - [Regions, Region Pairs & Availability Zones](A-cloud-foundation-landing-zones/regions-region-pairs-and-availability-zones/README.md)
@@ -29,7 +33,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### B — Identity & Access Management
 
-**8 dedicated topics** · [Category guide](B-identity-access-management/README.md) · [SVG](B-identity-access-management/architecture.svg) · [draw.io](B-identity-access-management/architecture.drawio) · [Mermaid](B-identity-access-management/architecture.mmd)
+![Identity & Access Management architecture](B-identity-access-management/architecture.svg)
+
+- [Category guide](B-identity-access-management/README.md) · [SVG](B-identity-access-management/architecture.svg) · [Editable draw.io](B-identity-access-management/architecture.drawio) · [Mermaid](B-identity-access-management/architecture.mmd)
 
 - [Microsoft Entra ID](B-identity-access-management/microsoft-entra-id/README.md)
 - [App Registrations](B-identity-access-management/app-registrations/README.md)
@@ -42,7 +48,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### C — Networking & Private Connectivity
 
-**12 dedicated topics** · [Category guide](C-networking-private-connectivity/README.md) · [SVG](C-networking-private-connectivity/architecture.svg) · [draw.io](C-networking-private-connectivity/architecture.drawio) · [Mermaid](C-networking-private-connectivity/architecture.mmd)
+![Networking & Private Connectivity architecture](C-networking-private-connectivity/architecture.svg)
+
+- [Category guide](C-networking-private-connectivity/README.md) · [SVG](C-networking-private-connectivity/architecture.svg) · [Editable draw.io](C-networking-private-connectivity/architecture.drawio) · [Mermaid](C-networking-private-connectivity/architecture.mmd)
 
 - [Virtual Networks (VNet)](C-networking-private-connectivity/virtual-networks-vnet/README.md)
 - [Subnets & CIDR Planning](C-networking-private-connectivity/subnets-and-cidr-planning/README.md)
@@ -59,7 +67,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### D — Traffic Management & Delivery
 
-**8 dedicated topics** · [Category guide](D-traffic-management-delivery/README.md) · [SVG](D-traffic-management-delivery/architecture.svg) · [draw.io](D-traffic-management-delivery/architecture.drawio) · [Mermaid](D-traffic-management-delivery/architecture.mmd)
+![Traffic Management & Delivery architecture](D-traffic-management-delivery/architecture.svg)
+
+- [Category guide](D-traffic-management-delivery/README.md) · [SVG](D-traffic-management-delivery/architecture.svg) · [Editable draw.io](D-traffic-management-delivery/architecture.drawio) · [Mermaid](D-traffic-management-delivery/architecture.mmd)
 
 - [Azure Load Balancer](D-traffic-management-delivery/azure-load-balancer/README.md)
 - [Application Gateway & WAF](D-traffic-management-delivery/application-gateway-and-waf/README.md)
@@ -72,7 +82,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### E — Compute & Application Hosting
 
-**8 dedicated topics** · [Category guide](E-compute-application-hosting/README.md) · [SVG](E-compute-application-hosting/architecture.svg) · [draw.io](E-compute-application-hosting/architecture.drawio) · [Mermaid](E-compute-application-hosting/architecture.mmd)
+![Compute & Application Hosting architecture](E-compute-application-hosting/architecture.svg)
+
+- [Category guide](E-compute-application-hosting/README.md) · [SVG](E-compute-application-hosting/architecture.svg) · [Editable draw.io](E-compute-application-hosting/architecture.drawio) · [Mermaid](E-compute-application-hosting/architecture.mmd)
 
 - [Virtual Machines](E-compute-application-hosting/virtual-machines/README.md)
 - [Managed Disks](E-compute-application-hosting/managed-disks/README.md)
@@ -85,7 +97,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### F — Containers & Kubernetes
 
-**6 dedicated topics** · [Category guide](F-containers-kubernetes/README.md) · [SVG](F-containers-kubernetes/architecture.svg) · [draw.io](F-containers-kubernetes/architecture.drawio) · [Mermaid](F-containers-kubernetes/architecture.mmd)
+![Containers & Kubernetes architecture](F-containers-kubernetes/architecture.svg)
+
+- [Category guide](F-containers-kubernetes/README.md) · [SVG](F-containers-kubernetes/architecture.svg) · [Editable draw.io](F-containers-kubernetes/architecture.drawio) · [Mermaid](F-containers-kubernetes/architecture.mmd)
 
 - [Docker & Container Fundamentals](F-containers-kubernetes/docker-and-container-fundamentals/README.md)
 - [Azure Container Registry (ACR)](F-containers-kubernetes/azure-container-registry-acr/README.md)
@@ -96,7 +110,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### G — Storage & Enterprise File Services
 
-**8 dedicated topics** · [Category guide](G-storage-enterprise-file-services/README.md) · [SVG](G-storage-enterprise-file-services/architecture.svg) · [draw.io](G-storage-enterprise-file-services/architecture.drawio) · [Mermaid](G-storage-enterprise-file-services/architecture.mmd)
+![Storage & Enterprise File Services architecture](G-storage-enterprise-file-services/architecture.svg)
+
+- [Category guide](G-storage-enterprise-file-services/README.md) · [SVG](G-storage-enterprise-file-services/architecture.svg) · [Editable draw.io](G-storage-enterprise-file-services/architecture.drawio) · [Mermaid](G-storage-enterprise-file-services/architecture.mmd)
 
 - [Storage Accounts](G-storage-enterprise-file-services/storage-accounts/README.md)
 - [Blob Storage](G-storage-enterprise-file-services/blob-storage/README.md)
@@ -109,7 +125,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### H — Databases & Data Platforms
 
-**10 dedicated topics** · [Category guide](H-databases-data-platforms/README.md) · [SVG](H-databases-data-platforms/architecture.svg) · [draw.io](H-databases-data-platforms/architecture.drawio) · [Mermaid](H-databases-data-platforms/architecture.mmd)
+![Databases & Data Platforms architecture](H-databases-data-platforms/architecture.svg)
+
+- [Category guide](H-databases-data-platforms/README.md) · [SVG](H-databases-data-platforms/architecture.svg) · [Editable draw.io](H-databases-data-platforms/architecture.drawio) · [Mermaid](H-databases-data-platforms/architecture.mmd)
 
 - [Azure SQL Database](H-databases-data-platforms/azure-sql-database/README.md)
 - [Azure SQL Managed Instance](H-databases-data-platforms/azure-sql-managed-instance/README.md)
@@ -124,7 +142,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### I — Integration & API Management
 
-**6 dedicated topics** · [Category guide](I-integration-api-management/README.md) · [SVG](I-integration-api-management/architecture.svg) · [draw.io](I-integration-api-management/architecture.drawio) · [Mermaid](I-integration-api-management/architecture.mmd)
+![Integration & API Management architecture](I-integration-api-management/architecture.svg)
+
+- [Category guide](I-integration-api-management/README.md) · [SVG](I-integration-api-management/architecture.svg) · [Editable draw.io](I-integration-api-management/architecture.drawio) · [Mermaid](I-integration-api-management/architecture.mmd)
 
 - [API Management](I-integration-api-management/api-management/README.md)
 - [Azure Service Bus](I-integration-api-management/azure-service-bus/README.md)
@@ -135,7 +155,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### J — Security, Secrets & Governance
 
-**8 dedicated topics** · [Category guide](J-security-secrets-governance/README.md) · [SVG](J-security-secrets-governance/architecture.svg) · [draw.io](J-security-secrets-governance/architecture.drawio) · [Mermaid](J-security-secrets-governance/architecture.mmd)
+![Security, Secrets & Governance architecture](J-security-secrets-governance/architecture.svg)
+
+- [Category guide](J-security-secrets-governance/README.md) · [SVG](J-security-secrets-governance/architecture.svg) · [Editable draw.io](J-security-secrets-governance/architecture.drawio) · [Mermaid](J-security-secrets-governance/architecture.mmd)
 
 - [Azure Key Vault](J-security-secrets-governance/azure-key-vault/README.md)
 - [Key Vault Access Policies & RBAC](J-security-secrets-governance/key-vault-access-policies-and-rbac/README.md)
@@ -148,7 +170,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### K — Monitoring, Operations & Cost
 
-**10 dedicated topics** · [Category guide](K-monitoring-operations-cost/README.md) · [SVG](K-monitoring-operations-cost/architecture.svg) · [draw.io](K-monitoring-operations-cost/architecture.drawio) · [Mermaid](K-monitoring-operations-cost/architecture.mmd)
+![Monitoring, Operations & Cost architecture](K-monitoring-operations-cost/architecture.svg)
+
+- [Category guide](K-monitoring-operations-cost/README.md) · [SVG](K-monitoring-operations-cost/architecture.svg) · [Editable draw.io](K-monitoring-operations-cost/architecture.drawio) · [Mermaid](K-monitoring-operations-cost/architecture.mmd)
 
 - [Azure Monitor](K-monitoring-operations-cost/azure-monitor/README.md)
 - [Log Analytics Workspace & KQL](K-monitoring-operations-cost/log-analytics-workspace-and-kql/README.md)
@@ -163,7 +187,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### L — DevOps, IaC, Migration & Hybrid Management
 
-**6 dedicated topics** · [Category guide](L-devops-resilience-migration-ai/README.md) · [SVG](L-devops-resilience-migration-ai/architecture.svg) · [draw.io](L-devops-resilience-migration-ai/architecture.drawio) · [Mermaid](L-devops-resilience-migration-ai/architecture.mmd)
+![DevOps, IaC, Migration & Hybrid Management architecture](L-devops-resilience-migration-ai/architecture.svg)
+
+- [Category guide](L-devops-resilience-migration-ai/README.md) · [SVG](L-devops-resilience-migration-ai/architecture.svg) · [Editable draw.io](L-devops-resilience-migration-ai/architecture.drawio) · [Mermaid](L-devops-resilience-migration-ai/architecture.mmd)
 
 - [Terraform](L-devops-resilience-migration-ai/terraform/README.md)
 - [Bicep / ARM Templates](L-devops-resilience-migration-ai/bicep-arm-templates/README.md)
@@ -174,7 +200,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### M — AI Platform & Engineering
 
-**13 dedicated topics** · [Category guide](M-ai-platform-engineering/README.md) · [SVG](M-ai-platform-engineering/architecture.svg) · [draw.io](M-ai-platform-engineering/architecture.drawio) · [Mermaid](M-ai-platform-engineering/architecture.mmd)
+![AI Platform & Engineering architecture](M-ai-platform-engineering/architecture.svg)
+
+- [Category guide](M-ai-platform-engineering/README.md) · [SVG](M-ai-platform-engineering/architecture.svg) · [Editable draw.io](M-ai-platform-engineering/architecture.drawio) · [Mermaid](M-ai-platform-engineering/architecture.mmd)
 
 - [Microsoft Foundry](M-ai-platform-engineering/microsoft-foundry/README.md)
 - [Azure OpenAI](M-ai-platform-engineering/azure-openai/README.md)
@@ -192,7 +220,9 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 
 ### 12 — Business Continuity, Backup & Disaster Recovery
 
-**7 dedicated topics** · [Category guide](12-automation-backup-disaster-recovery/README.md) · [SVG](12-automation-backup-disaster-recovery/architecture.svg) · [draw.io](12-automation-backup-disaster-recovery/architecture.drawio) · [Mermaid](12-automation-backup-disaster-recovery/architecture.mmd)
+![Business Continuity, Backup & Disaster Recovery architecture](12-automation-backup-disaster-recovery/architecture.svg)
+
+- [Category guide](12-automation-backup-disaster-recovery/README.md) · [SVG](12-automation-backup-disaster-recovery/architecture.svg) · [Editable draw.io](12-automation-backup-disaster-recovery/architecture.drawio) · [Mermaid](12-automation-backup-disaster-recovery/architecture.mmd)
 
 - [Business Continuity & Disaster Recovery Strategy](12-automation-backup-disaster-recovery/77-business-continuity-disaster-recovery-strategy/README.md)
 - [Workload Criticality, BIA, RTO & RPO](12-automation-backup-disaster-recovery/78-workload-criticality-bia-rto-rpo/README.md)
@@ -202,9 +232,10 @@ Use this page to browse visual assets and the canonical guide for each catalogue
 - [Azure Site Recovery & Replication](12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md)
 - [Recovery Plans, Failover & Failback](12-automation-backup-disaster-recovery/81-recovery-plans-failover-failback/README.md)
 
-## Diagram conventions
+## Ownership boundaries
 
-- Category diagrams show the logical flow and major relationships within that domain.
-- Component guides are the source of truth for detailed service design, examples, caveats and validation.
-- A conceptual arrow does not prove a network path, an authorization grant or a service dependency.
-- Verify current Azure service behavior, supported regions/SKUs, quotas and pricing before production decisions.
+- **L:** delivery engineering, Infrastructure as Code, CI/CD, migration and hybrid management.
+- **M:** AI platform, Azure AI services, AI workloads, model lifecycle, agents, evaluation, LLMOps and responsible AI.
+- **12:** business continuity, workload criticality, RTO/RPO, Azure Backup, vault security, restore validation, Site Recovery and recovery plans.
+
+No topic is intentionally duplicated between L and 12. Each component has one canonical guide.
