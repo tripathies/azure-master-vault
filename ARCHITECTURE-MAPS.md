@@ -12,17 +12,17 @@
 **Text model:** `.mmd` files are supplementary Mermaid source.
 
 
-## Azure Master Mindmap
+## Azure Master Vault — Azure Cloud Mindmap
 
-- [View the complete Azure Master Mindmap — all 111 catalogue components](AZURE-MASTER-MINDMAP.svg)
+- [View the complete Azure Master Vault — Azure Cloud Mindmap — all 111 catalogue components](AZURE-MASTER-MINDMAP.svg)
 - [Open the editable mindmap in diagrams.net](AZURE-MASTER-MINDMAP.drawio)
 
 The mindmap mirrors the canonical `catalog.json`: 13 domains and 111 component guides. The SVG is the quick visual preview; the draw.io file is the editable source. Select services according to workload requirements rather than treating the catalogue as a mandatory deployment stack.
 
 
-## Azure Master Architecture Map
+## Azure Master Vault — Architecture Map
 
-- [Open the linked Azure Master Architecture Map](AZURE-MASTER-ARCHITECTURE-MAP.md)
+- [Open the linked Azure Master Vault — Architecture Map](AZURE-MASTER-ARCHITECTURE-MAP.md)
 - [View the SVG overview](AZURE-MASTER-ARCHITECTURE-MAP.svg)
 - [Open the editable catalogue mindmap](AZURE-MASTER-MINDMAP.drawio)
 
