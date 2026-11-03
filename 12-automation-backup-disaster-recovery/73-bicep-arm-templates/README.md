@@ -1,7 +1,9 @@
-# Bicep and ARM Templates — canonical guide moved
+# 73. Bicep and ARM Templates — canonical guide moved
 
-Bicep and ARM Templates have one canonical catalogue location under **L — DevOps, IaC, Migration & Hybrid Management**.
+This topic is maintained in its dedicated catalogue category to prevent duplicate component ownership.
 
-[Open the Bicep / ARM component guide](../../L-devops-resilience-migration-ai/bicep-arm-templates/README.md) · [Open category L](../../L-devops-resilience-migration-ai/README.md)
+- [Open the canonical guide](../../L-devops-resilience-migration-ai/bicep-arm-templates/README.md)
+- [Open the canonical category](../../L-devops-resilience-migration-ai/README.md)
+- [Return to the master catalogue](../../README.md)
 
-This legacy path remains as a redirect so older bookmarks continue to work.
+Do not maintain a second copy here. The canonical guide is the source of truth for this topic.
