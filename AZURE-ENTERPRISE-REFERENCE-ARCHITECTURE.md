@@ -23,7 +23,7 @@ This design describes a representative enterprise platform for hosting internet-
 | Application and compute | Host application services using a runtime appropriate to the workload | [Compute and application hosting](E-compute-application-hosting/README.md), [Containers and Kubernetes](F-containers-kubernetes/README.md) |
 | Data and integration | Persist data, integrate services and publish governed APIs | [Storage and enterprise file services](G-storage-enterprise-file-services/README.md), [Databases and data platforms](H-databases-data-platforms/README.md), [Integration and API management](I-integration-api-management/README.md) |
 | Security and secrets | Protect secrets, posture, workload access and threat detection | [Security, secrets and governance](J-security-secrets-governance/README.md) |
-| Operations and delivery | Observe health, manage cost, automate delivery and recover from failures | [Monitoring, operations and cost](K-monitoring-operations-cost/README.md), [DevOps, resilience, migration and AI](L-devops-resilience-migration-ai/README.md), [Automation, backup and disaster recovery](12-automation-backup-disaster-recovery/README.md) |
+| Operations and delivery | Observe health, manage cost, automate delivery and recover from failures | [Monitoring, operations and cost](K-monitoring-operations-cost/README.md), [DevOps, resilience and migration](L-devops-resilience-migration-ai/README.md), [Automation, backup and disaster recovery](12-automation-backup-disaster-recovery/README.md) |
 
 > If a link's path differs in the catalogue, use the category tracker to find the canonical component page. Component pages are the source of detailed service guidance.
 
@@ -102,6 +102,10 @@ A safe implementation workflow is:
 8. Revisit the architecture when workload requirements or Azure service capabilities change.
 
 The individual component pages provide deeper topic material. Treat any sample code as a starting point until versions, permissions, naming, dependencies and cleanup behavior have been checked in a test subscription.
+
+## AI platform and engineering
+
+For AI services and engineering practices, see [M — AI Platform & Engineering](M-ai-platform-engineering/README.md). The AI category covers Microsoft Foundry, Azure OpenAI, Azure AI Search, Azure Machine Learning, GPU infrastructure, model lifecycle, inference, RAG, agents, evaluation, LLMOps and responsible AI. These capabilities depend on the same identity, network, data, security and operations foundations described above.
 
 ## 10. Related learning paths
 
