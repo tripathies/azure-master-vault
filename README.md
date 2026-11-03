@@ -21,16 +21,6 @@
 
 [**Open network map (SVG) →**](AZURE-NETWORK-ARCHITECTURE-MAP.svg) · [**Edit in draw.io →**](AZURE-NETWORK-ARCHITECTURE-MAP.drawio) · [**Networking component guides →**](C-networking-private-connectivity/README.md)
 
-## Azure Component Mind Map
-
-<p align="center">
-  <a href="AZURE-COMPONENT-MINDMAP.svg">
-    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Azure Master Vault component mind map with 13 catalogue categories and 111 linked guide entries" width="100%" />
-  </a>
-</p>
-
-**Every component node links to its existing guide.** Open the [full-size SVG mind map](AZURE-COMPONENT-MINDMAP.svg) or the [editable draw.io source](AZURE-COMPONENT-MINDMAP.drawio). For the broader architectural view, see the [Azure Master Vault — Architecture Map](AZURE-MASTER-ARCHITECTURE-MAP.md).
-
 ## Azure Master Vault — Architecture Map
 
 <p align="center">
@@ -43,7 +33,7 @@
 
 [**Open the linked architecture map and navigation guide →**](AZURE-MASTER-ARCHITECTURE-MAP.md) · [Open editable mindmap](AZURE-MASTER-MINDMAP.drawio) · [Open all architecture diagrams](ARCHITECTURE-MAPS.md)
 
-> **Catalogue accounting:** the repository's machine-readable tracker contains 111 entries across 13 categories. Domains A–L hold 106 unique core entries; domain 12 is a focused path that intentionally cross-lists five topics from domain L. The map therefore groups the platform into ten architecture lenses without double-counting those pathway entries.
+> **Catalogue accounting:** the repository's machine-readable tracker contains 120 entries across 14 categories. Domains A–M hold 115 unique core topics; domain 12 is a focused path that intentionally cross-lists five topics from domain L. The map therefore groups the platform into ten architecture lenses without double-counting those pathway entries.
 
 ## Start here
 
@@ -206,9 +196,21 @@ The diagram follows the canonical `catalog.json` and links component labels to t
 
 ## Your Azure learning tracker
 
-Use the checkboxes as a visible checklist and open a topic by clicking its name. Category totals are generated from the repository catalogue; the checkboxes in GitHub Markdown do **not** provide per-user automatic progress tracking or calculate a live completion percentage.
+Use the checkboxes as a visible checklist and open a topic by clicking its name. Category totals are generated from the repository catalogue; GitHub Markdown checkboxes do not provide synced progress tracking.
 
-**Catalogue size:** 111 component/topic guides across 13 categories.
+**Catalogue size:** 120 entries across 14 categories — 115 core topics plus five cross-listed learning-path entries.
+
+### Visual catalogue mind map
+
+<p align="center">
+  <a href="AZURE-COMPONENT-MINDMAP.svg">
+    <img src="AZURE-COMPONENT-MINDMAP.svg" alt="Azure Cloud Mindmap — 14 categories and 120 catalogue entries, created by Rahul Tripathi" width="100%" />
+  </a>
+</p>
+
+<p align="center"><strong>Created by Rahul Tripathi</strong> · Azure Master Vault</p>
+
+[**Open full-resolution mind map**](AZURE-COMPONENT-MINDMAP.svg) · [**Edit mind map**](AZURE-COMPONENT-MINDMAP.drawio)
 
 ### Browse categories
 
@@ -225,7 +227,8 @@ Use the checkboxes as a visible checklist and open a topic by clicking its name.
 | **I** | [Integration & API Management](I-integration-api-management/README.md) | 6 | [Open tracker](#i-integration-api-management) |
 | **J** | [Security, Secrets & Governance](J-security-secrets-governance/README.md) | 8 | [Open tracker](#j-security-secrets-governance) |
 | **K** | [Monitoring, Operations & Cost](K-monitoring-operations-cost/README.md) | 10 | [Open tracker](#k-monitoring-operations-cost) |
-| **L** | [DevOps, Resilience, Migration & AI](L-devops-resilience-migration-ai/README.md) | 12 | [Open tracker](#l-devops-resilience-migration-ai) |
+| **L** | [DevOps, Resilience & Migration](L-devops-resilience-migration-ai/README.md) | 8 | [Open tracker](#l-devops-resilience-migration) |
+| **M** | [AI Platform & Engineering](M-ai-platform-engineering/README.md) | 13 | [Open tracker](#m-ai-platform-engineering) |
 | **12** | [Automation, Backup and Disaster Recovery](12-automation-backup-disaster-recovery/README.md) | 5 | [Open tracker](#12-automation-backup-and-disaster-recovery) |
 
 ### Component checklist
@@ -413,7 +416,7 @@ Use the checkboxes as a visible checklist and open a topic by clicking its name.
 </details>
 
 <details>
-<summary><strong>L. DevOps, Resilience, Migration & AI</strong> — 12 topics</summary>
+<summary><strong>L. DevOps, Resilience & Migration</strong> — 8 topics</summary>
 
 - [ ] [Terraform](L-devops-resilience-migration-ai/terraform/README.md)
 - [ ] [Bicep / ARM Templates](L-devops-resilience-migration-ai/bicep-arm-templates/README.md)
@@ -423,12 +426,29 @@ Use the checkboxes as a visible checklist and open a topic by clicking its name.
 - [ ] [Azure Site Recovery](L-devops-resilience-migration-ai/azure-site-recovery/README.md)
 - [ ] [Azure Migrate](L-devops-resilience-migration-ai/azure-migrate/README.md)
 - [ ] [Azure Arc](L-devops-resilience-migration-ai/azure-arc/README.md)
-- [ ] [Microsoft Foundry](L-devops-resilience-migration-ai/microsoft-foundry/README.md)
-- [ ] [Azure OpenAI](L-devops-resilience-migration-ai/azure-openai/README.md)
-- [ ] [Azure AI Search](L-devops-resilience-migration-ai/azure-ai-search/README.md)
-- [ ] [Azure Machine Learning](L-devops-resilience-migration-ai/azure-machine-learning/README.md)
 
 [Open full category guide](<L-devops-resilience-migration-ai/README.md>)
+
+</details>
+
+<details>
+<summary><strong>M. AI Platform & Engineering</strong> — 13 topics</summary>
+
+- [ ] [Microsoft Foundry](M-ai-platform-engineering/microsoft-foundry/README.md)
+- [ ] [Azure OpenAI](M-ai-platform-engineering/azure-openai/README.md)
+- [ ] [Azure AI Search](M-ai-platform-engineering/azure-ai-search/README.md)
+- [ ] [Azure Machine Learning](M-ai-platform-engineering/azure-machine-learning/README.md)
+- [ ] [AI Infrastructure Foundations](M-ai-platform-engineering/ai-infrastructure-foundations/README.md)
+- [ ] [GPU & Accelerated Compute](M-ai-platform-engineering/gpu-accelerated-compute/README.md)
+- [ ] [Model Catalog, Registry & Lifecycle](M-ai-platform-engineering/model-catalog-registry-lifecycle/README.md)
+- [ ] [Model Deployment & Inference](M-ai-platform-engineering/model-deployment-inference/README.md)
+- [ ] [RAG & Vector Search Architecture](M-ai-platform-engineering/rag-vector-search-architecture/README.md)
+- [ ] [AI Agents & Orchestration](M-ai-platform-engineering/ai-agents-orchestration/README.md)
+- [ ] [Prompt Engineering & Evaluation](M-ai-platform-engineering/prompt-engineering-evaluation/README.md)
+- [ ] [LLMOps & AI Observability](M-ai-platform-engineering/llmops-ai-observability/README.md)
+- [ ] [Responsible AI, Security & Governance](M-ai-platform-engineering/responsible-ai-security-governance/README.md)
+
+[Open full category guide](<M-ai-platform-engineering/README.md>)
 
 </details>
 
