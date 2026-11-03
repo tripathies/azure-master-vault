@@ -4,20 +4,33 @@
   <img src="assets/azure-architecture-playbook-cover.svg" alt="Azure Architecture Playbook — From Cloud Fundamentals to Enterprise-Grade Architecture" width="100%" />
 </p>
 
-
 > **Azure Edition** — From Cloud Fundamentals to Enterprise-Grade Architecture. An open-source Solution Architect learning portal with service guides, reference architecture, diagrams and hands-on implementation projects.
 
 [![Learning tracker](https://img.shields.io/badge/Learning%20tracker-open%20checklist-0078D4?style=for-the-badge)](#your-azure-learning-tracker)
 [![Reference architecture](https://img.shields.io/badge/Reference%20architecture-open%20design-107C10?style=for-the-badge)](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md)
-[![Visual library](https://img.shields.io/badge/Diagrams-SVG%20%7C%20draw.io-7F56D9?style=for-the-badge)](VISUAL-DIAGRAMS.md)
+[![Architecture map](https://img.shields.io/badge/Architecture%20map-10%20lenses-005A9E?style=for-the-badge)](AZURE-MASTER-ARCHITECTURE-MAP.md)
 [![Azure book](https://img.shields.io/badge/Book-production%20blueprint-5B5BD6?style=for-the-badge)](book/README.md)
+
+## Azure Master Architecture Map
+
+<p align="center">
+  <a href="AZURE-MASTER-ARCHITECTURE-MAP.md">
+    <img src="AZURE-MASTER-ARCHITECTURE-MAP.svg" alt="Azure Master Vault — architecture map covering cloud foundation, identity, networking, compute, data, operations, DevOps and AI infrastructure" width="100%" />
+  </a>
+</p>
+
+**Navigate the platform by architecture concern:** foundation and governance → identity and security → network and edge → compute and containers → storage and data → integration → operations and FinOps → DevOps and resilience → AI infrastructure specialization.
+
+[**Open the linked architecture map and navigation guide →**](AZURE-MASTER-ARCHITECTURE-MAP.md) · [Open editable mindmap](AZURE-MASTER-MINDMAP.drawio) · [Open all architecture diagrams](ARCHITECTURE-MAPS.md)
+
+> **Catalogue accounting:** the repository's machine-readable tracker contains 111 entries across 13 categories. Domains A–L hold 106 unique core entries; domain 12 is a focused path that intentionally cross-lists five topics from domain L. The map therefore groups the platform into ten architecture lenses without double-counting those pathway entries.
 
 ## Start here
 
 | <div align="center">📚 Learning tracker</div> | <div align="center">🏗️ End-to-end design</div> | <div align="center">🗺️ Diagram library</div> |
 |---|---|---|
 | Work through the catalogue by category. Every topic name opens its own guide. | Explore how governance, identity, network, application, data, security and operations fit together. | Preview category diagrams and open editable draw.io sources. |
-| [**Track topics below ↓**](#your-azure-learning-tracker) | [**Open reference design →**](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md) | [**Open visual library →**](VISUAL-DIAGRAMS.md) |
+| [**Track topics below ↓**](#your-azure-learning-tracker) | [**Open reference design →**](AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md) | [**Open visual library →**](ARCHITECTURE-MAPS.md) |
 
 ![Azure Master Vault architecture overview](architecture.svg)
 
