@@ -11,6 +11,14 @@
 **Quick preview:** `.svg` files render directly in GitHub.  
 **Text model:** `.mmd` files are supplementary Mermaid source.
 
+
+## Azure Master Mindmap
+
+- [View the complete Azure Master Mindmap — all 111 catalogue components](AZURE-MASTER-MINDMAP.svg)
+- [Open the editable mindmap in diagrams.net](AZURE-MASTER-MINDMAP.drawio)
+
+The mindmap mirrors the canonical `catalog.json`: 13 domains and 111 component guides. The SVG is the quick visual preview; the draw.io file is the editable source. Select services according to workload requirements rather than treating the catalogue as a mandatory deployment stack.
+
 ## Category maps
 
 - **A · Cloud Foundation & Landing Zones** — [SVG preview](A-cloud-foundation-landing-zones/architecture.svg) · [Editable draw.io](A-cloud-foundation-landing-zones/architecture.drawio) · [Category guide](A-cloud-foundation-landing-zones/README.md)
