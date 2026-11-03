@@ -1,104 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2600" height="1800" viewBox="0 0 2600 1800">
-<defs>
- <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071B33"/><stop offset="1" stop-color="#0B2D4B"/></linearGradient>
- <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#168BE1"/><stop offset="1" stop-color="#005A9E"/></linearGradient>
- <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#000814" flood-opacity=".35"/></filter>
- <style>
- .heading{font:700 56px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF;letter-spacing:1px}
- .subheading{font:400 25px 'Segoe UI',Arial,sans-serif;fill:#C7DDF1}
- .metric{font:700 19px 'Segoe UI',Arial,sans-serif;fill:#D9EEFF}
- .cardhead{font:700 22px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF;letter-spacing:.3px}
- .sub{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#D7E7F5}
- .root{font:800 32px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF}
- .rootsub{font:600 17px 'Segoe UI',Arial,sans-serif;fill:#D8EDFF}
- .note{font:500 17px 'Segoe UI',Arial,sans-serif;fill:#BBD2E5}
- .badge{font:700 16px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF}
- </style>
-</defs>
-<rect width="2600" height="1800" fill="url(#bg)"/>
-<path d="M0 145 H2600" stroke="#2F5879" stroke-width="2"/>
-<text x="100" y="82" class="heading">AZURE MASTER VAULT</text>
-<text x="103" y="122" class="subheading">Cloud architecture map • from landing zones to AI infrastructure</text>
-<text x="2500" y="72" text-anchor="end" class="metric">106 CORE CATALOGUE GUIDES  •  10 ARCHITECTURAL DOMAINS</text>
-<text x="2500" y="105" text-anchor="end" class="metric">13 repository categories, including one focused learning path</text>
-<rect x="1050" y="730" width="500" height="280" rx="34" fill="url(#hero)" stroke="#75C6FF" stroke-width="4" filter="url(#shadow)"/>
-<path d="M1160 820 L1215 742 L1270 820 L1215 820 L1184 870 L1246 870 L1215 925 L1160 820" fill="#FFFFFF" opacity=".95"/>
-<text x="1370" y="826" text-anchor="middle" class="root">AZURE</text>
-<text x="1370" y="870" text-anchor="middle" class="root">MASTER VAULT</text>
-<text x="1300" y="962" text-anchor="middle" class="rootsub">DESIGN • BUILD • SECURE • OPERATE • OPTIMIZE</text><path d="M1050 870 C910 870, 980 265, 910 265" fill="none" stroke="#0078D4" stroke-width="5" opacity=".9"/>
-<circle cx="910" cy="265" r="8" fill="#0078D4" stroke="#FFFFFF" stroke-width="2"/><path d="M1050 870 C910 870, 980 517, 910 517" fill="none" stroke="#176B87" stroke-width="5" opacity=".9"/>
-<circle cx="910" cy="517" r="8" fill="#176B87" stroke="#FFFFFF" stroke-width="2"/><path d="M1050 870 C910 870, 980 769, 910 769" fill="none" stroke="#386CB0" stroke-width="5" opacity=".9"/>
-<circle cx="910" cy="769" r="8" fill="#386CB0" stroke="#FFFFFF" stroke-width="2"/><path d="M1050 870 C910 870, 980 1021, 910 1021" fill="none" stroke="#5B5BD6" stroke-width="5" opacity=".9"/>
-<circle cx="910" cy="1021" r="8" fill="#5B5BD6" stroke="#FFFFFF" stroke-width="2"/><path d="M1050 870 C910 870, 980 1273, 910 1273" fill="none" stroke="#087E8B" stroke-width="5" opacity=".9"/>
-<circle cx="910" cy="1273" r="8" fill="#087E8B" stroke="#FFFFFF" stroke-width="2"/><path d="M1550 870 C1690 870, 1590 265, 1660 265" fill="none" stroke="#355C7D" stroke-width="5" opacity=".9"/>
-<circle cx="1660" cy="265" r="8" fill="#355C7D" stroke="#FFFFFF" stroke-width="2"/><path d="M1550 870 C1690 870, 1590 517, 1660 517" fill="none" stroke="#168AAD" stroke-width="5" opacity=".9"/>
-<circle cx="1660" cy="517" r="8" fill="#168AAD" stroke="#FFFFFF" stroke-width="2"/><path d="M1550 870 C1690 870, 1590 769, 1660 769" fill="none" stroke="#2A6F97" stroke-width="5" opacity=".9"/>
-<circle cx="1660" cy="769" r="8" fill="#2A6F97" stroke="#FFFFFF" stroke-width="2"/><path d="M1550 870 C1690 870, 1590 1021, 1660 1021" fill="none" stroke="#6C63A8" stroke-width="5" opacity=".9"/>
-<circle cx="1660" cy="1021" r="8" fill="#6C63A8" stroke="#FFFFFF" stroke-width="2"/><path d="M1550 870 C1690 870, 1590 1273, 1660 1273" fill="none" stroke="#B45F06" stroke-width="5" opacity=".9"/>
-<circle cx="1660" cy="1273" r="8" fill="#B45F06" stroke="#FFFFFF" stroke-width="2"/><a xlink:href="A-cloud-foundation-landing-zones/README.md">
-<rect x="90" y="160" width="820" height="210" rx="24" fill="#123A5A" stroke="#0078D4" stroke-width="4" filter="url(#shadow)"/>
-<rect x="90" y="160" width="13" height="210" rx="6" fill="#0078D4"/>
-<text x="126" y="207" class="cardhead">01  CLOUD FOUNDATION &amp; GOVERNANCE</text>
-<circle cx="132" cy="248" r="4" fill="#0078D4"/><text x="150" y="254" class="sub">Tenant • Management Groups • Subscriptions</text><circle cx="132" cy="277" r="4" fill="#0078D4"/><text x="150" y="283" class="sub">Resource Groups • Azure Policy • Landing Zones</text><circle cx="132" cy="306" r="4" fill="#0078D4"/><text x="150" y="312" class="sub">Well-Architected Framework</text>
-<text x="884" y="348" text-anchor="end" class="badge">OPEN CATEGORY GUIDE  ↗</text>
-</a><a xlink:href="B-identity-access-management/README.md">
-<rect x="90" y="412" width="820" height="210" rx="24" fill="#123A5A" stroke="#176B87" stroke-width="4" filter="url(#shadow)"/>
-<rect x="90" y="412" width="13" height="210" rx="6" fill="#176B87"/>
-<text x="126" y="459" class="cardhead">02  IDENTITY &amp; SECURITY</text>
-<circle cx="132" cy="500" r="4" fill="#176B87"/><text x="150" y="506" class="sub">Microsoft Entra ID • App Registrations</text><circle cx="132" cy="529" r="4" fill="#176B87"/><text x="150" y="535" class="sub">Managed Identities • RBAC • PIM</text><circle cx="132" cy="558" r="4" fill="#176B87"/><text x="150" y="564" class="sub">MFA / Conditional Access • Key Vault • Defender</text>
-<text x="884" y="600" text-anchor="end" class="badge">OPEN CATEGORY GUIDE  ↗</text>
-</a><a xlink:href="C-networking-private-connectivity/README.md">
-<rect x="90" y="664" width="820" height="210" rx="24" fill="#123A5A" stroke="#386CB0" stroke-width="4" filter="url(#shadow)"/>
-<rect x="90" y="664" width="13" height="210" rx="6" fill="#386CB0"/>
-<text x="126" y="711" class="cardhead">03  NETWORK &amp; CONNECTIVITY</text>
-<circle cx="132" cy="752" r="4" fill="#386CB0"/><text x="150" y="758" class="sub">VNet • Subnets • NSG / ASG • UDR</text><circle cx="132" cy="781" r="4" fill="#386CB0"/><text x="150" y="787" class="sub">Peering • Firewall • VPN • ExpressRoute</text><circle cx="132" cy="810" r="4" fill="#386CB0"/><text x="150" y="816" class="sub">Private Link • Private DNS • NAT</text>
-<text x="884" y="852" text-anchor="end" class="badge">OPEN CATEGORY GUIDE  ↗</text>
-</a><a xlink:href="D-traffic-management-delivery/README.md">
-<rect x="90" y="916" width="820" height="210" rx="24" fill="#123A5A" stroke="#5B5BD6" stroke-width="4" filter="url(#shadow)"/>
-<rect x="90" y="916" width="13" height="210" rx="6" fill="#5B5BD6"/>
-<text x="126" y="963" class="cardhead">04  TRAFFIC &amp; EDGE</text>
-<circle cx="132" cy="1004" r="4" fill="#5B5BD6"/><text x="150" y="1010" class="sub">Azure Front Door • Application Gateway / WAF</text><circle cx="132" cy="1033" r="4" fill="#5B5BD6"/><text x="150" y="1039" class="sub">Load Balancer • Traffic Manager • Azure DNS</text><circle cx="132" cy="1062" r="4" fill="#5B5BD6"/><text x="150" y="1068" class="sub">DDoS Protection • Bastion • Network Watcher</text>
-<text x="884" y="1104" text-anchor="end" class="badge">OPEN CATEGORY GUIDE  ↗</text>
-</a><a xlink:href="E-compute-application-hosting/README.md">
-<rect x="90" y="1168" width="820" height="210" rx="24" fill="#123A5A" stroke="#087E8B" stroke-width="4" filter="url(#shadow)"/>
-<rect x="90" y="1168" width="13" height="210" rx="6" fill="#087E8B"/>
-<text x="126" y="1215" class="cardhead">05  COMPUTE &amp; CONTAINERS</text>
-<circle cx="132" cy="1256" r="4" fill="#087E8B"/><text x="150" y="1262" class="sub">Virtual Machines • Disks • Scale Sets</text><circle cx="132" cy="1285" r="4" fill="#087E8B"/><text x="150" y="1291" class="sub">App Service • Functions • Logic Apps • Batch</text><circle cx="132" cy="1314" r="4" fill="#087E8B"/><text x="150" y="1320" class="sub">ACR • Container Apps • AKS • ACI</text>
-<text x="884" y="1356" text-anchor="end" class="badge">OPEN CATEGORY GUIDE  ↗</text>
-</a><a xlink:href="G-storage-enterprise-file-services/README.md">
-<rect x="1660" y="160" width="820" height="210" rx="24" fill="#123A5A" stroke="#355C7D" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1660" y="160" width="13" height="210" rx="6" fill="#355C7D"/>
-<text x="1696" y="207" class="cardhead">06  STORAGE &amp; DATA PLATFORMS</text>
-<circle cx="1702" cy="248" r="4" fill="#355C7D"/><text x="1720" y="254" class="sub">Storage Accounts • Blob • ADLS • Files</text><circle cx="1702" cy="277" r="4" fill="#355C7D"/><text x="1720" y="283" class="sub">Azure SQL • Cosmos DB • PostgreSQL / MySQL</text><circle cx="1702" cy="306" r="4" fill="#355C7D"/><text x="1720" y="312" class="sub">Redis • Data Factory • Databricks • Fabric</text>
-<text x="2454" y="348" text-anchor="end" class="badge">OPEN CATEGORY GUIDE  ↗</text>
-</a><a xlink:href="I-integration-api-management/README.md">
-<rect x="1660" y="412" width="820" height="210" rx="24" fill="#123A5A" stroke="#168AAD" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1660" y="412" width="13" height="210" rx="6" fill="#168AAD"/>
-<text x="1696" y="459" class="cardhead">07  INTEGRATION &amp; API</text>
-<circle cx="1702" cy="500" r="4" fill="#168AAD"/><text x="1720" y="506" class="sub">API Management • Service Bus</text><circle cx="1702" cy="529" r="4" fill="#168AAD"/><text x="1720" y="535" class="sub">Event Grid • Event Hubs</text><circle cx="1702" cy="558" r="4" fill="#168AAD"/><text x="1720" y="564" class="sub">Stream Analytics • Data Explorer</text>
-<text x="2454" y="600" text-anchor="end" class="badge">OPEN CATEGORY GUIDE  ↗</text>
-</a><a xlink:href="K-monitoring-operations-cost/README.md">
-<rect x="1660" y="664" width="820" height="210" rx="24" fill="#123A5A" stroke="#2A6F97" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1660" y="664" width="13" height="210" rx="6" fill="#2A6F97"/>
-<text x="1696" y="711" class="cardhead">08  OPERATIONS &amp; FINOPS</text>
-<circle cx="1702" cy="752" r="4" fill="#2A6F97"/><text x="1720" y="758" class="sub">Azure Monitor • Log Analytics • App Insights</text><circle cx="1702" cy="781" r="4" fill="#2A6F97"/><text x="1720" y="787" class="sub">Alerts • Service Health • Resource Graph</text><circle cx="1702" cy="810" r="4" fill="#2A6F97"/><text x="1720" y="816" class="sub">Cost Management • Advisor • Automation</text>
-<text x="2454" y="852" text-anchor="end" class="badge">OPEN CATEGORY GUIDE  ↗</text>
-</a><a xlink:href="L-devops-resilience-migration-ai/README.md">
-<rect x="1660" y="916" width="820" height="210" rx="24" fill="#123A5A" stroke="#6C63A8" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1660" y="916" width="13" height="210" rx="6" fill="#6C63A8"/>
-<text x="1696" y="963" class="cardhead">09  DEVOPS, IaC &amp; RESILIENCE</text>
-<circle cx="1702" cy="1004" r="4" fill="#6C63A8"/><text x="1720" y="1010" class="sub">Terraform • Bicep / ARM</text><circle cx="1702" cy="1033" r="4" fill="#6C63A8"/><text x="1720" y="1039" class="sub">Azure DevOps • GitHub Actions</text><circle cx="1702" cy="1062" r="4" fill="#6C63A8"/><text x="1720" y="1068" class="sub">Azure Backup • Site Recovery • Migration • Arc</text>
-<text x="2454" y="1104" text-anchor="end" class="badge">OPEN CATEGORY GUIDE  ↗</text>
-</a><a xlink:href="L-devops-resilience-migration-ai/README.md">
-<rect x="1660" y="1168" width="820" height="210" rx="24" fill="#123A5A" stroke="#B45F06" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1660" y="1168" width="13" height="210" rx="6" fill="#B45F06"/>
-<text x="1696" y="1215" class="cardhead">10  AI PLATFORM &amp; INFRASTRUCTURE</text>
-<circle cx="1702" cy="1256" r="4" fill="#B45F06"/><text x="1720" y="1262" class="sub">AI services • Foundry • Azure OpenAI • AI Search</text><circle cx="1702" cy="1285" r="4" fill="#B45F06"/><text x="1720" y="1291" class="sub">GPU / accelerated compute • quotas • capacity</text><circle cx="1702" cy="1314" r="4" fill="#B45F06"/><text x="1720" y="1320" class="sub">Model registry • deployment • inference endpoints</text><circle cx="1702" cy="1343" r="4" fill="#B45F06"/><text x="1720" y="1349" class="sub">AKS / containers • KServe / vLLM patterns</text><circle cx="1702" cy="1372" r="4" fill="#B45F06"/><text x="1720" y="1378" class="sub">RAG • vector retrieval • data pipelines</text><circle cx="1702" cy="1401" r="4" fill="#B45F06"/><text x="1720" y="1407" class="sub">LLMOps • evaluation • telemetry • guardrails</text>
-<text x="2454" y="1356" text-anchor="end" class="badge">SPECIALIZATION LAYER  ↗</text>
-</a><rect x="1020" y="1060" width="560" height="180" rx="24" fill="#102F4B" stroke="#63A5D8" stroke-width="2"/>
-<text x="1300" y="1107" text-anchor="middle" class="cardhead">ARCHITECTURE DECISION PRINCIPLE</text>
-<text x="1300" y="1150" text-anchor="middle" class="sub">Choose by workload requirements, risk, scale, region,</text>
-<text x="1300" y="1181" text-anchor="middle" class="sub">resilience and cost — not by service popularity.</text>
-<text x="100" y="1725" class="note">Core domains link to the existing Vault category guides. Category 12 remains a focused learning path and intentionally overlaps selected L-domain topics.</text>
-<text x="2500" y="1725" text-anchor="end" class="note">AI infrastructure is an architectural specialization, not a new claim of Azure catalogue completeness.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="1620" viewBox="0 0 2600 1620">
+<title>Azure Enterprise Architecture Map — Cloud Architecture Playbook</title>
+<desc>Nine architecture views cover all 14 catalogue categories and 120 unique topics, including separate DevOps, AI and business recovery categories. Created by Rahul Tripathi.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F7FAFE"/><stop offset="1" stop-color="#E9F2FA"/></linearGradient><linearGradient id="header" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#063D70"/><stop offset="1" stop-color="#1176B8"/></linearGradient><filter id="sh" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#17334B" flood-opacity=".12"/></filter><style>
+.title{font:800 56px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF;letter-spacing:1px}
+.sub{font:400 23px 'Segoe UI',Arial,sans-serif;fill:#DCEEFF}
+.meta{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF}
+.cardtitle{font:700 25px 'Segoe UI',Arial,sans-serif;fill:#142E46}
+.cardid{font:800 20px 'Segoe UI',Arial,sans-serif;fill:#FFFFFF}
+.desc{font:500 19px 'Segoe UI',Arial,sans-serif;fill:#435B70}
+.foot{font:600 17px 'Segoe UI',Arial,sans-serif;fill:#526C80}
+</style></defs>
+<rect width="2600" height="1620" fill="url(#bg)"/>
+<rect width="2600" height="190" fill="url(#header)"/>
+<text x="80" y="78" class="title">AZURE ENTERPRISE ARCHITECTURE MAP</text>
+<text x="84" y="124" class="sub">Cloud Architecture Playbook — Azure Edition</text>
+<rect x="2120" y="40" width="395" height="70" rx="22" fill="#FFFFFF" opacity=".16" stroke="#D5EDFF"/>
+<text x="2318" y="83" text-anchor="middle" class="meta">14 CATEGORIES • 120 UNIQUE TOPICS</text>
+<rect x="70" y="235" width="780" height="390" rx="24" fill="#FFFFFF" stroke="#0078D4" stroke-width="3" filter="url(#sh)"/>
+ <rect x="70" y="235" width="780" height="76" rx="22" fill="#0078D4"/>
+ <circle cx="114" cy="273" r="25" fill="#FFFFFF" opacity=".18" stroke="#FFFFFF" stroke-width="1.5"/>
+ <text x="114" y="280" text-anchor="middle" class="cardid">A</text>
+ <text x="156" y="282" class="cardtitle">Cloud Foundation &amp; Landing Zones</text>
+ <text x="104" y="367" class="desc">Tenant • Regions • Subscriptions • Resource Groups</text><text x="104" y="405" class="desc">ARM • Azure Policy • Landing Zones</text>
+ <text x="824" y="602" text-anchor="end" class="foot">ARCHITECTURE VIEW</text><rect x="888" y="235" width="780" height="390" rx="24" fill="#FFFFFF" stroke="#176B87" stroke-width="3" filter="url(#sh)"/>
+ <rect x="888" y="235" width="780" height="76" rx="22" fill="#176B87"/>
+ <circle cx="932" cy="273" r="25" fill="#FFFFFF" opacity=".18" stroke="#FFFFFF" stroke-width="1.5"/>
+ <text x="932" y="280" text-anchor="middle" class="cardid">B</text>
+ <text x="974" y="282" class="cardtitle">Identity &amp; Access Management</text>
+ <text x="922" y="367" class="desc">Entra ID • App Registrations • Managed Identities</text><text x="922" y="405" class="desc">RBAC • MFA • PIM • OAuth/OIDC</text>
+ <text x="1642" y="602" text-anchor="end" class="foot">ARCHITECTURE VIEW</text><rect x="1706" y="235" width="780" height="390" rx="24" fill="#FFFFFF" stroke="#386CB0" stroke-width="3" filter="url(#sh)"/>
+ <rect x="1706" y="235" width="780" height="76" rx="22" fill="#386CB0"/>
+ <circle cx="1750" cy="273" r="25" fill="#FFFFFF" opacity=".18" stroke="#FFFFFF" stroke-width="1.5"/>
+ <text x="1750" y="280" text-anchor="middle" class="cardid">C + D</text>
+ <text x="1792" y="282" class="cardtitle">Network, Connectivity &amp; Traffic</text>
+ <text x="1740" y="367" class="desc">VNet • CIDR • NSG • UDR • Firewall • VPN</text><text x="1740" y="405" class="desc">ExpressRoute • Private Link • DNS • Front Door • WAF</text>
+ <text x="2460" y="602" text-anchor="end" class="foot">ARCHITECTURE VIEW</text><rect x="70" y="657" width="780" height="390" rx="24" fill="#FFFFFF" stroke="#5B5BD6" stroke-width="3" filter="url(#sh)"/>
+ <rect x="70" y="657" width="780" height="76" rx="22" fill="#5B5BD6"/>
+ <circle cx="114" cy="695" r="25" fill="#FFFFFF" opacity=".18" stroke="#FFFFFF" stroke-width="1.5"/>
+ <text x="114" y="702" text-anchor="middle" class="cardid">E + F</text>
+ <text x="156" y="704" class="cardtitle">Compute, Applications &amp; Containers</text>
+ <text x="104" y="789" class="desc">VMs • Scale Sets • App Service • Functions</text><text x="104" y="827" class="desc">Logic Apps • ACR • Container Apps • AKS • ACI</text>
+ <text x="824" y="1024" text-anchor="end" class="foot">ARCHITECTURE VIEW</text><rect x="888" y="657" width="780" height="390" rx="24" fill="#FFFFFF" stroke="#087E8B" stroke-width="3" filter="url(#sh)"/>
+ <rect x="888" y="657" width="780" height="76" rx="22" fill="#087E8B"/>
+ <circle cx="932" cy="695" r="25" fill="#FFFFFF" opacity=".18" stroke="#FFFFFF" stroke-width="1.5"/>
+ <text x="932" y="702" text-anchor="middle" class="cardid">G + H + I</text>
+ <text x="974" y="704" class="cardtitle">Storage, Data &amp; Integration</text>
+ <text x="922" y="789" class="desc">Blob • ADLS • Files • SQL • Cosmos DB • PostgreSQL</text><text x="922" y="827" class="desc">Fabric • Databricks • API Management • Service Bus</text><text x="922" y="865" class="desc">Events</text>
+ <text x="1642" y="1024" text-anchor="end" class="foot">ARCHITECTURE VIEW</text><rect x="1706" y="657" width="780" height="390" rx="24" fill="#FFFFFF" stroke="#355C7D" stroke-width="3" filter="url(#sh)"/>
+ <rect x="1706" y="657" width="780" height="76" rx="22" fill="#355C7D"/>
+ <circle cx="1750" cy="695" r="25" fill="#FFFFFF" opacity=".18" stroke="#FFFFFF" stroke-width="1.5"/>
+ <text x="1750" y="702" text-anchor="middle" class="cardid">J + K</text>
+ <text x="1792" y="704" class="cardtitle">Security, Operations &amp; FinOps</text>
+ <text x="1740" y="789" class="desc">Key Vault • Defender • Sentinel • Purview • Zero Trust</text><text x="1740" y="827" class="desc">Azure Monitor • Log Analytics • Alerts</text><text x="1740" y="865" class="desc">Cost Management</text>
+ <text x="2460" y="1024" text-anchor="end" class="foot">ARCHITECTURE VIEW</text><rect x="70" y="1079" width="780" height="390" rx="24" fill="#FFFFFF" stroke="#2A6F97" stroke-width="3" filter="url(#sh)"/>
+ <rect x="70" y="1079" width="780" height="76" rx="22" fill="#2A6F97"/>
+ <circle cx="114" cy="1117" r="25" fill="#FFFFFF" opacity=".18" stroke="#FFFFFF" stroke-width="1.5"/>
+ <text x="114" y="1124" text-anchor="middle" class="cardid">L</text>
+ <text x="156" y="1126" class="cardtitle">DevOps, IaC, Migration &amp; Hybrid Management</text>
+ <text x="104" y="1211" class="desc">Terraform • Bicep/ARM • Azure DevOps • GitHub Actions</text><text x="104" y="1249" class="desc">Azure Migrate • Azure Arc</text>
+ <text x="824" y="1446" text-anchor="end" class="foot">ARCHITECTURE VIEW</text><rect x="888" y="1079" width="780" height="390" rx="24" fill="#FFFFFF" stroke="#7C3AED" stroke-width="3" filter="url(#sh)"/>
+ <rect x="888" y="1079" width="780" height="76" rx="22" fill="#7C3AED"/>
+ <circle cx="932" cy="1117" r="25" fill="#FFFFFF" opacity=".18" stroke="#FFFFFF" stroke-width="1.5"/>
+ <text x="932" y="1124" text-anchor="middle" class="cardid">M</text>
+ <text x="974" y="1126" class="cardtitle">AI Platform &amp; Engineering</text>
+ <text x="922" y="1211" class="desc">Foundry • Azure OpenAI • AI Search • Azure ML • GPU</text><text x="922" y="1249" class="desc">Model lifecycle • Inference • RAG • Agents • LLMOps</text><text x="922" y="1287" class="desc">Responsible AI</text>
+ <text x="1642" y="1446" text-anchor="end" class="foot">ARCHITECTURE VIEW</text><rect x="1706" y="1079" width="780" height="390" rx="24" fill="#FFFFFF" stroke="#B45309" stroke-width="3" filter="url(#sh)"/>
+ <rect x="1706" y="1079" width="780" height="76" rx="22" fill="#B45309"/>
+ <circle cx="1750" cy="1117" r="25" fill="#FFFFFF" opacity=".18" stroke="#FFFFFF" stroke-width="1.5"/>
+ <text x="1750" y="1124" text-anchor="middle" class="cardid">12</text>
+ <text x="1792" y="1126" class="cardtitle">Business Continuity, Backup &amp; Disaster Recovery</text>
+ <text x="1740" y="1211" class="desc">BCDR Strategy • BIA/RTO/RPO • Azure Backup</text><text x="1740" y="1249" class="desc">Vault Security • Restore Testing • Site Recovery</text><text x="1740" y="1287" class="desc">Failover/Failback</text>
+ <text x="2460" y="1446" text-anchor="end" class="foot">ARCHITECTURE VIEW</text><rect x="70" y="1502" width="2460" height="74" rx="18" fill="#EAF3FA" stroke="#B5CBDE" stroke-width="2"/>
+<text x="1300" y="1548" text-anchor="middle" class="foot">Cross-cutting throughout: Identity • Networking • Security • Governance • Observability • Resilience • FinOps</text>
+<text x="1300" y="1600" text-anchor="middle" class="foot">Created by Rahul Tripathi • Cloud Architecture Playbook</text></svg>
