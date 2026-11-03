@@ -1,0 +1,17 @@
+flowchart LR
+  Sources["Enterprise data sources"] --> Ingest["Ingestion, parsing and chunking"]
+  Ingest --> Embed["Embedding model"]
+  Embed --> Index["Azure AI Search / vector index"]
+  Index --> Retrieve["Hybrid / vector retrieval"]
+  Retrieve --> App["AI application"]
+  Model["Microsoft Foundry / Azure OpenAI"] --> App
+  App --> Agent["Agents and orchestration"]
+  Agent --> Tools["Approved tools / APIs / MCP"]
+  App --> Evaluate["Prompt and model evaluation"]
+  Agent --> Evaluate
+  Evaluate --> Deploy["Controlled release"]
+  Deploy --> Observe["LLMOps / telemetry / cost"]
+  Identity["Entra ID / RBAC / managed identity"] -. cross-cutting .-> App
+  Security["Content safety / private networking / Key Vault"] -. cross-cutting .-> Agent
+  Governance["Purview / data policy / human oversight"] -. cross-cutting .-> Sources
+  Observe -. feedback .-> Evaluate
