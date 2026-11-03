@@ -550,7 +550,7 @@
     },
     {
       "letter": "L",
-      "title": "DevOps, Resilience, Migration & AI",
+      "title": "DevOps, Resilience & Migration",
       "folder": "L-devops-resilience-migration-ai",
       "components": [
         {
@@ -592,26 +592,78 @@
           "name": "Azure Arc",
           "slug": "azure-arc",
           "path": "L-devops-resilience-migration-ai/azure-arc/README.md"
-        },
+        }
+      ]
+    },
+    {
+      "letter": "M",
+      "title": "AI Platform & Engineering",
+      "folder": "M-ai-platform-engineering",
+      "components": [
         {
           "name": "Microsoft Foundry",
           "slug": "microsoft-foundry",
-          "path": "L-devops-resilience-migration-ai/microsoft-foundry/README.md"
+          "path": "M-ai-platform-engineering/microsoft-foundry/README.md"
         },
         {
           "name": "Azure OpenAI",
           "slug": "azure-openai",
-          "path": "L-devops-resilience-migration-ai/azure-openai/README.md"
+          "path": "M-ai-platform-engineering/azure-openai/README.md"
         },
         {
           "name": "Azure AI Search",
           "slug": "azure-ai-search",
-          "path": "L-devops-resilience-migration-ai/azure-ai-search/README.md"
+          "path": "M-ai-platform-engineering/azure-ai-search/README.md"
         },
         {
           "name": "Azure Machine Learning",
           "slug": "azure-machine-learning",
-          "path": "L-devops-resilience-migration-ai/azure-machine-learning/README.md"
+          "path": "M-ai-platform-engineering/azure-machine-learning/README.md"
+        },
+        {
+          "name": "AI Infrastructure Foundations",
+          "slug": "ai-infrastructure-foundations",
+          "path": "M-ai-platform-engineering/ai-infrastructure-foundations/README.md"
+        },
+        {
+          "name": "GPU & Accelerated Compute",
+          "slug": "gpu-accelerated-compute",
+          "path": "M-ai-platform-engineering/gpu-accelerated-compute/README.md"
+        },
+        {
+          "name": "Model Catalog, Registry & Lifecycle",
+          "slug": "model-catalog-registry-lifecycle",
+          "path": "M-ai-platform-engineering/model-catalog-registry-lifecycle/README.md"
+        },
+        {
+          "name": "Model Deployment & Inference",
+          "slug": "model-deployment-inference",
+          "path": "M-ai-platform-engineering/model-deployment-inference/README.md"
+        },
+        {
+          "name": "RAG & Vector Search Architecture",
+          "slug": "rag-vector-search-architecture",
+          "path": "M-ai-platform-engineering/rag-vector-search-architecture/README.md"
+        },
+        {
+          "name": "AI Agents & Orchestration",
+          "slug": "ai-agents-orchestration",
+          "path": "M-ai-platform-engineering/ai-agents-orchestration/README.md"
+        },
+        {
+          "name": "Prompt Engineering & Evaluation",
+          "slug": "prompt-engineering-evaluation",
+          "path": "M-ai-platform-engineering/prompt-engineering-evaluation/README.md"
+        },
+        {
+          "name": "LLMOps & AI Observability",
+          "slug": "llmops-ai-observability",
+          "path": "M-ai-platform-engineering/llmops-ai-observability/README.md"
+        },
+        {
+          "name": "Responsible AI, Security & Governance",
+          "slug": "responsible-ai-security-governance",
+          "path": "M-ai-platform-engineering/responsible-ai-security-governance/README.md"
         }
       ]
     },
@@ -653,6 +705,6 @@
       ]
     }
   ],
-  "componentCount": 111,
-  "note": "Each component has a pre-created linked page. A Markdown click navigates; it does not create a GitHub file. Category 12 is a focused learning path and overlaps intentionally with related topics in A–L."
+  "componentCount": 120,
+  "note": "Each component has a linked guide. Domain 12 is a focused learning path and intentionally cross-lists five DevOps/backup/DR topics also covered in domain L. Domains A–M contain 115 unique core catalogue topics; with the five cross-listed pathway entries the catalogue contains 120 entries."
 }
