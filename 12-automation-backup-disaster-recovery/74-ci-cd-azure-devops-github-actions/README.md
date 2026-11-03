@@ -1,9 +1,9 @@
-# CI/CD — canonical guides moved
+# 74. CI/CD — Azure DevOps Pipelines and GitHub Actions — canonical guide moved
 
-Azure DevOps Pipelines and GitHub Actions each have their own canonical guide under **L — DevOps, IaC, Migration & Hybrid Management**.
+This topic is maintained in its dedicated catalogue category to prevent duplicate component ownership.
 
-- [Azure DevOps Pipelines](../../L-devops-resilience-migration-ai/azure-devops-pipelines/README.md)
-- [GitHub Actions](../../L-devops-resilience-migration-ai/github-actions/README.md)
-- [Open category L](../../L-devops-resilience-migration-ai/README.md)
+- [Open the canonical guide](../../L-devops-resilience-migration-ai/azure-devops-pipelines/README.md)
+- [Open the canonical category](../../L-devops-resilience-migration-ai/README.md)
+- [Return to the master catalogue](../../README.md)
 
-This legacy combined path remains as a redirect.
+Do not maintain a second copy here. The canonical guide is the source of truth for this topic.
