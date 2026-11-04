@@ -22,8 +22,9 @@ This is a textbook and illustrated field reference—not a copy of the repositor
 The attached DP-750 notebook is a visual reference for the *look and feel* of handwritten learning notes. It is not a source for Azure subject matter, technical content, chapter sequence, diagrams, logos or wording.
 
 Use an original Azure notebook aesthetic:
-- Clean notebook-paper backgrounds, subtle ruled/grid lines where they help, generous white space and clear page hierarchy.
-- Handwritten-style headings, labels, callout annotations and diagram captions.
+- Clean notebook-paper backgrounds, subtle ruled lines, generous white space and a consistent page grid.
+- Neat, legible, consistent handwritten-style headings, explanations, labels, callout annotations and diagram captions. The handwriting should look like carefully prepared study notes—not hurried or messy writing.
+- Maintain consistent letter forms, baseline, spacing, line weight and heading hierarchy across the entire book. Use readable typeset text only where it improves long-form readability, code or dense reference material.
 - Original hand-drawn-style architecture sketches: pen-like strokes, boxes, cloud/service symbols, numbered arrows, boundaries, legends and short margin notes.
 - A restrained Azure-inspired blue palette, supported by dark ink and occasional accent colors for warnings, decisions and flow direction.
 - Clear, professionally typeset body text and code. Handwritten styling is for visual explanation and annotations—not for long paragraphs or dense code.
@@ -264,7 +265,7 @@ Every one of the 120 topic chapters uses this learning structure. Sections that 
 
 ## 7. Hand-drawn diagram requirements
 
-Each catalogue chapter must have at least one original, topic-specific hand-drawn-style technical diagram. Complex topics should have several, for example a logical architecture view, a numbered traffic/data-flow sequence and a failure/recovery view.
+Every individual catalogue component/topic must have its own original, component-specific hand-drawn-style technical diagram. This is mandatory for all 120 topics: no generic diagram reused as a substitute and no component left without its own visual. Complex topics should have several, for example a logical architecture view, a numbered traffic/data-flow sequence and a failure/recovery view.
 
 Every diagram must:
 - Name real Azure components and show clear trust/network/resource boundaries.
@@ -276,7 +277,7 @@ Every diagram must:
 - Be authored as editable vector/source artwork (SVG and, where useful, draw.io) before PDF placement.
 - Be checked against the accompanying text and official service documentation.
 
-Use a hand-drawn visual treatment without sacrificing technical precision. Rough pen strokes are decorative; arrows, labels, boundaries and relationships must remain unambiguous.
+Use a hand-drawn visual treatment without sacrificing technical precision. The overall impression should be handwritten by a skilled technical note-taker: attractive, orderly and highly readable. Pen strokes may look natural, but arrows, labels, boundaries and relationships must remain unambiguous.
 
 ## 8. Implementation standard
 
