@@ -1,442 +1,365 @@
-# Azure Cloud Architecture Playbook — Book Production Plan
+# Azure Master Vault — Complete Book Production Blueprint
 
-**Working title:** Cloud Architecture Playbook — Azure Edition  
-**Subtitle:** From Cloud Fundamentals to Enterprise-Grade Architecture  
-**Format:** One navigable A4 PDF, with a maintainable Markdown source manuscript  
-**Source repository:** [tripathies/azure-master-vault](https://github.com/tripathies/azure-master-vault)  
-**Editorial role:** Azure Solution Architect and technical book writer  
-**Status:** Blueprint / content audit baseline
+**Book title:** Azure Master Vault  
+**Subtitle:** End-to-End Azure Cloud, Infrastructure and Solution Architecture  
+**Repository:** [tripathies/azure-master-vault](https://github.com/tripathies/azure-master-vault)  
+**Catalogue source of truth:** [`catalog.json`](../catalog.json)  
+**Book format:** A4, navigable, searchable PDF, supported by editable Markdown and vector diagram source  
+**Scope:** Every one of the 120 catalogue topics in all 14 categories, plus foundations, end-to-end architecture case studies, hands-on labs and reference appendices.
 
 ---
 
-## 1. Editorial vision
+## 1. What this book is
 
-Create a practical Azure textbook that moves a learner from first principles to the ability to reason about, design, deploy, secure, operate and review Azure solutions.
+Azure Master Vault is a complete, end-to-end Azure learning and architecture book. It must take a reader from cloud fundamentals to the ability to assess requirements, design an Azure platform, select and connect services, deploy or configure them, secure and operate the resulting solution, troubleshoot failures, manage resilience and control cost.
 
-This is not a PDF export of the repository. The repository is a component knowledge base; the book is a guided learning experience. The manuscript must add the connective teaching narrative that explains why one concept leads to another, how services interact, when to choose alternatives, and how a design becomes a working deployment.
+This is a textbook and illustrated field reference—not a copy of the repository README files and not a certification cram guide. The repository is the source inventory. The book adds a coherent teaching sequence, worked examples, architecture reasoning and practical implementation.
 
-The central learning sequence is:
+**Coverage rule:** all 120 catalogue topics must appear as individually identifiable chapters in the finished book. Do not remove, silently merge, rename or replace a catalogue topic. Supporting foundation and capstone chapters may be added, but they do not count as substitutes for catalogue chapters.
 
-**Understand the requirement → understand the service → place it in an architecture → make design decisions → deploy/configure it → validate it → operate and troubleshoot it → evaluate cost and trade-offs.**
+## 2. Visual direction: DP-750 as appearance reference only
 
-The book will be technically honest. A diagram is not proof of deployment. A Terraform plan is not proof of a successful Azure deployment. A code sample is not production-ready merely because it compiles.
+The attached DP-750 notebook is a visual reference for the *look and feel* of handwritten learning notes. It is not a source for Azure subject matter, technical content, chapter sequence, diagrams, logos or wording.
 
-## 2. Repository audit — baseline
+Use an original Azure notebook aesthetic:
+- Clean notebook-paper backgrounds, subtle ruled/grid lines where they help, generous white space and clear page hierarchy.
+- Handwritten-style headings, labels, callout annotations and diagram captions.
+- Original hand-drawn-style architecture sketches: pen-like strokes, boxes, cloud/service symbols, numbered arrows, boundaries, legends and short margin notes.
+- A restrained Azure-inspired blue palette, supported by dark ink and occasional accent colors for warnings, decisions and flow direction.
+- Clear, professionally typeset body text and code. Handwritten styling is for visual explanation and annotations—not for long paragraphs or dense code.
+- Every figure must be redrawn or authored for the topic and must be technically correct, legible at A4 size, captioned and explained in the nearby text.
 
-The current Azure repository README identifies the project as **Cloud Architecture Playbook — Azure Edition** and reports **120 unique component/topic catalogue entries across 14 categories**.
+Do not reproduce the DP-750 cover, brand, logo, page content or exact composition. Do not use one generic diagram repeatedly. The drawings must explain the Azure topic on that page.
 
-### Existing source assets
+## 3. Learning journey
 
-| Asset | Current repository source | Book use |
-|---|---|---|
-| Master catalogue and learning tracker | `README.md`, `catalog.json` | Canonical chapter and topic inventory |
-| Enterprise reference design | `AZURE-ENTERPRISE-REFERENCE-ARCHITECTURE.md` | End-to-end architecture and design narrative |
-| Master/category/component diagrams | `architecture.svg`, category and component `architecture.svg`, `.drawio`, `.mmd` | Figures, topology explanations and visual cross-references |
-| Component guides | Category folders A–M and Category 12 | Service chapters, checklists, scenarios and references |
-| Implementation project | `littlenest-azure-reference/` | End-to-end deployable learning case study |
-| LittleNest LLD | `littlenest-azure-reference/lld/` | Requirements, design, identity/security and operations/FinOps |
-| Validation guide | `littlenest-azure-reference/docs/validation.md` | Test procedures and troubleshooting |
-| Terraform examples | `littlenest-azure-reference/infra/`, Category 12 Terraform starter | Deployment examples and labs |
+The reader should repeatedly move through this sequence:
 
-### Catalogue inventory
+**Requirement → concept → internal working → architecture placement → design decision → implementation/configuration → validation → operations/troubleshooting → resilience → cost and trade-offs.**
 
-| Domain | Topic count | Book part |
-|---|---:|---|
-| A. Cloud Foundation & Landing Zones | 10 | Part I — Cloud foundations |
-| B. Identity & Access Management | 8 | Part II — Identity and governance |
-| C. Networking & Private Connectivity | 12 | Part III — Network architecture |
-| D. Traffic Management & Delivery | 8 | Part III — Network architecture |
-| E. Compute & Application Hosting | 8 | Part IV — Compute and application platforms |
-| F. Containers & Kubernetes | 6 | Part IV — Compute and application platforms |
-| G. Storage & Enterprise File Services | 8 | Part V — Data and integration |
-| H. Databases & Data Platforms | 10 | Part V — Data and integration |
-| I. Integration & API Management | 6 | Part V — Data and integration |
-| J. Security, Secrets & Governance | 8 | Part VI — Security architecture |
-| K. Monitoring, Operations & Cost | 10 | Part VII — Operations and FinOps |
-| L. DevOps, IaC, Migration & Hybrid Management | 6 | Part VIII — Engineering and platform delivery |
-| M. AI Platform & Engineering | 13 | Part IX — AI platform engineering |
-| 12. Business Continuity, Backup & Disaster Recovery | 7 | Part X — Business continuity and recovery |
-| **Total unique catalogue topics** | **120** | **14 source categories, consolidated into guided book parts plus capstone** |
+The book begins with the language and operating model of cloud architecture, then follows the repository's category structure. The final section brings the catalogue together in end-to-end enterprise scenarios and the LittleNest learning workload.
 
-**Editorial note:** Category L and Category 12 now have distinct responsibilities and no shared component entries. L covers IaC, CI/CD, migration and hybrid management. Category 12 covers BCDR strategy, workload criticality, backup, vault security, restore testing, Site Recovery and recovery orchestration. The book should preserve that separation and cross-reference between topics only where a real dependency exists.
+## 4. Complete catalogue coverage — mandatory 120 chapters
 
-### Important source-quality finding
+The titles below are taken directly from the current `catalog.json`. Each item is a required, distinct chapter and links to its canonical repository guide. Chapter numbering is the book's reading sequence, not a change to the catalogue's category names or folder structure.
 
-The repository has strong architecture notes, checklists, diagrams, scenarios and a real LittleNest Terraform workload. However, not every component guide contains a complete, service-specific deployment implementation. Some component pages intentionally use a common implementation-and-validation framework and direct the reader to a Terraform/Bicep sample where one exists.
+### A. Cloud Foundation & Landing Zones — 10 chapters
+1. **Microsoft Azure fundamentals** — [canonical repository guide](../A-cloud-foundation-landing-zones/microsoft-azure-fundamentals/README.md)
+2. **Regions, Region Pairs & Availability Zones** — [canonical repository guide](../A-cloud-foundation-landing-zones/regions-region-pairs-and-availability-zones/README.md)
+3. **Microsoft Entra ID tenants** — [canonical repository guide](../A-cloud-foundation-landing-zones/microsoft-entra-id-tenants/README.md)
+4. **Management Groups** — [canonical repository guide](../A-cloud-foundation-landing-zones/management-groups/README.md)
+5. **Azure Subscriptions** — [canonical repository guide](../A-cloud-foundation-landing-zones/azure-subscriptions/README.md)
+6. **Resource Groups** — [canonical repository guide](../A-cloud-foundation-landing-zones/resource-groups/README.md)
+7. **Azure Resource Manager (ARM)** — [canonical repository guide](../A-cloud-foundation-landing-zones/azure-resource-manager-arm/README.md)
+8. **Azure Policy** — [canonical repository guide](../A-cloud-foundation-landing-zones/azure-policy/README.md)
+9. **Azure Landing Zones** — [canonical repository guide](../A-cloud-foundation-landing-zones/azure-landing-zones/README.md)
+10. **Azure Well-Architected Framework** — [canonical repository guide](../A-cloud-foundation-landing-zones/azure-well-architected-framework/README.md)
 
-Therefore, the book must not imply that all 111 topics already have deployable code. For each component, the editorial process will classify the correct implementation method and either reuse verified repository code, author a new example, provide a configuration procedure, or explain why standalone deployment code is not applicable.
+### B. Identity & Access Management — 8 chapters
+11. **Microsoft Entra ID** — [canonical repository guide](../B-identity-access-management/microsoft-entra-id/README.md)
+12. **App Registrations** — [canonical repository guide](../B-identity-access-management/app-registrations/README.md)
+13. **Enterprise Applications & Service Principals** — [canonical repository guide](../B-identity-access-management/enterprise-applications-and-service-principals/README.md)
+14. **Managed Identities** — [canonical repository guide](../B-identity-access-management/managed-identities/README.md)
+15. **Azure RBAC** — [canonical repository guide](../B-identity-access-management/azure-rbac/README.md)
+16. **MFA & Conditional Access** — [canonical repository guide](../B-identity-access-management/mfa-and-conditional-access/README.md)
+17. **Privileged Identity Management (PIM)** — [canonical repository guide](../B-identity-access-management/privileged-identity-management-pim/README.md)
+18. **OAuth 2.0 & OpenID Connect** — [canonical repository guide](../B-identity-access-management/oauth-2-0-and-openid-connect/README.md)
 
-## 3. Proposed book architecture
+### C. Networking & Private Connectivity — 12 chapters
+19. **Virtual Networks (VNet)** — [canonical repository guide](../C-networking-private-connectivity/virtual-networks-vnet/README.md)
+20. **Subnets & CIDR Planning** — [canonical repository guide](../C-networking-private-connectivity/subnets-and-cidr-planning/README.md)
+21. **Network Security Groups (NSGs)** — [canonical repository guide](../C-networking-private-connectivity/network-security-groups-nsgs/README.md)
+22. **Application Security Groups (ASGs)** — [canonical repository guide](../C-networking-private-connectivity/application-security-groups-asgs/README.md)
+23. **VNet Peering** — [canonical repository guide](../C-networking-private-connectivity/vnet-peering/README.md)
+24. **User-Defined Routes (UDRs)** — [canonical repository guide](../C-networking-private-connectivity/user-defined-routes-udrs/README.md)
+25. **Azure Firewall** — [canonical repository guide](../C-networking-private-connectivity/azure-firewall/README.md)
+26. **VPN Gateway** — [canonical repository guide](../C-networking-private-connectivity/vpn-gateway/README.md)
+27. **ExpressRoute** — [canonical repository guide](../C-networking-private-connectivity/expressroute/README.md)
+28. **Private Link & Private Endpoints** — [canonical repository guide](../C-networking-private-connectivity/private-link-and-private-endpoints/README.md)
+29. **Private DNS Zones** — [canonical repository guide](../C-networking-private-connectivity/private-dns-zones/README.md)
+30. **NAT Gateway** — [canonical repository guide](../C-networking-private-connectivity/nat-gateway/README.md)
+
+### D. Traffic Management & Delivery — 8 chapters
+31. **Azure Load Balancer** — [canonical repository guide](../D-traffic-management-delivery/azure-load-balancer/README.md)
+32. **Application Gateway & WAF** — [canonical repository guide](../D-traffic-management-delivery/application-gateway-and-waf/README.md)
+33. **Azure Front Door** — [canonical repository guide](../D-traffic-management-delivery/azure-front-door/README.md)
+34. **Traffic Manager** — [canonical repository guide](../D-traffic-management-delivery/traffic-manager/README.md)
+35. **Azure Bastion** — [canonical repository guide](../D-traffic-management-delivery/azure-bastion/README.md)
+36. **Azure DNS** — [canonical repository guide](../D-traffic-management-delivery/azure-dns/README.md)
+37. **DDoS Protection** — [canonical repository guide](../D-traffic-management-delivery/ddos-protection/README.md)
+38. **Network Watcher** — [canonical repository guide](../D-traffic-management-delivery/network-watcher/README.md)
+
+### E. Compute & Application Hosting — 8 chapters
+39. **Virtual Machines** — [canonical repository guide](../E-compute-application-hosting/virtual-machines/README.md)
+40. **Managed Disks** — [canonical repository guide](../E-compute-application-hosting/managed-disks/README.md)
+41. **Availability Sets & Zones** — [canonical repository guide](../E-compute-application-hosting/availability-sets-and-zones/README.md)
+42. **Virtual Machine Scale Sets** — [canonical repository guide](../E-compute-application-hosting/virtual-machine-scale-sets/README.md)
+43. **Azure App Service** — [canonical repository guide](../E-compute-application-hosting/azure-app-service/README.md)
+44. **Azure Functions** — [canonical repository guide](../E-compute-application-hosting/azure-functions/README.md)
+45. **Logic Apps** — [canonical repository guide](../E-compute-application-hosting/logic-apps/README.md)
+46. **Azure Batch** — [canonical repository guide](../E-compute-application-hosting/azure-batch/README.md)
+
+### F. Containers & Kubernetes — 6 chapters
+47. **Docker & Container Fundamentals** — [canonical repository guide](../F-containers-kubernetes/docker-and-container-fundamentals/README.md)
+48. **Azure Container Registry (ACR)** — [canonical repository guide](../F-containers-kubernetes/azure-container-registry-acr/README.md)
+49. **Azure Container Apps** — [canonical repository guide](../F-containers-kubernetes/azure-container-apps/README.md)
+50. **Azure Kubernetes Service (AKS)** — [canonical repository guide](../F-containers-kubernetes/azure-kubernetes-service-aks/README.md)
+51. **Azure Container Instances (ACI)** — [canonical repository guide](../F-containers-kubernetes/azure-container-instances-aci/README.md)
+52. **AKS Ingress, Scaling & Workload Identity** — [canonical repository guide](../F-containers-kubernetes/aks-ingress-scaling-and-workload-identity/README.md)
+
+### G. Storage & Enterprise File Services — 8 chapters
+53. **Storage Accounts** — [canonical repository guide](../G-storage-enterprise-file-services/storage-accounts/README.md)
+54. **Blob Storage** — [canonical repository guide](../G-storage-enterprise-file-services/blob-storage/README.md)
+55. **Azure Data Lake Storage Gen2** — [canonical repository guide](../G-storage-enterprise-file-services/azure-data-lake-storage-gen2/README.md)
+56. **Azure Files** — [canonical repository guide](../G-storage-enterprise-file-services/azure-files/README.md)
+57. **Azure NetApp Files** — [canonical repository guide](../G-storage-enterprise-file-services/azure-netapp-files/README.md)
+58. **Queue Storage** — [canonical repository guide](../G-storage-enterprise-file-services/queue-storage/README.md)
+59. **Table Storage** — [canonical repository guide](../G-storage-enterprise-file-services/table-storage/README.md)
+60. **Storage Redundancy: LRS, ZRS, GRS & GZRS** — [canonical repository guide](../G-storage-enterprise-file-services/storage-redundancy-lrs-zrs-grs-and-gzrs/README.md)
+
+### H. Databases & Data Platforms — 10 chapters
+61. **Azure SQL Database** — [canonical repository guide](../H-databases-data-platforms/azure-sql-database/README.md)
+62. **Azure SQL Managed Instance** — [canonical repository guide](../H-databases-data-platforms/azure-sql-managed-instance/README.md)
+63. **SQL Server on Azure VMs** — [canonical repository guide](../H-databases-data-platforms/sql-server-on-azure-vms/README.md)
+64. **Azure Cosmos DB** — [canonical repository guide](../H-databases-data-platforms/azure-cosmos-db/README.md)
+65. **Azure Database for PostgreSQL** — [canonical repository guide](../H-databases-data-platforms/azure-database-for-postgresql/README.md)
+66. **Azure Database for MySQL** — [canonical repository guide](../H-databases-data-platforms/azure-database-for-mysql/README.md)
+67. **Azure Managed Redis** — [canonical repository guide](../H-databases-data-platforms/azure-managed-redis/README.md)
+68. **Azure Data Factory** — [canonical repository guide](../H-databases-data-platforms/azure-data-factory/README.md)
+69. **Azure Databricks** — [canonical repository guide](../H-databases-data-platforms/azure-databricks/README.md)
+70. **Microsoft Fabric / OneLake** — [canonical repository guide](../H-databases-data-platforms/microsoft-fabric-onelake/README.md)
+
+### I. Integration & API Management — 6 chapters
+71. **API Management** — [canonical repository guide](../I-integration-api-management/api-management/README.md)
+72. **Azure Service Bus** — [canonical repository guide](../I-integration-api-management/azure-service-bus/README.md)
+73. **Azure Event Grid** — [canonical repository guide](../I-integration-api-management/azure-event-grid/README.md)
+74. **Azure Event Hubs** — [canonical repository guide](../I-integration-api-management/azure-event-hubs/README.md)
+75. **Azure Stream Analytics** — [canonical repository guide](../I-integration-api-management/azure-stream-analytics/README.md)
+76. **Azure Data Explorer** — [canonical repository guide](../I-integration-api-management/azure-data-explorer/README.md)
+
+### J. Security, Secrets & Governance — 8 chapters
+77. **Azure Key Vault** — [canonical repository guide](../J-security-secrets-governance/azure-key-vault/README.md)
+78. **Key Vault Access Policies & RBAC** — [canonical repository guide](../J-security-secrets-governance/key-vault-access-policies-and-rbac/README.md)
+79. **Microsoft Defender for Cloud** — [canonical repository guide](../J-security-secrets-governance/microsoft-defender-for-cloud/README.md)
+80. **Microsoft Sentinel** — [canonical repository guide](../J-security-secrets-governance/microsoft-sentinel/README.md)
+81. **Microsoft Purview** — [canonical repository guide](../J-security-secrets-governance/microsoft-purview/README.md)
+82. **Azure Resource Locks** — [canonical repository guide](../J-security-secrets-governance/azure-resource-locks/README.md)
+83. **Tagging & Naming Standards** — [canonical repository guide](../J-security-secrets-governance/tagging-and-naming-standards/README.md)
+84. **Zero Trust Architecture** — [canonical repository guide](../J-security-secrets-governance/zero-trust-architecture/README.md)
+
+### K. Monitoring, Operations & Cost — 10 chapters
+85. **Azure Monitor** — [canonical repository guide](../K-monitoring-operations-cost/azure-monitor/README.md)
+86. **Log Analytics Workspace & KQL** — [canonical repository guide](../K-monitoring-operations-cost/log-analytics-workspace-and-kql/README.md)
+87. **Application Insights** — [canonical repository guide](../K-monitoring-operations-cost/application-insights/README.md)
+88. **Azure Monitor Alerts & Action Groups** — [canonical repository guide](../K-monitoring-operations-cost/azure-monitor-alerts-and-action-groups/README.md)
+89. **Service Health & Resource Health** — [canonical repository guide](../K-monitoring-operations-cost/service-health-and-resource-health/README.md)
+90. **Cost Management** — [canonical repository guide](../K-monitoring-operations-cost/cost-management/README.md)
+91. **Azure Advisor** — [canonical repository guide](../K-monitoring-operations-cost/azure-advisor/README.md)
+92. **Azure Automation** — [canonical repository guide](../K-monitoring-operations-cost/azure-automation/README.md)
+93. **Azure Update Manager** — [canonical repository guide](../K-monitoring-operations-cost/azure-update-manager/README.md)
+94. **Azure Resource Graph** — [canonical repository guide](../K-monitoring-operations-cost/azure-resource-graph/README.md)
+
+### L. DevOps, IaC, Migration & Hybrid Management — 6 chapters
+95. **Terraform** — [canonical repository guide](../L-devops-resilience-migration-ai/terraform/README.md)
+96. **Bicep / ARM Templates** — [canonical repository guide](../L-devops-resilience-migration-ai/bicep-arm-templates/README.md)
+97. **Azure DevOps Pipelines** — [canonical repository guide](../L-devops-resilience-migration-ai/azure-devops-pipelines/README.md)
+98. **GitHub Actions** — [canonical repository guide](../L-devops-resilience-migration-ai/github-actions/README.md)
+99. **Azure Migrate** — [canonical repository guide](../L-devops-resilience-migration-ai/azure-migrate/README.md)
+100. **Azure Arc** — [canonical repository guide](../L-devops-resilience-migration-ai/azure-arc/README.md)
+
+### M. AI Platform & Engineering — 13 chapters
+101. **Microsoft Foundry** — [canonical repository guide](../M-ai-platform-engineering/microsoft-foundry/README.md)
+102. **Azure OpenAI** — [canonical repository guide](../M-ai-platform-engineering/azure-openai/README.md)
+103. **Azure AI Search** — [canonical repository guide](../M-ai-platform-engineering/azure-ai-search/README.md)
+104. **Azure Machine Learning** — [canonical repository guide](../M-ai-platform-engineering/azure-machine-learning/README.md)
+105. **AI Infrastructure Foundations** — [canonical repository guide](../M-ai-platform-engineering/ai-infrastructure-foundations/README.md)
+106. **GPU & Accelerated Compute** — [canonical repository guide](../M-ai-platform-engineering/gpu-accelerated-compute/README.md)
+107. **Model Catalog, Registry & Lifecycle** — [canonical repository guide](../M-ai-platform-engineering/model-catalog-registry-lifecycle/README.md)
+108. **Model Deployment & Inference** — [canonical repository guide](../M-ai-platform-engineering/model-deployment-inference/README.md)
+109. **RAG & Vector Search Architecture** — [canonical repository guide](../M-ai-platform-engineering/rag-vector-search-architecture/README.md)
+110. **AI Agents & Orchestration** — [canonical repository guide](../M-ai-platform-engineering/ai-agents-orchestration/README.md)
+111. **Prompt Engineering & Evaluation** — [canonical repository guide](../M-ai-platform-engineering/prompt-engineering-evaluation/README.md)
+112. **LLMOps & AI Observability** — [canonical repository guide](../M-ai-platform-engineering/llmops-ai-observability/README.md)
+113. **Responsible AI, Security & Governance** — [canonical repository guide](../M-ai-platform-engineering/responsible-ai-security-governance/README.md)
+
+### 12. Business Continuity, Backup & Disaster Recovery — 7 chapters
+114. **Business Continuity & Disaster Recovery Strategy** — [canonical repository guide](../12-automation-backup-disaster-recovery/77-business-continuity-disaster-recovery-strategy/README.md)
+115. **Workload Criticality, BIA, RTO & RPO** — [canonical repository guide](../12-automation-backup-disaster-recovery/78-workload-criticality-bia-rto-rpo/README.md)
+116. **Azure Backup & Workload Protection** — [canonical repository guide](../12-automation-backup-disaster-recovery/75-azure-backup/README.md)
+117. **Backup Policy, Retention & Vault Security** — [canonical repository guide](../12-automation-backup-disaster-recovery/79-backup-policy-retention-vault-security/README.md)
+118. **Restore Operations & Recovery Testing** — [canonical repository guide](../12-automation-backup-disaster-recovery/80-restore-operations-recovery-testing/README.md)
+119. **Azure Site Recovery & Replication** — [canonical repository guide](../12-automation-backup-disaster-recovery/76-azure-site-recovery-asr/README.md)
+120. **Recovery Plans, Failover & Failback** — [canonical repository guide](../12-automation-backup-disaster-recovery/81-recovery-plans-failover-failback/README.md)
+
+
+**Verified catalogue total: 120 topic chapters across 14 categories.** This list is generated from the repository catalogue. Any future catalogue change must trigger a corresponding update to this book crosswalk.
+
+## 5. Additional book sections (in addition to the 120 catalogue chapters)
 
 ### Front matter
+- Cover and title page
+- Copyright, licence, version and publication date
+- About the book and intended audience
+- Prerequisites and lab safety / Azure cost warning
+- How to use the notebook-style diagrams, callouts and labs
+- Clickable table of contents, list of figures and abbreviations
 
-1. Cover
-2. Title page
-3. Copyright, licence and disclaimer
-4. About this book
-5. Intended audience and prerequisites
-6. How to use the book
-7. Lab safety and Azure cost warning
-8. Learning roadmap
-9. Table of contents
-10. List of figures and tables
-11. Abbreviations and conventions
-
-### Part 0 — How to think like an Azure Solution Architect
-
-- What cloud architecture solves
-- Requirements before services
+### Part 0 — Think like an Azure architect
+- What solution architecture is responsible for
+- Start with business, functional and non-functional requirements
 - Shared responsibility and cloud operating models
-- Control plane vs data plane
-- Architecture views: context, logical, deployment, network, identity and operations
-- How to read diagrams, decision records and deployment examples
-- Azure Well-Architected Framework: reliability, security, cost optimisation, operational excellence and performance efficiency
+- Azure global infrastructure and service models
+- Control plane vs. data plane
+- Architecture views: context, logical, deployment, network, identity, data and operations
+- Azure Well-Architected Framework and Cloud Adoption Framework
+- How to read topology diagrams, decision records and deployment examples
 
-### Part I — Cloud foundations and landing zones (Domain A)
-
-1. Microsoft Azure fundamentals
-2. Global infrastructure: regions, region pairs and availability zones
-3. Tenant and Microsoft Entra ID foundations
-4. Management groups and resource hierarchy
-5. Azure subscriptions and billing boundaries
-6. Resource groups and lifecycle boundaries
-7. Azure Resource Manager and deployment scopes
-8. Azure Policy and governance
-9. Azure landing zones and platform/workload separation
-10. Applying the Well-Architected Framework
-
-### Part II — Identity and access management (Domain B)
-
-11. Microsoft Entra ID
-12. App registrations
-13. Enterprise applications and service principals
-14. Managed identities
-15. Azure RBAC and role assignment design
-16. MFA and Conditional Access
-17. Privileged Identity Management
-18. OAuth 2.0 and OpenID Connect
-
-### Part III — Network architecture, connectivity and traffic delivery (Domains C and D)
-
-19. Azure network architecture fundamentals
-20. Virtual Networks and address-space design
-21. Subnets and CIDR planning
-22. Network Security Groups
-23. Application Security Groups
-24. VNet peering
-25. User-defined routes and effective routing
-26. Azure Firewall
-27. VPN Gateway
-28. ExpressRoute
-29. Private Link and Private Endpoints
-30. Private DNS Zones
-31. NAT Gateway and outbound connectivity
-32. Azure Load Balancer
-33. Application Gateway and WAF
-34. Azure Front Door
-35. Traffic Manager
-36. Azure Bastion
-37. Azure DNS
-38. DDoS Protection
-39. Network Watcher and network troubleshooting
-
-### Part IV — Compute, application hosting, containers and Kubernetes (Domains E and F)
-
-40. Azure compute decision framework
-41. Virtual Machines
-42. Managed Disks
-43. Availability Sets and Availability Zones for compute
-44. Virtual Machine Scale Sets
-45. Azure App Service
-46. Azure Functions
-47. Logic Apps
-48. Azure Batch
-49. Container and Docker fundamentals
-50. Azure Container Registry
-51. Azure Container Apps
-52. Azure Kubernetes Service
-53. Azure Container Instances
-54. AKS ingress, scaling and workload identity
-
-### Part V — Storage, databases, data platforms and integration (Domains G, H and I)
-
-55. Storage architecture and decision framework
-56. Storage Accounts
-57. Blob Storage
-58. Azure Data Lake Storage Gen2
-59. Azure Files
-60. Azure NetApp Files
-61. Queue Storage
-62. Table Storage
-63. Storage redundancy: LRS, ZRS, GRS and GZRS
-64. Relational database design on Azure
-65. Azure SQL Database
-66. Azure SQL Managed Instance
-67. SQL Server on Azure Virtual Machines
-68. Azure Cosmos DB
-69. Azure Database for PostgreSQL
-70. Azure Database for MySQL
-71. Azure Managed Redis
-72. Azure Data Factory
-73. Azure Databricks
-74. Microsoft Fabric and OneLake
-75. API Management
-76. Azure Service Bus
-77. Azure Event Grid
-78. Azure Event Hubs
-79. Azure Stream Analytics
-80. Azure Data Explorer
-
-### Part VI — Security, secrets and governance (Domain J)
-
-81. Azure security architecture and Zero Trust
-82. Azure Key Vault
-83. Key Vault access policies and RBAC
-84. Microsoft Defender for Cloud
-85. Microsoft Sentinel
-86. Microsoft Purview
-87. Azure Resource Locks
-88. Tagging and naming standards
-
-### Part VII — Monitoring, operations and FinOps (Domain K)
-
-89. Azure Monitor
-90. Log Analytics Workspace and KQL
-91. Application Insights
-92. Azure Monitor Alerts and Action Groups
-93. Service Health and Resource Health
-94. Cost Management
-95. Azure Advisor
-96. Azure Automation
-97. Azure Update Manager
-98. Azure Resource Graph
-
-### Part VIII — Infrastructure engineering, resilience, migration and AI (Domain L + Category 12)
-
-99. Infrastructure as Code principles and delivery lifecycle
-100. Terraform on Azure
-101. Bicep and ARM templates
-102. Azure DevOps Pipelines
-103. GitHub Actions and federated identity
-104. Azure Backup
-105. Azure Site Recovery
-106. Azure Migrate
-107. Azure Arc
-108. Microsoft Foundry
-109. Azure OpenAI
-110. Azure AI Search
-111. Azure Machine Learning
-
-### Part IX — Architecture capstone and implementation case studies
-
-112. Build an Azure platform foundation: management groups, subscriptions, policy and identity
-113. Design a hub-and-spoke / hybrid network
-114. Design a secure three-tier application
-115. Design private PaaS access end to end
-116. Design an event-driven application
-117. Design observability and operations
-118. Design backup, recovery and multi-region continuity
-119. Build, review and promote infrastructure through CI/CD
-120. LittleNest Kidswear — end-to-end workload case study
-121. Enterprise architecture review and Well-Architected assessment
-
-**Note:** The numbered items above are a proposed reading sequence, not a claim that the repository currently contains 121 independent component guides. The capstone chapters combine and apply the component catalogue.
+### End-to-end architecture and capstone chapters
+- Enterprise platform foundation: tenant, management groups, subscriptions, policy and landing zones
+- Hub-and-spoke and hybrid connectivity design
+- Secure three-tier web application
+- Private PaaS access: private endpoint, private DNS, routing and identity end to end
+- Container and Kubernetes application platform
+- Event-driven and integration architecture
+- Data platform and analytics architecture, including Databricks and Fabric
+- AI application and RAG architecture
+- Central monitoring, security operations and FinOps
+- Backup, disaster recovery, failover and recovery testing
+- Infrastructure delivery with Terraform, Bicep and CI/CD
+- LittleNest Kidswear: end-to-end reference workload, with implemented controls separated from proposed enhancements
+- Enterprise architecture review and Well-Architected assessment
 
 ### Back matter
-
-- Glossary
-- Azure CLI command reference
-- PowerShell command reference
-- Terraform and Bicep conventions
+- Azure CLI and PowerShell command reference
+- Terraform and Bicep patterns
 - Architecture decision record (ADR) examples
-- Troubleshooting decision trees
-- Interview and scenario questions
-- References and further reading
-- Repository path index and source-to-book crosswalk
-- Version history and errata
+- Troubleshooting playbooks and decision trees
+- Glossary and acronym index
+- Interview and scenario question bank
+- Official Microsoft Learn references
+- Repository source index, topic-to-chapter crosswalk, version history and errata
 
-## 4. Required repeatable structure for every component chapter
+## 6. Standard template for every catalogue chapter
 
-Every component chapter must use the same teaching structure so the book feels coherent.
+Every one of the 120 topic chapters uses this learning structure. Sections that genuinely do not apply to a topic must be marked **Not applicable** with a reason; they must not be filled with generic boilerplate.
 
-1. **Chapter opener:** why the component exists and what problem it solves.
-2. **Learning objectives:** what the reader should be able to explain or do.
-3. **Plain-language explanation:** beginner-friendly definition and analogy, without sacrificing technical accuracy.
-4. **How it works:** control plane/data plane, request flow, lifecycle, protocols or internal mechanics as relevant.
-5. **Architecture placement:** upstream dependencies, downstream consumers and cross-cutting controls.
-6. **Architecture diagram:** readable, labelled, captioned and explained in the text.
-7. **Use cases and non-use cases:** when to choose it and when not to.
-8. **Design decisions:** SKUs, tiers, topology, scale, availability, region, quotas, limits and alternatives.
-9. **Security and identity:** control-plane permissions, data-plane permissions, workload identity, network exposure, encryption and secrets as applicable.
-10. **Operations:** monitoring, diagnostics, failure modes, backup/recovery, patching and ownership as applicable.
-11. **Cost model:** primary billing meters, cost drivers, common surprises and cost controls.
-12. **Common mistakes:** practical failure patterns and how to avoid them.
-13. **Enterprise scenario:** a realistic design problem and the rationale for the selected approach.
-14. **Deployment / configuration page:** the dedicated implementation page defined in Section 5.
-15. **Validation lab:** prove that the resource or configuration works, including negative tests where appropriate.
-16. **Review questions:** knowledge checks, scenario questions and model answers.
-17. **References:** current official Microsoft Learn pages and relevant repository source links.
+1. **Notebook opener:** topic title, one-line purpose, learning goals and a small hand-drawn concept sketch.
+2. **What problem does it solve?** Plain-language explanation, terminology, real-world analogy and boundaries.
+3. **How it works:** components, lifecycle, request/data/control flow and key mechanics.
+4. **Hand-drawn architecture diagram:** topic-specific drawing, legend, numbered flow and annotated explanation.
+5. **Where it fits:** upstream dependencies, downstream consumers and cross-cutting Azure services.
+6. **When to use / when not to use:** use cases, non-use cases and alternatives.
+7. **Architectural decisions:** topology, tiers/SKUs, region, scale, quotas, limits, availability and decision trade-offs.
+8. **Security and identity:** authentication, authorization, RBAC, managed identity, secrets, encryption, network exposure and governance as applicable.
+9. **Networking and data flow:** ingress, egress, routing, DNS, private access, protocols and data boundaries as applicable.
+10. **Reliability and recovery:** failure modes, redundancy, backup, restore, RTO/RPO and DR dependencies as applicable.
+11. **Operations:** metrics, logs, alerts, diagnostics, troubleshooting, patching, ownership and runbooks.
+12. **Cost and FinOps:** billing dimensions, cost drivers, cost traps, estimation approach and optimization levers.
+13. **Worked enterprise example:** requirement, assumptions, selected pattern, diagram and explanation of rejected alternatives.
+14. **Deploy / configure / design lab:** correct implementation method and guided exercise.
+15. **Validate it:** expected output, success checks, negative tests and failure injection where safe.
+16. **Common mistakes and troubleshooting:** symptoms, likely causes, diagnostic sequence and corrective action.
+17. **Knowledge check:** questions, scenario prompts and model answers.
+18. **References:** current official Microsoft Learn material plus the canonical repository topic guide.
 
-Not every service needs equal depth. The structure is a checklist, not a reason to add irrelevant sections. Mark non-applicable areas explicitly.
+## 7. Hand-drawn diagram requirements
 
-## 5. Mandatory implementation page after every component
+Each catalogue chapter must have at least one original, topic-specific hand-drawn-style technical diagram. Complex topics should have several, for example a logical architecture view, a numbered traffic/data-flow sequence and a failure/recovery view.
 
-Each component gets a visually distinct page titled:
+Every diagram must:
+- Name real Azure components and show clear trust/network/resource boundaries.
+- Distinguish control-plane actions from data-plane traffic where relevant.
+- Label protocols, ports, routes, identity, DNS and direction of flow when technically meaningful.
+- Distinguish a conceptual relationship from an actual network path.
+- Show assumptions and optional components instead of implying every architecture requires them.
+- Include a figure number, descriptive caption, legend and source/revision note.
+- Be authored as editable vector/source artwork (SVG and, where useful, draw.io) before PDF placement.
+- Be checked against the accompanying text and official service documentation.
 
-# Deploy / Configure This Component
+Use a hand-drawn visual treatment without sacrificing technical precision. Rough pen strokes are decorative; arrows, labels, boundaries and relationships must remain unambiguous.
 
-The page must include:
+## 8. Implementation standard
 
-- **Implementation classification:** deployable Azure resource, identity/configuration workflow, governance/policy workflow, or conceptual architecture pattern.
-- **Deployment objective:** exact outcome the reader will create or configure.
-- **Prerequisites:** subscription scope, permissions, resource providers, region/SKU support, quota, dependencies and tool versions.
-- **Architecture and dependency diagram:** what must exist before deployment and how the component connects.
-- **Code:** Terraform first where the repository already uses it; Bicep for Azure-native patterns where it adds value; Azure CLI / PowerShell / Microsoft Graph for configuration workflows where appropriate.
-- **Parameters:** names, types, safe example values and which values must be changed.
-- **Deployment commands:** login/context selection, init/validate/plan or what-if, reviewed apply/deploy and outputs.
-- **Validation:** Azure CLI queries, resource properties, DNS/network checks, identity/role tests, application test or service-specific verification.
-- **Cleanup / rollback:** safe destroy or removal steps, dependencies, retained data and resources that require manual review.
-- **Security notes:** least privilege, secret handling, state protection, public exposure and destructive-action warnings.
-- **Cost notes:** billable components, free-tier eligibility, recurring charges and teardown warnings.
-- **Evidence status:** source file, code-review status, static validation status and live deployment status.
+Every topic gets an appropriate practical treatment. Do not force every concept into a Terraform resource block.
 
-### Implementation labels
+Use one or more of these labels:
+- **DEPLOY — Terraform:** an Azure resource can be provisioned with a reusable Terraform example.
+- **DEPLOY — Bicep:** Bicep is the clearer Azure-native deployment example.
+- **CONFIGURE — CLI / PowerShell / Portal / API:** the topic is primarily identity, permission, policy, platform or service configuration.
+- **DESIGN — Architecture method:** the topic is a framework, design discipline or decision pattern without a standalone deployable resource.
 
-| Label | Meaning | Book treatment |
+Every lab must state:
+- Objective, prerequisites, scope and required permissions.
+- Tool/provider/API versions and region/SKU assumptions.
+- Required dependencies and safe sample parameters.
+- Complete code or configuration steps, with secrets excluded.
+- Login and subscription-context checks.
+- Format/validation/plan or what-if steps before applying changes.
+- Deployment/configuration commands and expected outputs.
+- Positive and negative validation checks.
+- Troubleshooting guidance.
+- Cleanup, rollback and data-retention warnings.
+- Expected cost drivers and steps to avoid unintended charges.
+- Evidence status: **reviewed**, **static-validated**, **lab-deployed**, or **not yet live-tested**.
+
+A plan or successful syntax check is not proof of a live Azure deployment. State evidence honestly. Never label the LittleNest workload production-ready.
+
+## 9. LittleNest learning workload
+
+Use LittleNest as a recurring example to show how catalogue topics interact in a real workload. Preserve the implementation boundaries documented in its source code and LLD. Clearly distinguish:
+- What currently exists in code and has validation evidence.
+- What is demonstrated only as a lab/configuration step.
+- What is an architecture recommendation or future enhancement.
+
+Do not claim tenant-wide landing zones, hub networks, central monitoring, budgets, public exposure, remote Terraform state or other capabilities unless the current source proves they exist. Keep resource-cost caveats and safe cleanup instructions visible.
+
+## 10. Editorial and technical quality rules
+
+- The catalogue is authoritative for topic names, category membership and source links.
+- Expand the repository material into teaching prose; do not concatenate existing README files.
+- Explain service boundaries, dependencies, alternatives and trade-offs.
+- Prefer current official Microsoft Learn sources for service behavior, limits, pricing meters, SKU/region availability and deployment syntax.
+- Date-stamp volatile details and state assumptions.
+- Separate generally available, preview, deprecated and region/SKU-specific features accurately.
+- Keep examples internally consistent across diagrams, prose, commands and IaC.
+- Avoid invented Azure capabilities, fake Terraform resources, misleading network arrows and unsupported production claims.
+- Use the five Well-Architected pillars throughout: reliability, security, cost optimisation, operational excellence and performance efficiency.
+
+## 11. Page design and PDF production
+
+- A4 portrait for teaching pages; landscape only where a wide diagram or table genuinely needs it.
+- Consistent margins, headers, footers, folio, part/chapter markers and generous whitespace.
+- Readable typeset body text, clear code blocks and high-contrast annotations.
+- Notebook-style chapter openers and diagram pages, with hand-drawn titles, callouts and arrows.
+- Figure and code-listing numbers, captions and cross-references.
+- Clickable contents, internal links, PDF bookmarks and clickable references.
+- Searchable/selectable text; never flatten the whole book into page images.
+- Embedded fonts, accessible reading order, legible diagrams and no clipped content.
+- Print and screen rendering checks before release.
+
+## 12. Production workflow and release gates
+
+| Stage | Work | Exit criteria |
 |---|---|---|
-| **DEPLOY — Terraform** | The component is provisioned as an Azure resource and a suitable Terraform example exists or will be authored | Complete Terraform example and reviewed deployment sequence |
-| **DEPLOY — Bicep** | Azure-native declarative deployment is the clearest teaching method | Bicep template, parameters and what-if/deploy commands |
-| **CONFIGURE — CLI / PowerShell / API** | The component is primarily a tenant, identity, policy, role, workflow or service configuration | Correct configuration commands and verification; no fake resource block |
-| **DESIGN — No standalone deployment** | The topic is a design framework, architecture pattern or decision method | Design worksheet, reference topology, decision criteria and validation checklist |
+| 1. Catalogue lock | Read `catalog.json` and build the 120-topic crosswalk | Exactly 120 topics and 14 categories accounted for |
+| 2. Visual prototype | Create cover, chapter opener, body page, diagram page and lab page | User approves the notebook visual language and legibility |
+| 3. Pilot chapter | Produce one complete chapter with original diagram, lab and questions | Technical and visual review passes |
+| 4. Category production | Write and illustrate chapters category by category | Every topic has a completed chapter and source link |
+| 5. Capstones | Connect the component chapters in enterprise scenarios and LittleNest | End-to-end designs are internally consistent |
+| 6. Technical review | Verify service details, security, network flows, code and citations | No known critical technical errors |
+| 7. PDF build | Generate TOC, bookmarks, links, figures and searchable text | No clipping, broken links or unreadable diagrams |
+| 8. Release review | Inspect the full PDF on screen and in print layout | Versioned release candidate approved |
 
-Some components need more than one method. For example, a resource may be provisioned with Terraform but its data-plane permissions or tenant policy must be configured and validated separately.
+Do not publish a partial PDF as the complete book. Draft sections can be shared for review but must be clearly marked incomplete.
 
-### Code quality and evidence rules
+## 13. Definition of done
 
-- Use pinned provider/API versions where possible and state the tested version.
-- Use variables and safe example values; never include real IDs, secrets, tenant details or credentials.
-- Do not put secrets in source code, command history, Terraform state examples or PDF screenshots.
-- Include least-privilege role assignments and explain the required scope.
-- Include `terraform fmt`, `terraform validate`, plan review and Bicep `what-if` where relevant.
-- State whether code is copied/adapted from the repository, newly authored, or based on official Microsoft examples.
-- Mark validation honestly: **reviewed**, **static-validated**, **lab-deployed**, or **not yet live-tested**.
-- Never imply a deployment was tested in Azure unless actual deployment evidence exists.
-- Never provide a destructive cleanup command without explaining scope and retained data.
-
-## 6. LittleNest — central capstone
-
-LittleNest will be the recurring workload case study that joins the component chapters into one coherent application.
-
-The current repository describes it as a low-cost, non-production learning workload with:
-
-- Node.js storefront on Azure App Service (Linux B1)
-- Azure Functions Flex Consumption order worker
-- Azure Cosmos DB for NoSQL
-- Azure Storage Queue and Storage account
-- Optional Key Vault synthetic-secret exercise
-- VNet, integration subnets, private endpoints and private DNS
-- System-assigned managed identities and scoped role assignments
-- Terraform infrastructure and validation scripts
-
-The book must preserve the documented boundaries:
-
-- It assumes an existing governed non-production subscription; it does not create an Entra tenant, management groups, subscription, hub network or central security platform.
-- The Azure-hosted app is private and not public-internet-facing.
-- Storage has a default-deny public endpoint with an explicit Terraform-runner IPv4 bootstrap exception; do not claim all public network access is disabled.
-- The current lab uses local Terraform state; remote state is a future team-use improvement.
-- Monitoring resources and Azure budget resources must not be described as deployed unless the Terraform source confirms them.
-- Cosmos DB Free Tier is conditional; private endpoints and other resources can incur charges.
-- The project is not production-ready and has not been represented as a validated production workload.
-
-LittleNest chapters will show a complete path: requirements → design → service selection → Terraform → identity → private networking → application deployment → order flow → validation → operations → cost → cleanup.
-
-## 7. Book design and production standards
-
-### Page and typography
-
-- A4 portrait for the main textbook; landscape pages only for wide architecture diagrams or comparison tables.
-- Consistent margins, grid, heading hierarchy and generous whitespace.
-- Readable body typography (target 10.5–11.5 pt), comfortable line spacing and clear code typography.
-- High-contrast colours suitable for dark diagrams and print; do not rely on colour alone to communicate meaning.
-- Running headers with part/chapter title; footer with page number and book short title.
-- Every diagram has a figure number, caption, source and explanatory paragraph.
-- Every code listing has a listing number, language, file name and version assumptions.
-- Tables must remain readable; split oversized tables rather than shrinking type excessively.
-
-### Learning design
-
-- Part openers explain the learning outcome and prerequisite knowledge.
-- Chapter openers state objectives and expected time/effort where useful.
-- Use consistent callouts: **Architect's note**, **Security checkpoint**, **Cost warning**, **Common mistake**, **Lab exercise**, **Production consideration**.
-- Use worked examples before independent exercises.
-- Include review questions and scenario-based assessments.
-- Provide cross-references between prerequisite and dependent chapters.
-
-### PDF usability
-
-- Clickable table of contents and internal chapter links.
-- Clickable official references and repository source links.
-- Bookmarks for parts, chapters and appendices.
-- Searchable/selectable text; do not render pages as flat images.
-- Embedded fonts, consistent figure sizing and no clipped code or diagrams.
-- Metadata, version, publication date and revision history.
-- Accessibility review for headings, reading order, contrast, figure captions and link text.
-
-## 8. Technical accuracy and source policy
-
-Use the Azure Well-Architected Framework and Azure landing-zone design areas as architectural reference points, not as a substitute for workload-specific requirements.
-
-- Map workload decisions to the five Well-Architected pillars: reliability, security, cost optimisation, operational excellence and performance efficiency.
-- Use Cloud Adoption Framework landing-zone design areas for platform foundation, identity, resource organisation, network topology, security, management, governance and platform automation.
-- Prefer official Microsoft Learn service documentation for current feature support, SKU/region availability, quotas, limits, identity, networking and deployment syntax.
-- Cite references near the relevant discussion and include a consolidated bibliography.
-- Date-stamp volatile details such as prices, service tiers, quotas, regions and API/provider versions.
-- Where guidance differs by SKU, region or feature, state the dependency rather than generalising.
-
-## 9. Production workflow and quality gates
-
-| Stage | Work | Exit gate |
-|---|---|---|
-| 1. Source audit | Inventory catalogue, guides, diagrams, code, LLD and validation assets | Every source topic has a destination chapter or an explicit exclusion |
-| 2. Curriculum map | Confirm order, prerequisites, chapter dependencies and crosswalk | No accidental omissions or repeated chapters |
-| 3. Technical editorial | Rewrite and expand source notes into coherent lessons | Each chapter has objectives, explanation, architecture and references |
-| 4. Deployment authoring | Reuse or create implementation pages | Every component has a deployment/configuration classification and honest code status |
-| 5. Architecture visuals | Select, redraw and caption diagrams | Every major design has a legible and technically consistent figure |
-| 6. Technical review | Review service details, code, security, cost, limits and terminology | No known critical technical errors; unsupported claims removed |
-| 7. Code validation | Format, lint, validate, plan/what-if and lab-test where possible | Evidence status recorded per code sample |
-| 8. Manuscript edit | Structure, grammar, consistency, cross-references and citations | Editorial checklist passes |
-| 9. PDF build | Typeset, paginate, generate TOC, bookmarks and links | PDF renders without clipping, broken links or unreadable diagrams |
-| 10. Release review | Sample pages, full-page inspection and metadata check | Release candidate approved and versioned |
-
-## 10. Initial release strategy
-
-Avoid attempting to write 100+ component chapters in one unreviewed pass. Build the manuscript in reviewable parts:
-
-1. **Release foundation:** front matter, style guide, full contents, glossary structure and source crosswalk.
-2. **Part I:** Azure foundations and landing zones.
-3. **Part II:** identity and access.
-4. **Part III:** networking and traffic delivery.
-5. **Part IV:** compute and containers.
-6. **Part V:** storage, databases and integration.
-7. **Part VI:** security and governance.
-8. **Part VII:** monitoring, operations and FinOps.
-9. **Part VIII:** DevOps, resilience, migration and AI.
-10. **Part IX:** LittleNest and enterprise capstone.
-11. **Final:** references, index, full technical review and PDF release.
-
-The first PDF should be published only after the full intended scope is complete. Intermediate manuscript snapshots may be shared for review, but they must be clearly marked draft and incomplete.
-
-## 11. Definition of done
-
-The book is ready to publish when:
-
-- All 13 source domains and all 111 catalogue entries are accounted for in the source-to-book crosswalk.
-- Repeated topics are consolidated without losing implementation depth.
-- Every component has an appropriate deploy/configure/design page.
-- Every code sample has prerequisites, versions, commands, validation and cleanup or an explicit reason those are not applicable.
-- LittleNest accurately reflects the current code and LLD.
-- Diagrams are readable, technically accurate, numbered and referenced.
-- Official sources are linked and volatile details are date-stamped.
-- The PDF has a clickable TOC, bookmarks, searchable text and embedded fonts.
-- Technical, editorial, code and PDF quality gates pass.
-- The release clearly states its version, publication date, scope and known limitations.
+The Azure Master Vault book is complete only when:
+- All **120 catalogue topics across 14 categories** have distinct chapters and are cross-checked against `catalog.json`.
+- All 120 chapters contain topic-specific learning content and at least one original hand-drawn-style technical diagram.
+- All topics have appropriate deploy/configure/design treatment and honest evidence labels.
+- End-to-end reference architectures and capstones connect the catalogue topics.
+- Official references, volatile-detail dates and assumptions are included.
+- LittleNest matches its actual source implementation and documented boundaries.
+- The final PDF has searchable text, bookmarks, clickable contents and references, embedded fonts and readable figures.
+- Technical, editorial, diagram, lab and PDF quality checks pass.
