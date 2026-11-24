@@ -1,0 +1,12 @@
+flowchart TD
+    A["Azure VM pricing update<br/>Effective 1 February 2027"] --> B["Discover VMs across subscriptions"]
+    B --> C["Capture region, SKU, series, size, power state"]
+    C --> D["Classify pricing applicability<br/>Potentially affected / named exclusion / verify"]
+    D --> E["Retrieve current public retail price"]
+    E --> F["Calculate projected price and discount scenario"]
+    F --> G["Compare alternative SKUs<br/>same region, availability and capability checks"]
+    G --> H["Rank recommendations by estimated net cost"]
+    H --> I["Export auditable CSV + HTML report"]
+    I --> J["Review compatibility and business impact"]
+    J --> K["Separate change approval and implementation"]
+    K --> L["Post-change validation and cost review"]
